@@ -1,0 +1,1 @@
+All notebooks are published under [MIT License](https://opensource.org/licenses/MIT). Be aware that the data might have its own license, please consult the original sources for the license information.
