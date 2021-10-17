@@ -3,6 +3,8 @@ numpy
 pandas
 seaborn
 world_bank_data
+xlrd
 openpyxl
 jupyterlab
+pycountry
 
