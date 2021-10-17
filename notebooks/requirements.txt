@@ -1,0 +1,8 @@
+matplotlib
+numpy
+pandas
+seaborn
+world_bank_data
+openpyxl
+jupyterlab
+
