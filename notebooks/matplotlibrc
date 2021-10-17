@@ -1,0 +1,53 @@
+#### MATPLOTLIBRC FORMAT
+
+## See http://matplotlib.org/users/customizing.html#the-matplotlibrc-file for
+## more details on the paths which are checked for the configuration file.
+
+# figure
+figure.figsize : 9, 6
+figure.subplot.left : 0.1
+figure.subplot.bottom : 0.1
+figure.subplot.right : 0.96
+figure.subplot.top : 0.96
+
+# text
+font.size : 8
+
+# axes
+axes.spines.left : True
+axes.spines.bottom : True
+axes.spines.right : False
+axes.spines.top : False
+axes.facecolor : white
+axes.edgecolor : 0.4
+axes.linewidth : 0.6
+
+# ticks
+xtick.bottom : True
+xtick.color : 0.4
+xtick.labelsize : 9
+xtick.major.width : 0.6
+xtick.major.size : 4
+ytick.left : True
+ytick.color : 0.4
+ytick.labelsize : 9
+ytick.major.width : 0.6
+ytick.major.size : 4
+
+# grid
+axes.grid : True
+grid.linestyle : -
+grid.color : black
+grid.alpha : 0.16 
+grid.linewidth : 0.4
+
+# legend
+legend.edgecolor : white
+legend.facecolor : 0.94
+legend.borderpad : 1
+legend.labelspacing : 0.6
+legend.framealpha : 1
+
+# lines
+lines.linewidth : 0.8
+
