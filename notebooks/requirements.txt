@@ -7,4 +7,4 @@ xlrd
 openpyxl
 jupyterlab
 pycountry
-
+eurostat
