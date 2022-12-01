@@ -110,7 +110,7 @@ definitions = {
         {'code': 'CRF1A3_CRF1D1A',  # vnitřní graf, políčko 2         DOPRAVA
          'label': 'Doprava (včetně letecké)',
          'sum': ['CRF1A3', 'CRF1D1A'],
-         'color': '#B22222',
+         'color': '#7FFFD4',
          'breakdown': [
              {'code': 'CRF1A3B1',  # vnější graf políčko 2.1
               'label': 'Osobní automobilová doprava',
