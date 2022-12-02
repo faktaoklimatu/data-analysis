@@ -3,11 +3,11 @@ import eurostat
 
 from regional_emissions_by_category_lib.emission_state_definitions import definitions
 
-def get_definition_dict(state):
+def _get_definition_dict(state):
     return definitions[state]
 
 
-def get_data(state, year):
+def _get_data(state, year):
     df = eurostat.get_data_df('env_air_gge')
     # Pandas query() does not allow backslash in column names so "rename column" is needed.
     df = df.rename(columns={'geo\\time': 'geo'})
@@ -18,45 +18,45 @@ def get_data(state, year):
     return df
 
 
-def get_value(key, df):  # získej hodnotu. Zadej klíč a df
+def _get_value(key, df):  # získej hodnotu. Zadej klíč a df
     return df.loc[key, 'value']
 
 
-def get_sum(keys, df):
+def _get_sum(keys, df):
     sum = 0
     for key in keys:
-        sum += get_value(key, df)
+        sum += _get_value(key, df)
     return sum
 
 
-def add_sums_and_reminder(definition, total_value_code, perc_dict, df):
+def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
     """Computes the sum values and a reminder.
     perc_dict gathers percents for each wedge.
     So we can show them in outer chart labels.
     """
     cumulative_sum = 0
-    total_divider = get_value('TOTX4_MEMONIA', df)  # dělitel pro výpočet procent
+    total_divider = _get_value('TOTX4_MEMONIA', df)  # dělitel pro výpočet procent
     for wedge_def in definition:
         wedge_code = wedge_def['code']
         if 'sum' in wedge_def:
-            wedge_value = get_sum(wedge_def['sum'], df)
+            wedge_value = _get_sum(wedge_def['sum'], df)
             cumulative_sum += wedge_value
         elif 'reminder' in wedge_def:
-            wedge_value = get_value(total_value_code, df) - cumulative_sum
+            wedge_value = _get_value(total_value_code, df) - cumulative_sum
         perc_dict[wedge_code] = (
                     wedge_value / total_divider)  # tohle mi počítá proceentuální zastoupení výseče proti celku a hází to hodnoty do listu
         df.loc[wedge_code, 'value'] = wedge_value  # přidá nový řádek ke stávajímu df
 
 
-def compute_values(definition, df, outer_perc_dict):
-    add_sums_and_reminder(definition, 'TOTX4_MEMONIA', {}, df)
+def _compute_values(definition, df, outer_perc_dict):
+    _add_sums_and_reminder(definition, 'TOTX4_MEMONIA', {}, df)
 
     for wedge_def in definition:
         if 'breakdown' in wedge_def:
-            add_sums_and_reminder(wedge_def['breakdown'], wedge_def['code'], outer_perc_dict, df)
+            _add_sums_and_reminder(wedge_def['breakdown'], wedge_def['code'], outer_perc_dict, df)
 
 
-def create_plot_lists(definition, outer_perc_dict):
+def _create_plot_lists(definition, outer_perc_dict):
     plot_dict = {
         "inner_chart_structure": [], "outer_chart_structure": [],
         "inner_labels": [], "outer_labels": [],
@@ -77,12 +77,12 @@ def create_plot_lists(definition, outer_perc_dict):
     return plot_dict
 
 
-def create_relative_outer_df(inner_chart_structure, outer_chart_structure, df):
-    total = get_sum(inner_chart_structure, df)
+def _create_relative_outer_df(inner_chart_structure, outer_chart_structure, df):
+    total = _get_sum(inner_chart_structure, df)
     return df.loc[outer_chart_structure] / total
 
 
-def draw_plot(state, year, plot_dict, df_rel, df):
+def _draw_plot(state, year, plot_dict, df_rel, df):
     fig, ax = plt.subplots(figsize=(12, 12))
     inner_size = 0.35
     outer_size = 0.2
@@ -113,15 +113,15 @@ def draw_plot(state, year, plot_dict, df_rel, df):
 
 
 def create_plot(state, year):
-    definition = get_definition_dict(state)
-    df = get_data(state, year)
+    definition = _get_definition_dict(state)
+    df = _get_data(state, year)
 
     outer_perc_dict = {}
-    compute_values(definition, df, outer_perc_dict)
+    _compute_values(definition, df, outer_perc_dict)
 
-    plot_dict = create_plot_lists(definition, outer_perc_dict)
+    plot_dict = _create_plot_lists(definition, outer_perc_dict)
 
-    df_rel = create_relative_outer_df(plot_dict['inner_chart_structure'],
-                                      plot_dict['outer_chart_structure'], df)
+    df_rel = _create_relative_outer_df(plot_dict['inner_chart_structure'],
+                                       plot_dict['outer_chart_structure'], df)
 
-    draw_plot(state, year, plot_dict, df_rel, df)
+    _draw_plot(state, year, plot_dict, df_rel, df)
