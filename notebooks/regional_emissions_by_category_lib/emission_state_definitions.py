@@ -86,31 +86,23 @@ definitions = {
          'reminder': True}
     ],
     'CZ': [
-        {'code': 'CRF2',  # vnitřní graf, políčko 1                 PRŮMYSLOVÉ PROCESY
-         'label': 'Průmyslové procesy (výroba cementu, oceli...)',
-         'sum': ['CRF2'],
-         'color': '#00FFFF',
+        {'code': 'CRF1A1',  # vnitřní graf, políčko 4                 ENERGETIKA
+         'label': 'Energetika',
+         'sum': ['CRF1A1'],
+         'color': '#FF4500',
          'breakdown': [
-             {'code': 'CRF2C',  # vnější graf políčko 1.1
-              'label': 'Zpracování oceli a kovů',
-              'color': '#68228B',
-              'sum': ['CRF2C']},
-             {'code': 'CRF2A',  # vnější graf políčko 1.2
-              'label': 'Minerální produkce (cement, vápno...)',
-              'color': '#9A32CD',
-              'sum': ['CRF2A']},
-             {'code': 'CRF2B',  # vnější graf políčko 1.3
-              'label': 'Chemický průmysl',
-              'color': '#B23AEE',
-              'sum': ['CRF2B']},
-             {'code': 'CRF2_dif',  # vnější graf políčko 1.3 - rozdíl
-              'label': 'Další průmyslové procesy',
-              'color': '#BF3EFF',
+             {'code': 'CRF1A1C_CRF1A1B',  # vnější graf políčko 4.1
+              'label': 'Rafinace, výroba a úprava paliv',
+              'color': '#CD3700',
+              'sum': ['CRF1A1C', 'CRF1A1B']},
+             {'code': 'CRF1A2_dif_X',  # vnější graf políčko 4.2 - rozdíl
+              'label': 'Teplárny a elektrárny',
+              'color': '#EE4000',
               'reminder': True}]},
         {'code': 'CRF1A3_CRF1D1A',  # vnitřní graf, políčko 2         DOPRAVA
          'label': 'Doprava (včetně letecké)',
          'sum': ['CRF1A3', 'CRF1D1A'],
-         'color': '#7FFFD4',
+         'color': '#B22222',
          'breakdown': [
              {'code': 'CRF1A3B1',  # vnější graf políčko 2.1
               'label': 'Osobní automobilová doprava',
@@ -128,6 +120,27 @@ definitions = {
               'label': 'Jiná doprava',
               'color': '#FF3030',
               'reminder': True}]},
+        {'code': 'CRF2',  # vnitřní graf, políčko 1                 PRŮMYSLOVÉ PROCESY
+         'label': 'Průmyslové procesy (výroba cementu, oceli...)',
+         'sum': ['CRF2'],
+         'color': '#8A2BE2',
+         'breakdown': [
+             {'code': 'CRF2C',  # vnější graf políčko 1.1
+              'label': 'Zpracování oceli a kovů',
+              'color': '#68228B',
+              'sum': ['CRF2C']},
+             {'code': 'CRF2A',  # vnější graf políčko 1.2
+              'label': 'Minerální produkce (cement, vápno...)',
+              'color': '#9A32CD',
+              'sum': ['CRF2A']},
+             {'code': 'CRF2B',  # vnější graf políčko 1.3
+              'label': 'Chemický průmysl',
+              'color': '#B23AEE',
+              'sum': ['CRF2B']},
+             {'code': 'CRF2_dif',  # vnější graf políčko 1.3 - rozdíl
+              'label': 'Další průmyslové procesy',
+              'color': '#BF3EFF',
+              'reminder': True}]},
         {'code': 'CRF1A2',  # vnitřní graf, políčko 3                 SPALOVÁNÍ V PRŮMYSLU
          'label': 'Spalování v průmyslu',
          'sum': ['CRF1A2'],
@@ -140,19 +153,6 @@ definitions = {
              {'code': 'CRF1A2_dil',  # vnější graf políčko 3.2 - rozdíl
               'label': 'Další spalování v průmyslu',
               'color': '#00B2EE',
-              'reminder': True}]},
-        {'code': 'CRF1A1',  # vnitřní graf, políčko 4                 ENERGETIKA
-         'label': 'Energetika',
-         'sum': ['CRF1A1'],
-         'color': '#FF4500',
-         'breakdown': [
-             {'code': 'CRF1A1C_CRF1A1B',  # vnější graf políčko 4.1
-              'label': 'Rafinace, výroba a úprava paliv',
-              'color': '#CD3700',
-              'sum': ['CRF1A1C', 'CRF1A1B']},
-             {'code': 'CRF1A2_dif_X',  # vnější graf políčko 4.2 - rozdíl
-              'label': 'Teplárny a elektrárny',
-              'color': '#EE4000',
               'reminder': True}]},
         {'code': 'CRF1A4',  # vnitřní graf, políčko 5                 SPALOVÁNÍ V DOM, INST A ZEMĚĎ
          'label': 'Spalování v domácnostech, institucích a zemědělství',
