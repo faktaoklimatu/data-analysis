@@ -171,7 +171,7 @@ definitions = {
          'color': '#FFD700',
          'reminder': True}
     ],
-'EU28': [
+'EU_28': [
         {'code': 'CRF1A1',  # vnitřní graf, políčko 4                 ENERGETIKA
          'label': 'Energetika',
          'sum': ['CRF1A1'],
