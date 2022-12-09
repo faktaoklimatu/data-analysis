@@ -1,12 +1,7 @@
 import matplotlib.pyplot as plt
 import eurostat
 
-from regional_emissions_by_category_lib.emission_state_definitions import definitions
-
 TOTAL_EMISSION = 'TOTX4_MEMONIA'
-
-def _get_definition_dict(state):
-    return definitions[state]
 
 
 def _get_data(state, year):
@@ -114,8 +109,7 @@ def _draw_plot(state, year, plot_dict, df_rel, df):
     plt.show()
 
 
-def create_plot(state, year):
-    definition = _get_definition_dict(state)
+def create_plot(state, year, definition):
     df = _get_data(state, year)
 
     outer_perc_dict = {}
