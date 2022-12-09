@@ -3,6 +3,8 @@ import eurostat
 
 from regional_emissions_by_category_lib.emission_state_definitions import definitions
 
+TOTAL_EMISSION = 'TOTX4_MEMONIA'
+
 def _get_definition_dict(state):
     return definitions[state]
 
@@ -35,7 +37,7 @@ def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
     So we can show them in outer chart labels.
     """
     cumulative_sum = 0
-    total_divider = _get_value('TOTX4_MEMONIA', df)  # dělitel pro výpočet procent
+    total_divider = _get_value(TOTAL_EMISSION, df)  # dělitel pro výpočet procent
     for wedge_def in definition:
         wedge_code = wedge_def['code']
         if 'sum' in wedge_def:
@@ -49,7 +51,7 @@ def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
 
 
 def _compute_values(definition, df, outer_perc_dict):
-    _add_sums_and_reminder(definition, 'TOTX4_MEMONIA', {}, df)
+    _add_sums_and_reminder(definition, TOTAL_EMISSION, {}, df)
 
     for wedge_def in definition:
         if 'breakdown' in wedge_def:
@@ -106,7 +108,7 @@ def _draw_plot(state, year, plot_dict, df_rel, df):
     plt.title(f'Emise skleníkových plynů pro {state} za rok {year} v CO2 ekviv.', fontsize=20)
 
     # číslo v prostřed
-    total_emisions = round(df.loc['TOTX4_MEMONIA', 'value'], 2)
+    total_emisions = round(df.loc[TOTAL_EMISSION, 'value'], 2)
     ax.annotate(total_emisions, xy=(0.1, 0.1), xytext=(-0.15, -0.01), fontsize=25)
 
     plt.show()
