@@ -46,7 +46,7 @@ def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
         elif 'reminder' in wedge_def:
             wedge_value = _get_value(total_value_code, df) - cumulative_sum
         perc_dict[wedge_code] = (
-                    wedge_value / total_divider)  # tohle mi počítá proceentuální zastoupení výseče proti celku a hází to hodnoty do listu
+                    wedge_value / total_divider)
         df.loc[wedge_code, 'value'] = wedge_value  # přidá nový řádek ke stávajímu df
 
 
