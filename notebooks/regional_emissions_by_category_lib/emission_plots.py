@@ -74,12 +74,7 @@ def _create_plot_lists(definition, outer_perc_dict):
     return plot_dict
 
 
-def _create_relative_outer_df(inner_chart_structure, outer_chart_structure, df):
-    total = _get_sum(inner_chart_structure, df)
-    return df.loc[outer_chart_structure] / total
-
-
-def _draw_plot(state, year, plot_dict, df_rel, df):
+def _draw_plot(state, year, plot_dict, outer_perc_dict, df):
     fig, ax = plt.subplots(figsize=(12, 12))
     inner_size = 0.35
     outer_size = 0.2
@@ -94,7 +89,7 @@ def _draw_plot(state, year, plot_dict, df_rel, df):
            wedgeprops=dict(width=inner_size, edgecolor='w'))
 
     # vnější
-    ax.pie(df_rel['value'], radius=(2 * inner_size + outer_size), labels=plot_dict['outer_labels'], counterclock=False,
+    ax.pie(outer_perc_dict.values(), radius=(2 * inner_size + outer_size), labels=plot_dict['outer_labels'], counterclock=False,
            startangle=90, normalize=False, colors=plot_dict['outer_colors'],
            textprops={'fontsize': 12}, labeldistance=1.2,
            wedgeprops=dict(width=outer_size, edgecolor='w'))
@@ -117,7 +112,4 @@ def create_plot(state, year, definition):
 
     plot_dict = _create_plot_lists(definition, outer_perc_dict)
 
-    df_rel = _create_relative_outer_df(plot_dict['inner_chart_structure'],
-                                       plot_dict['outer_chart_structure'], df)
-
-    _draw_plot(state, year, plot_dict, df_rel, df)
+    _draw_plot(state, year, plot_dict, outer_perc_dict, df)
