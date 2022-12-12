@@ -1,21 +1,25 @@
 import matplotlib.pyplot as plt
 import eurostat
 
-TOTAL_EMISSION = 'TOTX4_MEMONIA'
+TOTAL_EMISSION = 'TOTX4_MEMONIA' # global variable
 
 
 def _get_data(state, year):
+    """Import data from Eurostat.
+    Select certain data.
+    Rename columns, set index.
+    """
     df = eurostat.get_data_df('env_air_gge')
     # Pandas query() does not allow backslash in column names so "rename column" is needed.
     df = df.rename(columns={'geo\\time': 'geo'})
     df = df.query("airpol == 'GHG' and geo == @state and unit == 'MIO_T'")
-    df = df[["src_crf", year]]  # jen kod odvětví a rok
-    df = df.set_index('src_crf')  # src_crf jako index
+    df = df[["src_crf", year]]  # select just sector code and year
+    df = df.set_index('src_crf')
     df = df.rename(columns={year: 'value'})
     return df
 
 
-def _get_value(key, df):  # získej hodnotu. Zadej klíč a df
+def _get_value(key, df):
     return df.loc[key, 'value']
 
 
@@ -32,7 +36,7 @@ def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
     So we can show them in outer chart labels.
     """
     cumulative_sum = 0
-    total_divider = _get_value(TOTAL_EMISSION, df)  # dělitel pro výpočet procent
+    total_divider = _get_value(TOTAL_EMISSION, df)  # divider for percentage computing
     for wedge_def in definition:
         wedge_code = wedge_def['code']
         if 'sum' in wedge_def:
@@ -42,10 +46,11 @@ def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
             wedge_value = _get_value(total_value_code, df) - cumulative_sum
         perc_dict[wedge_code] = (
                     wedge_value / total_divider)
-        df.loc[wedge_code, 'value'] = wedge_value  # přidá nový řádek ke stávajímu df
+        df.loc[wedge_code, 'value'] = wedge_value  # add a new line to current df
 
 
 def _compute_values(definition, df, outer_perc_dict):
+    """Compute values for inner and outer chart structure"""
     _add_sums_and_reminder(definition, TOTAL_EMISSION, {}, df)
 
     for wedge_def in definition:
@@ -54,6 +59,7 @@ def _compute_values(definition, df, outer_perc_dict):
 
 
 def _create_plot_lists(definition, outer_perc_dict):
+    """Get lists of chart structures, labels and colors."""
     plot_dict = {
         "inner_chart_structure": [], "outer_chart_structure": [],
         "inner_labels": [], "outer_labels": [],
@@ -69,17 +75,18 @@ def _create_plot_lists(definition, outer_perc_dict):
         for subarea in area['breakdown']:
             plot_dict["outer_chart_structure"].append(subarea['code'])
             plot_dict["outer_labels"].append(
-                f"{subarea['label']} {(outer_perc_dict[subarea['code']]):.1%}")  # outer_perc_dict
+                f"{subarea['label']} {(outer_perc_dict[subarea['code']]):.1%}")
             plot_dict["outer_colors"].append(subarea['color'])
     return plot_dict
 
 
 def _draw_plot(state, year, plot_dict, outer_perc_dict, df):
+    """Define paramethers to draw the plot"""
     fig, ax = plt.subplots(figsize=(12, 12))
     inner_size = 0.35
     outer_size = 0.2
 
-    # vnitřní
+    # inner plot circle
     ax.pie(df.loc[plot_dict['inner_chart_structure']]['value'], radius=(2 * inner_size),
            labels=plot_dict['inner_labels'],
            counterclock=False,
@@ -88,16 +95,16 @@ def _draw_plot(state, year, plot_dict, outer_perc_dict, df):
            labeldistance=1.55,
            wedgeprops=dict(width=inner_size, edgecolor='w'))
 
-    # vnější
+    # outer plot circle
     ax.pie(outer_perc_dict.values(), radius=(2 * inner_size + outer_size), labels=plot_dict['outer_labels'], counterclock=False,
            startangle=90, normalize=False, colors=plot_dict['outer_colors'],
            textprops={'fontsize': 12}, labeldistance=1.2,
            wedgeprops=dict(width=outer_size, edgecolor='w'))
 
-    # nadpis
+    # title
     plt.title(f'Emise skleníkových plynů pro {state} za rok {year} v CO2 ekviv.', fontsize=20)
 
-    # číslo v prostřed
+    # the number in the middle
     total_emisions = round(df.loc[TOTAL_EMISSION, 'value'], 2)
     ax.annotate(total_emisions, xy=(0.1, 0.1), xytext=(-0.15, -0.01), fontsize=25)
 
@@ -105,6 +112,7 @@ def _draw_plot(state, year, plot_dict, outer_perc_dict, df):
 
 
 def create_plot(state, year, definition):
+    """Call the main functions together"""
     df = _get_data(state, year)
 
     outer_perc_dict = {}
