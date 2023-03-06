@@ -53,9 +53,10 @@ def _add_powerplant_data(source_df, year, powerplants):
     df = new_df
     return df
 
-# NEW 3.3.
+
 def _add_line_to_df(wedge_code, wedge_value, df):
     df.loc[wedge_code, 'value'] = wedge_value # add a new line to current df
+
 
 def _create_powerplant_allowances_list(definition):
     """Creates list of powerplants with allowances from definition"""
@@ -70,7 +71,8 @@ def _create_powerplant_allowances_list(definition):
                     allowances.append(item)
     return(allowances)
 
-def _add_sums_and_reminder_new(definition, total_value_code, perc_dict, df): # (upravené add_sums_and_reminder)
+
+def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
     cumulative_sum = 0
     total_divider = _get_value(TOTAL_EMISSION, df)  # divider for percentage computing
 
@@ -86,31 +88,20 @@ def _add_sums_and_reminder_new(definition, total_value_code, perc_dict, df): # (
         if 'reminder' in wedge_def:
             wedge_value = _get_value(total_value_code, df) - cumulative_sum
             _add_line_to_df(wedge_def['code'], wedge_value, df)
-        perc_dict['wedge_code'] = (wedge_value / total_divider)         # tohle sem přidal aniž bych věděl co to dělá a jesi vůbec něco
-# new - end
 
-def _compute_values(definition, perc_dict, df):
+    # third pass to compute values for outer perc dict (if in second pass, total outer chart sum > 1 so plot gets error)
+    for wedge_def in definition:
+        wedge_value = _get_value(wedge_def['code'], df)
+        perc_dict[wedge_def['code']] = (wedge_value / total_divider)
+
+
+def _compute_values(definition, outer_perc_dict, df):
     """Compute values for inner and outer chart structure"""
-    _add_sums_and_reminder_new(definition, TOTAL_EMISSION, perc_dict, df)
+    _add_sums_and_reminder(definition, TOTAL_EMISSION, {}, df)
 
     for wedge_def in definition:
         if 'breakdown' in wedge_def:
-            _add_sums_and_reminder_new(wedge_def['breakdown'], wedge_def['code'], perc_dict, df)
-
-
-def _compute_outer_perc_dict(definition, df):       # TOHODLE je potřeba se zbavit
-    """Compute relative values to create outer chart"""
-    result = {}
-    total_divider = _get_value(TOTAL_EMISSION, df)
-
-    for inner_cat in definition:
-        if "breakdown" not in inner_cat:
-            continue
-        for outer_cat in inner_cat["breakdown"]:
-            cat_code = outer_cat["code"]
-            result[cat_code] = _get_value(cat_code, df) / total_divider
-
-    return result
+            _add_sums_and_reminder(wedge_def['breakdown'], wedge_def['code'], outer_perc_dict, df)
 
 
 def _create_plot_lists(definition, outer_perc_dict):
@@ -166,66 +157,18 @@ def _draw_plot(state, year, plot_dict, outer_perc_dict, df):
     plt.show()
 
 
-def create_plot(state, year, definition, perc_dict):
+def create_plot(state, year, definition):
     """Call the main functions together"""
     df = _get_data(state, year)
 
-    powerplants = _create_powerplant_allowances_list(definition)    # NEW
+    powerplants = _create_powerplant_allowances_list(definition)
 
     df = _add_powerplant_data(df, year, powerplants)
 
-    _compute_values(definition, perc_dict, df)
-
-    # _reshuffle_energy(definition) - ZAHOĎ
-
-    outer_perc_dict = _compute_outer_perc_dict(definition, df)
+    outer_perc_dict = {}
+    _compute_values(definition, outer_perc_dict, df)
 
     plot_dict = _create_plot_lists(definition, outer_perc_dict)
 
     _draw_plot(state, year, plot_dict, outer_perc_dict, df)
 
-
-# def _add_sums_and_reminder(definition, total_value_code, df):
-#    """Computes the sum values and a reminder.
-#    perc_dict gathers percents for each wedge.
-#    So we can show them in outer chart labels.
-#    """
-#    cumulative_sum = 0
-
-#    for wedge_def in definition:
-#        wedge_code = wedge_def['code']
-#        if 'sum' in wedge_def:
-#            wedge_value = _get_sum(wedge_def['sum'], df)
-#            cumulative_sum += wedge_value
-#        elif 'reminder' in wedge_def:
-#            wedge_value = _get_value(total_value_code, df) - cumulative_sum
-#        df.loc[wedge_code, 'value'] = wedge_value  # add a new line to current df
-
-# def _find_category_index(definition, category_code):
-#    """Returns category indexes"""
-#    for index, category in enumerate(definition):
-#        if category["code"] == category_code:
-#            return index
-#        elif category["code"] == "CRF1A1_CRF1B":     # For EU plot without energy breakdown
-#            return False
-#    raise ValueError("Code not find in definition list")
-
-
-# def _category_reshuffling(definition, category_code, reminder_position=1):
-#    """Reshuffle positions of wedge_values in certain chart category
-#    so the reminder value does not have to be placed at the end."""
-#    category_index = _find_category_index(definition, category_code)
-
-#    if category_index is not False:                 # condition cause EU plot does not use energy breakdown structure
-
-#        category = definition[category_index]
-
-#        reminder = category["breakdown"][-1]
-#        tmp_breakdown = category["breakdown"][:-1]  # Takes all but the last element
-#        tmp_breakdown.insert(reminder_position, reminder)
-#        category["breakdown"] = tmp_breakdown
-
-
-# def _reshuffle_energy(definition):
-#    """Call category_reshuffling function"""
-#    _category_reshuffling(definition, "CRF1A1") # for the energy segment
