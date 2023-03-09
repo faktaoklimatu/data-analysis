@@ -67,8 +67,8 @@ def _create_powerplant_allowances_list(definition):
             continue
         for outer_cat in inner_cat["breakdown"]:
             if 'allowances' in outer_cat:
-                for item in (outer_cat["sum"]):
-                    allowances.append(item)
+                allowances += outer_cat['sum']
+
     return(allowances)
 
 
