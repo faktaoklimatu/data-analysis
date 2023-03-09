@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
+import pandas as pd
 import eurostat
 
 TOTAL_EMISSION = 'TOTX4_MEMONIA' # global variable
+HEADER_LINE_START = 16 # global variable
 
 
 def _get_data(state, year):
@@ -30,26 +32,70 @@ def _get_sum(keys, df):
     return sum
 
 
-def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
-    """Computes the sum values and a reminder.
-    perc_dict gathers percents for each wedge.
-    So we can show them in outer chart labels.
+def _add_powerplant_data(source_df, year, powerplants):
+    """Import data from xls.
+    Select certain data.
+    Rename columns, set index,
+    add to core dataframe.
     """
+    # load excel
+    df_input = pd.read_excel("verified_emissions_2021_en.xlsx", header=HEADER_LINE_START)
+
+    # adjust excel
+    df = df_input.loc[df_input["PERMIT_IDENTIFIER"].isin(powerplants)]
+    df = df.rename(columns={f'VERIFIED_EMISSIONS_{year}': "value"})
+    df = df.set_index('PERMIT_IDENTIFIER')["value"]
+    df = df.div(1000000)
+    df = pd.DataFrame(df)
+
+    # join dataframes
+    new_df = pd.concat([source_df, df])
+    df = new_df
+    return df
+
+
+def _add_line_to_df(wedge_code, wedge_value, df):
+    df.loc[wedge_code, 'value'] = wedge_value # add a new line to current df
+
+
+def _create_powerplant_allowances_list(definition):
+    """Creates list of powerplants with allowances from definition"""
+    allowances = []
+
+    for inner_cat in definition:
+        if "breakdown" not in inner_cat:
+            continue
+        for outer_cat in inner_cat["breakdown"]:
+            if 'allowances' in outer_cat:
+                allowances += outer_cat['sum']
+
+    return(allowances)
+
+
+def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
     cumulative_sum = 0
     total_divider = _get_value(TOTAL_EMISSION, df)  # divider for percentage computing
+
+    # first pass to compute cumulative_sum
     for wedge_def in definition:
-        wedge_code = wedge_def['code']
         if 'sum' in wedge_def:
             wedge_value = _get_sum(wedge_def['sum'], df)
+            _add_line_to_df(wedge_def['code'], wedge_value, df)
             cumulative_sum += wedge_value
-        elif 'reminder' in wedge_def:
+
+    # second pass to compute the reminder (if exists)
+    for wedge_def in definition:
+        if 'reminder' in wedge_def:
             wedge_value = _get_value(total_value_code, df) - cumulative_sum
-        perc_dict[wedge_code] = (
-                    wedge_value / total_divider)
-        df.loc[wedge_code, 'value'] = wedge_value  # add a new line to current df
+            _add_line_to_df(wedge_def['code'], wedge_value, df)
+
+    # third pass to compute values for outer perc dict (if in second pass, total outer chart sum > 1 so plot gets error)
+    for wedge_def in definition:
+        wedge_value = _get_value(wedge_def['code'], df)
+        perc_dict[wedge_def['code']] = (wedge_value / total_divider)
 
 
-def _compute_values(definition, df, outer_perc_dict):
+def _compute_values(definition, outer_perc_dict, df):
     """Compute values for inner and outer chart structure"""
     _add_sums_and_reminder(definition, TOTAL_EMISSION, {}, df)
 
@@ -104,7 +150,7 @@ def _draw_plot(state, year, plot_dict, outer_perc_dict, df):
     # title
     plt.title(f'Emise skleníkových plynů pro {state} za rok {year} v CO2 ekviv.', fontsize=20)
 
-    # the number in the middle
+    # show number in the middle
     total_emisions = round(df.loc[TOTAL_EMISSION, 'value'], 2)
     ax.annotate(total_emisions, xy=(0.1, 0.1), xytext=(-0.15, -0.01), fontsize=25)
 
@@ -115,9 +161,14 @@ def create_plot(state, year, definition):
     """Call the main functions together"""
     df = _get_data(state, year)
 
+    powerplants = _create_powerplant_allowances_list(definition)
+
+    df = _add_powerplant_data(df, year, powerplants)
+
     outer_perc_dict = {}
-    _compute_values(definition, df, outer_perc_dict)
+    _compute_values(definition, outer_perc_dict, df)
 
     plot_dict = _create_plot_lists(definition, outer_perc_dict)
 
     _draw_plot(state, year, plot_dict, outer_perc_dict, df)
+
