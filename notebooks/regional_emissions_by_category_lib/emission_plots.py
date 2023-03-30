@@ -17,9 +17,12 @@ def _get_data(state, year):
     df = df.rename(columns={'geo\\time': 'geo'})
     df = df.rename(columns={'geo\\TIME_PERIOD': 'geo'})
     df = df.query("airpol == 'GHG' and geo == @state and unit == 'MIO_T'")
-    df = df[["src_crf", year]]  # select just sector code and year
+
+    # In some version of python/pandas/eurostat, the column name is a (numeric) string.
+    year_column_name = str(year)
+    df = df[["src_crf", year_column_name]]  # select just sector code and year
     df = df.set_index('src_crf')
-    df = df.rename(columns={year: 'value'})
+    df = df.rename(columns={year_column_name: 'value'})
     return df
 
 
