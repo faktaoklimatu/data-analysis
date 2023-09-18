@@ -43,7 +43,8 @@ def _add_powerplant_data(source_df, year, powerplants):
     add to core dataframe.
     """
     # load excel
-    df_input = pd.read_excel("verified_emissions_2021_en.xlsx", header=HEADER_LINE_START)
+    allowances_df = pd.read_excel(
+        "../data/EUA/verified_emissions_2021_en.xlsx", header=HEADER_LINE_START)
 
     # adjust excel
     df = df_input.loc[df_input["PERMIT_IDENTIFIER"].isin(powerplants)]
