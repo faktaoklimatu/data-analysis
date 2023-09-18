@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import eurostat
 
-TOTAL_EMISSION = 'TOTX4_MEMONIA' # global variable
-HEADER_LINE_START = 16 # global variable
+TOTAL_EMISSION = 'TOTX4_MEMONIA'  # global variable
+HEADER_LINE_START = 16  # global variable
 
 
 def _get_data(state, year):
@@ -47,20 +47,22 @@ def _add_powerplant_data(source_df, year, powerplants):
         "../data/EUA/verified_emissions_2021_en.xlsx", header=HEADER_LINE_START)
 
     # adjust excel
-    df = df_input.loc[df_input["PERMIT_IDENTIFIER"].isin(powerplants)]
-    df = df.rename(columns={f'VERIFIED_EMISSIONS_{year}': "value"})
-    df = df.set_index('PERMIT_IDENTIFIER')["value"]
-    df = df.div(1000000)
-    df = pd.DataFrame(df)
+    # Select the right rows and columns from the data frame.
+    allowances_df = allowances_df.rename(
+        columns={f"VERIFIED_EMISSIONS_{year}": "value"})
+    allowances_df = allowances_df.loc[allowances_df["PERMIT_IDENTIFIER"].isin(powerplants),
+                                      ["PERMIT_IDENTIFIER", "value"]]
+    allowances_df.set_index('PERMIT_IDENTIFIER', inplace=True)
+    # Some elements are string "Excluded" or -1, convert that to zeros. Convert tons to megatons.
+    allowances_df["value"] = pd.to_numeric(allowances_df["value"],
+                                           errors='coerce').fillna(0).clip(lower=0) / 1_000_000
 
     # join dataframes
-    new_df = pd.concat([source_df, df])
-    df = new_df
-    return df
+    return pd.concat([source_df, allowances_df])
 
 
 def _add_line_to_df(wedge_code, wedge_value, df):
-    df.loc[wedge_code, 'value'] = wedge_value # add a new line to current df
+    df.loc[wedge_code, 'value'] = wedge_value  # add a new line to current df
 
 
 def _create_powerplant_allowances_list(definition):
@@ -74,12 +76,13 @@ def _create_powerplant_allowances_list(definition):
             if 'allowances' in outer_cat:
                 allowances += outer_cat['sum']
 
-    return(allowances)
+    return (allowances)
 
 
 def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
     cumulative_sum = 0
-    total_divider = _get_value(TOTAL_EMISSION, df)  # divider for percentage computing
+    # divider for percentage computing
+    total_divider = _get_value(TOTAL_EMISSION, df)
 
     # first pass to compute cumulative_sum
     for wedge_def in definition:
@@ -106,7 +109,8 @@ def _compute_values(definition, outer_perc_dict, df):
 
     for wedge_def in definition:
         if 'breakdown' in wedge_def:
-            _add_sums_and_reminder(wedge_def['breakdown'], wedge_def['code'], outer_perc_dict, df)
+            _add_sums_and_reminder(
+                wedge_def['breakdown'], wedge_def['code'], outer_perc_dict, df)
 
 
 def _create_plot_lists(definition, outer_perc_dict):
@@ -153,11 +157,13 @@ def _draw_plot(state, year, plot_dict, outer_perc_dict, df):
            wedgeprops=dict(width=outer_size, edgecolor='w'))
 
     # title
-    plt.title(f'Emise skleníkových plynů pro {state} za rok {year} v CO2 ekviv.', fontsize=20)
+    plt.title(
+        f'Emise skleníkových plynů pro {state} za rok {year} v CO2 ekviv.', fontsize=20)
 
     # show number in the middle
     total_emisions = round(df.loc[TOTAL_EMISSION, 'value'], 2)
-    ax.annotate(total_emisions, xy=(0.1, 0.1), xytext=(-0.15, -0.01), fontsize=25)
+    ax.annotate(total_emisions, xy=(0.1, 0.1),
+                xytext=(-0.15, -0.01), fontsize=25)
 
     plt.show()
 
@@ -176,4 +182,3 @@ def create_plot(state, year, definition):
     plot_dict = _create_plot_lists(definition, outer_perc_dict)
 
     _draw_plot(state, year, plot_dict, outer_perc_dict, df)
-
