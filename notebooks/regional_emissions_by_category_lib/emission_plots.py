@@ -14,8 +14,7 @@ def _get_data(state, year):
     df = eurostat.get_data_df('env_air_gge')
     # Pandas query() does not allow backslash in column names so "rename column" is needed.
     # In some versions of data, the column is called geo\time, in some geo\TIME_PERIOD.
-    df = df.rename(columns={'geo\\time': 'geo'})
-    df = df.rename(columns={'geo\\TIME_PERIOD': 'geo'})
+    df = df.rename(columns={'geo\\time': 'geo', 'geo\\TIME_PERIOD': 'geo'})
     df = df.query("airpol == 'GHG' and geo == @state and unit == 'MIO_T'")
 
     # In some version of python/pandas/eurostat, the column name is a (numeric) string.
