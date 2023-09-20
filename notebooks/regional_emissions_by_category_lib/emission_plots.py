@@ -76,7 +76,7 @@ def _create_powerplant_allowances_list(definition):
             if 'allowances' in outer_cat:
                 allowances += outer_cat['sum']
 
-    return (allowances)
+    return allowances
 
 
 def _add_sums_and_reminder(definition, total_value_code, perc_dict, df):
