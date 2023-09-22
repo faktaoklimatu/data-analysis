@@ -37,7 +37,7 @@ def get_emissions_wedges(definition: dict,
                          parent_id: Optional[str] = None) -> list[Wedge]:
     output: list[Wedge] = []
 
-    # Compute the sum of all codes that appear in the definition (to allow computing the reminder).
+    # Compute the sum of all codes that appear in the definition (to allow computing the remainder).
     all_codes = sum((wedge_def.get('codes', [])
                     for wedge_def in definition), start=[])
     all_codes_sum = get_emissions_sum_value(all_codes, df_crf_and_allowances)
@@ -46,10 +46,10 @@ def get_emissions_wedges(definition: dict,
         if 'codes' in wedge_def:
             wedge_value = get_emissions_sum_value(
                 wedge_def['codes'], df_crf_and_allowances)
-        elif 'reminder' in wedge_def:
+        elif 'remainder' in wedge_def:
             wedge_value = total_value - all_codes_sum
         else:
-            assert (False, "A definition must have codes or reminder")
+            assert False, "A definition must have codes or remainder"
 
         output.append(_get_wedge(wedge_def, wedge_value, parent_id))
     return output
