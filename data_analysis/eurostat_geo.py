@@ -40,7 +40,7 @@ eu27_geo_dict: dict[Geo, str] = {
     Geo.BE: 'Belgie',
     Geo.BG: 'Bulharsko',
     Geo.CY: 'Kypr',
-    Geo.CZ: 'Česká Republika',
+    Geo.CZ: 'Česko',
     Geo.DE: 'Německo',
     Geo.DK: 'Dánsko',
     Geo.EE: 'Estonsko',
