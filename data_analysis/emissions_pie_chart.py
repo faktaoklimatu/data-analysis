@@ -1,3 +1,5 @@
+""" Utils to generate CSV data and plots for emissions pie charts. """
+
 from dataclasses import dataclass
 from typing import Optional
 
@@ -53,7 +55,15 @@ def get_emissions_wedges(definition: dict,
     return output
 
 
-def draw_emissions_pie_chart(state: str,
+def print_emissions_wedges_to_csv(wedges: list[Wedge], csv_path: str) -> pd.DataFrame:
+    df = pd.DataFrame(wedges).set_index("id")
+    # Remove wedges with empty labels and remove the color column (not needed by Illustrator).
+    df = df[df["label"] != ""].drop("color", axis=1)
+    df.to_csv(csv_path)
+    return df
+
+
+def draw_emissions_pie_chart(geo: str,
                              year: int,
                              inner_wedges: list[Wedge],
                              outer_wedges: list[Wedge],
@@ -82,7 +92,7 @@ def draw_emissions_pie_chart(state: str,
 
     # title
     plt.title(
-        f'Emise skleníkových plynů pro {state} za rok {year} v CO2 ekviv.', fontsize=20)
+        f'Emise skleníkových plynů pro {geo} za rok {year} v CO2 ekviv.', fontsize=20)
 
     # show number in the middle
     total_emisions = round(total_value, 2)
