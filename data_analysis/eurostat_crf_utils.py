@@ -3,17 +3,19 @@
 import eurostat
 import pandas as pd
 
+from data_analysis.eurostat_geo import Geo
 
-def get_eurostat_crf_data(geo: str, year: int) -> pd.DataFrame:
+
+def get_eurostat_crf_data(geo: Geo, year: int) -> pd.DataFrame:
     """
-    Import data from Eurostat for a given geo (like 'CZ' or 'EU27_2020') and year.
+    Import data from Eurostat for a given geo and year.
     The dataframe is indexed by CRF codes and has a single column, 'value', in megatons CO2eq.
     """
     df = eurostat.get_data_df('env_air_gge', filter_pars={
         'startPeriod': year,
         'endPeriod': year,
-        'geo': [geo],
-        'airpol': ['GHG'],
+        'geo': geo.value,
+        'airpol': 'GHG',
         'unit': 'MIO_T'})
     # Pandas query() does not allow backslash in column names so "rename column" is needed.
     # In some versions of data, the column is called geo\time, in some geo\TIME_PERIOD.
