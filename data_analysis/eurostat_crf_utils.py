@@ -1,29 +1,46 @@
 """ Utils to load CRF data from eurostat. """
 
+from typing import Optional
+
 import eurostat
 import pandas as pd
 
 from data_analysis.eurostat_geo import Geo
 
 
-def get_eurostat_crf_data(geo: Geo, year: int) -> pd.DataFrame:
+def get_eurostat_crf_data(geo: Optional[Geo], crf_code: Optional[str], year: int) -> pd.DataFrame:
     """
-    Import data from Eurostat for a given geo and year.
-    The dataframe is indexed by CRF codes and has a single column, 'value', in megatons CO2eq.
+    Import data from Eurostat for a given geo / crf code and year.
+    The dataframe is indexed by CRF codes / geo and has a single column, 'value', in megatons CO2eq.
     """
-    df = eurostat.get_data_df('env_air_gge', filter_pars={
+    filter_pars = {
         'startPeriod': year,
         'endPeriod': year,
-        'geo': geo.value,
         'airpol': 'GHG',
-        'unit': 'MIO_T'})
+        'unit': 'MIO_T'}
+    if geo is not None:
+        filter_pars['geo'] = geo.value
+        main_dimension = 'src_crf'
+    elif crf_code is not None:
+        filter_pars['src_crf'] = crf_code
+        main_dimension = 'geo'
+
+    df = eurostat.get_data_df('env_air_gge', filter_pars=filter_pars)
     # Pandas query() does not allow backslash in column names so "rename column" is needed.
     # In some versions of data, the column is called geo\time, in some geo\TIME_PERIOD.
-    df = df.rename(columns={'geo\\time': 'geo', 'geo\\TIME_PERIOD': 'geo'})
-
-    # In some version of python/pandas/eurostat, the column name is a (numeric) string.
+    # In some version of python/pandas/eurostat, the year column name is a (numeric) string.
     year_column_name = str(year)
-    df = df[["src_crf", year_column_name]]  # select just sector code and year
-    df = df.set_index('src_crf')
-    df = df.rename(columns={year_column_name: 'value'})
+    df = df.rename(columns={'geo\\time': 'geo',
+                            'geo\\TIME_PERIOD': 'geo',
+                            year_column_name: 'value'})
+    df = df[[main_dimension, 'value']]
+    df = df.set_index(main_dimension)
     return df
+
+
+def get_eurostat_crf_data_for_geo(geo: Geo, year: int) -> pd.DataFrame:
+    return get_eurostat_crf_data(geo, None, year)
+
+
+def get_eurostat_crf_data_for_code(crf_code: str, year: int) -> pd.DataFrame:
+    return get_eurostat_crf_data(None, crf_code, year)
