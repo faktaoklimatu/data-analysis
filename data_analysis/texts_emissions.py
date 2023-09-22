@@ -30,8 +30,19 @@ def get_lulucf_info(year: int, strings: dict[str, str]) -> str:
     return f'Pro snadnější možnost srovnávání emisí [napříč státy EU](/infografiky/emise-vybrane-staty) vynecháváme kategorii lesnictví a využití půdy (která bývá označována _LULUCF_ podle anglického _Land use, land use change, forestry_). Díky ukládání uhlíku v zeleni má totiž tato kategorie ve většině států EU záporné emise, což komplikuje vizualizaci. Sektor LULUCF se také často ze srovnávání [vynechává](https://climateactiontracker.org/methodology/indc-ratings-and-lulucf/), protože jednak obsahuje vysokou nejistotu v datech, neboť záporné hodnoty mohou zakrývat _strukturální_ emise z energetiky, průmyslu a zemědělství, a jednak je tento sektor náchylnější na výkyvy v čase. Právě v Česku jsme v posledních letech svědky výrazného výkyvu kvůli masivní těžbě dřeva při kůrovcové kalamitě. Za rok {year} byly podle odhadů emise v tomto sektoru _kladné_ ve výši {strings["lulucf-emissions"]} Mt CO<sub>2</sub>eq.'
 
 
-def get_flights_info(geo: Geo) -> str:
-    if geo == Geo.CZ:
+def get_trade_and_flights_info(geo: Optional[Geo]) -> str:
+    if geo is None or geo == Geo.CZ:
+        return f"Údaje odpovídají emisím vyprodukovaným v dané zemi, avšak vzhledem k vývozu a dovozu zboží nemusejí odpovídat emisím vzniklých ze spotřeby v dané zemi. ČR například do dalších zemí EU vyváží elektřinu, ocel, automobily apod. a dováží zboží z jiných zemí EU nebo z Číny. Zahrnutí letecké dopravy je podobně problematické – zobrazený příspěvek letecké dopravy odpovídá emisím vyprodukovaným {get_flights_info(geo)}."
+    elif geo == Geo.SK:
+        return f"Údaje odpovídají emisím vyprodukovaným v dané zemi, avšak vzhledem k vývozu a dovozu zboží nemusejí odpovídat emisím vzniklých ze spotřeby v dané zemi. Slovensko například do dalších zemí EU vyváží automobily, ocel apod. a dováží zboží z jiných zemí EU nebo z Číny. Zahrnutí letecké dopravy je podobně problematické – zobrazený příspěvek letecké dopravy odpovídá emisím vyprodukovaným {get_flights_info(geo)}."
+    elif geo == Geo.EU27:
+        return f"Údaje odpovídají emisím vyprodukovaným v Evropské unii, avšak vzhledem k vývozu a dovozu zboží nemusejí odpovídat emisím vzniklých ze spotřeby. Země EU např. do třetích zemí mimo EU vyváží ocel, automobily apod. a dováží zboží z jiných třetích zemí, např. z Číny. Zahrnutí letecké dopravy je podobně problematické - zobrazený příspěvek letecké dopravy odpovídá emisím vyprodukovaným {get_flights_info(geo)}."
+    assert False, "unknown GEO used"
+
+def get_flights_info(geo: Optional[Geo]) -> str:
+    if geo is None:
+        return "lety z letišť v dané zemi. Je tedy pravděpodobně podhodnocený (mnoho Čechů létá z Vídně či Bratislavy) a neodpovídá zcela množství emisí, které Češi způsobí (typicky např. let českého člověka do New Yorku s přestupem v Amsterdamu se započítá do zobrazených emisí jen jako Praha–Amsterdam, zatímco emise z letu Amsterdam–New York se započtou Nizozemsku). Není také započítáno, že emise vypuštěné vysoko v atmosféře mají přibližně dvojnásobný efekt"
+    elif geo == Geo.CZ:
         return "lety z letišť v ČR. Je tedy pravděpodobně podhodnocený (mnoho Čechů létá z Vídně či Bratislavy) a neodpovídá zcela množství emisí, které Češi způsobí (typicky např. let českého člověka do New Yorku s přestupem v Amsterdamu se započítá do zobrazených emisí jen jako Praha–Amsterdam, zatímco emise z letu Amsterdam–New York se započtou Nizozemsku). Není také započítáno, že emise vypuštěné vysoko v atmosféře mají přibližně dvojnásobný efekt"
     elif geo == Geo.SK:
         return "lety z letišť na Slovensku. Je to tedy pravděpodobně podhodnocený údaj (mnoho Slováků létá z Vídně) a neodpovídá zcela množství emisí, které Slováci způsobí (typicky např. let z Bratislavy do New Yorku s přestupem v Dublinu se započítá do zobrazených emisí jen jako Bratislava–Dublin, zatímco emise z letu Dublin–New York se započtou Irsku). Není také započítáno, že emise vypuštěné vysoko v atmosféře mají přibližně dvojnásobný efekt"
