@@ -19,18 +19,22 @@ class Sector(Enum):
 
 
 def get_gases_info() -> str:
+    """ Returns explanation how different GHG converted into CO2eq. """
     return 'Všechny hodnoty v grafu jsou <glossary id="antropogennisklenikoveplyny">antropogenní emise</glossary> skleníkových plynů CO<sub>2</sub>, N<sub>2</sub>O, CH<sub>4</sub>, HFC, PFC, SF<sub>6</sub>, NF<sub>3</sub> vyjádřené jako <glossary id="co2eq">CO<sub>2</sub>eq</glossary>. Jednotka CO<sub>2</sub> ekvivalent zohledňuje dlouhodobý efekt skleníkových plynů v atmosféře a převádí je na množství CO<sub>2</sub>, které by mělo stejný efekt. Více viz článek [Global warming potential](https://en.wikipedia.org/wiki/Global_warming_potential).'
 
 
 def get_methodology_info() -> str:
+    """ Returns info about CRF methodology. """
     return 'Emisní inventura poskytovaná Eurostatem využívá formát a strukturu dat CRF (_Common Reporting Format_). Veškerá metodika k výpočtům a reportingu je na stránkách národního programu inventarizace emisí ([NGGIP – national greenhouse gas inventory programme](https://www.ipcc-nggip.iges.or.jp/)) a je závazná pro všechny státy [UNFCCC](https://cs.wikipedia.org/wiki/R%C3%A1mcov%C3%A1_%C3%BAmluva_OSN_o_zm%C4%9Bn%C4%9B_klimatu). Data o emisích poskytují Eurostatu jednotlivé země EU – data za Českou republiku sestavuje ČHMÚ, podílí se na tom ovšem více českých institucí.'
 
 
 def get_lulucf_info(year: int, strings: dict[str, str]) -> str:
+    """ Returns explanation why LULUCF is not included in emission graphs. """
     return f'Pro snadnější možnost srovnávání emisí [napříč státy EU](/infografiky/emise-vybrane-staty) vynecháváme kategorii lesnictví a využití půdy (která bývá označována _LULUCF_ podle anglického _Land use, land use change, forestry_). Díky ukládání uhlíku v zeleni má totiž tato kategorie ve většině států EU záporné emise, což komplikuje vizualizaci. Sektor LULUCF se také často ze srovnávání [vynechává](https://climateactiontracker.org/methodology/indc-ratings-and-lulucf/), protože jednak obsahuje vysokou nejistotu v datech, neboť záporné hodnoty mohou zakrývat _strukturální_ emise z energetiky, průmyslu a zemědělství, a jednak je tento sektor náchylnější na výkyvy v čase. Právě v Česku jsme v posledních letech svědky výrazného výkyvu kvůli masivní těžbě dřeva při kůrovcové kalamitě. Za rok {year} byly podle odhadů emise v tomto sektoru _kladné_ ve výši {strings["lulucf-emissions"]} Mt CO<sub>2</sub>eq.'
 
 
 def get_trade_and_flights_info(geo: Optional[Geo]) -> str:
+    """ Returns info about methodology of trade and flights in the emission accounting. """
     if geo is None or geo == Geo.CZ:
         return f"Údaje odpovídají emisím vyprodukovaným v dané zemi, avšak vzhledem k vývozu a dovozu zboží nemusejí odpovídat emisím vzniklých ze spotřeby v dané zemi. ČR například do dalších zemí EU vyváží elektřinu, ocel, automobily apod. a dováží zboží z jiných zemí EU nebo z Číny. Zahrnutí letecké dopravy je podobně problematické – zobrazený příspěvek letecké dopravy odpovídá emisím vyprodukovaným {get_flights_info(geo)}."
     elif geo == Geo.SK:
@@ -41,6 +45,10 @@ def get_trade_and_flights_info(geo: Optional[Geo]) -> str:
 
 
 def get_flights_info(geo: Optional[Geo]) -> str:
+    """
+    Returns info about flight emissions accounting. Does start with a sentence snippet, must be
+    carefully incorporated in the right context.
+    """
     if geo is None:
         return "lety z letišť v dané zemi. Je tedy pravděpodobně podhodnocený (mnoho Čechů létá z Vídně či Bratislavy) a neodpovídá zcela množství emisí, které Češi způsobí (typicky např. let českého člověka do New Yorku s přestupem v Amsterdamu se započítá do zobrazených emisí jen jako Praha–Amsterdam, zatímco emise z letu Amsterdam–New York se započtou Nizozemsku). Není také započítáno, že emise vypuštěné vysoko v atmosféře mají přibližně dvojnásobný efekt"
     elif geo == Geo.CZ:
@@ -53,6 +61,10 @@ def get_flights_info(geo: Optional[Geo]) -> str:
 
 
 def get_sectoral_tips(sector: Sector, geo: Optional[Geo] = None) -> str:
+    """
+    Returns various tips around emission sectors (either explaining the type of emissions or
+    possible measures for emission reductions or both).
+    """
     if sector == Sector.INDUSTRY:
         return "V této kategorii jsou zahrnuty tři druhy emisí. Za prvé jde o emise ze spalování fosilních paliv v průmyslu (např. koksu ve vysokých pecích nebo zemního plynu v cementárně). Za druhé jde o procesní emise, které vznikají chemickou reakcí při výrobním procesu – například při redukci uhlíku z železné rudy nebo při kalcinaci vápence při výrobě cementu. Za třetí jde o úniky skleníkových plynů související s průmyslem – například úniky F-plynů při jejich používání v chladících průmyslových produktech nebo úniky metanu při těžbě uhlí či v plynárenské infrastruktuře."
     elif sector == Sector.TRANSPORT:
@@ -73,6 +85,12 @@ def get_sectoral_tips(sector: Sector, geo: Optional[Geo] = None) -> str:
 
 def get_sectoral_info(sector: Sector, geo: Geo, df_wedges: pd.DataFrame,
                       df_crf: pd.DataFrame, total_value: float, population: int) -> str:
+    """
+    Returns a paragraph of text explaining emissions in the provided sector and geo for the latest
+    year (captured using `df_wedges` for sectors in the pie charts, `df_crf` for all CRF codes, and
+    `total_value` for the total emissions value). `population` is the size of the population in the
+    given geo (needed for emissions per capita).
+    """
     def _get(id: str) -> float:
         return df_wedges.loc[id, "value"]
 
@@ -128,15 +146,20 @@ def get_sectoral_info(sector: Sector, geo: Geo, df_wedges: pd.DataFrame,
 
 def get_sectoral_evolution_info(sector: Sector, geo: Geo,
                                 year_from: int, year_to: int,
-                                inner_from_dict, inner_to_dict,
-                                df_from, df_to,
-                                df_to_wedges) -> str:
+                                inner_dict_from, inner_dict_to,
+                                df_crf_from, df_crf_to) -> str:
+    """
+    Returns a paragraph of text explaining evolution of emissions in the provided sector and geo
+    from `year_from` to `year_to` (captured using `inner_dict_from` and `inner_dict_to` for the
+    high-level sectors and using the complete CRF data frames `df_crf_from` and `df_crf_to` for all
+    sub-sectors).
+    """
     def _get_sector_to() -> str:
-        return czech_float_for_html(inner_to_dict[sector.value], decimals=2)
+        return czech_float_for_html(inner_dict_to[sector.value], decimals=2)
 
     def _get_percentage_change() -> str:
-        value_from = inner_from_dict[sector.value]
-        value_to = inner_to_dict[sector.value]
+        value_from = inner_dict_from[sector.value]
+        value_to = inner_dict_to[sector.value]
         change_by_percent = abs((1 - value_to / value_from) * 100)
         return f"{change_by_percent:.0f}"
 
@@ -144,8 +167,8 @@ def get_sectoral_evolution_info(sector: Sector, geo: Geo,
         return df.loc[crf_code, "value"]
 
     def _get_crf_decrease(crf_code: str, remaining: bool = False) -> str:
-        value_from = _get_crf_value(crf_code, df_from)
-        value_to = _get_crf_value(crf_code, df_to)
+        value_from = _get_crf_value(crf_code, df_crf_from)
+        value_to = _get_crf_value(crf_code, df_crf_to)
         ratio = value_to / value_from if remaining else 1 - value_to / value_from
         percent = ratio * 100
         return f"{percent:.0f}"
@@ -164,15 +187,14 @@ def get_sectoral_evolution_info(sector: Sector, geo: Geo,
             details = f'Útlumem těžkého průmyslu v první polovině devadesátých let došlo k výraznému snížení emisí ze spalování fosilních paliv. Konkrétně emise ze spalování při výrobě železa a oceli klesly do roku 2000 o dvě třetiny a v roce {year_to} se pohybovaly pod {_get_crf_decrease("CRF1A2A", remaining=True)} % oproti úrovním z roku {year_from}. Emise z (nespalovacích) průmyslových procesů přitom spíše stagnují. Například emise z výroby skla, cementu, vápna nebo amoniaku a z petrochemie se pohybují na podobných úrovních jako na začátku devadesátých let. Dlouhodobě a setrvale rostou pouze emise z F-plynů, jež nahrazují dříve používané látky poškozující ozonovou vrstvu, které jsou dnes regulované Montrealským protokolem.'
         else:
             assert geo == Geo.EU27, f"unexpected geo value {geo}"
-            details = f'Postupným útlumem těžkého průmyslu došlo k výraznému snížení emisí ze spalování fosilních paliv. Konkrétně emise ze spalování při výrobě železa a oceli klesly do roku {year_to} o {_get_crf_decrease("CRF1A2A")} %. Emise z (nespalovacích) průmyslových procesů přitom do roku {year_to} klesly jen o {_get_crf_decrease("CRF2")} %. V každé oblasti průmyslových procesů je tento pokles odlišný. Například emise z výroby cementu klesly od roku {year_from} o {_get_crf_decrease("CRF2A1")} %. K poklesu dochází i v chemickém odvětví, kdy klesly mj. emise z výroby amoniaku o {_get_crf_decrease("CRF2B1")} % či emise z výroby kyseliny dusičné o {_get_crf_decrease("CRF2B2")} %. Naopak mírný nárůst pozorujeme u emisí z petrochemie. K poklesu dochází i u produkce železa a oceli (o {_get_crf_decrease("CRF2C1")} %) nebo produkce hliníku (o {_get_crf_decrease("CRF2C3")} %). Od devadesátých let výrazně vzrostly emise z F-plynů, jež nahrazují dříve používané látky poškozující ozonovou vrstvu, které jsou dnes regulované Montrealským protokolem. Tyto emise vzrostly z nuly na 88,4 Mt CO<sub>2</sub>eq v roce 2014. Od té doby dochází k jejich poklesu, přičemž v roce {year_to} dosahovaly hodnoty {czech_float_for_html(_get_crf_value("CRF2F", df_to))} Mt CO<sub>2</sub>eq.'
+            details = f'Postupným útlumem těžkého průmyslu došlo k výraznému snížení emisí ze spalování fosilních paliv. Konkrétně emise ze spalování při výrobě železa a oceli klesly do roku {year_to} o {_get_crf_decrease("CRF1A2A")} %. Emise z (nespalovacích) průmyslových procesů přitom do roku {year_to} klesly jen o {_get_crf_decrease("CRF2")} %. V každé oblasti průmyslových procesů je tento pokles odlišný. Například emise z výroby cementu klesly od roku {year_from} o {_get_crf_decrease("CRF2A1")} %. K poklesu dochází i v chemickém odvětví, kdy klesly mj. emise z výroby amoniaku o {_get_crf_decrease("CRF2B1")} % či emise z výroby kyseliny dusičné o {_get_crf_decrease("CRF2B2")} %. Naopak mírný nárůst pozorujeme u emisí z petrochemie. K poklesu dochází i u produkce železa a oceli (o {_get_crf_decrease("CRF2C1")} %) nebo produkce hliníku (o {_get_crf_decrease("CRF2C3")} %). Od devadesátých let výrazně vzrostly emise z F-plynů, jež nahrazují dříve používané látky poškozující ozonovou vrstvu, které jsou dnes regulované Montrealským protokolem. Tyto emise vzrostly z nuly na 88,4 Mt CO<sub>2</sub>eq v roce 2014. Od té doby dochází k jejich poklesu, přičemž v roce {year_to} dosahovaly hodnoty {czech_float_for_html(_get_crf_value("CRF2F", df_crf_to))} Mt CO<sub>2</sub>eq.'
 
         return f'__Průmysl:__ Emise z průmyslu klesly od roku {year_from} o {_get_percentage_change()} % na {_get_sector_to()} mil. tun CO<sub>2</sub>eq ročně. {get_sectoral_tips(sector)} {details}'
 
     elif sector == Sector.TRANSPORT:
-        total_transport = inner_to_dict[Sector.TRANSPORT.value]
-        road = df_to_wedges.loc["transport_cars", "value"] + \
-            df_to_wedges.loc["transport_trucks-buses", "value"]
-        airplanes = df_to_wedges.loc["transport_airplanes", "value"]
+        total_transport = inner_dict_to[sector.value]
+        road = _get_crf_value("CRF1A3B", df_crf_to)
+        airplanes = _get_crf_value("CRF1A3A", df_crf_to) + _get_crf_value("CRF1D1A", df_crf_to)
         percentage_road = (road / total_transport) * 100
         percentage_airplanes = (airplanes / total_transport) * 100
 
