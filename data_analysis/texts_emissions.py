@@ -1,21 +1,11 @@
 """ Snippets of accompanying texts for emission infographics. """
 
-from enum import Enum
-
 import pandas as pd
 
 from data_analysis.emissions_pie_chart import *
 from data_analysis.illustrator_strings import *
 from data_analysis.eurostat_geo import Geo
-
-
-class Sector(Enum):
-    INDUSTRY = "industry"
-    TRANSPORT = "transport"
-    ELECTRICITY_HEAT = "electricity-heat"
-    BUILDINGS = "buildings"
-    AGRICULTURE = "agriculture"
-    WASTE = "waste"
+from data_analysis.sectors import *
 
 
 def get_gases_info() -> str:
@@ -81,6 +71,7 @@ def get_sectoral_tips(sector: Sector, geo: Optional[Geo] = None) -> str:
         else:
             solution = ""
         return f"Emise z odpadového hospodářství produkují především skládky odpadu, ze kterých do atmosféry uniká metan. Ten vzniká rozkladem biologicky rozložitelného materiálu (papíru, kartonu, textilií a bioodpadu) v tělese skládky.{solution}"
+    assert False, f"unknown sector {sector} provided"
 
 
 def get_sectoral_info(sector: Sector, geo: Geo, df_wedges: pd.DataFrame,
@@ -143,6 +134,8 @@ def get_sectoral_info(sector: Sector, geo: Geo, df_wedges: pd.DataFrame,
     elif sector == Sector.WASTE:
         return f'__Odpadové hospodářství:__ {_total("waste")} mil. tun CO<sub>2</sub>eq ročně ({_percent("waste")} % celkových emisí, {_per_person("waste")} t CO<sub>2</sub>eq na obyvatele ročně). {get_sectoral_tips(sector, geo)}'
 
+    assert False, f"unknown sector {sector} provided"
+
 
 def get_sectoral_evolution_info(sector: Sector, geo: Geo,
                                 year_from: int, year_to: int,
@@ -194,7 +187,8 @@ def get_sectoral_evolution_info(sector: Sector, geo: Geo,
     elif sector == Sector.TRANSPORT:
         total_transport = inner_dict_to[sector.value]
         road = _get_crf_value("CRF1A3B", df_crf_to)
-        airplanes = _get_crf_value("CRF1A3A", df_crf_to) + _get_crf_value("CRF1D1A", df_crf_to)
+        airplanes = sum(_get_crf_value(code, df_crf_to)
+                        for code in SUBSECTOR_CODES[Subsector.AIRPLANES])
         percentage_road = (road / total_transport) * 100
         percentage_airplanes = (airplanes / total_transport) * 100
 
@@ -224,3 +218,5 @@ def get_sectoral_evolution_info(sector: Sector, geo: Geo,
         else:
             assert geo == Geo.EU27, f"unexpected geo value {geo}"
             return f'__Odpadové hospodářství:__ Emise z odpadového hospodářství klesají od poloviny 90. let. Do roku {year_to} klesly o {common}'
+
+    assert False, f"unknown sector {sector} provided"
