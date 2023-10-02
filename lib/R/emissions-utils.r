@@ -19,3 +19,15 @@ fakta_calculate_emission_categories <- function(.data) {
                  names_to = "Category",
                  values_to = "Value")
 }
+
+#' Colour scheme for GHG emission sectors
+#'
+#' @export
+emission_category_colours <-
+  c(PowerHeat   = "#ff4245",
+    Industry    = "#3b3b93",
+    Transport   = "#8546af",
+    Buildings   = "#0d80d8",
+    Agriculture = "#1bb0a3",
+    Waste       = "#fab519",
+    Other       = "#b5b8bd")
