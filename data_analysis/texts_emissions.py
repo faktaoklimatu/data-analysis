@@ -200,7 +200,7 @@ def get_sectoral_evolution_info(sector: Sector, geo: Geo,
     sub-sectors).
     """
     def _get_sector_to() -> str:
-        return czech_float_for_html(inner_dict_to[sector.value], decimals=_get_decimals(geo))
+        return czech_float(inner_dict_to[sector.value], decimals=_get_decimals(geo))
 
     def _get_percentage_change() -> str:
         value_from = inner_dict_from[sector.value]
@@ -208,7 +208,7 @@ def get_sectoral_evolution_info(sector: Sector, geo: Geo,
         change_by_percent = abs((1 - value_to / value_from) * 100)
         return f"{change_by_percent:.0f}"
 
-    def _get_crf_value(crf_code: str, df: pd.DataFrame) -> str:
+    def _get_crf_value(crf_code: str, df: pd.DataFrame) -> float:
         return df.loc[crf_code, "value"]
 
     def _get_crf_decrease(crf_code: str, remaining: bool = False) -> str:
@@ -232,7 +232,7 @@ def get_sectoral_evolution_info(sector: Sector, geo: Geo,
             details = f'Útlumem těžkého průmyslu v první polovině devadesátých let došlo k výraznému snížení emisí ze spalování fosilních paliv. Konkrétně emise ze spalování při výrobě železa a oceli klesly do roku 2000 o dvě třetiny a v roce {year_to} se pohybovaly pod {_get_crf_decrease("CRF1A2A", remaining=True)} % oproti úrovním z roku {year_from}. Emise z (nespalovacích) průmyslových procesů přitom spíše stagnují. Například emise z výroby skla, cementu, vápna nebo amoniaku a z petrochemie se pohybují na podobných úrovních jako na začátku devadesátých let. Dlouhodobě a setrvale rostou pouze emise z F-plynů, jež nahrazují dříve používané látky poškozující ozonovou vrstvu, které jsou dnes regulované Montrealským protokolem.'
         else:
             assert geo == Geo.EU27, f"unexpected geo value {geo}"
-            details = f'Postupným útlumem těžkého průmyslu došlo k výraznému snížení emisí ze spalování fosilních paliv. Konkrétně emise ze spalování při výrobě železa a oceli klesly do roku {year_to} o {_get_crf_decrease("CRF1A2A")} %. Emise z (nespalovacích) průmyslových procesů přitom do roku {year_to} klesly jen o {_get_crf_decrease("CRF2")} %. V každé oblasti průmyslových procesů je tento pokles odlišný. Například emise z výroby cementu klesly od roku {year_from} o {_get_crf_decrease("CRF2A1")} %. K poklesu dochází i v chemickém odvětví, kdy klesly mj. emise z výroby amoniaku o {_get_crf_decrease("CRF2B1")} % či emise z výroby kyseliny dusičné o {_get_crf_decrease("CRF2B2")} %. Naopak mírný nárůst pozorujeme u emisí z petrochemie. K poklesu dochází i u produkce železa a oceli (o {_get_crf_decrease("CRF2C1")} %) nebo produkce hliníku (o {_get_crf_decrease("CRF2C3")} %). Od devadesátých let výrazně vzrostly emise z F-plynů, jež nahrazují dříve používané látky poškozující ozonovou vrstvu, které jsou dnes regulované Montrealským protokolem. Tyto emise vzrostly z nuly na 88,4 Mt CO<sub>2</sub>eq v roce 2014. Od té doby dochází k jejich poklesu, přičemž v roce {year_to} dosahovaly hodnoty {czech_float_for_html(_get_crf_value("CRF2F", df_crf_to))} Mt CO<sub>2</sub>eq.'
+            details = f'Postupným útlumem těžkého průmyslu došlo k výraznému snížení emisí ze spalování fosilních paliv. Konkrétně emise ze spalování při výrobě železa a oceli klesly do roku {year_to} o {_get_crf_decrease("CRF1A2A")} %. Emise z (nespalovacích) průmyslových procesů přitom do roku {year_to} klesly jen o {_get_crf_decrease("CRF2")} %. V každé oblasti průmyslových procesů je tento pokles odlišný. Například emise z výroby cementu klesly od roku {year_from} o {_get_crf_decrease("CRF2A1")} %. K poklesu dochází i v chemickém odvětví, kdy klesly mj. emise z výroby amoniaku o {_get_crf_decrease("CRF2B1")} % či emise z výroby kyseliny dusičné o {_get_crf_decrease("CRF2B2")} %. Naopak mírný nárůst pozorujeme u emisí z petrochemie. K poklesu dochází i u produkce železa a oceli (o {_get_crf_decrease("CRF2C1")} %) nebo produkce hliníku (o {_get_crf_decrease("CRF2C3")} %). Od devadesátých let výrazně vzrostly emise z F-plynů, jež nahrazují dříve používané látky poškozující ozonovou vrstvu, které jsou dnes regulované Montrealským protokolem. Tyto emise vzrostly z nuly na 88,4 Mt CO<sub>2</sub>eq v roce 2014. Od té doby dochází k jejich poklesu, přičemž v roce {year_to} dosahovaly hodnoty {czech_float(_get_crf_value("CRF2F", df_crf_to))} Mt CO<sub>2</sub>eq.'
 
         return f'__Průmysl:__ Emise z průmyslu klesly od roku {year_from} o {_get_percentage_change()} % na {_get_sector_to()} mil. tun CO<sub>2</sub>eq ročně. {get_sectoral_tips(sector)} {details}'
 
