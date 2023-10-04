@@ -52,8 +52,8 @@ def get_trade_and_flights_info(geo: Optional[Geo]) -> str:
 
 def get_flights_from_snippet(geo: Optional[Geo]) -> str:
     """
-    Returns info about which flight are included in accounting. It is only a sentence snippet, must be
-    carefully incorporated in the right context.
+    Returns info about which flight are included in accounting. It is only a sentence snippet,
+    must be carefully incorporated in the right context.
     """
     if geo is None:
         return "lety z letišť v dané zemi"
