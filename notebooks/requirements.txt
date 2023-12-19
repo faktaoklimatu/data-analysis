@@ -8,3 +8,4 @@ openpyxl
 jupyterlab
 pycountry
 eurostat
+pycountry

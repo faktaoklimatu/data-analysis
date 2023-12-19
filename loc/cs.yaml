@@ -1,21 +1,6 @@
 net-zero-pledges:
   title: Závazky uhlíkové neutrality (celkem $countries zemí a $co2pct % světových emisí CO2)
-  CHN: Čína
-  USA: USA
-  EU: EU-27
-  IND: Indie
-  RUS: Rusko
-  JPN: Japonsko
-  KOR: Jižní Korea
-  IDN: Indonésie
-  SAU: Saúdská Arábie
-  CAN: Kanada
-  BRA: Brazílie
-  ZAF: Jihoafrická republika
-  TUR: Turecko
-  AUS: Austrálie
-  GBR: Velká Británie
-  MEX: Mexiko
   Others: Ostatní
   NonPledged: Bez závazku
-  Transport: Mezinárodní námořní \na letecká doprava
+  Transport: Mezinárodní námořní a letecká doprava
+EU: EU-27

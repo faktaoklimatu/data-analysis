@@ -1,6 +1,8 @@
 import os
 import yaml
 import glob
+import pycountry
+import gettext
 from string import Template
 
 class Translator():
@@ -18,6 +20,8 @@ class Translator():
     def set_locale(self, loc):
         if loc in self.data:
             self.locale = loc
+            self.country_translations = gettext.translation('iso3166-1', pycountry.LOCALES_DIR, languages=[self.get_locale()])
+            self.country_translations.install()
         else:
             raise Exception(f"Invalid locale {loc}")
             
@@ -29,3 +33,11 @@ class Translator():
         for token in key.split('.'):
             datatoken = datatoken.get(token)
         return Template(datatoken).safe_substitute(**kwargs)
+    
+    def translate_country(self, key):
+        # special cases for countries or country groups not in the iso dictionary
+        if key == 'EU':
+            return self.translate('EU')
+        
+        _ = self.country_translations.gettext
+        return _(pycountry.countries.get(alpha_3=key).name)
