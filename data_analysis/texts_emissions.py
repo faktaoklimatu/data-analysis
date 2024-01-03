@@ -27,16 +27,16 @@ def get_methodology_info() -> str:
 
 
 def get_lulucf_info(year: int, geo: Geo, lulucf_emissions: float) -> str:
+    """ Returns explanation why LULUCF is not included in emission graphs. """
     details = ""
     if geo == Geo.CZ:
-        details = "Právě v Česku jsme v posledních letech svědky výrazného výkyvu kvůli masivní těžbě dřeva při kůrovcové kalamitě."
+        details = " Právě v Česku jsme v posledních letech svědky výrazného výkyvu kvůli masivní těžbě dřeva při kůrovcové kalamitě."
     if lulucf_emissions < 0:
         sign = "záporné"
     else:
         sign = "kladné"
 
-    """ Returns explanation why LULUCF is not included in emission graphs. """
-    return f'Pro snadnější možnost srovnávání emisí [napříč státy EU](/infografiky/emise-vybrane-staty) vynecháváme kategorii lesnictví a využití půdy (která bývá označována _LULUCF_ podle anglického _Land use, land use change, forestry_). Díky ukládání uhlíku v zeleni má totiž tato kategorie ve většině států EU záporné emise, což komplikuje vizualizaci. Sektor LULUCF se také často ze srovnávání [vynechává](https://climateactiontracker.org/methodology/indc-ratings-and-lulucf/), protože jednak obsahuje vysokou nejistotu v datech, neboť záporné hodnoty mohou zakrývat _strukturální_ emise z energetiky, průmyslu a zemědělství, a jednak je tento sektor náchylnější na výkyvy v čase. {details} Za rok {year} byly podle odhadů emise v tomto sektoru _{sign}_ ve výši {czech_float(lulucf_emissions, decimals=_get_decimals(geo))} Mt CO<sub>2</sub>eq.'
+    return f'Pro snadnější možnost srovnávání emisí [napříč státy EU](/infografiky/emise-vybrane-staty) vynecháváme kategorii lesnictví a využití půdy (která bývá označována _LULUCF_ podle anglického _Land use, land use change, forestry_). Díky ukládání uhlíku v zeleni má totiž tato kategorie ve většině států EU záporné emise, což komplikuje vizualizaci. Sektor LULUCF se také často ze srovnávání [vynechává](https://climateactiontracker.org/methodology/land-use-and-forestry/), protože záporné hodnoty v tomto sektoru mohou zakrývat _strukturální_ emise z energetiky, průmyslu a zemědělství a také tento sektor obsahuje vysokou nejistotu v datech a je náchylnější na výkyvy v čase.{details} Za rok {year} byly podle odhadů emise v tomto sektoru _{sign}_ ve výši {czech_float(lulucf_emissions, decimals=_get_decimals(geo))} Mt CO<sub>2</sub>eq.'
 
 
 def get_trade_and_flights_info(geo: Optional[Geo]) -> str:
