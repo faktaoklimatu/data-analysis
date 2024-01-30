@@ -1,5 +1,5 @@
 venv
-notebooks/.ipynb_checkpoints
+**/.ipynb_checkpoints
 temp
 *__pycache__
 *.DS_Store
