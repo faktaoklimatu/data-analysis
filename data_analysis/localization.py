@@ -49,7 +49,6 @@ class Translator():
             None
 
         if self.locale != 'en':
-            print(key)
             _ = self.country_translations.gettext
             return _(pycountry.countries.get(alpha_3=key).name)
         else:
