@@ -4,3 +4,13 @@ net-zero-pledges:
   NonPledged: Without pledge
   Transport: International shipping and aviation
 EU: EU-27
+Asia: Asia
+Asia w/o China, India: Asia (except China and India)
+NAmerica: North America
+Europe: Europe
+Africa: Africa
+SCAmerica: South and Central America
+NAmerica w/o USA: North America (except USA)
+Europe w/o Russia, EU: Europe (except Russia and EU)
+Oceania: Oceania
+RUS: Russia

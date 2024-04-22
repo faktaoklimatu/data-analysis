@@ -9,3 +9,4 @@ jupyterlab
 pycountry
 eurostat
 pycountry
+squarify
