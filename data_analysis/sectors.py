@@ -18,6 +18,7 @@ class Subsector(Enum):
     METAL = "metal"
     MINERAL = "mineral"
     FUELS = "fuels"
+    CHEMICAL = "chemical"
 
     CARS = "cars"
     TRUCKS_BUSES = "trucks-buses"
@@ -36,6 +37,7 @@ SECTOR_CODES: dict[Sector, list[str]] = {
 SUBSECTOR_CODES: dict[Subsector, list[str]] = {
     Subsector.METAL: ['CRF1A2A', 'CRF1A2B', 'CRF2C'],
     Subsector.MINERAL: ['CRF1A2F', 'CRF2A'],
+    Subsector.CHEMICAL: ['CRF1A2C', 'CRF2B'],
     Subsector.FUELS: ['CRF1A1C', 'CRF1A1B', 'CRF1A3E', 'CRF1B'],
     Subsector.CARS: ['CRF1A3B1'],
     Subsector.TRUCKS_BUSES: ['CRF1A3B2', 'CRF1A3B3'],
@@ -55,6 +57,7 @@ SECTOR_LABEL_CZ: dict[Sector, str] = {
 SUBSECTOR_LABEL_CZ: dict[Subsector, str] = {
     Subsector.METAL: "Ocel a jiné kovy",
     Subsector.MINERAL: "Cement a jiné minerály",
+    Subsector.CHEMICAL: "Chemikálie a hnojiva",
     Subsector.FUELS: "Těžba a zpracování fosilních paliv",
     Subsector.CARS: "Osobní automobilová doprava",
     Subsector.TRUCKS_BUSES: "Nákladní a autobusová doprava",
