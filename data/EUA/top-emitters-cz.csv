@@ -1,0 +1,36 @@
+facility_id,facility_name,permit_ids,lat,lon
+1,Elektrárna Počerady,CZ-0204-05|CZ-0478-12,50.43,13.68
+2,Liberty Ostrava a TAMEH Czech,CZ-0435-07|CZ-0134-05|CZ-0444-10,49.8,18.31
+3,Třinecké železárny a Energetika Třinec,CZ-0192-05|CZ-0101-05,49.69,18.65
+4,Elektrárna Ledvice,CZ-0447-11|CZ-0201-05,50.58,13.78
+5,Rafinerie Litvínov,CZ-0400-05|CZ-0160-05|CZ-0231-05,50.56,13.6
+6,Elektrárna Prunéřov,CZ-0207-05|CZ-0206-05,50.42,13.26
+7,Elektrárna Tušimice,CZ-0209-05,50.38,13.34
+8,Elektrárna Chvaletice,CZ-0200-05,50.03,14.34
+9,Elektrárna Mělník,CZ-0202-05|CZ-0092-05|CZ-0203-05,50.41,14.42
+10,Teplárna Vřesová,CZ-0197-05,50.26,12.7
+11,Teplárna Kladno,CZ-0148-05,50.15,14.13
+12,Elektrárna Opatovice,CZ-0080-05,50.13,15.79
+13,Elektrárna Dětmarovice,CZ-0198-05,49.91,18.46
+14,Teplárna Komořany,CZ-0190-05,50.52,13.57
+15,Elektrárna Třebovice,CZ-0317-05,49.83,18.21
+16,Českomoravský cement (závod Mokrá),CZ-0260-15,49.21,16.77
+17,Elektrárna Tisová,CZ-0208-05,50.15,12.61
+18,Plzeňská teplárenská,CZ-0121-05|CZ-0138-05,49.75,13.38
+19,Cement Hranice,CZ-0136-05,49.56,17.76
+20,CEMEX Czech Republic,CZ-0381-05,49.9,15.63
+21,Rafinerie a teplárna Kralupy,CZ-0372-05|CZ-0259-05,50.26,14.32
+22,Teplárna Trmice,CZ-0237-05,50.65,13.99
+23,Cementárna Čížkovice,CZ-0193-05,50.49,14.04
+24,Českomoravský cement (závod Radotín),CZ-0261-15,49.99,14.34
+26,Vápenka Čertovy schody,CZ-0144-05,49.91,14.06
+27,Teplárna Mladá Boleslav,CZ-0256-05,50.42,14.93
+28,Mondi Štětí,CZ-0147-05,50.46,14.37
+29,Elektrárna Poříčí,CZ-0205-05,50.57,15.96
+30,Vápenka Vitošov,CZ-0178-05,49.86,16.95
+31,Teplárna Otrokovice,CZ-0085-05|CZ-0429-06,49.2,17.52
+32,Teplárna Olomouc,CZ-0321-05,49.59,17.27
+33,Teplárna České Budějovice,CZ-0285-05|CZ-0284-05,48.97,14.49
+34,DEZA,CZ-0235-05,49.5,17.96
+35,Teplárna Zlín,CZ-0091-05,49.23,17.65
+36,Teplárna Karviná,CZ-0328-05,49.82,18.48
