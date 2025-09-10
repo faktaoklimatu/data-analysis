@@ -30,7 +30,7 @@ def get_lulucf_info(year: int, geo: Geo, lulucf_emissions: float) -> str:
     """ Returns explanation why LULUCF is not included in emission graphs. """
     details = ""
     if geo == Geo.CZ:
-        details = " Právě v Česku jsme v posledních letech svědky výrazného výkyvu kvůli masivní těžbě dřeva při kůrovcové kalamitě."
+        details = " Právě v Česku jsme v posledních letech byli svědky výrazného výkyvu kvůli masivní těžbě dřeva při kůrovcové kalamitě. Mezi lety 2019 a 2022 byly dokonce emise z tohoto sektoru _kladné_ (nejvíce v roce 2020, kdy dosáhly 10,9 Mt CO<sub>2</sub>eq), tedy lesnictví bylo v součtu zdrojem emisí skleníkových plynů."
     if lulucf_emissions < 0:
         sign = "záporné"
     else:
@@ -100,9 +100,9 @@ def get_sectoral_tips(sector: Sector, geo: Optional[Geo] = None) -> str:
     if sector == Sector.INDUSTRY:
         return "V této kategorii jsou zahrnuty tři druhy emisí. Za prvé jde o emise ze spalování fosilních paliv v průmyslu (např. koksu ve vysokých pecích nebo zemního plynu v cementárně). Za druhé jde o procesní emise, které vznikají chemickou reakcí při výrobním procesu – například při redukci uhlíku z železné rudy nebo při kalcinaci vápence při výrobě cementu. Za třetí jde o úniky skleníkových plynů související s průmyslem – například úniky F-plynů při jejich používání v chladících průmyslových produktech nebo úniky metanu při těžbě uhlí či v plynárenské infrastruktuře."
     elif sector == Sector.TRANSPORT:
-        return "Snížit emise z dopravy je možné přechodem na alternativní druhy pohonu (např. na biometan, CNG, vodík nebo na elektřinu), zvýšením podílu hromadné dopravy a snížením počtu vozidel na silnicích. Objem silniční dopravy lze snížit vyšší obsazeností vozidel (např. spolujízdou) či obecně snížením nutnosti dopravy (např. prací na dálku)."
+        return "Snížit emise z dopravy je možné přechodem na alternativní druhy pohonu (např. na elektřinu, biometan nebo CNG), zvýšením podílu hromadné dopravy a snížením počtu vozidel na silnicích. Objem silniční dopravy lze snížit vyšší obsazeností vozidel (např. spolujízdou) či obecně snížením nutnosti dopravy (např. prací na dálku)."
     elif sector == Sector.ELECTRICITY_HEAT:
-        return "Emise skleníkových plynů původem z energetiky je možné snížit energetickými úsporami a rozvojem obnovitelných a nízkouhlíkových zdrojů energie."
+        return "Emise skleníkových plynů původem z energetiky je možné snížit energetickými úsporami a dalším rozvojem obnovitelných a nízkouhlíkových zdrojů energie."
     elif sector == Sector.BUILDINGS:
         return "Jde o topení a ohřev vody v domácnostech, kancelářích a institucích (pokud energie není dodávána z teplárny) a také o vaření plynem. Průmyslové budovy jsou zahrnuty v kategorii Průmysl."
     elif sector == Sector.AGRICULTURE:
@@ -162,7 +162,7 @@ def get_sectoral_info(sector: Sector, geo: Geo, df_wedges: pd.DataFrame,
                 total_electricity / total_value * 100, 1)
 
         if geo == Geo.CZ:
-            details = f'Emise v energetice pochází především ze spalování hnědého uhlí a zemního plynu v elektrárnách ({total_electricity_str} milionů tun, resp. {total_electricity_percent_str} % celkových ročních emisí) a dále z tepláren ({_total("electricity-heat_CHP")} mil. tun, či {_percent("electricity-heat_CHP")} % celkových emisí ročně). Největším jednotlivým emitentem CO<sub>2</sub> jsou elektrárny v Počeradech (pět hnědouhelných bloků a jeden na zemní plyn), které ročně vyprodukují {_total("electricity-heat_pocerady")} mil. tun CO<sub>2</sub>, což je {_percent("electricity-heat_pocerady")} % celkových emisí České republiky. Pět největších českých fosilních elektráren, Počerady, Ledvice, Prunéřov, Tušimice a Chvaletice, vyprodukují ročně více emisí CO<sub>2</sub> než veškerá silniční doprava.'
+            details = f'Emise v energetice pochází především ze spalování hnědého uhlí a zemního plynu v elektrárnách ({total_electricity_str} milionů tun, resp. {total_electricity_percent_str} % celkových ročních emisí) a dále z tepláren ({_total("electricity-heat_CHP")} mil. tun, či {_percent("electricity-heat_CHP")} % celkových emisí ročně). Největším jednotlivým emitentem CO<sub>2</sub> jsou elektrárny v Počeradech (pět hnědouhelných bloků a jeden na zemní plyn), které ročně vyprodukují {_total("electricity-heat_pocerady")} mil. tun CO<sub>2</sub>, což je {_percent("electricity-heat_pocerady")} % celkových emisí České republiky. Pět největších českých fosilních elektráren, Počerady, Ledvice, Prunéřov, Tušimice a Chvaletice, vyprodukují ročně téměř tolik emisí CO<sub>2</sub> jako veškerá silniční doprava.'
         elif geo == Geo.SK:
             details = f'Tyto emise pochází především z tepláren ({_total("electricity-heat_CHP")} mil. tun, či {_percent("electricity-heat_CHP")} % celkových emisí ročně) a dále z tepelných elektráren ({total_electricity_str} milionů tun, resp. {total_electricity_percent_str} % celkových ročních emisí).'
         elif geo == Geo.EU27:
@@ -175,7 +175,8 @@ def get_sectoral_info(sector: Sector, geo: Geo, df_wedges: pd.DataFrame,
 
     elif sector == Sector.AGRICULTURE:
         livestock_str = czech_float(
-            get_emissions_value("CRF31", df_crf), _get_decimals(geo))
+            # Compute livestock emissions simply as 3A (Enteric fermentation) + 3B (Manure management).
+            get_emissions_value("CRF3A", df_crf) + get_emissions_value("CRF3B", df_crf), _get_decimals(geo))
         managed_agricultural_soils_str = czech_float(
             get_emissions_value("CRF3D", df_crf), _get_decimals(geo))
         agricultural_fuels_str = czech_float(

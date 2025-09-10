@@ -22,13 +22,22 @@ def _get_wedge(wedge_def: dict, wedge_value: float, parent_id: Optional[str] = N
     return Wedge(id=full_id, value=wedge_value, parent_id=parent_id,
                  label=wedge_def['label'], color=wedge_def['color'])
 
+def get_total_emissions_value(df_crf_and_allowances: pd.DataFrame) -> float:
+    # The TOTX4_MEMONIA code was dropped in a 2025 revision, so we
+    # need to calculate it manually from the available components.
+    return df_crf_and_allowances.loc["TOTX4_MEMO", 'value'] + df_crf_and_allowances.loc["CRF1D1A", 'value']
+
 
 def get_emissions_value(key: str, df_crf_and_allowances: pd.DataFrame) -> float:
-    return df_crf_and_allowances.loc[key, 'value']
+    try:
+        return df_crf_and_allowances.loc[key, 'value']
+    except KeyError:
+        print(f"Warning: missing CRF code {key} in the data, filled with 0.0.")
+        return 0.0
 
 
 def get_emissions_sum_value(keys: list[str], df_crf_and_allowances: pd.DataFrame) -> float:
-    return df_crf_and_allowances.loc[keys, 'value'].sum()
+    return sum([get_emissions_value(key, df_crf_and_allowances) for key in keys])
 
 
 def get_emissions_wedges(definition: dict,
