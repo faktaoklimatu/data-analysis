@@ -11,7 +11,7 @@ fakta_calculate_emission_categories <- function(.data) {
            Buildings   = CRF1A4A + CRF1A4B,
            Agriculture = CRF3 + CRF1A4C,
            Waste       = CRF5,
-           Other       = TOTX4_MEMONIA - PowerHeat - Industry - Transport -
+           Other       = TOTX4_MEMO + CRF1D1A - PowerHeat - Industry - Transport -
             Buildings - Agriculture - Waste) |>
     select(!(starts_with("CRF") | starts_with("TOTX"))) |>
     # Turn back into long format.
