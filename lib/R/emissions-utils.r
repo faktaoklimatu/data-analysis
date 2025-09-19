@@ -4,7 +4,8 @@
 fakta_calculate_emission_categories <- function(.data, values_col) {
   # Pivot to a wide tibble for easier calculations.
   pivot_wider(.data, names_from = "Code", values_from = {{ values_col }}) |>
-    # Group into sectors by summing components.
+    mutate(
+      # Group into sectors by summing components.
       PowerHeat = CRF1A1A,
       Industry = CRF1A2 + CRF1A1B + CRF1A1C + CRF1A3E + CRF2 + CRF1B,
       Transport = CRF1A3A + CRF1A3B + CRF1A3C + CRF1A3D + CRF1D1A,
