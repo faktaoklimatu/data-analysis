@@ -36,8 +36,10 @@ def get_emissions_value(key: str, df_crf_and_allowances: pd.DataFrame) -> float:
         return 0.0
 
 
-def get_emissions_sum_value(keys: list[str], df_crf_and_allowances: pd.DataFrame) -> float:
-    return sum([get_emissions_value(key, df_crf_and_allowances) for key in keys])
+def get_emissions_sum_value(
+    keys: list[str], df_crf_and_allowances: pd.DataFrame
+) -> float:
+    return sum(get_emissions_value(key, df_crf_and_allowances) for key in keys)
 
 
 def get_emissions_wedges(definition: dict,
