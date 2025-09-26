@@ -8,7 +8,7 @@ import pandas as pd
 from data_analysis.eurostat_geo import Geo
 
 
-def get_eurostat_crf_data(geo: Optional[Geo], crf_code: Optional[str], year: int) -> pd.DataFrame:
+def get_eurostat_crf_data(geo: Optional[Geo | str], crf_code: Optional[str], year: int) -> pd.DataFrame:
     """
     Import data from Eurostat for a given geo / crf code and year.
     The dataframe is indexed by CRF codes / geo and has a single column, "value", in megatons CO2eq.
@@ -20,7 +20,7 @@ def get_eurostat_crf_data(geo: Optional[Geo], crf_code: Optional[str], year: int
         "unit": "MIO_T"
     }
     if geo is not None:
-        filter_pars["geo"] = geo.value
+        filter_pars["geo"] = geo.value if isinstance(geo, Geo) else geo
         main_dimension = "src_crf"
     elif crf_code is not None:
         filter_pars["src_crf"] = crf_code
