@@ -72,8 +72,9 @@ def nan_default(value: Any, default: Any = None) -> Any:
     return value
 
 
-def process_row(row: pd.Series, df_mf: pd.DataFrame, df_chp: pd.DataFrame) -> dict:
+def process_row(row: pd.Series, df_mf: pd.DataFrame, df_chp: pd.DataFrame, df_ippc: pd.DataFrame) -> dict:
     ghg_cols = [col for col in row.index if col.startswith("ghg_2")]
+    ghg_cols.reverse()  # Reverse to have the latest year last.
     emissions = row[ghg_cols][::-1].astype(float).div(1e6).round(3)
     coords = approximate_xy_coordinates(row["lon"], row["lat"])
 
@@ -115,8 +116,14 @@ def process_row(row: pd.Series, df_mf: pd.DataFrame, df_chp: pd.DataFrame) -> di
     if not np.isnan(row["share_households"]):
         item["share_households"] = round(100 * row["share_households"])
 
+    if not np.isnan(row["share_households_dhs_in_czechia"]):
+        item["share_households_dhs_in_czechia"] = row["share_households_dhs_in_czechia"]
+    else:
+        item["share_households_dhs_in_czechia"] = 0.0
+
     # Include ModF subsidies.
     mf_ids = row["mf_application_ids"]
+    mf_subsidies_total = 0
     if isinstance(mf_ids, list) and len(mf_ids) > 0:
         item["mf_subsidies"] = []
 
@@ -128,6 +135,8 @@ def process_row(row: pd.Series, df_mf: pd.DataFrame, df_chp: pd.DataFrame) -> di
                     "name": mf_row.ShortName,
                     "long_name": mf_row.LongName,
                     "amount": round(mf_row["Amount"]),
+                    "amount_original": round(mf_row["AmountOriginal"]),
+                    "paid_percent": round(mf_row["AmountPaid"] / mf_row["Amount"] * 100),
                 }
             )
 
@@ -139,19 +148,38 @@ def process_row(row: pd.Series, df_mf: pd.DataFrame, df_chp: pd.DataFrame) -> di
 
     # Include CHP subsidies
     chp_ids = row["chp_application_ids"]
+    chp_subsidies_total_accepted = 0
     if isinstance(chp_ids, list) and len(chp_ids) > 0:
         item["chp_subsidies"] = []
+        sum_power = 0
         for chp_id, chp_row in df_chp.loc[chp_ids].iterrows():
+            status = CHP_STATUS_MAP.get(chp_row["Status"], "unknown")
+            if status == "accepted":
+                sum_power += chp_row["Power"]
             item["chp_subsidies"].append(
                 {
                     "power": round(chp_row["Power"]),
                     "since": QuotedString(chp_row["SinceDate"].strftime("%m/%Y")),
                     "fuel": chp_row["Fuel"],
-                    "status": CHP_STATUS_MAP.get(chp_row["Status"], "unknown"),
+                    "status": status,
+                }
+            )
+        chp_subsidies_total_accepted = round(sum_power)
+        item["chp_subsidies_total_accepted"] = chp_subsidies_total_accepted
+
+    # Include IPPC permits
+    ippc_ids = row["ippc_ids"]
+    if isinstance(ippc_ids, list) and len(ippc_ids) > 0:
+        item["ippc_permits"] = []
+        for ippc_id, ippc_row in df_ippc.loc[ippc_ids].iterrows():
+            item["ippc_permits"].append(
+                {
+                    "name": ippc_row["Name"],
+                    "url": ippc_row["URL"],
                 }
             )
 
-    return item
+    return item, mf_subsidies_total, chp_subsidies_total_accepted
 
 
 def read_chp_supported_projects(filename: str | Path) -> pd.DataFrame:
@@ -167,6 +195,7 @@ def read_chp_supported_projects(filename: str | Path) -> pd.DataFrame:
         # NOTE: Apparently, colons are not supported in sheet names.
         sheet_name="Vstup Podpora KVET",
         engine="openpyxl",
+        skiprows=4,
         index_col="Kód",
     )
     df = df[list(column_mapping)].rename(columns=column_mapping)
@@ -175,6 +204,22 @@ def read_chp_supported_projects(filename: str | Path) -> pd.DataFrame:
 
     return df
 
+def read_chp_ippc_permits(filename: str | Path) -> pd.DataFrame:
+    column_mapping = {
+        "Název zařízení dle IPPC": "Name",
+        "Odkaz": "URL",
+    }
+
+    df = pd.read_excel(
+        filename,
+        # NOTE: Apparently, colons are not supported in sheet names.
+        sheet_name="Vstup IPPC řízení",
+        engine="openpyxl",
+        skiprows=1,
+        index_col="Kód",
+    )
+    df = df[list(column_mapping)].rename(columns=column_mapping)
+    return df
 
 def read_dh_systems(filename: str | Path) -> pd.DataFrame:
     def _map_fuels(fuels: list[str] | float) -> list[str] | float:
@@ -182,15 +227,22 @@ def read_dh_systems(filename: str | Path) -> pd.DataFrame:
             return [FUELS_MAP.get(f, "unknown") for f in fuels]
         return fuels
 
+    def _split(x: str | float) -> list[str] | float:
+        # Make sure we also split float values that are not NaN.
+        if not isinstance(x, float) or not math.isnan(x):
+            return [s.strip() for s in str(x).split(",")]
+        return np.nan
+
     df = (
         pd.read_excel(
             filename,
-            sheet_name="Teplárenství - komplet",
+            # NOTE: Apparently, colons are not supported in sheet names.
+            sheet_name="Výstup Přehled velkých tepláren",
             engine="openpyxl",
             skiprows=2,
             usecols=lambda col: not col.startswith("Unnamed"),
         )
-        .query("primary_product != '-- část --'")
+        .query("whole == True")
         .sort_values(by="num_households", ascending=False)
     )
 
@@ -201,8 +253,9 @@ def read_dh_systems(filename: str | Path) -> pd.DataFrame:
         "fuels_secondary_future",
         "fuels_secondary_today",
         "mf_application_ids",
+        "ippc_ids"
     ):
-        df[col] = df[col].str.split(", ")
+        df[col] = df[col].apply(_split)
         if col.startswith("fuels_"):
             df[col] = df[col].apply(_map_fuels)
 
@@ -215,22 +268,24 @@ def read_modernisation_fund_projects(filename: str | Path) -> pd.DataFrame:
         "Název akce": "LongName",
         "Název stručně": "ShortName",
         "Dotace (Kč)": "Amount",
+        "Dotace původně (Kč)": "AmountOriginal",
+        "Vyplaceno (Kč)": "AmountPaid",
     }
 
     df = pd.read_excel(
         filename,
-        # NOTE: Apparently, there's a bug in openpyxl such that colons are not
-        # supported in sheet names and the name is clipped to 31 characters.
-        sheet_name="Vstup ModFond HEAT podpořené pr",
+        # NOTE: Apparently, colons are not supported in sheet names.
+        sheet_name="Vstup ModFond projekty",
         engine="openpyxl",
-        skiprows=1,
+        skiprows=2,
         index_col="Číslo RM",
     )
     df = df[list(column_mapping)].rename(columns=column_mapping)
 
     df.index = df.index.map(str)
     df["Amount"] = df["Amount"].div(1e6)
-    df["Call"] = df["Call"].str.extract(r"(\d+/\d{4})$")[0]
+    df["AmountOriginal"] = df["AmountOriginal"].div(1e6)
+    df["AmountPaid"] = df["AmountPaid"].div(1e6)
     df["LongName"] = df["LongName"].apply(lambda s: re.sub("\\s+", " ", s))
 
     return df
@@ -266,12 +321,30 @@ if __name__ == "__main__":
     logger.info(f"Reading supported CHP projects...")
     df_chp = read_chp_supported_projects(dataset_filename)
 
+    # Database of IPPC permits for CHP projects
+    logger.info(f"Reading IPPC permits for CHP projects...")
+    df_ippc = read_chp_ippc_permits(dataset_filename)
+
+    mf_chp_shown_subsidies_total = 0
+    chp_shown_subsidies_total_accepted = 0
+
     for i, row in df_dhs_visible.iterrows():
         logger.debug(f"Processing site ‘{row['name']}’...")
 
-        item = process_row(row, df_mf, df_chp)
+        item, mf_subsidies, chp_subsidies_accepted  = process_row(row, df_mf, df_chp, df_ippc)
 
         items.append(item)
+        mf_chp_shown_subsidies_total += mf_subsidies
+        chp_shown_subsidies_total_accepted += chp_subsidies_accepted
+
+    # Add hidden items.
+    num_households_ets1_total = int(df_dhs_visible.num_households.sum() +
+                                    df_dhs_hidden.num_households.sum())
+    share_households_ets1_total = (df_dhs_visible.share_households_dhs_in_czechia.sum() +
+                                   df_dhs_hidden.share_households_dhs_in_czechia.sum())
+    num_households_total = round(num_households_ets1_total / share_households_ets1_total)
+    share_households_ets2_total = 1 - share_households_ets1_total
+    num_households_ets2_total = round(num_households_total * share_households_ets2_total)
 
     df_highlights = df_dhs_visible.groupby("status_simple").agg(
         ghg_share=("ghg_share", "sum"),
@@ -301,7 +374,25 @@ if __name__ == "__main__":
 
     logger.info("All plants processed. Exporting YAML...")
 
-    result = {"highlights": highlights, "items": items}
+    chp_subsidies_total_accepted = df_chp[df_chp["Status"] == "C: podpořeno"]["Power"].sum()
+
+    # Read all ModFond projects
+    mf_subsidies_df = pd.read_csv("sfzp_aktivni_IS.ModF.csv")
+    mf_subsidies_total = mf_subsidies_df["Podpora"].sum()
+
+    mf_chp_subsidies_df = pd.read_csv("sfzp_aktivni_IS.CHP.csv")
+    mf_chp_subsidies_total = mf_chp_subsidies_df["Podpora"].sum()
+
+    result = {
+        "timestamp": pd.Timestamp.now().strftime("%Y-%m-%d"),
+        "highlights": highlights,
+        "items": items,
+        "mf_chp_shown_subsidies_total": mf_chp_shown_subsidies_total,
+        "mf_chp_subsidies_total": round(mf_chp_subsidies_total / 1e6),
+        "mf_subsidies_total": round(mf_subsidies_total / 1e6),
+        "chp_shown_subsidies_total_accepted": chp_shown_subsidies_total_accepted,
+        "chp_subsidies_total_accepted": round(chp_subsidies_total_accepted),
+        "num_households_ets2_total": num_households_ets2_total}
 
     yaml.add_representer(QuotedString, QuotedString.yaml_represent)
     yaml.dump(result, sys.stdout, allow_unicode=True, sort_keys=False, width=math.inf)
