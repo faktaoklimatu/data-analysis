@@ -135,20 +135,27 @@ def read_fuel_scenarios(spreadsheet_id: str) -> list[dict]:
     # Skip unit row; row 0 = scenario labels, row 1 = column names, row 2+ = data
     df = pd.read_csv(csv, header=None, skiprows=1)
 
-    scenarios = list(dict.fromkeys(s for s in df.iloc[0, 2:] if str(s) not in ("nan", "")))
-    fuel_cols = list(df.iloc[1, 2:9])  # 7 fuel/factor columns per scenario
+    # Find where each scenario block starts by scanning for non-empty labels in row 0.
+    # This handles blocks of different widths (e.g. one scenario has an extra column).
+    scenario_starts: list[tuple[int, str]] = [
+        (col, str(val))
+        for col, val in enumerate(df.iloc[0])
+        if col >= 2 and str(val) not in ("nan", "")
+    ]
     shared_cols = list(df.iloc[1, :2])  # Year_Calendar, Year_Investment
-
     data_rows = df.iloc[2:].reset_index(drop=True)
 
     result = []
-    for i, scenario in enumerate(scenarios):
-        col_start = 2 + i * len(fuel_cols)
+    for i, (col_start, scenario) in enumerate(scenario_starts):
+        col_end = scenario_starts[i + 1][0] if i + 1 < len(scenario_starts) else len(df.columns)
+        fuel_cols = list(df.iloc[1, col_start:col_end])
         prices = []
         for _, row in data_rows.iterrows():
             record = {shared_cols[0]: int(row[0]), shared_cols[1]: int(row[1])}
             for j, col in enumerate(fuel_cols):
-                record[col] = _parse_number(row[col_start + j])
+                val = _clean_value(row[col_start + j])
+                if val is not None:
+                    record[col] = _parse_number(val)
             prices.append(record)
         result.append({"scenario": scenario, "prices": prices})
 
