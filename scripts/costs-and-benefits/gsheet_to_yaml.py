@@ -145,21 +145,28 @@ def read_fuel_scenarios(spreadsheet_id: str) -> list[dict]:
     shared_cols = list(df.iloc[1, :2])  # Year_Calendar, Year_Investment
     data_rows = df.iloc[2:].reset_index(drop=True)
 
-    result = []
+    # Collect year rows per scenario, merging multiple column blocks with the same name.
+    scenario_order: list[str] = []
+    scenario_rows: dict[str, list[dict]] = {}
+
     for i, (col_start, scenario) in enumerate(scenario_starts):
         col_end = scenario_starts[i + 1][0] if i + 1 < len(scenario_starts) else len(df.columns)
         fuel_cols = list(df.iloc[1, col_start:col_end])
-        prices = []
-        for _, row in data_rows.iterrows():
-            record = {shared_cols[0]: int(row[0]), shared_cols[1]: int(row[1])}
+
+        if scenario not in scenario_rows:
+            scenario_order.append(scenario)
+            scenario_rows[scenario] = [
+                {shared_cols[0]: int(row[0]), shared_cols[1]: int(row[1])}
+                for _, row in data_rows.iterrows()
+            ]
+
+        for row_idx, (_, row) in enumerate(data_rows.iterrows()):
             for j, col in enumerate(fuel_cols):
                 val = _clean_value(row[col_start + j])
                 if val is not None:
-                    record[col] = _parse_number(val)
-            prices.append(record)
-        result.append({"scenario": scenario, "prices": prices})
+                    scenario_rows[scenario][row_idx][col] = _parse_number(val)
 
-    return result
+    return [{"scenario": s, "prices": scenario_rows[s]} for s in scenario_order]
 
 
 def read_sheet(spreadsheet_id: str, gid: int) -> pd.DataFrame:
