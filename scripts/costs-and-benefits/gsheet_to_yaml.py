@@ -29,6 +29,7 @@ SHEET_FUEL_FACTORS = 290409297
 SHEET_CARBON_COST = 1410388641
 SHEET_DISCOUNT_RATE = 1688519708
 SHEET_FUEL_SCENARIOS = 51297067
+SHEET_ELECTRICITY_TARIFFS = 804935784
 
 
 def fetch_sheet(spreadsheet_id: str, gid: int) -> StringIO:
@@ -269,6 +270,7 @@ def main() -> None:
     fuel_factors = read_simple_sheet(sid, SHEET_FUEL_FACTORS, skiprows=3)
     carbon_costs = read_simple_sheet(sid, SHEET_CARBON_COST, skiprows=1)
     discount_rates = read_simple_sheet(sid, SHEET_DISCOUNT_RATE, skiprows=1)
+    electricity_tariffs = read_simple_sheet(sid, SHEET_ELECTRICITY_TARIFFS, skiprows=1)
     fuel_scenarios = read_fuel_scenarios(sid)
 
     logger.info("Exporting YAML...")
@@ -278,6 +280,7 @@ def main() -> None:
         "fuel_emission_factors": fuel_factors,
         "carbon_cost_scenarios": carbon_costs,
         "discount_rate_scenarios": discount_rates,
+        "electricity_price_scenarios": electricity_tariffs,
         "fuel_scenarios": fuel_scenarios,
     }
     yaml.dump(_lowercase_keys(result), sys.stdout, allow_unicode=True, sort_keys=False, width=math.inf)
