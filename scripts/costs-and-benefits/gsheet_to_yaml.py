@@ -101,6 +101,7 @@ NUMERIC_COLS = {
     "Mileage",
     "CAPEX_CZK",
     "OPEX_insurance_CZK",
+    "OPEX_repairs_CZK",
     "Emissions_direct",
     "Emissions_indirect",
     "Measure_baseline_id",
