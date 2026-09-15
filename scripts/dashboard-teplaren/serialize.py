@@ -132,7 +132,9 @@ def process_row(row: pd.Series, df_mf: pd.DataFrame, df_chp: pd.DataFrame, df_ip
                 {
                     "call": mf_row.Call,
                     "application_id": mf_id,
-                    "name": mf_row.ShortName,
+                    # Fall back to the long name if the short name has not
+                    # been filled in yet (common for recently added calls).
+                    "name": nan_default(mf_row.ShortName, mf_row.LongName),
                     "long_name": mf_row.LongName,
                     "amount": round(mf_row["Amount"]),
                     "amount_original": round(mf_row["AmountOriginal"]),
@@ -156,10 +158,14 @@ def process_row(row: pd.Series, df_mf: pd.DataFrame, df_chp: pd.DataFrame, df_ip
             status = CHP_STATUS_MAP.get(chp_row["Status"], "unknown")
             if status == "accepted":
                 sum_power += chp_row["Power"]
+            since = chp_row["SinceDate"]
+            # For not-yet-operational projects, the source sheet already
+            # stores this as a plain "MM/YYYY" string instead of a date.
+            since_str = since if isinstance(since, str) else since.strftime("%m/%Y")
             item["chp_subsidies"].append(
                 {
                     "power": round(chp_row["Power"]),
-                    "since": QuotedString(chp_row["SinceDate"].strftime("%m/%Y")),
+                    "since": QuotedString(since_str),
                     "fuel": chp_row["Fuel"],
                     "status": status,
                 }
@@ -182,6 +188,20 @@ def process_row(row: pd.Series, df_mf: pd.DataFrame, df_chp: pd.DataFrame, df_ip
     return item, mf_subsidies_total, chp_subsidies_total_accepted
 
 
+def _find_header_row(filename: str | Path, sheet_name: str, marker: str, max_search: int = 20) -> int:
+    """Find the row index (0-based) whose first cell equals `marker`, to be
+    used as `skiprows` when the sheet's preamble grows over time (e.g. a new
+    row is added for each newly evaluated subsidy call)."""
+
+    df_preview = pd.read_excel(
+        filename, sheet_name=sheet_name, engine="openpyxl", header=None, nrows=max_search
+    )
+    for i, value in enumerate(df_preview[0]):
+        if value == marker:
+            return i
+    raise ValueError(f"Could not find header row starting with {marker!r} in sheet {sheet_name!r}")
+
+
 def read_chp_supported_projects(filename: str | Path) -> pd.DataFrame:
     column_mapping = {
         "Instalovaný výkon (MWe)": "Power",
@@ -190,12 +210,13 @@ def read_chp_supported_projects(filename: str | Path) -> pd.DataFrame:
         "Druh paliva": "Fuel",
     }
 
+    skiprows = _find_header_row(filename, "Vstup Podpora KVET", "Číslo výzvy")
     df = pd.read_excel(
         filename,
         # NOTE: Apparently, colons are not supported in sheet names.
         sheet_name="Vstup Podpora KVET",
         engine="openpyxl",
-        skiprows=4,
+        skiprows=skiprows,
         index_col="Kód",
     )
     df = df[list(column_mapping)].rename(columns=column_mapping)
