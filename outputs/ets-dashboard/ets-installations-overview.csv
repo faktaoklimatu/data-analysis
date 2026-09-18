@@ -1,0 +1,363 @@
+Installation ID,Installation Name,Installation Name (Clean),Company Name (MoE),Installation Address,First Verified Emissions Year,Last Verified Emissions Year,Main Activity Code,Main Activity Name
+CZ-0005,Procter&Gamble - Rakona - Kotelna,Rakona – Kotelna,"PROCTER&GAMBLE-RAKONA, s.r.o.","Ottova 402, 269 32 Rakovník",2008,2025,20,Výroba elektřiny a tepla
+CZ-0006,PARAMO-HS Pardubice,HS Pardubice,Paramo a.s.,"Přerovská  560, 53006 Pardubice",2008,2025,21,Rafinace minerálních olejů
+CZ-0007,PARAMO-HS Kolín,HS Kolín,ORLEN Unipetrol RPA s.r.o.,"Ovčárecká 314, 28002 Kolín",2008,2025,21,Rafinace minerálních olejů
+CZ-0021,ArcelorMittal Tubular Products Karviná,Tubular Products Karviná,ArcelorMittal Tubular Products Karviná a.s.,"Rudé armády 471, Karviná - Hranice, 73323",2008,2025,1,Výroba elektřiny a tepla
+CZ-0023,Cukrovar Vrbátky - uhelná kotelna,Uhelná kotelna,,,2008,2024,20,Výroba elektřiny a tepla
+CZ-0024,innogy Energo - Teplárna Náchod,Teplárna Náchod,"innogy Energo, s.r.o.","Plhovská 544, 547 35 Náchod",2008,2025,20,Výroba elektřiny a tepla
+CZ-0025,innogy Energo - Teplárna Králův Dvůr,Teplárna Králův Dvůr,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0028,OPATHERM - Výtopna Hillova,Výtopna Hillova,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0029,OPATHERM - Výtopna Olomoucká,Výtopna Olomoucká,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0034,"Slévárna ČKD Kutná Hora, a.s.",Slévárna,"ČKD Kutná Hora, a.s.","Karlov č.p. 197, Kutná Hora, 284 49",2008,2025,20,Výroba elektřiny a tepla
+CZ-0036,Iveco - Výtopna E-1,Výtopna E-1,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0038,DIAMO-odštěpný závod GEAM provoz Chemická úpravna,Odštěpný závod GEAM provoz Chemická úpravna,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0040,SCB Foundry - Slévárna České Budějovice,Slévárna České Budějovice,,,2008,2019,25,Železo a ocel
+CZ-0041,"Chrudim IRON&STEEL,s.r.o. - Slévárna tvárné litiny",Slévárna tvárné litiny,,,2008,2014,20,Výroba elektřiny a tepla
+CZ-0045,Plzeňský Prazdroj - varny závodu Plzeň,Varny závodu Plzeň,"Plzeňský Prazdroj, a.s.","U Prazdroje 64/7,301 00",2008,2025,20,Výroba elektřiny a tepla
+CZ-0047,Kappa Morava Paper a Kappa Žimrovice,Kappa Morava Paper a Kappa Žimrovice,Smurfit Westrock Czech s.r.o.,"Žimrovice,  747 41, Hradec nad Moravicí - Žimrovice",2008,2025,1,Výroba elektřiny a tepla
+CZ-0048,"Synthesia a.s., odštěpný závod SYNTHESIA",Odštěpný závod,"Synthesia, a.s.","Pardubice, Semtín, č.p.103, 532 17",2008,2025,20,Výroba elektřiny a tepla
+CZ-0052,KAREL HOLOUBEK - Trade Group - Teplárna Bohatice,Teplárna Bohatice,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0053,ArcelorMittal Frýdek-Místek,Frýdek-Místek,,,2008,2017,24,Železo a ocel
+CZ-0063,Teva Czech Industries - Energetika - kotelna,Energetika – kotelna,Teva Czech Industries s.r.o.,"Ostravská 29, Opava, Komárov, 747 70",2008,2025,1,Výroba elektřiny a tepla
+CZ-0065,Psychiatr. léčebna v Dobřanech - plynová kotelna,Plynová kotelna,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0068,Sellier & Bellot - Centrální kotelna,Centrální kotelna,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0069,Tepelné hospodářství Prachatice - kotelna IV - byt,Kotelna IV – byt,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0070,ČEZ Energetické služby - kotelna Nádražní,Kotelna Nádražní,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0071,"Huhtamaki Česká republika, a.s.",Huhtamaki Česká republika,"Huhtamaki Česká republika, a.s.","Petrovická 101, 675 21 Přibyslavice",2008,2025,36,Papír
+CZ-0075,POWGEN - TUBOX,POWGEN – TUBOX,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0080,Elektrárny Opatovice - Elektrárna Opatovice,Elektrárna Opatovice,"Elektrárny Opatovice, a.s.","Opatovice nad Labem, 532 13 Pardubice 2",2008,2025,20,Výroba elektřiny a tepla
+CZ-0084,SKATLOP a.s.,SKATLOP,,,2008,2024,20,Výroba elektřiny a tepla
+CZ-0085,Teplárna Otrokovice - Teplárna,Teplárna,"Teplárna Otrokovice, a.s.",76502 Otrokovice,2008,2025,20,Výroba elektřiny a tepla
+CZ-0086,PBS Industry - Plynová výtopna,Plynová výtopna,,,2008,2014,1,Výroba elektřiny a tepla
+CZ-0087,"Teplárna Strakonice, a.s.",Teplárna Strakonice,"Teplárna Strakonice, a.s.","Komenského 59, 38643 Strakonice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0088,HOLOUBEK ENERGO - Teplárna divize Tevex,Teplárna divize Tevex,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0090,KRPA PAPER - Závodní elektrárna,Závodní elektrárna,"KRPA PAPER, a.s.","Nádražní 266, 543 71 Hostinné",2008,2025,1,Výroba elektřiny a tepla
+CZ-0091,Teplárna Zlín s.r.o.,Teplárna Zlín s.r.o.,Teplárna Zlín s.r.o.,"Hlavničkovo nábřeží 650, 760 01 Zlín",2008,2025,20,Výroba elektřiny a tepla
+CZ-0092,ENERGOTRANS - Elektrárna Mělník 1,Elektrárna Mělník 1,"Energotrans, a.s.",277 03 Horní Počáply,2008,2025,20,Výroba elektřiny a tepla
+CZ-0093,Pražská teplárenská - Teplárna Malešice,Teplárna Malešice,Pražská teplárenská a.s.,"Teplárenská 611/1, 108 15 Praha 10",2008,2025,20,Výroba elektřiny a tepla
+CZ-0096,"ENERGOAQUA, a.s. - Výtopna",Výtopna,"ENERGOAQUA, a.s.","1. máje 823, 75661 Rožnov pod Radhoštěm",2008,2025,20,Výroba elektřiny a tepla
+CZ-0097,"AL INVEST Břidličná, a.s.",AL INVEST Břidličná,"AL INVEST Břidličná, a.s.","Bruntálská 167, 793 51 Břidličná",2008,2025,20,Výroba elektřiny a tepla
+CZ-0098,C-Energy Planá - kotelna TTA 1,Kotelna TTA 1,C-Energy s.r.o.,"U Cihelny 2128, 390 02 Tábor",2008,2025,20,Výroba elektřiny a tepla
+CZ-0099,Heineken - Královský pivovar Krušovice,Královský pivovar Krušovice,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0102,"VÍTKOVICE STEEL, a.s. - Ocelárna I",Ocelárna I,"VÍTKOVICE STEEL, a.s.","Štramberská č.p. 2871/41, 709 00 Ostrava Hulváky",2008,2025,24,Železo a ocel
+CZ-0103,Cukrovar Opava,Cukrovar Opava,"Moravskoslezské cukrovary, s.r.o.","Vávrovická 273, Opava - Vávrovice, 74773",2008,2025,1,Výroba elektřiny a tepla
+CZ-0105,Veolia Průmyslové služby ČR - Důl ČSM - teplárna,Důl ČSM – teplárna,"Veolia Průmyslové služby ČR, a.s.","Stonava č.p.1077, 735 34  Stonava",2008,2025,20,Výroba elektřiny a tepla
+CZ-0107,Veolia Průmyslové služby ČR -Důl Lazy-kotelna Lazy,Důl Lazy – kotelna Lazy,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0111,Veolia Energie Mariánské Lázně - výtopna Nádražní,Výtopna Nádražní,"Veolia Energie Mariánské Lázně, s.r.o.","Nádražní náměstí 294, 35301 Mariánské Lázně",2008,2025,20,Výroba elektřiny a tepla
+CZ-0115,Amper Savings - Areál Gumotex Břeclav,Areál Gumotex Břeclav,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0117,OKK - Koksovna Svoboda,Koksovna Svoboda,OKK Koksovny a.s.,"Koksární ul. 1112, 702 24 Ostrava - Přívoz",2008,2025,20,Výroba elektřiny a tepla
+CZ-0121,Plzeňská teplárenská - centrální zdroj tepla Plzeň,Centrální zdroj tepla Plzeň,"Plzeňská teplárenská, a.s.","Doubravecká 2760/1, 300 01 Plzeň",2008,2025,20,Výroba elektřiny a tepla
+CZ-0124,Veolia Průmyslové služby ČR - kotelna dolu Darkov,Kotelna dolu Darkov,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0126,Veolia Průmyslové služby ČR - kotelna Sviadnov,Kotelna Sviadnov,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0127,Veolia Průmyslové služby ČR - kotelna Chlebovice,Kotelna Chlebovice,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0128,Veolia Průmyslové služby ČR - kotelna Staříč,Kotelna Staříč,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0129,EOP Distribuce - Teplárna Pardubice,Teplárna Pardubice,"EOP Distribuce, a.s.","Arnošta z Pardubic 676, 530 99 Pardubice",2008,2020,20,Výroba elektřiny a tepla
+CZ-0130,"JIHLAVSKÉ KOTELNY,s.r.o.",JIHLAVSKÉ KOTELNY,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0134,Liberty Ostrava a.s.,Liberty Ostrava a.s.,,,2008,2024,20,Výroba elektřiny a tepla
+CZ-0136,Cement Hranice - rotační pec,Rotační pec,"Cement Hranice, akciová společnost","Bělotínská 288, Hranice I - Město, 45339",2008,2025,29,Cement a vápno
+CZ-0138,"Plzeňská teplárenská, a.s. - Teplárna ELU III",Teplárna ELU III,Plzeňská teplárenská a.s.,"Tylova 1/57, 30100 Plzeň",2008,2025,20,Výroba elektřiny a tepla
+CZ-0139,Dřevozpracující družstvo - Kotelny družstva,Kotelny družstva,Dřevozpracující družstvo,"Lukavec čp.9, PSČ 394 26,",2008,2025,20,Výroba elektřiny a tepla
+CZ-0142,KLATOVSKÁ TEPLÁRNA - Kotelna,Kotelna,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0143,Teplárna Kyjov - Paroplynová kogenerační jednotka,Paroplynová kogenerační jednotka,"Teplárna Kyjov, a.s.","Havlíčkova 180, 69701 Kyjov",2008,2020,20,Výroba elektřiny a tepla
+CZ-0145,PILSEN STEEL - Elektrické obloukové pece,Elektrické obloukové pece,,,2008,2022,24,Železo a ocel
+CZ-0146,Teplo Bruntál - Centrální výtopna Dolní,Centrální výtopna Dolní,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0148,Teplárna Kladno - Elektrárna Kladno,Elektrárna Kladno,"Teplárna Kladno, s.r.o.","Dubská 257, 27203 Kladno",2008,2025,20,Výroba elektřiny a tepla
+CZ-0150,EMBA spol. s r.o.,EMBA,"EMBA, spol. s r.o.","Paseky nad Jizerou 235, 512 47 Paseky nad Jizerou",2008,2025,36,Papír
+CZ-0151,Pražská teplárenská - Teplárna Michle,Teplárna Michle,Pražská teplárenská a.s.,"Chodovská 729/5, 140 00 Praha 4",2008,2025,20,Výroba elektřiny a tepla
+CZ-0152,Pražská teplárenská - Teplárna Holešovice,Teplárna Holešovice,Pražská teplárenská a.s.,"Partyzánská 1/7, 170 00 Praha 7",2008,2025,20,Výroba elektřiny a tepla
+CZ-0153,Veolia Energie Praha - Teplárna Veleslavín,Teplárna Veleslavín,"Veolia Energie Praha, a.s.","Na Hradním vodovodu 435, 162 00 Praha 6",2008,2025,20,Výroba elektřiny a tepla
+CZ-0154,Pražská teplárenská - Výtopna Krč,Výtopna Krč,Pražská teplárenská a.s.,"Zálesí 1927/13, 140 00 Praha 4",2008,2025,20,Výroba elektřiny a tepla
+CZ-0155,Veolia Energie Praha - Výtopna Juliska,Výtopna Juliska,"Veolia Energie Praha, a.s.","Pod Juliskou 2604/6, 160 00 Praha 6",2008,2025,20,Výroba elektřiny a tepla
+CZ-0156,Pražská teplárenská - Výtopna Ruzyně,Výtopna Ruzyně,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0157,Energotrans - Výtopna Třeboradice,Výtopna Třeboradice,"Energotrans, a.s.","Za Tratí 197, 196 00 Praha 9",2008,2020,20,Výroba elektřiny a tepla
+CZ-0158,C-Energy Planá - TTA 2,TTA 2,,,2008,2021,20,Výroba elektřiny a tepla
+CZ-0160,ORLEN UNIPETROL - AGROCHEMIE,AGROCHEMIE,"ORLEN UNIPETROL RPA, s.r.o.","Záluží 1, 436 70 Litvínov 7",2008,2025,20,Výroba elektřiny a tepla
+CZ-0161,Kotelna ASAVET Přeštice,Kotelna,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0163,Centrální zdroj tepla,Centrální zdroj tepla,,,2008,2023,20,Výroba elektřiny a tepla
+CZ-0164,MS UTILITIES & SERVICES,MS UTILITIES & SERVICES,,,2008,2024,20,Výroba elektřiny a tepla
+CZ-0169,TERMO Děčín - Teplárna Želenice,Teplárna Želenice,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0170,TERMO Děčín - Teplárna Bynov,Teplárna Bynov,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0171,TERMO Děčín - CZT Teplárna Benešovská,CZT Teplárna Benešovská,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0174,KRONOSPAN CR,KRONOSPAN CR,"KRONOSPAN CR, spol. s.r.o.","Jihlava, Na Hranici 6, PSČ 587 04",2008,2025,20,Výroba elektřiny a tepla
+CZ-0180,Spolana - Závod Energetika,Závod Energetika,SPOLANA s.r.o.,,2008,2025,42,Chemikálie
+CZ-0181,Lovochemie - Uhelná kotelna,Uhelná kotelna,"Lovochemie, a.s.","Terezínská 57, 41017 Lovosice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0182,Lovochemie - Plynová kotelna,Plynová kotelna,"Lovochemie, a.s.","Terezínská 57, 41017 Lovosice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0186,CEREPA a.s.,CEREPA,,,2008,2024,36,Papír
+CZ-0187,ENERGIE Holding - Výtopna Litoměřice - Kocanda,Výtopna Litoměřice – Kocanda,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0188,ENERGIE Holding - Výtopna Mimoň - Hradčany,Výtopna Mimoň – Hradčany,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0189,ENERGIE Holding - Výtopna Louny,Výtopna Louny,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0190,United Energy - Teplárna Komořany,Teplárna Komořany,"UNITED Energy, a.s.","Teplárenská 2, 434 03 Most - Komořany",2008,2025,20,Výroba elektřiny a tepla
+CZ-0191,ČEZ Teplárenská - Výtopna Proboštov,Výtopna Proboštov,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0192,Třinecké železárny,Třinecké železárny,"TŘINECKÉ ŽELEZÁRNY, a.s.","Průmyslová 1000, 739 70 Třinec-Staré město",2008,2025,24,Železo a ocel
+CZ-0195,KAVALIERGLASS - Kotelna Papírny Bělá,Kotelna Papírny Bělá,,,2008,2016,31,Sklo
+CZ-0196,OP papírna - Nové energocentrum,Nové energocentrum,"OP papírna, s.r.o.","Olšany 18, 789 62 Olšany",2008,2025,36,Papír
+CZ-0197,Sokolovská uhelná - Teplárna a PPC Vřesová,Teplárna a PPC Vřesová,"Sokolovská uhelná, právní nástupce, a.s.","Vřesová, Karlovarský kraj",2008,2025,20,Výroba elektřiny a tepla
+CZ-0198,"ČEZ, a. s. - Elektrárna Dětmarovice",Elektrárna Dětmarovice,"ČEZ, a.s.","Dětmarovice 1202, 735 71 Dětmarovice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0199,"ČEZ, a. s. - Elektrárna Hodonín",Elektrárna Hodonín,"ČEZ, a.s.","U Elektrárny 1/3030, 695 23 Hodonín",2008,2025,20,Výroba elektřiny a tepla
+CZ-0200,Elektrárna Chvaletice,Elektrárna Chvaletice,"Elektrárna Chvaletice, a.s.","K Elektrárně 227, 533 12 Chvaletice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0201,"ČEZ, a. s. - Elektrárna Ledvice",Elektrárna Ledvice,"ČEZ, a.s.","Bílina, 418 48",2008,2025,20,Výroba elektřiny a tepla
+CZ-0202,Energotrans a.s. - Elektrárna Mělník 2,Elektrárna Mělník 2,"Energotrans, a.s.","Horní Počaply 255, 277 03 Horní Počaply",2008,2025,20,Výroba elektřiny a tepla
+CZ-0203,"Energotrans, a.s. - Elektrárna Mělník 3",Elektrárna Mělník 3,,,2008,2021,20,Výroba elektřiny a tepla
+CZ-0204,Elektrárna Počerady,Elektrárna Počerady,"Elektrárna Počerady, a.s.","Počerady 57, 440 01 Louny",2008,2025,20,Výroba elektřiny a tepla
+CZ-0205,"ČEZ, a. s. - Elektrárna Poříčí",Elektrárna Poříčí,"ČEZ, a.s.","Kladská 466, 541 37 Trutnov",2008,2025,20,Výroba elektřiny a tepla
+CZ-0206,"ČEZ, a. s. - Elektrárna Prunéřov 1",Elektrárna Prunéřov 1,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0207,"ČEZ, a. s. - Elektrárna Prunéřov 2",Elektrárna Prunéřov 2,"ČEZ, a.s.","Prunéřov 375, 43201 Kadaň",2008,2025,20,Výroba elektřiny a tepla
+CZ-0208,Elektrárna Tisová,Elektrárna Tisová,"Elektrárna Tisová, a.s.","část Tisová 2, 357 61 Březová u Sokolova",2008,2025,20,Výroba elektřiny a tepla
+CZ-0209,"ČEZ, a. s. - Elektrárna Tušimice 2",Elektrárna Tušimice 2,"ČEZ, a.s.",432 01 Kadaň,2008,2025,20,Výroba elektřiny a tepla
+CZ-0210,"ČEZ, a. s. - Elektrárna Temelín",Elektrárna Temelín,"ČEZ, a.s.","Temelín, 37305 Temelín",2008,2025,20,Výroba elektřiny a tepla
+CZ-0211,"ČEZ, a. s. - Teplárna Dvůr Králové nad Labem",Teplárna Dvůr Králové nad Labem,"ČEZ, a.s.","28. října 1965, 544 01 Dvůr Králové nad Labem",2008,2025,20,Výroba elektřiny a tepla
+CZ-0215,Actherm - teplárna - spalovací zařízení,Teplárna – spalovací zařízení,"ACTHERM, spol s r.o.","ACTHERM, spol. s.r.o., se sídlem Na Moráni 6052, Chomutov, PSČ 430 01",2008,2025,20,Výroba elektřiny a tepla
+CZ-0222,Seco Industries - Kotelna AGS,Kotelna AGS,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0223,Jablonecká energetická - Výtopna Brandl,Výtopna Brandl,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0224,Jablonecká energetická - Výtopna Rýnovice,Výtopna Rýnovice,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0225,Teplárny Brno - Provoz Brno sever,Provoz Brno sever,Teplárny Brno a.s.,"Obřanská 60, 614 00 Brno",2008,2025,20,Výroba elektřiny a tepla
+CZ-0226,Teplárny Brno - Provoz Špitálka,Provoz Špitálka,Teplárny Brno a.s.,"Špitálka 6, 658 15 Brno",2008,2025,20,Výroba elektřiny a tepla
+CZ-0227,Teplárny Brno - Provoz Červený Mlýn,Provoz Červený Mlýn,Teplárny Brno a.s.,"Cimburkova 2, 612 00 Brno",2008,2025,20,Výroba elektřiny a tepla
+CZ-0228,Teplárna Ostrov,Teplárna Ostrov,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0229,Devro - plynová kotelna,Plynová kotelna,,,2008,2023,20,Výroba elektřiny a tepla
+CZ-0230,KOMTERM Čechy- Kotelna Jitex Písek,Kotelna Jitex Písek,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0232,IROMEZ - Kotelna Z1,Kotelna Z1,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0234,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),Kotle K1-K3 (Cukrovar Vrdy),"Ethanol Energy, a.s.","Školská 67, 285 71 Vrdy",2008,2025,1,Výroba elektřiny a tepla
+CZ-0235,DEZA - teplárna závodu,Teplárna závodu,"DEZA a.s., Valašské meziříčí","Masarykova 753, 757 28 Valašské Meziříčí",2008,2025,20,Výroba elektřiny a tepla
+CZ-0237,ČEZ - Teplárna Trmice,Teplárna Trmice,"ČEZ, a.s.","Edisonova 453, 40004 Trmice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0241,CRYSTALEX CZ - závod Nový Bor,Závod Nový Bor,"CRYSTALEX CZ, s.r.o.",,2008,2025,7,Sklo
+CZ-0243,Balsac papermill s.r.o. - Lukavice,Lukavice,"Balsac papermill, s.r.o.",,2008,2025,36,Papír
+CZ-0245,Papírna Aloisov,Papírna Aloisov,Papírna Aloisov a.s.,,2008,2025,36,Papír
+CZ-0247,kotelna Cukrovar Litovel,Kotelna,,,2008,2023,20,Výroba elektřiny a tepla
+CZ-0249,kotelna Semperflex Optimit,Kotelna,,,2008,2021,20,Výroba elektřiny a tepla
+CZ-0255,Teplospol - kotelna Vajgar,Kotelna Vajgar,Teplospol a.s.,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0256,ŠKO-ENERGO Teplárna Mladá Boleslav,Teplárna Mladá Boleslav,"ŠKO-ENERGO, s.r.o.","Václava Klementa 869, 293 60 Mladá Boleslav",2008,2025,20,Výroba elektřiny a tepla
+CZ-0257,ŠKO-ENERGO - Výtopna Vrchlabí,Výtopna Vrchlabí,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0259,TAMERO INVEST - Teplárna Kralupy,Teplárna Kralupy,TAMERO INVEST s.r.o.,"Wichterleho 810, 278 01 Kralupy nad Vltavou",2008,2025,20,Výroba elektřiny a tepla
+CZ-0265,Teplárna Písek,Teplárna Písek,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0266,Teplárna Písek - Výtopna Samoty,Výtopna Samoty,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0267,Z-Group - Železárny Hrádek,Železárny Hrádek,"Z-Group, a.s.","Rokycanská 204, 338 42 Hrádek",2008,2025,24,Železo a ocel
+CZ-0269,Kotelna závodu HAMÉ,Kotelna závodu,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0270,Česká zbrojovka - kotelna v hlavním závodě,Kotelna v hlavním závodě,,,2008,2021,20,Výroba elektřiny a tepla
+CZ-0271,TEREA Cheb - Bloková výtopna Skalka,Bloková výtopna Skalka,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0272,TEREA Cheb - Bloková výtopna Nemocnice,Bloková výtopna Nemocnice,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0273,Toray Textiles - plynová kotelna,Plynová kotelna,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0293,TERMIKA Varnsdorf a.s.,TERMIKA Varnsdorf,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0298,"Wotan Forest, a.s.",Wotan Forest,"Wotan Forest, a.s.","Kvasinská 297, 517 01 Solnice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0300,CTZ s.r.o. - Kotelna,Kotelna,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0304,"KOVOBRASIV Mníšek, spol s r.o.",KOVOBRASIV Mníšek,,,2008,2016,24,Železo a ocel
+CZ-0308,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",Milevsko – kotelna,,,2008,2021,20,Výroba elektřiny a tepla
+CZ-0309,"ŽĎAS, a.s. - metalurgie a teplárna",Metalurgie a teplárna,"ŽĎAS, a.s.","Strojírenská 675/6, 591 71 Žďár nad Sázavou ",2008,2025,20,Výroba elektřiny a tepla
+CZ-0311,Trelleborg Wheel Systems CR - Plynová kotelna,Plynová kotelna,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0312,Ammann - Tepelné hospodářství,Tepelné hospodářství,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0315,Veolia Energie Kolín - Výtopna Východ,Výtopna Východ,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0316,Veolia Energie Kolín - Elektrárna Kolín,Elektrárna Kolín,"Veolia Energie Kolín, a.s.","Tovární 21, 280 02 Kolín V",2008,2025,20,Výroba elektřiny a tepla
+CZ-0331,AERO Vodochody AERO - plynová kotelna Odolena Voda,Plynová kotelna Odolena Voda,,,2008,2022,20,Výroba elektřiny a tepla
+CZ-0333,Nemocnice Kroměříž - Výtopna,Výtopna,,,2008,2014,20,Výroba elektřiny a tepla
+CZ-0335,TON - ENERGO-Teplárna  Bystřice pod Hostýnem,ENERGO – Teplárna  Bystřice pod Hostýnem,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0336,TON - ENERGO-Teplárna Holešov,ENERGO – Teplárna Holešov,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0339,DIAMO – výtopna Stráž pod Ralskem,Výtopna Stráž pod Ralskem,"DIAMO, státní podnik","Pod Vinicí, 471 27 Stráž pod Ralskem",2008,2025,20,Výroba elektřiny a tepla
+CZ-0348,Žatecká teplárenská - Výtopna Perč,Výtopna Perč,"Žatecká teplárenská, a.s.",438 01 Žatec,2008,2025,20,Výroba elektřiny a tepla
+CZ-0350,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice","Kotelna Areál Tatry, Kopřivnice","KOMTERM services, s.r.o.","Areál Tatry 1446/3, 742 21 Kopřivnice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0354,ATALIAN CZ - Areál Zbrojovky Brno,Areál Zbrojovky Brno,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0359,Tereos TTD - Lihovar Chrudim,Lihovar Chrudim,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0361,Teplárny Brno - Provoz Staré Brno,Provoz Staré Brno,Teplárny Brno a.s.,"Rybářská 4, 603 00 Brno",2008,2025,20,Výroba elektřiny a tepla
+CZ-0387,IROMEZ - Kotelna Z2,Kotelna Z2,IROMEZ s.r.o.,,2008,2025,20,Výroba elektřiny a tepla
+CZ-0317,Veolia Energie - Elektrárna Třebovice,Elektrárna Třebovice,"Veolia Energie ČR, a.s.","Elektrárenská 5562/17, 722 00 Ostrava",2008,2025,20,Výroba elektřiny a tepla
+CZ-0320,Veolia Energie - Mobilní kotelna Jižní Město,Mobilní kotelna Jižní Město,"Veolia Energie ČR, a.s.","U Výtopny 2794/10, 700 30",2008,2025,20,Výroba elektřiny a tepla
+CZ-0326,Veolia Energie - Provoz Nový Jičín,Provoz Nový Jičín,"Veolia Energie ČR, a.s.","Zborovská 823 / 65, 741 01 Nový Jičín",2008,2025,20,Výroba elektřiny a tepla
+CZ-0323,Veolia Energie - Provozovna Fakultní nemocnice,Provozovna Fakultní nemocnice,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0324,Dalkia - Provozovna Setuza,Provozovna Setuza,,,2008,2013,20,Výroba elektřiny a tepla
+CZ-0322,Veolia Energie - Špičková výtopna Olomouc,Špičková výtopna Olomouc,"Veolia Energie ČR, a.s.","Pavelkova 1081/20, 77200 Olomouc",2008,2025,20,Výroba elektřiny a tepla
+CZ-0329,Veolia Energie - Teplárna Československé armády,Teplárna Československé armády,,,2008,2024,20,Výroba elektřiny a tepla
+CZ-0330,Veolia Energie - Teplárna Frýdek-Místek,Teplárna Frýdek-Místek,"Veolia Energie ČR, a.s.","Nádražní 391, 73801 Sviadnov",2008,2025,20,Výroba elektřiny a tepla
+CZ-0328,Veolia Energie - Teplárna Karviná,Teplárna Karviná,"Veolia Energie ČR, a.s.","Svobody 5, 73506 Karviná Doly",2008,2025,20,Výroba elektřiny a tepla
+CZ-0327,Veolia Energie - Teplárna Krnov,Teplárna Krnov,"Veolia Energie ČR, a.s.","Revoluční 960/51, 79401 Krnov",2008,2025,20,Výroba elektřiny a tepla
+CZ-0321,Veolia Energie - Teplárna Olomouc,Teplárna Olomouc,"Veolia Energie ČR, a.s.","Tovární 839/46, 77900 Olomouc",2008,2025,20,Výroba elektřiny a tepla
+CZ-0325,Veolia Energie - Teplárna Přerov,Teplárna Přerov,"Veolia Energie ČR, a.s.","Tovačovská 2924/18, 750 02 Přerov",2008,2025,20,Výroba elektřiny a tepla
+CZ-0318,Veolia Energie - Teplárna Přívoz,Teplárna Přívoz,"Veolia Energie ČR, a.s.","Kříšťanova 1122, 709 74 Ostrava",2008,2025,20,Výroba elektřiny a tepla
+CZ-0022,Kotelna Pivovaru Radegast,Kotelna,"Plzeňský Prazdroj, a.s.",,2008,2025,20,Výroba elektřiny a tepla
+CZ-0302,ČEZ Energetické služby - Kotelna Vítkovice I,Kotelna Vítkovice I,"ČEZ ESL, s.r.o.","Výstavní 1144/103,706 02 Ostrava - Vítkovice",2008,2025,20,Výroba elektřiny a tepla
+CZ-0172,Teplárna Týnec,Teplárna Týnec,Teplárna Týnec s.r.o.,,2008,2025,1,Výroba elektřiny a tepla
+CZ-0291,Výtopna ESAB Vamberk,Výtopna ESAB Vamberk,,,2008,2013,1,Výroba elektřiny a tepla
+CZ-0376,Zás.tep.Vsetín-Plynová kotelna Jasenice,Plynová kotelna Jasenice,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0377,Zás.tep.Vsetín-Uhelná kotelna Jasenice,Uhelná kotelna Jasenice,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0104,Zás.tep.Vsetín-Teplárna Jiráskova,Teplárna Jiráskova,,,2008,2020,20,Výroba elektřiny a tepla
+CZ-0378,Zás.tep.Vsetín-Výtopna Ohrada,Výtopna Ohrada,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0031,P-D Refractories - Lokalita Svitavy,Lokalita Svitavy,RHI Magnesita Czech Republic a.s.,"Průmyslová 13, 56802 Svitavy",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0030,P-D Refractories - Lokalita Velké Opatovice,Lokalita Velké Opatovice,RHI Magnesita Czech Republic a.s.,"Nádražní 218, 679 63 Velké Opatovice",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0032,GLAZURA - Výroba keramických frit,Výroba keramických frit,Glazura s.r.o.,413 11 Roudnice nad Labem,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0400,UNIPETROL - Petrochemie,Petrochemie,"ORLEN UNIPETROL RPA, s.r.o.","Záluží 1, 436 70 Litvínov 7",2008,2025,20,Výroba elektřiny a tepla
+CZ-0362,Veolia Energie - Výtopna Anenská,Výtopna Anenská,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0358,O-I Czech Republic - Nové Sedlo,Nové Sedlo,"O-I  Czech Republic, a.s.","Sklářská 142, 357 34 Nové Sedlo u Lokte",2008,2025,31,Sklo
+CZ-0357,O-I Czech Republic - Rudolfova huť,Rudolfova huť,"O-I Czech Republic, a.s.","Dubí 3, Ruská 84, PSČ 417 03 ",2008,2025,31,Sklo
+CZ-0274,OKIN FACILITY a.s. - Kotelna SKV,Kotelna SKV,,,2008,2021,20,Výroba elektřiny a tepla
+CZ-0066,"Sklárny Moravia, a.s.",Sklárny Moravia,"SKLÁRNY MORAVIA, akciová společnost","Úsobrno č.pop. 79, 679 39 Úsobrno",2008,2025,7,Sklo
+CZ-0010,Wienerberger - závod Řepov,Závod Řepov,"Wienerberger, s.r.o.","Řepov 43, 293 01 Mladá Boleslav",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0284,"Teplárna České Budějovice, Novohradská ul.",Novohradská ul.,"Teplárna České Budějovice, a.s.","Novohradská 398/32, České Budějovice, 372 15",2008,2025,20,Výroba elektřiny a tepla
+CZ-0094,KAVALIERGLASS,KAVALIERGLASS,"Kavalierglass, a.s.","Sklářská 359, Sázava, 285 06",2008,2025,7,Sklo
+CZ-0012,Wienerberger - závod Novosedly,Závod Novosedly,"Wienerberger, s.r.o.","Novosedly 365, 691 82 Novosedly na Moravě",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0014,Wienerberger - závod Týn n/Vltavou,Závod Týn n/Vltavou,"Wienerberger, s.r.o.","K Jihotvaru 418, 375 01 Týn nad Vltavou",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0101,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,Teplárny a Tepelná zařízení,"ENERGETIKA TŘINEC, a.s.","Průmyslová 1024, 739 65 Třinec - Staré Město",2008,2025,20,Výroba elektřiny a tepla
+CZ-0352,HELUZ cihl. prům. - Cihelna Kryry,Cihelna Kryry,,,2008,2014,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0017,Wienerberger - závod Holice,Závod Holice,"Wienerberger, s.r.o.","Holice v Čechách, 534 01",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0140,ČESKOLIPSKÁ TEPLÁRENSKÁ - výtopna Holý Vrch,Výtopna Holý Vrch,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0141,ČESKOLIPSKÁ TEPLÁRENSKÁ - Výtopna LOOS Stará Lípa,Výtopna LOOS Stará Lípa,,,2008,2022,20,Výroba elektřiny a tepla
+CZ-0185,"JIP - Papírny Větřní, a.s.","Papírny Větřní, a.s.",,,2008,2025,1,Výroba elektřiny a tepla
+CZ-0231,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov","RAFINÉRIE, Litvínov","ORLEN UNIPETROL RPA, s.r.o.","Záluží 2, 436 70 Litvínov",2008,2025,21,Rafinace minerálních olejů
+CZ-0233,"LAUFEN CZ s.r.o.,  provozovna Bechyně",Provozovna Bechyně,LAUFEN CZ s.r.o.,"Na Libuši 717, 391 65 Bechyně",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0334,AGC Flat Glass Czech - závod Řetenice,Závod Řetenice,"AGC Flat Glass Czech a.s.,člen AGC Group","Sklářská 450, 415 03 Teplice",2008,2025,31,Sklo
+CZ-0294,AGC Flat Glass Czech - závod Barevka,Závod Barevka,"AGC Flat Glass Czech a.s.,člen AGC Group","Mírová 249, 417 03 Dubí",2008,2025,31,Sklo
+CZ-0285,Teplárna České Budějovice - Výtopna Vráto,Výtopna Vráto,"Teplárna České Budějovice, a.s.",,2008,2025,20,Výroba elektřiny a tepla
+CZ-0019,Cihelna Kinský spol. s r.o,Cihelna Kinský,Cihelna Kinský spol. s r.o.,"Hálkova 1359, 517 41 Kostelec nad Orlicí",2008,2025,8,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0062,"Cihelny STAMP Miskolezy, s.r.o.",Cihelny STAMP Miskolezy,,,2008,2015,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0074,Wienerberger - Závod Stod,Závod Stod,Wienerberger s.r.o.,,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0120,Wienerberger - Závod Blížejov,Závod Blížejov,,,2008,2023,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0122,TONDACH Česká republika s.r.o. - Závod Hranice,Závod Hranice,Wienerberger s.r.o.,,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0123,Wienerberger - Závod Šlapanice,Závod Šlapanice,Wienerberger s.r.o.,,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0132,SAINT-GOBAIN ADFORS CZ - Litomyšl,Litomyšl,SAINT-GOBAIN ADFORS CZ s.r.o.,"Litomyšl, Sokolovská 106, 570 21",2008,2025,31,Sklo
+CZ-0147,Mondi Štětí - Energetika,Mondi Štětí - Energetika,Mondi Štětí a.s.,"Litoměřická 272, 413 01, Štětí",2008,2025,20,Výroba elektřiny a tepla
+CZ-0175,"HASIT Šumavské vápenice a omítkárny, s.r.o.",HASIT Šumavské vápenice a omítkárny,"HASIT Šumavské vápenice a omítkárny, s.r.o.",341 01 Velké Hydčice,2008,2025,30,Cement a vápno
+CZ-0178,Vápenka Vitošov s.r.o.,Vápenka Vitošov,VÁPENKA VITOŠOV s.r.o.,"Hrabová 54, 789 01 Zábřeh",2008,2025,30,Cement a vápno
+CZ-0193,"Holcim (Česko), a.s. - Cementárna Čížkovice",Cementárna Čížkovice,"Holcim (Česko), a.s.","Čížkovice č.p. 27, 411 12",2008,2025,29,Cement a vápno
+CZ-0218,"LB Cemix, s.r.o.","LB Cemix, s.r.o.","LB Cemix, s r.o.","Štramberk, číslo popisné 500, číslo katastru 764 116 Štramberk, na parcele č. 1482/93",2008,2025,30,Cement a vápno
+CZ-0299,Seves Glass Block s.r.o.,Seves Glass Block,Seves Glass Block s.r.o.,"Bílinská 782/42, 419 14 Duchcov",2008,2025,31,Sklo
+CZ-0340,Lenzing Biocel Paskov a.s.,Lenzing Biocel Paskov,,,2008,2025,35,Papír
+CZ-0144,Vápenka Čertovy schody,Vápenka Čertovy schody,Vápenka Čertovy schody a.s.,,2008,2025,30,Cement a vápno
+CZ-0168,CRYSTALITE BOHEMIA a.s.,CRYSTALITE BOHEMIA ,CRYSTAL Bohemia a.s.,"Zámecká 730, 582 91 Světlá nad Sázavou",2008,2025,31,Sklo
+CZ-0055,RWE Gas Storage CZ - PZP Háje,PZP Háje,"Gas Storage, s.r.o. ","Příbram, část Jesenice 21, PSČ: 261 01, číslo katastru 636550, parcelní číslo  568/21",2008,2025,20,Výroba elektřiny a tepla
+CZ-0056,NET4GAS - kompresní stanice Kralice nad Oslavou,Kompresní stanice Kralice nad Oslavou,"NET4GAS, s.r.o.",Kompresní stanice Kralice nad Oslavou; 67573 Kralice nad Oslavou,2008,2025,20,Výroba elektřiny a tepla
+CZ-0057,NET4GAS - kompresní stanice Kouřim,Kompresní stanice Kouřim,"NET4GAS, s.r.o.","KS Kouřim, Obec Vitice, 281 61",2008,2025,20,Výroba elektřiny a tepla
+CZ-0059,NET4GAS - kompresní stanice Břeclav,Kompresní stanice Břeclav,"NET4GAS, s.r.o.","Břeclav, 690 78",2008,2025,20,Výroba elektřiny a tepla
+CZ-0060,NET4GAS - kompresní stanice Hostim,Kompresní stanice Hostim,"NET4GAS, s.r.o.",,2008,2013,1,Výroba elektřiny a tepla
+CZ-0194,"ŠKODA AUTO, Plynová kotelna, Kvasiny","Plynová kotelna, Kvasiny",ŠKODA AUTO a.s. ,"Kvasiny 145, 51702 Kvasiny",2008,2025,20,Výroba elektřiny a tepla
+CZ-0061,NET4GAS - kompresní stanice Veselí nad Lužnicí,Kompresní stanice Veselí nad Lužnicí,"NET4GAS, s.r.o.","Veselí nad Lužnicí - Žíšov, PSČ 391 81",2008,2025,20,Výroba elektřiny a tepla
+CZ-0253,Teplárna Loučovice,Teplárna Loučovice,"Teplárna Loučovice, a.s.",382 76 Loučovice,2008,2020,20,Výroba elektřiny a tepla
+CZ-0394,ČEZ Energetické služby - en. hosp. Mohelnice,En. hosp. Mohelnice,,,2008,2013,1,Výroba elektřiny a tepla
+CZ-0313,Thermoservis spol. s r. o. - Kotelna ŽOS Nymburk,Kotelna ŽOS Nymburk,,,2008,2023,20,Výroba elektřiny a tepla
+CZ-0314,Thermoservis spol. s r. o. - Kotelna CZT Nymburk,Kotelna CZT Nymburk,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0219,"REFRASIL, s.r.o.",REFRASIL,"Refrasil, s.r.o.","Průmyslová 720, 739 65, Třinec - Konská",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0001,Paralax a.s. - Cihelna Nebužely,Cihelna Nebužely,,,2008,2015,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0345,Papos Trade s.r.o.,Papos Trade,"PAPOS Trade, s.r.o.","Moříčovská 251, 363 01 Ostrov",2008,2025,35,Papír
+CZ-0008,EUROSERUM s.r.o.,EUROSERUM,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0133,KG Energo s.r.o.,KG Energo,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0399,"Plynová kotelna SPH-SLUŽBY, s.r.o.",Plynová kotelna,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0159,"PLEAS a.s., Havlíčkův Brod","PLEAS, Havlíčkův Brod",,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0282,C-Energy Planá - Teplárna,Teplárna,C-Energy s.r.o.,"Průmyslová 748, Planá nad Lužnicí, PSČ 391 02",2008,2025,20,Výroba elektřiny a tepla
+CZ-0382,Fakultní nemocnice v Motole - centrální kotelna,Centrální kotelna,Fakultní nemocnice v Motole,"V Úvalu 84, 150 05 Praha 5",2008,2025,20,Výroba elektřiny a tepla
+CZ-0373,kotelny Mlékárny Hlinsko,Kotelny,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0083,Jan Fiala - Cihelna Šterboholy,Cihelna Šterboholy,Jan Fiala - Cihelna Štěrboholy,,2008,2020,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0108,POLDI s.r.o.,POLDI,,,2008,2017,24,Železo a ocel
+CZ-0184,"Crystal BOHEMIA, a.s.",Crystal BOHEMIA,Crystal BOHEMIA a.s.,,2008,2025,31,Sklo
+CZ-0002,LASSELSBERGER - závod Borovany,Závod Borovany,"LASSELSBERGER, s.r.o.","Tovární 137, 373 12 Borovany",2008,2025,8,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0004,LASSELSBERGER - závod Chlumčany,Závod Chlumčany,"LASSELSBERGER, s.r.o.","U Keramičky 448, 33442 Chlumčany",2008,2025,8,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0033,České lupkové závody - Nové Strašecí,Nové Strašecí,"České lupkové závody, a.s.","Pecínov 1171, 271 01 Nové Strašecí",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0082,LASSELSBERGER - závod RAKO 3,Závod RAKO 3,"LASSELSBERGER, s.r.o.","Lubná 313, 27036 Lubná",2008,2025,8,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0109,"PRECIOSA ORNELA-Polubný,Příchovice a Desná","Polubný,Příchovice a Desná","Preciosa Ornela, a.s.",,2008,2025,31,Sklo
+CZ-0179,VETROPACK MORAVIA GLASS,VETROPACK MORAVIA GLASS,"Vetropack Moravia Glass,akciová společnost Kyjov",,2008,2025,31,Sklo
+CZ-0260,Heidelberg Materials CZ - závod Mokrá,Závod Mokrá,"Heidelberg Materials CZ, a.s.","Mokrá - Horákov 359, PSČ 664 04",2008,2025,29,Cement a vápno
+CZ-0261,Heidelberg Materials CZ - závod Radotín,Závod Radotín,"Heidelberg Materials CZ, a.s.","K cementárně 1261/25, 15300 Praha-Radotín",2008,2025,29,Cement a vápno
+CZ-0280,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,Cihelna Libochovice,"HELUZ cihlářský průmysl, a.s.","Pokorného 810, 41117 Libochovice",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0281,STOELZLE UNION s.r.o.,STOELZLE UNION,Stoelzle Union s.r.o.,"U Sklárny 300, 330 24 Heřmanova Huť",2008,2025,31,Sklo
+CZ-0288,"Zlínské cihelny s.r.o., cihelna Žopy",Cihelna Žopy,,,2008,2023,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0289,"Zlínské cihelny s.r.o., cihelna Malenovice",Cihelna Malenovice,,,2008,2024,20,Výroba elektřiny a tepla
+CZ-0301,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,Vápenka Mokrá,,,2008,2024,30,Cement a vápno
+CZ-0306,HELUZ cihlářský průmysl - Cihelna Hevlín,Cihelna Hevlín,"HELUZ cihlářský průmysl, a.s.",67169 Hevlín,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0307,Fosfa - kotelna Fosfa,Kotelna Fosfa,,,2008,2024,20,Výroba elektřiny a tepla
+CZ-0310,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,Cihelna Dolní Bukovsko,"HELUZ cihlářský průmysl, a.s.","Dolní Bukovsko 295, 373 65 Dolní Bukovsko",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0337,BEFACOAL s.r.o. - kotelna Dobříš,Kotelna Dobříš,,,2008,2013,1,Výroba elektřiny a tepla
+CZ-0355,Varroc Lighting Systems - kotelna,Kotelna,,,2008,2021,20,Výroba elektřiny a tepla
+CZ-0364,LASSELSBERGER - závod Podbořany,Závod Podbořany,"LASSELSBERGER, s.r.o.","Dělnická 313, 441 25 Podbořany",2008,2025,8,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0372,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy","RAFINÉRIE, Kralupy","ORLEN UNIPETROL RPA, s.r.o.","O.Wichterleho 809, 278 52 Kralupy nad Vltavou",2008,2025,21,Rafinace minerálních olejů
+CZ-0379,"Cihelna Hodonín, s.r.o.",Cihelna Hodonín,"Cihelna Hodonín, s.r.o.",,2008,2025,8,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0381,"CEMEX Czech Republic, s.r.o.",CEMEX Czech Republic,"Cemex Czech Republic, s.r.o","Tovární 296, 538 04 Prachovice",2008,2025,29,Cement a vápno
+CZ-0412,"Aircraft Industries, a. s. kotelna",Kotelna,,,2008,2021,20,Výroba elektřiny a tepla
+CZ-0027,Cukrovar Hrušovany,Cukrovar Hrušovany,,,2008,2025,20,Výroba elektřiny a tepla
+CZ-0411,Masokombinát Polička,Masokombinát Polička,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0252,Kongresové centrum Praha a.s.,Kongresové centrum Praha,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0254,Kotelna a kogenerační jednotky v ÚVN Praha,Kotelna a kogenerační jednotky,Ústřední vojenská nemocnice – Vojenská fakultní nemocnice Praha,"U Vojenské nemocnice 1200, 16900",2008,2025,20,Výroba elektřiny a tepla
+CZ-0406,Tereos TTD - Moravský Lihovar Kojetín kotelna,Moravský Lihovar Kojetín kotelna,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0167,"Teplárna Liberec, a.s.",Teplárna Liberec,"Teplárna Liberec, a.s.","tř. Dr. Milady Horákové 641/34a, 46001 Liberec",2008,2025,20,Výroba elektřiny a tepla
+CZ-0405,TS Vlašim plynová výtopna Pila,TS Vlašim plynová výtopna Pila,,,2008,2013,20,Výroba elektřiny a tepla
+CZ-0409,TYLEX Letovice a.s.,TYLEX Letovice,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0287,Silike keramika - provozovna Děčín,Provozovna Děčín,"Silike keramika, spol. s r.o.",,2008,2025,8,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0295,Cihelna Polom spol. s r.o.,Cihelna Polom,"Cihelna Polom, spol. s r.o.",,2008,2025,8,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0384,BRUDRA - Sdružení Teplárna Radotín,Sdružení Teplárna Radotín,,,2008,2016,20,Výroba elektřiny a tepla
+CZ-0365,"Best - Business, a. s. - provozovna Kunštát",Provozovna Kunštát,,,2008,2015,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0366,"Schiedel, závod Zliv",Závod Zliv,,,2008,2019,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0398,"Hanácká p.s., Cukrovar Prosenice",Cukrovar Prosenice,,,2008,2024,20,Výroba elektřiny a tepla
+CZ-0283,"ENERGY U/L, a.s., kotelna",Kotelna,"ENERGY Ústí nad Labem, a.s.","Žukovova 100, 400 03 Ústí nad Labem",2008,2025,1,Výroba elektřiny a tepla
+CZ-0392,"OMGD, s.r.o., provozovna Kaznějov",Provozovna Kaznějov,,,2008,2014,20,Výroba elektřiny a tepla
+CZ-0342,Tereos TTD - Cukrovar ČeskéMeziříčí,Cukrovar České Meziříčí,"Tereos TTD, a.s.","ul. Osvobození, 517 71 České Meziříčí",2008,2025,1,Výroba elektřiny a tepla
+CZ-0360,Tereos TTD - Cukrovar Dobrovice,Cukrovar Dobrovice,"Tereos TTD, a.s.","Palackého náměstí 1, 294 41 Dobrovice",2008,2025,1,Výroba elektřiny a tepla
+CZ-0397,"Synthomer, kotelna","Synthomer, kotelna",Synthomer a.s.,"Tovární 2093, 356 01 Sokolov",2008,2025,20,Výroba elektřiny a tepla
+CZ-0415,GZ DIGITAL MEDIA a.s. - plynova kotelna,Plynová kotelna,,,2008,2015,20,Výroba elektřiny a tepla
+CZ-0370,TEREA Cheb - Kotelna Hedvábnická,Kotelna Hedvábnická,,,2008,2014,20,Výroba elektřiny a tepla
+CZ-0389,Energetické centrum s.r.o. - teplárna,Teplárna,,,2008,2017,20,Výroba elektřiny a tepla
+CZ-0049,EOP Distribuce - Farářství,Farářství,"EOP Distribuce, a.s.","Jungmannova 15, 50002 Hradec Králové",2008,2020,20,Výroba elektřiny a tepla
+CZ-0050,EOP Distribuce - ZVU,ZVU,"EOP Distribuce, a.s.","Pražská 322, 501 01 Hradec Králové",2008,2020,20,Výroba elektřiny a tepla
+CZ-0051,EOP Distribuce - Chrudim,Chrudim,"EOP Distribuce, a.s.","Dašická 1185, 537 01 Chrudim",2008,2020,20,Výroba elektřiny a tepla
+CZ-0020,Wienerberger cihelna Jezernice,Cihelna Jezernice,"Wienerberger, s.r.o.","Jezernice, 751 31 Lipník nad Bečvou",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0131,SAINT-GOBAIN ADFORS CZ - závod Hodonice,Závod Hodonice,SAINT-GOBAIN ADFORS CZ s.r.o.,,2008,2025,31,Sklo
+CZ-0263,"TTS energo s.r.o., kotelna K13",Kotelna K13,TTS energo s.r.o.,"Rafaelova 1115, 674 01 Třebíč",2008,2025,20,Výroba elektřiny a tepla
+CZ-0338,BEFACOAL s.r.o. - kotelna Oslavany,Kotelna Oslavany,,,2008,2013,1,Výroba elektřiny a tepla
+CZ-0290,"Cihelna Vysoké Mýto, s.r.o.",Cihelna Vysoké Mýto,,,2008,2019,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0413,Liapor s.r.o.,Liapor s.r.o.,Liapor s.r.o.,"Vintířov 176, 357 44 Vintířov",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0414,"TERMO Frýdlant n.O s.r.o., Uhelná kotelna v areálu",Uhelná kotelna v areálu,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0404,"Letiště Praha, a. s. – Výtopna SEVER",Výtopna SEVER,"Letiště Praha, a.s.","K Letišti 6/1019, 160 08 Praha",2008,2025,20,Výroba elektřiny a tepla
+CZ-0044,"Tepelné hospodářství Rychnov nad Kněžnou, s.r.o. ,",Tepelné hospodářství Rychnov nad Kněžnou,,,2008,2013,1,Výroba elektřiny a tepla
+CZ-0428,Rýnovická energetická s.r.o.,Rýnovická energetická,Rýnovická energetická s.r.o.,"Belgická 400, 466 05 Jablonec nad Nisou ",2008,2025,1,Výroba elektřiny a tepla
+CZ-0420,"FN BRNO Výtopna, pracoviště medicíny dospělého věk",Výtopna,Fakultní nemocnice Brno,"Jihlavská 20, Brno 625 00",2008,2025,20,Výroba elektřiny a tepla
+CZ-0427,Carthamus - Energoblok Domoradice,Energoblok Domoradice,,,2008,2022,20,Výroba elektřiny a tepla
+CZ-0417,Teplárna Kladno - Elektrárna Kladno 2,Elektrárna Kladno 2,"Sev.en Zeta, a. s.","Průmyslová zóna Kladno východ, oblast Dříň, R110 kV ECK",2008,2020,20,Výroba elektřiny a tepla
+CZ-0418,Všeobecná fakultní nemocnice - Benátská,Benátská,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0419,Všeobecná fakultní nemocnice - Wenzigova,Wenzigova,,,2008,2018,20,Výroba elektřiny a tepla
+CZ-0429,Teplárna Otrokovice - posilovací a záložní zdroj,Posilovací a záložní zdroj,,,2008,2019,20,Výroba elektřiny a tepla
+CZ-0423,KNAUF INSULATION,KNAUF INSULATION,"Knauf Insulation, spol. s r.o.","Pod Dolní drahou 10, Krupka 41742",2008,2025,33,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0434,"BFS Energo, a.s.",BFS Energo,,,2008,2014,1,Výroba elektřiny a tepla
+CZ-0432,AGC Flat Glass Czech - výrobní linka R3,Výrobní linka R3,"AGC Flat Glass Czech a.s.,člen AGC Group","Sklářská 450, 415 03 Teplice",2008,2025,31,Sklo
+CZ-0435,Liberty Ostrava,Liberty Ostrava,Liberty Ostrava a.s. (závod 15 – Rourovna),"Vratimovská 689, 707 02 Ostrava-Kunčice",2008,2024,25,Železo a ocel
+CZ-0437,Glazura,Glazura,,,2008,2021,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0438,"Rockwool, Technologická linka BOH2",Technologická linka BOH2,"ROCKWOOL, a.s.","Cihelní 769, 739 11 Bohumín",2008,2025,31,Sklo
+CZ-0440,HELUZ cihlářský průmysl v.o.s.,HELUZ cihlářský průmysl,"HELUZ cihlářský průmysl, a.s.",671 69 Hevlín,2008,2025,20,Výroba elektřiny a tepla
+CZ-0439,Saint-Gobain Construction Products CZ a.s.,Saint-Gobain Construction Products CZ,Saint-Gobain Construction Products CZ a.s.,"Masarykova 197, 51750 Častolovice",2008,2025,1,Výroba elektřiny a tepla
+CZ-0443,SLADOVNY SOUFFLET ČR - závod Kroměříž,Závod Kroměříž,"SLADOVNY SOUFFLET ČR, a.s.","J. Silného 2997, Kroměříž 76701",2009,2025,20,Výroba elektřiny a tepla
+CZ-0441,Jaderná elektrárna Dukovany,Jaderná elektrárna Dukovany,"ČEZ, a.s.","Dukovany 269, 67550 Dukovany",2009,2020,20,Výroba elektřiny a tepla
+CZ-0444,TAMEH Czech,TAMEH Czech,,,2010,2023,20,Výroba elektřiny a tepla
+CZ-0446,Liberty Engineering Products Ostrava,Liberty Engineering Products Ostrava,Liberty Engineering Products Ostrava s.r.o.,"Vratimovská 689, 707 02 Ostrava-Kunčice",2011,2025,20,Výroba elektřiny a tepla
+CZ-0447,ČEZ - Elektrárna Ledvice 4,Elektrárna Ledvice 4,,,2011,2020,20,Výroba elektřiny a tepla
+CZ-0469,Gas Storage CZ - PZP Třanovice,PZP Třanovice,"Gas Storage, s.r.o. ","Třanovice 274, 739 93 Třanovice",2011,2025,20,Výroba elektřiny a tepla
+CZ-0459,SPP Storage - PZP Dolní Bojanovice,PZP Dolní Bojanovice,"SPP Storage, s.r.o.","Dolní Bojanovice 891, 696 17 Dolní Bojanovice",2011,2025,20,Výroba elektřiny a tepla
+CZ-0471,MND Energy Storage - PZP Uhřice,PZP Uhřice,MND Energy Storage a.s.,,2012,2025,20,Výroba elektřiny a tepla
+CZ-0478,"ČEZ, a. s., Elektrárna Počerady 2",Elektrárna Počerady 2,"ČEZ, a.s.","Počerady 57, PSČ 440 01 Louny",2012,2025,20,Výroba elektřiny a tepla
+CZ-0479,VIADRUS a.s.,VIADRUS,,,2012,2019,24,Železo a ocel
+CZ-0455,"BorsodChem MCHZ, s.r.o.",BorsodChem MCHZ,"BorsodChem MCHZ, s.r.o.","Chemická 1/2039, 70903 Ostrava",2013,2025,38,Chemikálie
+CZ-0457,"CS CABOT, spol. s r.o.",CS CABOT,"CS CABOT, spol.s r.o.","Masarykova 753, 757 27 Valašské Meziříčí",2013,2025,37,Chemikálie
+CZ-0461,"Třinecké železárny, a.s. -  Kladno",Kladno,"TŘINECKÉ ŽELEZÁRNY, a.s.","Dříň, 272 01, Kladno Dříň",2013,2025,20,Výroba elektřiny a tepla
+CZ-0453,Válcovny trub Chomutov - divize Chomutov,Divize Chomutov,"Válcovny trub Chomutov, a.s.","Chomutov, Tovární 629, PSČ 430 01",2013,2025,20,Výroba elektřiny a tepla
+CZ-0477,FERROMET - divize Veselí,Divize Veselí,,,2013,2017,20,Výroba elektřiny a tepla
+CZ-0448,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,Výroba síranu vápenatého a anorg.pigmentů,PRECHEZA a.s.,"Nábřeží Dr. E. Beneše 24, 751 62 Přerov",2013,2025,42,Chemikálie
+CZ-0452,Constellium Extrusions Děčín s.r.o.,Constellium Extrusions Děčín s.r.o.,Constellium Extrusions Děčín s.r.o.,"Ústecká 37, 405 35 Děčín",2013,2025,27,Hliníku
+CZ-0470,SYNTHOS Kralupy a.s. - provoz Styren,Provoz Styren,SYNTHOS Kralupy a.s. ,"Wichterleho  810, Kralupy nad Vltavou 278 01",2013,2025,42,Chemikálie
+CZ-0458,SYNTHOS Kralupy a.s.- výroba Etylbenzen,Výroba Etylbenzen,SYNTHOS Kralupy a.s.,"Záluží 1, Litvínov, 436 70",2013,2025,42,Chemikálie
+CZ-0475,SYNTHOS Kralupy a.s.-výroba Polystyreny,Výroba Polystyreny,SYNTHOS Kralupy a.s.,"Wichterleho  810, Kralupy nad Vltavou 278 01",2013,2025,42,Chemikálie
+CZ-0462,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.","Válcovna kol, kovárna náprav",BONATRANS GROUP a.s.,"Revoluční 1234, 735 94 Bohumín",2013,2025,25,Železo a ocel
+CZ-0476,Hyundai Motor Manufacturing Czech s.r.o.,Hyundai Motor Manufacturing Czech,Hyundai Motor Manufacturing Czech s.r.o.,"Průmyslová zóna Nošovice, 739 51 Nižní Lhoty 700",2013,2025,20,Výroba elektřiny a tepla
+CZ-0474,"Pražská obalovna Herink, s.r.o.",Pražská obalovna Herink,,,2013,2015,20,Výroba elektřiny a tepla
+CZ-0454,Špičkový zdroj – Spalovací turbíny s generátorem,Špičkový zdroj – Spalovací turbíny s generátorem,"Elektrárna Prostějov, s.r.o.","Rovná 4615, 796 01  Prostějov",2013,2020,20,Výroba elektřiny a tepla
+CZ-0456,"Slévárny Třinec, a.s.",Slévárny Třinec,"Slévárny Třinec, a.s.","Třinec – Staré Město, PSČ 739 65, č. katastru: 770892",2013,2025,25,Železo a ocel
+CZ-0480,Porr a.s. - Středokluky,Středokluky,Porr a.s.,252 68 Středokluky,2013,2025,20,Výroba elektřiny a tepla
+CZ-0481,Tepelná a zvuková izolace Rotaflex,Tepelná a zvuková izolace Rotaflex,"UNION LESNÍ BRÁNA, a.s. ","Novosedlická 248, 417 03 Dubí",2013,2025,33,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0483,PK ELE,PK ELE,"ČEZ Teplárenská, a.s.","Bílina, Ledvice, PSČ 418 48",2014,2025,20,Výroba elektřiny a tepla
+CZ-0482,"TŘINECKÉ ŽELEZÁRNY, a.s.(provoz VT-VÁLCOVNA TRUB)",Provoz VT-VÁLCOVNA TRUB,,,2014,2017,20,Výroba elektřiny a tepla
+CZ-0450,POLDI TRADE a.s.,POLDI TRADE,,,2014,2017,24,Železo a ocel
+CZ-0484,PZP Dambořice,PZP Dambořice,MND Gas Storage a.s.,"Dambořice, 696 35",2016,2025,20,Výroba elektřiny a tepla
+CZ-0485,Spalovací zařízení kotelny,Spalovací zařízení kotelny,ENE20 s.r.o.,"Papírenská čp.2, Větřní 382 11",2015,2025,20,Výroba elektřiny a tepla
+CZ-0486,Pittsburgh Corning CR,Pittsburgh Corning CR,"Pittsburgh Corning CR, s.r.o.","Průmyslová 3, Klášterec nad Ohří, 431 51",2016,2025,31,Sklo
+CZ-0487,Papírna APIS s.r.o.,Papírna APIS,,,2017,2025,36,Papír
+CZ-0488,Výrobní linky formalínu,Výrobní linky formalínu,Dukol Ostrava s.r.o.,"Mariánské Hory, Chemická 2039/1, PSČ 709 00, IČ 267 92 893",2020,2025,42,Chemikálie
+CZ-0489,"Pražská obalovna Herink, s.r.o.",Pražská obalovna Herink,"Pražská obalovna Herink, s.r.o.","Hlavní 26, Herink, PSČ 251 01, IČ ",2020,2024,20,Výroba elektřiny a tepla
+CZ-0490,Nexen Tire Europe s.r.o.,Nexen Tire Europe,Nexen Tire Europe s.r.o.,"Bitozeves, Průmyslová 1000, 
+PSČ 438 01, IČ 036 14 131",2021,2025,20,Výroba elektřiny a tepla
+CZ-0491,Kotelna Procter & Gamble Rakovník,Kotelna Rakovník,,,2022,2023,20,Výroba elektřiny a tepla
+CZ-0492,Technologický komplex Energy nest,Technologický komplex Energy nest,"E.nest Energy, a.s.","Vraňany, PSČ 277 07, K.ú.: Vraňany 785 253",2024,2025,20,Výroba elektřiny a tepla
+CZ-0495,Výroba sádry a sádrokartonových desek,Výroba sádry a sádrokartonových desek,"KNAUF Praha, spol. s r. o.","Počerady 17, PSČ 440 01, Louny",2025,2025,34,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0498,Plynová kotelna Prunéřov,Plynová kotelna Prunéřov,"ČEZ Teplárenská, a.s.","Bílina, Ledvice, PSČ 418 48",2025,2025,20,Výroba elektřiny a tepla
+CZ-0497,"Saint-Gobain Construction Products CZ a.s., Rigips",Saint-Gobain Construction Products CZRigips,"Saint-Gobain Construction Products CZ a.s., Rigips","Horní Počaply 254, PSČ 277 03",2025,2025,34,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0496,Kalcinační jednotka Vřesová,Kalcinační jednotka Vřesová,"SUAS - Lindner, s.r.o.","Vřesová 1, PSČ 357 35, k.ú. 786721",2025,2025,34,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0499,Synthesia Nitrocellulose,Synthesia Nitrocellulose,"Synthesia Nitrocellulose, a.s.","Semtín 103, PSČ 530 02",2025,2025,38,Chemikálie
