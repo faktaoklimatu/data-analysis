@@ -1,0 +1,296 @@
+#!/usr/bin/env python
+"""Transform the EUTL verified emissions export (2008-2025) for the ETS1 dashboard.
+
+Also pre-aggregates the result into the compact structure the dashboard page
+needs (installations, per-sector activity groups, yearly records), so the
+Jekyll site only has to load a ready-made YAML file instead of running a
+Ruby build-time generator over the raw CSV.
+"""
+import sys
+from pathlib import Path
+
+import pandas as pd
+import yaml
+
+INPUT_PATH = Path("data/EUA/verified_emissions_2025_en.xlsx")
+OPOK_PATH = Path("data/EUA/OPOK-seznam-zarizeni-20260209.xlsx")
+OUTPUT_CSV_PATH = Path("data/EUA/EUTL/ETS-data.csv")
+OUTPUT_YAML_PATH = Path("data/EUA/EUTL/ets-dashboard.yaml")
+
+# "Vlastník a skutečné odvětví" sheet of the live ETS dashboard Google Sheet.
+MANUAL_OVERRIDES_SHEET_ID = "1DX6MGLeiKXbGsPxHH9HwjuK7qOFl27XdsFu5CzDWH1Y"
+MANUAL_OVERRIDES_SHEET_GID = "1625654215"
+MANUAL_OVERRIDES_URL = (
+    f"https://docs.google.com/spreadsheets/d/{MANUAL_OVERRIDES_SHEET_ID}/export"
+    f"?format=csv&gid={MANUAL_OVERRIDES_SHEET_GID}"
+)
+
+ID_COLUMNS = [
+    "REGISTRY_CODE",
+    "IDENTIFIER_IN_REG",
+    "INSTALLATION_NAME",
+    "INSTALLATION_NAME_CLEAN",
+    "COMPANY_NAME_CLEAN",
+    "INSTALLATION_IDENTIFIER",
+    "PERMIT_IDENTIFIER",
+    "MAIN_ACTIVITY_TYPE_CODE",
+    "MAIN_ACTIVITY_TYPE_NAME",
+    "REAL_ACTIVITY",
+    "OWNER_ASSIGNED",
+    "AFFILIATED_POWER_HEAT_PLANT",
+    "AFFILIATED_POWER_HEAT_PLANT_NAME",
+]
+
+# Manually curated in the live Google Sheet (see MANUAL_OVERRIDES_URL) ->
+# internal column name. Kept purely as reference/annotation columns, except
+# for INSTALLATION_NAME_CLEAN, which is what the dashboard displays as the
+# installation name.
+MANUAL_OVERRIDE_COLUMNS = {
+    "Installation Name (Clean)": "INSTALLATION_NAME_CLEAN",
+    "Company Name (Clean)": "COMPANY_NAME_CLEAN",
+    "Real Activity": "REAL_ACTIVITY",
+    "Owner Assigned": "OWNER_ASSIGNED",
+    "Affiliated Power/Heat Plant": "AFFILIATED_POWER_HEAT_PLANT",
+    "Name of Affiliated Power/Heat Plant": "AFFILIATED_POWER_HEAT_PLANT_NAME",
+}
+
+# Metrics to unpivot; not every metric exists for every year (RESERVE/TRANSITIONAL
+# only exist from 2013 onward).
+ALLOCATION_METRICS = ["ALLOCATION", "ALLOCATION_RESERVE", "ALLOCATION_TRANSITIONAL"]
+METRICS = ALLOCATION_METRICS + ["VERIFIED_EMISSIONS"]
+YEARS = range(2008, 2026)
+
+# Aircraft/maritime operator activity codes; these are airlines and shipping
+# companies, not industrial plants, so they're dropped from the dataset.
+AVIATION_MARITIME_CODES = [10, 50]
+
+# Code 60 is a member-state ETS2 placeholder account (e.g. "ETS2 účet České
+# republiky"), not a real installation, so it's dropped from the dataset too.
+ETS2_PLACEHOLDER_CODES = [60]
+
+# Manual overrides for installations misclassified as code 99 ("Other
+# activity opted-in") in the source file; keyed by PERMIT_IDENTIFIER.
+ACTIVITY_CODE_OVERRIDES = {
+    "CZ-0457-13": 37,  # CS CABOT, spol. s r.o. -> Production of carbon black
+    "CZ-0139-05": 20,  # Dřevozpracující družstvo - Kotelny družstva -> Combustion of fuels
+    "CZ-0496-25": 34,  # Kalcinační jednotka Vřesová -> Production/processing of gypsum or plasterboard
+}
+
+# Raw EU ETS activity-type code -> broad sector group key.
+SECTOR_GROUP = {
+    1: "combustion", 20: "combustion",
+    2: "refineries", 21: "refineries",
+    4: "iron_steel", 5: "iron_steel", 22: "iron_steel", 23: "iron_steel",
+    24: "iron_steel", 25: "iron_steel",
+    26: "aluminium", 27: "aluminium", 28: "other_metals",
+    6: "cement_lime", 29: "cement_lime", 30: "cement_lime",
+    7: "glass", 31: "glass", 8: "other_minerals",
+    32: "other_minerals", 33: "other_minerals", 34: "other_minerals",
+    9: "pulp_paper", 35: "pulp_paper", 36: "pulp_paper",
+    37: "chemicals", 38: "chemicals", 39: "chemicals", 40: "chemicals",
+    41: "chemicals", 42: "chemicals", 43: "chemicals", 44: "chemicals",
+    45: "other", 99: "other",
+}
+
+GROUP_ORDER = [
+    "combustion", "refineries", "iron_steel", "aluminium", "other_metals", "cement_lime", "glass", "other_minerals",
+    "pulp_paper", "chemicals", "other",
+]
+
+GROUP_LABELS = {
+    "combustion": "Výroba elektřiny a tepla",
+    "refineries": "Rafinace minerálních olejů",
+    "iron_steel": "Železo a ocel",
+    "aluminium": "Hliníku",
+    "other_metals": "Ostatní kovy",
+    "cement_lime": "Cement a vápno",
+    "glass": "Sklo",
+    "other_minerals": "Ostatní minerály (keramika, cihly, minerální vlna, sádra)",
+    "pulp_paper": "Papír",
+    "chemicals": "Chemikálie",
+    "other": "Ostatní odvětví",
+}
+
+COUNTRY_NAME = "Česko"  # only CZ installations are kept, see transform()
+
+
+def year_column(metric: str, year: int) -> str:
+    if year == 2008 and metric == "ALLOCATION":
+        return "ALLOCATION2008"  # inconsistent naming in the source file
+    return f"{metric}_{year}"
+
+
+def load_manual_overrides() -> pd.DataFrame | None:
+    """Hand-curated columns from the live "Vlastník a skutečné odvětví"
+    Google Sheet, keyed by "Installation ID" (the "CZ-XXXX" prefix of
+    PERMIT_IDENTIFIER). Returns None if the sheet can't be fetched (e.g. no
+    network access, or the sheet's sharing settings changed), so the
+    pipeline still runs with those columns simply left blank."""
+    try:
+        raw = pd.read_csv(MANUAL_OVERRIDES_URL, header=None)
+    except (OSError, pd.errors.ParserError) as e:
+        print(f"WARNING: couldn't load manual overrides sheet ({e}); leaving those columns blank.",
+              file=sys.stderr)
+        return None
+
+    # The sheet may have a free-text note row above the real header (people
+    # edit this sheet by hand), so find the header by content instead of by
+    # a fixed row number.
+    header_rows = raw.index[raw.iloc[:, 0] == "Installation ID"]
+    if header_rows.empty:
+        print("WARNING: couldn't find the \"Installation ID\" header row in the "
+              "manual overrides sheet; leaving those columns blank.", file=sys.stderr)
+        return None
+
+    header_row = header_rows[0]
+    edited = raw.iloc[header_row + 1:].reset_index(drop=True)
+    edited.columns = raw.iloc[header_row]
+
+    present = [col for col in MANUAL_OVERRIDE_COLUMNS if col in edited.columns]
+    return edited[["Installation ID", *present]].rename(columns=MANUAL_OVERRIDE_COLUMNS)
+
+
+def transform() -> pd.DataFrame:
+    df = pd.read_excel(INPUT_PATH, sheet_name="data", header=2)
+
+    activity_codes = pd.read_excel(INPUT_PATH, sheet_name="activity codes")
+    activity_names = activity_codes.set_index("code")["new descriptions aligned"]
+
+    overridden_code = df["PERMIT_IDENTIFIER"].map(ACTIVITY_CODE_OVERRIDES)
+    df["MAIN_ACTIVITY_TYPE_CODE"] = overridden_code.fillna(df["MAIN_ACTIVITY_TYPE_CODE"]).astype(int)
+    df["MAIN_ACTIVITY_TYPE_NAME"] = df["MAIN_ACTIVITY_TYPE_CODE"].map(activity_names)
+
+    df = df[df["REGISTRY_CODE"] == "CZ"]
+    df = df[~df["MAIN_ACTIVITY_TYPE_CODE"].isin(AVIATION_MARITIME_CODES + ETS2_PLACEHOLDER_CODES)]
+
+    installation_id = df["PERMIT_IDENTIFIER"].str.extract(r"^(CZ-\d+)")[0]
+
+    # Hand-curated annotations from the live Google Sheet; purely additive
+    # reference columns, except INSTALLATION_NAME_CLEAN, which the
+    # dashboard displays as the installation name.
+    manual_overrides = load_manual_overrides()
+    if manual_overrides is not None:
+        df = df.merge(
+            manual_overrides, how="left", left_on=installation_id, right_on="Installation ID"
+        ).drop(columns="Installation ID")
+    else:
+        for column in MANUAL_OVERRIDE_COLUMNS.values():
+            df[column] = pd.NA
+
+    # INSTALLATION_NAME_CLEAN drives the dashboard's installation name, so
+    # it must never be blank; fall back to the raw name if the sheet has no
+    # clean version yet for this installation (or couldn't be reached).
+    df["INSTALLATION_NAME_CLEAN"] = df["INSTALLATION_NAME_CLEAN"].fillna(df["INSTALLATION_NAME"])
+
+    year_frames = []
+    for year in YEARS:
+        frame = df[ID_COLUMNS].copy()
+        frame["PERIOD_YEAR"] = year
+        for metric in METRICS:
+            col = year_column(metric, year)
+            frame[metric] = df[col] if col in df.columns else pd.NA
+        year_frames.append(frame)
+
+    long_df = pd.concat(year_frames, ignore_index=True)
+
+    # VERIFIED_EMISSIONS mixes the numeric -1 (missing) sentinel with the
+    # literal string "Excluded"; normalize both to -1, then drop those rows.
+    long_df["VERIFIED_EMISSIONS"] = pd.to_numeric(
+        long_df["VERIFIED_EMISSIONS"].replace("Excluded", -1)
+    )
+    long_df = long_df[long_df["VERIFIED_EMISSIONS"] != -1]
+
+    # -1 marks missing data and NaN marks a field that didn't exist yet for
+    # that year (pre-2013); treat both as 0 so FREE_ALLOCATION is directly
+    # comparable to VERIFIED_EMISSIONS.
+    allocation_cols = long_df[ALLOCATION_METRICS].apply(pd.to_numeric)
+    long_df["FREE_ALLOCATION"] = allocation_cols.replace(-1, 0).fillna(0).sum(axis=1)
+
+    return long_df
+
+
+def build_dashboard_data(df: pd.DataFrame) -> dict:
+    """Aggregate the flat dataframe into the compact dashboard structure
+    (installations deduplicated, activity codes grouped into broad sectors)
+    mirroring the former Jekyll::EtsDashboardData Ruby generator."""
+    codes_in_data = df["MAIN_ACTIVITY_TYPE_CODE"].unique().tolist()
+    unmapped_codes = [code for code in codes_in_data if code not in SECTOR_GROUP]
+    if unmapped_codes:
+        print(
+            f"WARNING: unmapped MAIN_ACTIVITY_TYPE_CODE value(s) {unmapped_codes} "
+            "-- add them to SECTOR_GROUP. Falling back to the \"other\" group for now.",
+            file=sys.stderr,
+        )
+
+    group_index = {group: i for i, group in enumerate(GROUP_ORDER)}
+    activities = [
+        {"n": GROUP_LABELS[group], "short": GROUP_LABELS[group]}
+        for group in GROUP_ORDER
+    ]
+
+    install_index: dict[tuple, int] = {}
+    installs = []
+    records = []
+    year_min = None
+    year_max = None
+
+    for row in df.itertuples(index=False):
+        group = SECTOR_GROUP.get(row.MAIN_ACTIVITY_TYPE_CODE, "other")
+        act_i = group_index[group]
+
+        install_key = (row.REGISTRY_CODE, row.INSTALLATION_IDENTIFIER)
+        inst_i = install_index.get(install_key)
+        if inst_i is None:
+            installs.append({
+                "n": row.INSTALLATION_NAME_CLEAN,
+                "c": row.REGISTRY_CODE,
+                "act": act_i,
+                "own": None if pd.isna(row.OWNER_ASSIGNED) else row.OWNER_ASSIGNED,
+                "co": None if pd.isna(row.COMPANY_NAME_CLEAN) else row.COMPANY_NAME_CLEAN,
+                "ra": None if pd.isna(row.REAL_ACTIVITY) else row.REAL_ACTIVITY,
+                "aff": 1 if row.AFFILIATED_POWER_HEAT_PLANT == 1 else 0,
+                "aff_name": None if pd.isna(row.AFFILIATED_POWER_HEAT_PLANT_NAME) else row.AFFILIATED_POWER_HEAT_PLANT_NAME,
+            })
+            inst_i = len(installs) - 1
+            install_index[install_key] = inst_i
+
+        year = int(row.PERIOD_YEAR)
+        year_min = year if year_min is None else min(year_min, year)
+        year_max = year if year_max is None else max(year_max, year)
+
+        emissions = row.VERIFIED_EMISSIONS
+        emissions = None if pd.isna(emissions) else round(emissions)
+        allocation = row.FREE_ALLOCATION
+        allocation = 0 if pd.isna(allocation) else round(allocation)
+
+        records.append([inst_i, year, emissions, allocation])
+
+    countries = [{"c": "CZ", "n": COUNTRY_NAME}]
+
+    return {
+        "countries": countries,
+        "activities": activities,
+        "installs": installs,
+        "records": records,
+        "year_min": year_min,
+        "year_max": year_max,
+    }
+
+
+def main() -> None:
+    long_df = transform()
+    long_df.to_csv(OUTPUT_CSV_PATH, index=False)
+
+    dashboard_data = build_dashboard_data(long_df)
+    with OUTPUT_YAML_PATH.open("w", encoding="utf-8") as f:
+        yaml.dump(dashboard_data, f, allow_unicode=True, sort_keys=False)
+
+    print(
+        f"{len(dashboard_data['installs'])} installations, "
+        f"{len(dashboard_data['records'])} records, "
+        f"{len(dashboard_data['countries'])} countries"
+    )
+
+
+if __name__ == "__main__":
+    main()
