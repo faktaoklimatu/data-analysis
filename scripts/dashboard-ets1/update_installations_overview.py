@@ -15,7 +15,7 @@ from process_verified_emissions import (  # noqa: E402
     transform,
 )
 
-INSTALLATIONS_OVERVIEW_PATH = Path("data/EUA/ets-installations-overview.csv")
+INSTALLATIONS_OVERVIEW_PATH = Path("outputs/ets-dashboard/ets-installations-overview.csv")
 
 
 def main() -> None:
@@ -38,9 +38,9 @@ def main() -> None:
     opok = pd.read_excel(OPOK_PATH, sheet_name="ETS1_20260209")
     opok = opok.rename(columns={
         "ID zařízení:": "installation_id",
-        "Název provozovatele:": "company_name_moe",
+        "Název provozovatele:": "operator_name_moe",
         "Adresa zařízení": "installation_address",
-    })[["installation_id", "company_name_moe", "installation_address"]]
+    })[["installation_id", "operator_name_moe", "installation_address"]]
 
     merged = per_install.merge(opok, on="installation_id", how="left")
 
@@ -48,7 +48,7 @@ def main() -> None:
         "installation_id": "Installation ID",
         "installation_name": "Installation Name",
         "installation_name_clean": "Installation Name (Clean)",
-        "company_name_moe": "Company Name (MoE)",
+        "operator_name_moe": "Operator Name (MoE)",
         "installation_address": "Installation Address",
         "first_verified_emissions_year": "First Verified Emissions Year",
         "last_verified_emissions_year": "Last Verified Emissions Year",
@@ -60,7 +60,7 @@ def main() -> None:
         "Installation ID",
         "Installation Name",
         "Installation Name (Clean)",
-        "Company Name (MoE)",
+        "Operator Name (MoE)",
         "Installation Address",
         "First Verified Emissions Year",
         "Last Verified Emissions Year",
@@ -70,7 +70,7 @@ def main() -> None:
     merged[column_order].to_csv(INSTALLATIONS_OVERVIEW_PATH, index=False)
 
     cleaned = (merged["Installation Name (Clean)"] != merged["Installation Name"]).sum()
-    print(f"{len(merged)} installations, {merged['Company Name (MoE)'].notna().sum()} matched in OPOK, "
+    print(f"{len(merged)} installations, {merged['Operator Name (MoE)'].notna().sum()} matched in OPOK, "
           f"{cleaned} names cleaned up")
 
 

@@ -1,8 +1,8 @@
-Installation ID,Installation Name,Installation Name (Clean),Company Name (MoE),Installation Address,First Verified Emissions Year,Last Verified Emissions Year,Main Activity Code,Main Activity Name
+Installation ID,Installation Name,Installation Name (Clean),Operator Name (MoE),Installation Address,First Verified Emissions Year,Last Verified Emissions Year,Main Activity Code,Main Activity Name
 CZ-0005,Procter&Gamble - Rakona - Kotelna,Rakona – Kotelna,"PROCTER&GAMBLE-RAKONA, s.r.o.","Ottova 402, 269 32 Rakovník",2008,2025,20,Výroba elektřiny a tepla
 CZ-0006,PARAMO-HS Pardubice,HS Pardubice,Paramo a.s.,"Přerovská  560, 53006 Pardubice",2008,2025,21,Rafinace minerálních olejů
 CZ-0007,PARAMO-HS Kolín,HS Kolín,ORLEN Unipetrol RPA s.r.o.,"Ovčárecká 314, 28002 Kolín",2008,2025,21,Rafinace minerálních olejů
-CZ-0021,ArcelorMittal Tubular Products Karviná,Tubular Products Karviná,ArcelorMittal Tubular Products Karviná a.s.,"Rudé armády 471, Karviná - Hranice, 73323",2008,2025,1,Výroba elektřiny a tepla
+CZ-0021,ArcelorMittal Tubular Products Karviná,ArcelorMittal Tubular Products Karviná,ArcelorMittal Tubular Products Karviná a.s.,"Rudé armády 471, Karviná - Hranice, 73323",2008,2025,1,Výroba elektřiny a tepla
 CZ-0023,Cukrovar Vrbátky - uhelná kotelna,Uhelná kotelna,,,2008,2024,20,Výroba elektřiny a tepla
 CZ-0024,innogy Energo - Teplárna Náchod,Teplárna Náchod,"innogy Energo, s.r.o.","Plhovská 544, 547 35 Náchod",2008,2025,20,Výroba elektřiny a tepla
 CZ-0025,innogy Energo - Teplárna Králův Dvůr,Teplárna Králův Dvůr,,,2008,2018,20,Výroba elektřiny a tepla
@@ -171,7 +171,7 @@ CZ-0327,Veolia Energie - Teplárna Krnov,Teplárna Krnov,"Veolia Energie ČR, a.
 CZ-0321,Veolia Energie - Teplárna Olomouc,Teplárna Olomouc,"Veolia Energie ČR, a.s.","Tovární 839/46, 77900 Olomouc",2008,2025,20,Výroba elektřiny a tepla
 CZ-0325,Veolia Energie - Teplárna Přerov,Teplárna Přerov,"Veolia Energie ČR, a.s.","Tovačovská 2924/18, 750 02 Přerov",2008,2025,20,Výroba elektřiny a tepla
 CZ-0318,Veolia Energie - Teplárna Přívoz,Teplárna Přívoz,"Veolia Energie ČR, a.s.","Kříšťanova 1122, 709 74 Ostrava",2008,2025,20,Výroba elektřiny a tepla
-CZ-0022,Kotelna Pivovaru Radegast,Kotelna,"Plzeňský Prazdroj, a.s.",,2008,2025,20,Výroba elektřiny a tepla
+CZ-0022,Kotelna Pivovaru Radegast,Kotelna Pivovaru Radegast,"Plzeňský Prazdroj, a.s.",,2008,2025,20,Výroba elektřiny a tepla
 CZ-0302,ČEZ Energetické služby - Kotelna Vítkovice I,Kotelna Vítkovice I,"ČEZ ESL, s.r.o.","Výstavní 1144/103,706 02 Ostrava - Vítkovice",2008,2025,20,Výroba elektřiny a tepla
 CZ-0172,Teplárna Týnec,Teplárna Týnec,Teplárna Týnec s.r.o.,,2008,2025,1,Výroba elektřiny a tepla
 CZ-0291,Výtopna ESAB Vamberk,Výtopna ESAB Vamberk,,,2008,2013,1,Výroba elektřiny a tepla
@@ -179,8 +179,8 @@ CZ-0376,Zás.tep.Vsetín-Plynová kotelna Jasenice,Plynová kotelna Jasenice,,,2
 CZ-0377,Zás.tep.Vsetín-Uhelná kotelna Jasenice,Uhelná kotelna Jasenice,,,2008,2018,20,Výroba elektřiny a tepla
 CZ-0104,Zás.tep.Vsetín-Teplárna Jiráskova,Teplárna Jiráskova,,,2008,2020,20,Výroba elektřiny a tepla
 CZ-0378,Zás.tep.Vsetín-Výtopna Ohrada,Výtopna Ohrada,,,2008,2017,20,Výroba elektřiny a tepla
-CZ-0031,P-D Refractories - Lokalita Svitavy,Lokalita Svitavy,RHI Magnesita Czech Republic a.s.,"Průmyslová 13, 56802 Svitavy",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
-CZ-0030,P-D Refractories - Lokalita Velké Opatovice,Lokalita Velké Opatovice,RHI Magnesita Czech Republic a.s.,"Nádražní 218, 679 63 Velké Opatovice",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0031,P-D Refractories - Lokalita Svitavy,P-D Refractories – Lokalita Svitavy,RHI Magnesita Czech Republic a.s.,"Průmyslová 13, 56802 Svitavy",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0030,P-D Refractories - Lokalita Velké Opatovice,P-D Refractories – Lokalita Velké Opatovice,RHI Magnesita Czech Republic a.s.,"Nádražní 218, 679 63 Velké Opatovice",2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0032,GLAZURA - Výroba keramických frit,Výroba keramických frit,Glazura s.r.o.,413 11 Roudnice nad Labem,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0400,UNIPETROL - Petrochemie,Petrochemie,"ORLEN UNIPETROL RPA, s.r.o.","Záluží 1, 436 70 Litvínov 7",2008,2025,20,Výroba elektřiny a tepla
 CZ-0362,Veolia Energie - Výtopna Anenská,Výtopna Anenská,,,2008,2018,20,Výroba elektřiny a tepla
@@ -208,7 +208,7 @@ CZ-0019,Cihelna Kinský spol. s r.o,Cihelna Kinský,Cihelna Kinský spol. s r.o.
 CZ-0062,"Cihelny STAMP Miskolezy, s.r.o.",Cihelny STAMP Miskolezy,,,2008,2015,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0074,Wienerberger - Závod Stod,Závod Stod,Wienerberger s.r.o.,,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0120,Wienerberger - Závod Blížejov,Závod Blížejov,,,2008,2023,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
-CZ-0122,TONDACH Česká republika s.r.o. - Závod Hranice,Závod Hranice,Wienerberger s.r.o.,,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0122,TONDACH Česká republika s.r.o. - Závod Hranice,TONDACH – Závod Hranice,Wienerberger s.r.o.,,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0123,Wienerberger - Závod Šlapanice,Závod Šlapanice,Wienerberger s.r.o.,,2008,2025,32,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0132,SAINT-GOBAIN ADFORS CZ - Litomyšl,Litomyšl,SAINT-GOBAIN ADFORS CZ s.r.o.,"Litomyšl, Sokolovská 106, 570 21",2008,2025,31,Sklo
 CZ-0147,Mondi Štětí - Energetika,Mondi Štětí - Energetika,Mondi Štětí a.s.,"Litoměřická 272, 413 01, Štětí",2008,2025,20,Výroba elektřiny a tepla
@@ -358,6 +358,6 @@ CZ-0491,Kotelna Procter & Gamble Rakovník,Kotelna Rakovník,,,2022,2023,20,Výr
 CZ-0492,Technologický komplex Energy nest,Technologický komplex Energy nest,"E.nest Energy, a.s.","Vraňany, PSČ 277 07, K.ú.: Vraňany 785 253",2024,2025,20,Výroba elektřiny a tepla
 CZ-0495,Výroba sádry a sádrokartonových desek,Výroba sádry a sádrokartonových desek,"KNAUF Praha, spol. s r. o.","Počerady 17, PSČ 440 01, Louny",2025,2025,34,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0498,Plynová kotelna Prunéřov,Plynová kotelna Prunéřov,"ČEZ Teplárenská, a.s.","Bílina, Ledvice, PSČ 418 48",2025,2025,20,Výroba elektřiny a tepla
-CZ-0497,"Saint-Gobain Construction Products CZ a.s., Rigips",Saint-Gobain Construction Products CZRigips,"Saint-Gobain Construction Products CZ a.s., Rigips","Horní Počaply 254, PSČ 277 03",2025,2025,34,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
+CZ-0497,"Saint-Gobain Construction Products CZ a.s., Rigips","Saint-Gobain Construction Products CZ, Rigips","Saint-Gobain Construction Products CZ a.s., Rigips","Horní Počaply 254, PSČ 277 03",2025,2025,34,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0496,Kalcinační jednotka Vřesová,Kalcinační jednotka Vřesová,"SUAS - Lindner, s.r.o.","Vřesová 1, PSČ 357 35, k.ú. 786721",2025,2025,34,"Ostatní minerály (keramika, cihly, minerální vlna, sádra)"
 CZ-0499,Synthesia Nitrocellulose,Synthesia Nitrocellulose,"Synthesia Nitrocellulose, a.s.","Semtín 103, PSČ 530 02",2025,2025,38,Chemikálie
