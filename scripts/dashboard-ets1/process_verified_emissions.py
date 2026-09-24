@@ -14,32 +14,18 @@ import yaml
 
 INPUT_PATH = Path("data/EUA/verified_emissions_2025_en.xlsx")
 OPOK_PATH = Path("data/EUA/OPOK-seznam-zarizeni-20260209.xlsx")
-OUTPUT_CSV_PATH = Path("data/EUA/EUTL/ETS-data.csv")
-OUTPUT_YAML_PATH = Path("data/EUA/EUTL/ets-dashboard.yaml")
+OUTPUT_CSV_PATH = Path("outputs/ets-dashboard/ETS-data.csv")
+OUTPUT_YAML_PATH = Path("outputs/ets-dashboard/ets-dashboard.yaml")
 
-# "Vlastník a skutečné odvětví" sheet of the live ETS dashboard Google Sheet.
+# "Přehled instalací" sheet of the live ETS dashboard Google Sheet. (The
+# manual annotations used to live on a separate "Vlastník a skutečné
+# odvětví" sheet; that's been merged into this one as extra columns.)
 MANUAL_OVERRIDES_SHEET_ID = "1DX6MGLeiKXbGsPxHH9HwjuK7qOFl27XdsFu5CzDWH1Y"
-MANUAL_OVERRIDES_SHEET_GID = "1625654215"
+MANUAL_OVERRIDES_SHEET_GID = "814098780"
 MANUAL_OVERRIDES_URL = (
     f"https://docs.google.com/spreadsheets/d/{MANUAL_OVERRIDES_SHEET_ID}/export"
     f"?format=csv&gid={MANUAL_OVERRIDES_SHEET_GID}"
 )
-
-ID_COLUMNS = [
-    "REGISTRY_CODE",
-    "IDENTIFIER_IN_REG",
-    "INSTALLATION_NAME",
-    "INSTALLATION_NAME_CLEAN",
-    "COMPANY_NAME_CLEAN",
-    "INSTALLATION_IDENTIFIER",
-    "PERMIT_IDENTIFIER",
-    "MAIN_ACTIVITY_TYPE_CODE",
-    "MAIN_ACTIVITY_TYPE_NAME",
-    "REAL_ACTIVITY",
-    "OWNER_ASSIGNED",
-    "AFFILIATED_POWER_HEAT_PLANT",
-    "AFFILIATED_POWER_HEAT_PLANT_NAME",
-]
 
 # Manually curated in the live Google Sheet (see MANUAL_OVERRIDES_URL) ->
 # internal column name. Kept purely as reference/annotation columns, except
@@ -47,12 +33,21 @@ ID_COLUMNS = [
 # installation name.
 MANUAL_OVERRIDE_COLUMNS = {
     "Installation Name (Clean)": "INSTALLATION_NAME_CLEAN",
-    "Company Name (Clean)": "COMPANY_NAME_CLEAN",
+    "Operator Name (Clean)": "OPERATOR_NAME_CLEAN",
     "Real Activity": "REAL_ACTIVITY",
     "Owner Assigned": "OWNER_ASSIGNED",
-    "Affiliated Power/Heat Plant": "AFFILIATED_POWER_HEAT_PLANT",
-    "Name of Affiliated Power/Heat Plant": "AFFILIATED_POWER_HEAT_PLANT_NAME",
 }
+
+ID_COLUMNS = [
+    "REGISTRY_CODE",
+    "IDENTIFIER_IN_REG",
+    "INSTALLATION_NAME",
+    "INSTALLATION_IDENTIFIER",
+    "PERMIT_IDENTIFIER",
+    "MAIN_ACTIVITY_TYPE_CODE",
+    "MAIN_ACTIVITY_TYPE_NAME",
+    *MANUAL_OVERRIDE_COLUMNS.values(),
+]
 
 # Metrics to unpivot; not every metric exists for every year (RESERVE/TRANSITIONAL
 # only exist from 2013 onward).
@@ -121,11 +116,11 @@ def year_column(metric: str, year: int) -> str:
 
 
 def load_manual_overrides() -> pd.DataFrame | None:
-    """Hand-curated columns from the live "Vlastník a skutečné odvětví"
-    Google Sheet, keyed by "Installation ID" (the "CZ-XXXX" prefix of
-    PERMIT_IDENTIFIER). Returns None if the sheet can't be fetched (e.g. no
-    network access, or the sheet's sharing settings changed), so the
-    pipeline still runs with those columns simply left blank."""
+    """Hand-curated columns from the live "Přehled instalací" Google Sheet,
+    keyed by "Installation ID" (the "CZ-XXXX" prefix of PERMIT_IDENTIFIER).
+    Returns None if the sheet can't be fetched (e.g. no network access, or
+    the sheet's sharing settings changed), so the pipeline still runs with
+    those columns simply left blank."""
     try:
         raw = pd.read_csv(MANUAL_OVERRIDES_URL, header=None)
     except (OSError, pd.errors.ParserError) as e:
@@ -146,12 +141,21 @@ def load_manual_overrides() -> pd.DataFrame | None:
     edited = raw.iloc[header_row + 1:].reset_index(drop=True)
     edited.columns = raw.iloc[header_row]
 
+    # The sheet leads with a block of columns copied straight from this
+    # script's own ets-installations-overview.csv output, then appends the
+    # hand-curated columns after it -- some of which reuse a header name
+    # from that first block (e.g. two "Installation Name (Clean)" columns).
+    # Keep the last occurrence of any repeated name, since the hand-edited
+    # one is always the one appended later.
+    edited = edited.loc[:, ~edited.columns.duplicated(keep="last")]
+
     present = [col for col in MANUAL_OVERRIDE_COLUMNS if col in edited.columns]
     return edited[["Installation ID", *present]].rename(columns=MANUAL_OVERRIDE_COLUMNS)
 
 
 def transform() -> pd.DataFrame:
     df = pd.read_excel(INPUT_PATH, sheet_name="data", header=2)
+    df = df[df["REGISTRY_CODE"] == "CZ"]
 
     activity_codes = pd.read_excel(INPUT_PATH, sheet_name="activity codes")
     activity_names = activity_codes.set_index("code")["new descriptions aligned"]
@@ -160,21 +164,27 @@ def transform() -> pd.DataFrame:
     df["MAIN_ACTIVITY_TYPE_CODE"] = overridden_code.fillna(df["MAIN_ACTIVITY_TYPE_CODE"]).astype(int)
     df["MAIN_ACTIVITY_TYPE_NAME"] = df["MAIN_ACTIVITY_TYPE_CODE"].map(activity_names)
 
-    df = df[df["REGISTRY_CODE"] == "CZ"]
     df = df[~df["MAIN_ACTIVITY_TYPE_CODE"].isin(AVIATION_MARITIME_CODES + ETS2_PLACEHOLDER_CODES)]
 
     installation_id = df["PERMIT_IDENTIFIER"].str.extract(r"^(CZ-\d+)")[0]
 
     # Hand-curated annotations from the live Google Sheet; purely additive
     # reference columns, except INSTALLATION_NAME_CLEAN, which the
-    # dashboard displays as the installation name.
+    # dashboard displays as the installation name. Falls back to an empty
+    # frame if the sheet can't be fetched, so every expected column still
+    # ends up in df (as all-blank) rather than the merge being skipped.
     manual_overrides = load_manual_overrides()
-    if manual_overrides is not None:
-        df = df.merge(
-            manual_overrides, how="left", left_on=installation_id, right_on="Installation ID"
-        ).drop(columns="Installation ID")
-    else:
-        for column in MANUAL_OVERRIDE_COLUMNS.values():
+    if manual_overrides is None:
+        manual_overrides = pd.DataFrame(columns=["Installation ID", *MANUAL_OVERRIDE_COLUMNS.values()])
+    df = df.merge(
+        manual_overrides, how="left", left_on=installation_id, right_on="Installation ID"
+    ).drop(columns="Installation ID")
+
+    # Backfill any expected column the sheet doesn't have right now (e.g. a
+    # column was temporarily removed/renamed in the sheet) so the pipeline
+    # degrades to blank values instead of crashing later on.
+    for column in MANUAL_OVERRIDE_COLUMNS.values():
+        if column not in df.columns:
             df[column] = pd.NA
 
     # INSTALLATION_NAME_CLEAN drives the dashboard's installation name, so
@@ -246,10 +256,8 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
                 "c": row.REGISTRY_CODE,
                 "act": act_i,
                 "own": None if pd.isna(row.OWNER_ASSIGNED) else row.OWNER_ASSIGNED,
-                "co": None if pd.isna(row.COMPANY_NAME_CLEAN) else row.COMPANY_NAME_CLEAN,
+                "operator": None if pd.isna(row.OPERATOR_NAME_CLEAN) else row.OPERATOR_NAME_CLEAN,
                 "ra": None if pd.isna(row.REAL_ACTIVITY) else row.REAL_ACTIVITY,
-                "aff": 1 if row.AFFILIATED_POWER_HEAT_PLANT == 1 else 0,
-                "aff_name": None if pd.isna(row.AFFILIATED_POWER_HEAT_PLANT_NAME) else row.AFFILIATED_POWER_HEAT_PLANT_NAME,
             })
             inst_i = len(installs) - 1
             install_index[install_key] = inst_i
@@ -277,9 +285,33 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
     }
 
 
+def build_csv_export(long_df: pd.DataFrame) -> pd.DataFrame:
+    """ETS-data.csv's own column order: identifiers, then raw names, then
+    the names/company derived from them, then activity classification,
+    then the yearly emissions/allocation time series. Also renames the
+    allocation breakdown so the "a+b+c" sum relationship is visible in the
+    headers."""
+    csv_df = long_df.rename(columns={
+        "ALLOCATION": "a_ALLOCATION",
+        "ALLOCATION_RESERVE": "b_ALLOCATION_RESERVE",
+        "ALLOCATION_TRANSITIONAL": "c_ALLOCATION_TRANSITIONAL",
+        "FREE_ALLOCATION": "FREE_ALLOCATION (a+b+c)",
+    })
+
+    column_order = [
+        "REGISTRY_CODE", "INSTALLATION_IDENTIFIER", "PERMIT_IDENTIFIER",
+        "INSTALLATION_NAME", "IDENTIFIER_IN_REG",
+        "INSTALLATION_NAME_CLEAN", "OPERATOR_NAME_CLEAN", "OWNER_ASSIGNED",
+        "MAIN_ACTIVITY_TYPE_CODE", "MAIN_ACTIVITY_TYPE_NAME", "REAL_ACTIVITY",
+        "PERIOD_YEAR", "VERIFIED_EMISSIONS", "FREE_ALLOCATION (a+b+c)",
+        "a_ALLOCATION", "b_ALLOCATION_RESERVE", "c_ALLOCATION_TRANSITIONAL",
+    ]
+    return csv_df[column_order]
+
+
 def main() -> None:
     long_df = transform()
-    long_df.to_csv(OUTPUT_CSV_PATH, index=False)
+    build_csv_export(long_df).to_csv(OUTPUT_CSV_PATH, index=False)
 
     dashboard_data = build_dashboard_data(long_df)
     with OUTPUT_YAML_PATH.open("w", encoding="utf-8") as f:
