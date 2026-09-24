@@ -7,6 +7,9 @@ Two independent scripts:
 | `fetch_stazo.py` | STAZO (Pohyb zboží přes hranice) | gas and crude oil imports by month/year and country |
 | `fetch_gdp.py` | DataStat | annual GDP in nominal CZK |
 
+Each script writes a full CSV for analysis plus a stripped-down copy in
+`output-dashboard/` for the d3 app — see [Dashboard files](#dashboard-files).
+
 `fetch_gdp.py` exists mainly so import values can be put in proportion — for
 example, natural gas imports were 3.3 % of GDP during the 2022 price spike
 against 0.5-1.3 % in a normal year. It is a short, unremarkable script because
@@ -50,14 +53,16 @@ STAZO form field is set explicitly with a comment.
 
 ### The two output files
 
+Row counts below are as of the last run; they grow as ČSÚ publishes new months.
+
 | File | Rows | Rows with no value |
 | --- | --- | --- |
-| `czso_stazo_imports_monthly.csv` | 8504 | 63 |
-| `czso_stazo_imports_annual.csv` | 1155 | **0** |
+| `output-czso-stazo-imports-monthly.csv` | 8532 | 63 |
+| `output-czso-stazo-imports-annual.csv` | 1155 | **0** |
 
 They are fetched as separate queries, not derived from one another. Use monthly
 for shape within a year, annual for levels and shares. The annual file has no
-`month` column.
+`month` column. Both also get a minimal copy in `output-dashboard/`.
 
 ### What is fetched
 
@@ -199,13 +204,14 @@ rather than by position.
 python fetch_gdp.py
 ```
 
-No arguments; one request pair, instant. Writes `czso_gdp_annual.csv` with one
+No arguments; one request pair, instant. Writes `output-czso-gdp-annual.csv` with one
 row per indicator and year:
 
 `indicator`, `code`, `label`, `year`, `value`, `unit`, `note`
 
 By default a single indicator, `9988S03` — gross domestic product in **millions
-of CZK at current (nominal) prices**, currently 1990 to 2025.
+of CZK at current (nominal) prices**, currently 1990 to 2025. It also writes
+`output-dashboard/gdp.csv` — see [Dashboard files](#dashboard-files).
 
 ### Source
 
@@ -250,3 +256,67 @@ National accounts are revised. These are current-vintage figures, so a series
 downloaded today will differ slightly from one downloaded a year ago, including
 for years long past. Re-download rather than mixing vintages, and do not compare
 against older published tables without checking.
+
+## Dashboard files
+
+Both scripts also write a minimal copy of their output to `output-dashboard/`, carrying
+only the columns a chart needs so the browser does not download Czech labels,
+provenance flags and notes it will never draw. Regenerated on every run; change
+`MINIMAL_DIR` at the top of either script to write them elsewhere.
+
+Row counts below are as of the last run; they grow as ČSÚ publishes new months.
+
+| File | Columns | Rows |
+| --- | --- | --- |
+| `output-dashboard/gdp.csv` | `year`, `value_mil_czk` | 36 |
+| `output-dashboard/imports-annual.csv` | `commodity`, `year`, `country_code`, `mass_kg`, `value_mil_czk` | 1155 |
+| `output-dashboard/imports-monthly.csv` | `commodity`, `year`, `month`, `country_code`, `mass_kg`, `value_mil_czk` | 8469 |
+
+Every output name contains `output-`, which the repository's `.gitignore`
+excludes via `*output-*`, so none of these files are committed.
+
+Rows with neither `mass_kg` nor `value_mil_czk` are left out, since there is
+nothing to draw: 63 rows in the monthly file, none in the annual one. They are
+the cells ČSÚ suppressed that subtraction could not attribute to a single
+origin, and their volume is still present in the `_RESIDUAL` row of the same
+period, which is kept. Dropping them therefore does not change any total.
+
+Loading them in d3, where the numeric columns can be empty:
+
+```js
+const rows = await d3.csv("output-dashboard/imports-annual.csv", d => ({
+  commodity: d.commodity,
+  year: +d.year,
+  country: d.country_code,
+  massKg: d.mass_kg === "" ? null : +d.mass_kg,
+  valueMilCzk: d.value_mil_czk === "" ? null : +d.value_mil_czk,
+}));
+```
+
+Three things to handle in the app:
+
+* `mass_kg` is empty for **2006-2008** — ČSÚ publishes no net mass for those
+  years. Chart value rather than mass if the series must be continuous.
+* `country_code` `_RESIDUAL` is not a country. Exclude it when ranking origins,
+  include it in totals.
+* `QU` and `QV` are ČSÚ's "not specified" origins and carry real volume — up to
+  about 30 % of gas mass in 2025.
+
+`output-dashboard/gdp.csv` carries one series and therefore has no `code`
+column. Which series that is comes from `MINIMAL_INDICATOR` in `fetch_gdp.py`,
+nominal GDP by default. Indicators added to `INDICATORS` land in the full CSV
+only, so the dashboard file cannot silently gain a second, indistinguishable
+series under a column name that would no longer describe it.
+
+Whenever a run produces rows the dashboard file does not carry, the script
+warns and names the codes it left out:
+
+```
+Warning: output-dashboard/gdp.csv carries only 9988S03; left out 65 rows of
+10032S01, 9988S11. Point MINIMAL_INDICATOR at the series the dashboard needs,
+or give the others their own file.
+```
+
+The same warning catches the case where `MINIMAL_INDICATOR` is not in
+`INDICATORS` at all — the dashboard file would otherwise be written empty
+without comment.

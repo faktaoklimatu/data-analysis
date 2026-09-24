@@ -5,9 +5,10 @@ Run it with no arguments; everything is configured by the constants below.
 
     python fetch_gdp.py
 
-Writes one tidy CSV: one row per indicator x year, with the value in millions of CZK at
-current (nominal) prices, covering every year DataStat publishes — currently 1990 to
-2025.
+Writes two CSVs: the full tidy table, one row per indicator x year, with the value in
+millions of CZK at current (nominal) prices, covering every year DataStat publishes —
+currently 1990 to 2025 — and a minimal `year,value_mil_czk` version of the
+MINIMAL_INDICATOR series under MINIMAL_DIR for the d3 dashboard to load directly.
 
 Unlike STAZO, DataStat has a real JSON/CSV API, documented at
 https://csu.gov.cz/zakladni-informace-pro-pouziti-api-datastatu
@@ -33,6 +34,7 @@ INDICATORS below:
 import csv
 import io
 import sys
+from pathlib import Path
 
 import requests
 
@@ -46,18 +48,37 @@ INDICATORS = {
     "9988S03": ("gdp", "mil. CZK, current prices"),
 }
 
+# The one indicator the dashboard file carries. It holds a single series, so it needs no
+# code column; add indicators to INDICATORS above and they land in the full CSV only.
+MINIMAL_INDICATOR = "9988S03"
+
 # Dimension items to pin. Uz012 is the territory dimension (CZ = Czechia as a whole),
 # NACEHDP the industry breakdown, whose "0" item is the all-industry total.
 AREA = "CZ"
 INDUSTRY_TOTAL = "0"
 
-OUTPUT_PATH = "czso_gdp_annual.csv"
+# Every output name contains "output-", which the repository's .gitignore excludes.
+OUTPUT_PATH = Path("output-czso-gdp-annual.csv")
+
+# Stripped-down copies for the d3 dashboard: only the columns a chart needs, so the
+# browser does not download labels and notes it will never draw.
+MINIMAL_DIR = Path("output-dashboard")
+MINIMAL_PATH = MINIMAL_DIR / "gdp.csv"
 
 FIELDNAMES = ["indicator", "code", "label", "year", "value", "unit", "note"]
+MINIMAL_FIELDNAMES = ["year", "value_mil_czk"]
 
 
 def log(message: str) -> None:
     print(message, file=sys.stderr)
+
+
+def write_csv(path: Path, rows: list[dict], fields: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
 
 
 def fetch_dataset_info(session: requests.Session) -> dict[str, str]:
@@ -160,18 +181,36 @@ def main() -> int:
         log("No data returned")
         return 1
 
-    with open(OUTPUT_PATH, "w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDNAMES)
-        writer.writeheader()
-        writer.writerows(records)
+    write_csv(OUTPUT_PATH, records, FIELDNAMES)
+
+    # One indicator only, so the series needs no code column. A year with no value is
+    # nothing for a chart to draw, so leave it out.
+    minimal = [
+        {"year": r["year"], "value_mil_czk": r["value"]}
+        for r in records
+        if r["code"] == MINIMAL_INDICATOR and r["value"] is not None
+    ]
+    write_csv(MINIMAL_PATH, minimal, MINIMAL_FIELDNAMES)
 
     years = [r["year"] for r in records]
     log(f"Wrote {len(records)} rows to {OUTPUT_PATH} ({min(years)}-{max(years)})")
+    log(f"Wrote {len(minimal)} rows to {MINIMAL_PATH}")
     for name, _ in INDICATORS.values():
         series = [r for r in records if r["indicator"] == name]
         missing = [r["year"] for r in series if r["value"] is None]
         gaps = f", no value for {missing}" if missing else ""
         log(f"  {name}: {len(series)} years{gaps}")
+
+    # The dashboard file has no code column, so anything but MINIMAL_INDICATOR would be
+    # indistinguishable in it and is left out. Say so rather than dropping it quietly.
+    other = [r for r in records if r["code"] != MINIMAL_INDICATOR]
+    if other:
+        codes = ", ".join(sorted({r["code"] for r in other}))
+        log(
+            f"Warning: {MINIMAL_PATH} carries only {MINIMAL_INDICATOR}; left out "
+            f"{len(other)} rows of {codes}. Point MINIMAL_INDICATOR at the series "
+            "the dashboard needs, or give the others their own file."
+        )
     return 0
 
 

@@ -7,7 +7,8 @@ Run it with no arguments; everything is configured by the constants below.
 
 Writes two tidy CSVs, one monthly and one annual, each with one row per period x
 commodity x country of origin, net mass in kg and statistical value in millions of CZK,
-from FIRST_YEAR to the latest period ČSÚ has published.
+from FIRST_YEAR to the latest period ČSÚ has published. Alongside each it writes a
+stripped-down copy under MINIMAL_DIR for the d3 dashboard to load directly.
 
 Both files are produced because ČSÚ suppresses cells that would disclose an individual
 importer, and it does so per query. The annual figures are therefore not merely the sum
@@ -51,10 +52,20 @@ import requests
 # Monthly data starts in January 1999; 1993-1998 is only available on request from ČSÚ.
 FIRST_YEAR = 1999
 
-# Output file per period aggregation, keyed by the STAZO `seskup` code.
+# Output files per period aggregation, keyed by the STAZO `seskup` code: the full
+# table, and a stripped-down copy holding only the columns a chart needs, so the browser
+# does not download Czech labels and provenance flags it will never draw.
+# Every output name contains "output-", which the repository's .gitignore excludes.
+MINIMAL_DIR = Path("output-dashboard")
 OUTPUTS = {
-    "M": Path("czso_stazo_imports_monthly.csv"),
-    "A": Path("czso_stazo_imports_annual.csv"),
+    "M": (
+        Path("output-czso-stazo-imports-monthly.csv"),
+        MINIMAL_DIR / "imports-monthly.csv",
+    ),
+    "A": (
+        Path("output-czso-stazo-imports-annual.csv"),
+        MINIMAL_DIR / "imports-annual.csv",
+    ),
 }
 
 # The goods to fetch, as 4-digit HS codes mapped to the label used in the output.
@@ -361,40 +372,55 @@ def reconcile(rows: list[dict], totals: list[dict]) -> list[dict]:
     return rows + residual_rows
 
 
-def write_csv(path: Path, records: list[dict], monthly: bool) -> None:
-    fields = [
-        "commodity",
-        "code",
-        "code_label",
-        "period",
-        "year",
-        *(["month"] if monthly else []),
-        "country_code",
-        "country_name",
-        "mass_kg",
-        VALUE_FIELD,
-        "confidential",
-        "derived",
-    ]
+def prepare(records: list[dict]) -> list[dict]:
+    """Sort the records and add the fields that only exist on the way out."""
     records.sort(key=lambda r: (r["commodity"], r["period"], r["country_code"]))
+    return [
+        {
+            **record,
+            # Thousands are whole numbers, so millions are exact to 3 places.
+            VALUE_FIELD: (
+                None if record[VALUE_K] is None else round(record[VALUE_K] / 1000, 3)
+            ),
+            "derived": record.get("derived", False),
+        }
+        for record in records
+    ]
+
+
+def write_csv(path: Path, rows: list[dict], fields: list[str]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
-        for record in records:
-            thousands = record[VALUE_K]
-            writer.writerow(
-                {
-                    **record,
-                    # Thousands are whole numbers, so millions are exact to 3 places.
-                    VALUE_FIELD: (
-                        None if thousands is None else round(thousands / 1000, 3)
-                    ),
-                    "derived": record.get("derived", False),
-                }
-            )
+        writer.writerows(rows)
 
-    still_hidden = sum(1 for r in records if r[VALUE_K] is None)
-    log(f"Wrote {len(records)} rows to {path} ({still_hidden} with no value)")
+
+def write_outputs(
+    full_path: Path, minimal_path: Path, rows: list[dict], monthly: bool
+) -> None:
+    period = ["year", "month"] if monthly else ["year"]
+    write_csv(
+        full_path,
+        rows,
+        ["commodity", "code", "code_label", "period", *period, "country_code",
+         "country_name", "mass_kg", VALUE_FIELD, "confidential", "derived"],
+    )
+    # A row with neither measure is a cell ČSÚ suppressed and subtraction could not
+    # recover; there is nothing for a chart to draw, so leave it out. Its volume is
+    # still accounted for by the _RESIDUAL row of the same period, which is kept.
+    minimal = [
+        r for r in rows if r["mass_kg"] is not None or r[VALUE_FIELD] is not None
+    ]
+    write_csv(
+        minimal_path,
+        minimal,
+        ["commodity", *period, "country_code", "mass_kg", VALUE_FIELD],
+    )
+
+    still_hidden = len(rows) - len(minimal)
+    log(f"Wrote {len(rows)} rows to {full_path} ({still_hidden} with no value)")
+    log(f"Wrote {len(minimal)} rows to {minimal_path}")
 
 
 def main() -> int:
@@ -406,14 +432,14 @@ def main() -> int:
     log(f"STAZO holds data up to {latest[:4]}-{latest[4:]}")
 
     massless: set[int] = set()
-    for seskup, path in OUTPUTS.items():
+    for seskup, (full_path, minimal_path) in OUTPUTS.items():
         label = "monthly" if seskup == "M" else "annual"
         log(f"{label} aggregation, by country")
         by_country = fetch_series(session, seskup, latest, by_country=True)
         log(f"{label} aggregation, country-free totals")
         totals = fetch_series(session, seskup, latest, by_country=False)
-        records = reconcile(by_country, totals)
-        write_csv(path, records, monthly=seskup == "M")
+        records = prepare(reconcile(by_country, totals))
+        write_outputs(full_path, minimal_path, records, monthly=seskup == "M")
         with_mass = {r["year"] for r in records if r["mass_kg"] is not None}
         massless |= {r["year"] for r in records} - with_mass
 
