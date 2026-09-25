@@ -10,8 +10,10 @@ from pathlib import Path
 import pandas as pd
 import yaml
 
+# Bump the end year when updating the verified emissions file.
 INPUT_PATH = Path("data/EUA/verified_emissions_2025_en.xlsx")
-OPOK_PATH = Path("data/EUA/OPOK-seznam-zarizeni-20260209.xlsx")
+YEARS = range(2008, 2026)  # Note stop is exclusive in range. Must be end year+1.
+
 OUTPUT_CSV_PATH = Path("outputs/ets-dashboard/ETS-data.csv")
 OUTPUT_YAML_PATH = Path("outputs/ets-dashboard/output-ets-dashboard.yaml")
 
@@ -45,7 +47,6 @@ ID_COLUMNS = [
 # only exist from 2013 onward).
 ALLOCATION_METRICS = ["ALLOCATION", "ALLOCATION_RESERVE", "ALLOCATION_TRANSITIONAL"]
 METRICS = ALLOCATION_METRICS + ["VERIFIED_EMISSIONS"]
-YEARS = range(2008, 2026)
 
 # Aircraft/maritime operator activity codes; these are airlines and shipping
 # companies, not industrial plants, so they're dropped from the dataset.
@@ -79,11 +80,7 @@ SECTOR_GROUP = {
     45: "other", 99: "other",
 }
 
-GROUP_ORDER = [
-    "combustion", "refineries", "iron_steel", "aluminium", "other_metals", "cement_lime", "glass", "other_minerals",
-    "pulp_paper", "chemicals", "other",
-]
-
+# This dict also encodes the order of groups in the output.
 GROUP_LABELS = {
     "combustion": "Výroba elektřiny a tepla",
     "refineries": "Rafinace minerálních olejů",
@@ -109,6 +106,10 @@ def year_column(metric: str, year: int) -> str:
 
 def or_none(value):
     return None if pd.isna(value) else value
+
+
+def get_sector_group_label(code) -> str:
+    return GROUP_LABELS[SECTOR_GROUP.get(code, "other")]
 
 
 def load_manual_overrides() -> pd.DataFrame | None:
@@ -218,10 +219,10 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
             file=sys.stderr,
         )
 
-    group_index = {group: i for i, group in enumerate(GROUP_ORDER)}
+    group_index = {group: i for i, group in enumerate(GROUP_LABELS)}
     activities = [
         {"n": GROUP_LABELS[group], "short": GROUP_LABELS[group]}
-        for group in GROUP_ORDER
+        for group in GROUP_LABELS.keys()
     ]
 
     install_index: dict[int, int] = {}
