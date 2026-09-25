@@ -84,7 +84,7 @@ installs:
   act: 0
   own: Amper
   operator: Amper Savings
-  ra: Výroba elektřiny a tepla
+  ra: Ostatní odvětví
 - n: Frýdek-Místek
   c: CZ
   act: 2
@@ -276,7 +276,7 @@ installs:
   act: 0
   own: DIAMO
   operator: DIAMO
-  ra: Výroba elektřiny a tepla
+  ra: Ostatní odvětví
 - n: Odštěpný závod GEAM provoz Chemická úpravna
   c: CZ
   act: 0
@@ -672,7 +672,7 @@ installs:
   act: 0
   own: Hlavní město Praha
   operator: Kongresové centrum Praha
-  ra: Ostatní odvětví
+  ra: Výroba elektřiny a tepla
 - n: Kotelna
   c: CZ
   act: 0
