@@ -1,10 +1,8 @@
 #!/usr/bin/env python
-"""Transform the EUTL verified emissions export (2008-2025) for the ETS1 dashboard.
-
-Also pre-aggregates the result into the compact structure the dashboard page
-needs (installations, per-sector activity groups, yearly records), so the
-Jekyll site only has to load a ready-made YAML file instead of running a
-Ruby build-time generator over the raw CSV.
+"""Build the data the ETS1 dashboard (faktaoklimatu.cz) needs from the EUTL
+verified emissions export (2008-2025): a flat per-installation-per-year CSV,
+and a compact pre-aggregated YAML (installations, per-sector activity
+groups, yearly records) that the dashboard page loads directly.
 """
 import sys
 from pathlib import Path
@@ -17,9 +15,7 @@ OPOK_PATH = Path("data/EUA/OPOK-seznam-zarizeni-20260209.xlsx")
 OUTPUT_CSV_PATH = Path("outputs/ets-dashboard/ETS-data.csv")
 OUTPUT_YAML_PATH = Path("outputs/ets-dashboard/ets-dashboard.yaml")
 
-# "Přehled instalací" sheet of the live ETS dashboard Google Sheet. (The
-# manual annotations used to live on a separate "Vlastník a skutečné
-# odvětví" sheet; that's been merged into this one as extra columns.)
+# "Přehled instalací" sheet of the live ETS dashboard Google Sheet.
 MANUAL_OVERRIDES_SHEET_ID = "1DX6MGLeiKXbGsPxHH9HwjuK7qOFl27XdsFu5CzDWH1Y"
 MANUAL_OVERRIDES_SHEET_GID = "814098780"
 MANUAL_OVERRIDES_URL = (
@@ -27,10 +23,6 @@ MANUAL_OVERRIDES_URL = (
     f"?format=csv&gid={MANUAL_OVERRIDES_SHEET_GID}"
 )
 
-# Manually curated in the live Google Sheet (see MANUAL_OVERRIDES_URL) ->
-# internal column name. Kept purely as reference/annotation columns, except
-# for INSTALLATION_NAME_CLEAN, which is what the dashboard displays as the
-# installation name.
 MANUAL_OVERRIDE_COLUMNS = {
     "Installation Name (Clean)": "INSTALLATION_NAME_CLEAN",
     "Operator Name (Clean)": "OPERATOR_NAME_CLEAN",
@@ -106,13 +98,17 @@ GROUP_LABELS = {
     "other": "Ostatní odvětví",
 }
 
-COUNTRY_NAME = "Česko"  # only CZ installations are kept, see transform()
+COUNTRY_NAME = "Česko"  # only CZ installations are kept, see build_installation_years()
 
 
 def year_column(metric: str, year: int) -> str:
     if year == 2008 and metric == "ALLOCATION":
         return "ALLOCATION2008"  # inconsistent naming in the source file
     return f"{metric}_{year}"
+
+
+def or_none(value):
+    return None if pd.isna(value) else value
 
 
 def load_manual_overrides() -> pd.DataFrame | None:
@@ -141,19 +137,11 @@ def load_manual_overrides() -> pd.DataFrame | None:
     edited = raw.iloc[header_row + 1:].reset_index(drop=True)
     edited.columns = raw.iloc[header_row]
 
-    # The sheet leads with a block of columns copied straight from this
-    # script's own ets-installations-overview.csv output, then appends the
-    # hand-curated columns after it -- some of which reuse a header name
-    # from that first block (e.g. two "Installation Name (Clean)" columns).
-    # Keep the last occurrence of any repeated name, since the hand-edited
-    # one is always the one appended later.
-    edited = edited.loc[:, ~edited.columns.duplicated(keep="last")]
-
     present = [col for col in MANUAL_OVERRIDE_COLUMNS if col in edited.columns]
     return edited[["Installation ID", *present]].rename(columns=MANUAL_OVERRIDE_COLUMNS)
 
 
-def transform() -> pd.DataFrame:
+def build_installation_years() -> pd.DataFrame:
     df = pd.read_excel(INPUT_PATH, sheet_name="data", header=2)
     df = df[df["REGISTRY_CODE"] == "CZ"]
 
@@ -168,11 +156,9 @@ def transform() -> pd.DataFrame:
 
     installation_id = df["PERMIT_IDENTIFIER"].str.extract(r"^(CZ-\d+)")[0]
 
-    # Hand-curated annotations from the live Google Sheet; purely additive
-    # reference columns, except INSTALLATION_NAME_CLEAN, which the
-    # dashboard displays as the installation name. Falls back to an empty
-    # frame if the sheet can't be fetched, so every expected column still
-    # ends up in df (as all-blank) rather than the merge being skipped.
+    # Falls back to an empty frame if the sheet can't be fetched, so every
+    # expected column still ends up in df (as all-blank) rather than the
+    # merge being skipped.
     manual_overrides = load_manual_overrides()
     if manual_overrides is None:
         manual_overrides = pd.DataFrame(columns=["Installation ID", *MANUAL_OVERRIDE_COLUMNS.values()])
@@ -221,8 +207,8 @@ def transform() -> pd.DataFrame:
 
 def build_dashboard_data(df: pd.DataFrame) -> dict:
     """Aggregate the flat dataframe into the compact dashboard structure
-    (installations deduplicated, activity codes grouped into broad sectors)
-    mirroring the former Jekyll::EtsDashboardData Ruby generator."""
+    the ETS1 page loads directly (installations deduplicated, activity
+    codes grouped into broad sectors)."""
     codes_in_data = df["MAIN_ACTIVITY_TYPE_CODE"].unique().tolist()
     unmapped_codes = [code for code in codes_in_data if code not in SECTOR_GROUP]
     if unmapped_codes:
@@ -238,40 +224,28 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
         for group in GROUP_ORDER
     ]
 
-    install_index: dict[tuple, int] = {}
+    install_index: dict[int, int] = {}
     installs = []
     records = []
-    year_min = None
-    year_max = None
 
     for row in df.itertuples(index=False):
-        group = SECTOR_GROUP.get(row.MAIN_ACTIVITY_TYPE_CODE, "other")
-        act_i = group_index[group]
+        act_i = group_index[SECTOR_GROUP.get(row.MAIN_ACTIVITY_TYPE_CODE, "other")]
 
-        install_key = (row.REGISTRY_CODE, row.INSTALLATION_IDENTIFIER)
-        inst_i = install_index.get(install_key)
+        inst_i = install_index.get(row.INSTALLATION_IDENTIFIER)
         if inst_i is None:
             installs.append({
                 "n": row.INSTALLATION_NAME_CLEAN,
                 "c": row.REGISTRY_CODE,
                 "act": act_i,
-                "own": None if pd.isna(row.OWNER_ASSIGNED) else row.OWNER_ASSIGNED,
-                "operator": None if pd.isna(row.OPERATOR_NAME_CLEAN) else row.OPERATOR_NAME_CLEAN,
-                "ra": None if pd.isna(row.REAL_ACTIVITY) else row.REAL_ACTIVITY,
+                "own": or_none(row.OWNER_ASSIGNED),
+                "operator": or_none(row.OPERATOR_NAME_CLEAN),
+                "ra": or_none(row.REAL_ACTIVITY),
             })
-            inst_i = len(installs) - 1
-            install_index[install_key] = inst_i
+            inst_i = install_index[row.INSTALLATION_IDENTIFIER] = len(installs) - 1
 
-        year = int(row.PERIOD_YEAR)
-        year_min = year if year_min is None else min(year_min, year)
-        year_max = year if year_max is None else max(year_max, year)
-
-        emissions = row.VERIFIED_EMISSIONS
-        emissions = None if pd.isna(emissions) else round(emissions)
-        allocation = row.FREE_ALLOCATION
-        allocation = 0 if pd.isna(allocation) else round(allocation)
-
-        records.append([inst_i, year, emissions, allocation])
+        emissions = None if pd.isna(row.VERIFIED_EMISSIONS) else round(row.VERIFIED_EMISSIONS)
+        allocation = 0 if pd.isna(row.FREE_ALLOCATION) else round(row.FREE_ALLOCATION)
+        records.append([inst_i, int(row.PERIOD_YEAR), emissions, allocation])
 
     countries = [{"c": "CZ", "n": COUNTRY_NAME}]
 
@@ -280,8 +254,8 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
         "activities": activities,
         "installs": installs,
         "records": records,
-        "year_min": year_min,
-        "year_max": year_max,
+        "year_min": int(df["PERIOD_YEAR"].min()),
+        "year_max": int(df["PERIOD_YEAR"].max()),
     }
 
 
@@ -310,7 +284,7 @@ def build_csv_export(long_df: pd.DataFrame) -> pd.DataFrame:
 
 
 def main() -> None:
-    long_df = transform()
+    long_df = build_installation_years()
     build_csv_export(long_df).to_csv(OUTPUT_CSV_PATH, index=False)
 
     dashboard_data = build_dashboard_data(long_df)

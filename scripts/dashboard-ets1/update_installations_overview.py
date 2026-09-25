@@ -12,18 +12,31 @@ from process_verified_emissions import (  # noqa: E402
     GROUP_LABELS,
     OPOK_PATH,
     SECTOR_GROUP,
-    transform,
+    build_installation_years,
 )
 
 INSTALLATIONS_OVERVIEW_PATH = Path("outputs/ets-dashboard/ets-installations-overview.csv")
 
+# Internal column name -> output header, in the order the CSV should have.
+OUTPUT_COLUMNS = {
+    "installation_id": "Installation ID",
+    "installation_name": "Installation Name",
+    "operator_name_moe": "Operator Name (MoE)",
+    "installation_address": "Installation Address",
+    "first_verified_emissions_year": "First Verified Emissions Year",
+    "last_verified_emissions_year": "Last Verified Emissions Year",
+    "main_activity_code": "Main Activity Code",
+    "main_activity_name": "Main Activity Name",
+}
+
 
 def main() -> None:
-    long_df = transform()
+    # One row per Czech installation per year, with emissions/allocation
+    # data and the manual-overrides sheet already merged in.
+    long_df = build_installation_years()
 
     per_install = long_df.groupby("INSTALLATION_IDENTIFIER").agg(
         installation_name=("INSTALLATION_NAME", "first"),
-        installation_name_clean=("INSTALLATION_NAME_CLEAN", "first"),
         permit_identifier=("PERMIT_IDENTIFIER", "first"),
         first_verified_emissions_year=("PERIOD_YEAR", "min"),
         last_verified_emissions_year=("PERIOD_YEAR", "max"),
@@ -43,35 +56,10 @@ def main() -> None:
     })[["installation_id", "operator_name_moe", "installation_address"]]
 
     merged = per_install.merge(opok, on="installation_id", how="left")
+    merged = merged.rename(columns=OUTPUT_COLUMNS)[list(OUTPUT_COLUMNS.values())]
+    merged.to_csv(INSTALLATIONS_OVERVIEW_PATH, index=False)
 
-    merged = merged.rename(columns={
-        "installation_id": "Installation ID",
-        "installation_name": "Installation Name",
-        "installation_name_clean": "Installation Name (Clean)",
-        "operator_name_moe": "Operator Name (MoE)",
-        "installation_address": "Installation Address",
-        "first_verified_emissions_year": "First Verified Emissions Year",
-        "last_verified_emissions_year": "Last Verified Emissions Year",
-        "main_activity_code": "Main Activity Code",
-        "main_activity_name": "Main Activity Name",
-    })
-
-    column_order = [
-        "Installation ID",
-        "Installation Name",
-        "Installation Name (Clean)",
-        "Operator Name (MoE)",
-        "Installation Address",
-        "First Verified Emissions Year",
-        "Last Verified Emissions Year",
-        "Main Activity Code",
-        "Main Activity Name",
-    ]
-    merged[column_order].to_csv(INSTALLATIONS_OVERVIEW_PATH, index=False)
-
-    cleaned = (merged["Installation Name (Clean)"] != merged["Installation Name"]).sum()
-    print(f"{len(merged)} installations, {merged['Operator Name (MoE)'].notna().sum()} matched in OPOK, "
-          f"{cleaned} names cleaned up")
+    print(f"{len(merged)} installations, {merged['Operator Name (MoE)'].notna().sum()} matched in OPOK")
 
 
 if __name__ == "__main__":
