@@ -15,7 +15,8 @@ from process_verified_emissions import (  # noqa: E402
     build_installation_years,
 )
 
-INSTALLATIONS_OVERVIEW_PATH = Path("outputs/ets-dashboard/ets-installations-overview.csv")
+# Prefix the name with output- to make it gitignored.
+INSTALLATIONS_OVERVIEW_PATH = Path("outputs/ets-dashboard/output-ets-installations-overview.csv")
 
 # Internal column name -> output header, in the order the CSV should have.
 OUTPUT_COLUMNS = {

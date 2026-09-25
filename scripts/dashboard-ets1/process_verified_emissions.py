@@ -13,7 +13,7 @@ import yaml
 INPUT_PATH = Path("data/EUA/verified_emissions_2025_en.xlsx")
 OPOK_PATH = Path("data/EUA/OPOK-seznam-zarizeni-20260209.xlsx")
 OUTPUT_CSV_PATH = Path("outputs/ets-dashboard/ETS-data.csv")
-OUTPUT_YAML_PATH = Path("outputs/ets-dashboard/ets-dashboard.yaml")
+OUTPUT_YAML_PATH = Path("outputs/ets-dashboard/output-ets-dashboard.yaml")
 
 # "Přehled instalací" sheet of the live ETS dashboard Google Sheet.
 MANUAL_OVERRIDES_SHEET_ID = "1DX6MGLeiKXbGsPxHH9HwjuK7qOFl27XdsFu5CzDWH1Y"
