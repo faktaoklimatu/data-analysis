@@ -1,8 +1,9 @@
 # ETS1 dashboard data pipeline
 
 Transforms the EUTL verified-emissions export into the data the ETS1
-dashboard (faktaoklimatu.cz/studie/2026-interaktivni-prehled-ets) needs: a flat per-installation-per-year CSV, and
-a compact pre-aggregated YAML the dashboard page loads directly.
+dashboard (faktaoklimatu.cz/studie/2026-interaktivni-prehled-ets) needs: a flat
+per-installation-per-year CSV, and a compact pre-aggregated YAML the dashboard page
+loads directly.
 
 ## Scripts
 
