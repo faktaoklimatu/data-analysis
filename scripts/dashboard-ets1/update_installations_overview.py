@@ -9,11 +9,11 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
 from process_verified_emissions import (  # noqa: E402
-    GROUP_LABELS,
-    OPOK_PATH,
-    SECTOR_GROUP,
     build_installation_years,
+    get_sector_group_label,
 )
+
+OPOK_PATH = Path("data/EUA/OPOK-seznam-zarizeni-20260209.xlsx")
 
 # Prefix the name with output- to make it gitignored.
 INSTALLATIONS_OVERVIEW_PATH = Path("outputs/ets-dashboard/output-ets-installations-overview.csv")
@@ -44,9 +44,12 @@ def main() -> None:
         main_activity_code=("MAIN_ACTIVITY_TYPE_CODE", "first"),
     ).reset_index(drop=True)
 
+    # Replace code by its Czech label.
     per_install["main_activity_name"] = per_install["main_activity_code"].map(
-        lambda code: GROUP_LABELS[SECTOR_GROUP.get(code, "other")]
+        lambda code: get_sector_group_label(code)
     )
+
+    # Merge the data with OPOK registry (by ID of the prefix form CZ-XXXX).
     per_install["installation_id"] = per_install["permit_identifier"].str.extract(r"^(CZ-\d+)")[0]
 
     opok = pd.read_excel(OPOK_PATH, sheet_name="ETS1_20260209")
@@ -55,8 +58,9 @@ def main() -> None:
         "Název provozovatele:": "operator_name_moe",
         "Adresa zařízení": "installation_address",
     })[["installation_id", "operator_name_moe", "installation_address"]]
-
     merged = per_install.merge(opok, on="installation_id", how="left")
+
+    # Rename and select output columns and export to CSV.
     merged = merged.rename(columns=OUTPUT_COLUMNS)[list(OUTPUT_COLUMNS.values())]
     merged.to_csv(INSTALLATIONS_OVERVIEW_PATH, index=False)
 
