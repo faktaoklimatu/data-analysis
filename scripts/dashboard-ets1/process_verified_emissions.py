@@ -12,7 +12,8 @@ import yaml
 
 # Bump the end year when updating the verified emissions file.
 INPUT_PATH = Path("data/EUA/verified_emissions_2025_en.xlsx")
-YEARS = range(2008, 2026)  # Note stop is exclusive in range. Must be end year+1.
+# Note second param is exclusive in range(). Must be end year+1.
+YEARS = range(2008, 2026)
 
 OUTPUT_CSV_PATH = Path("outputs/ets-dashboard/ETS-data.csv")
 OUTPUT_YAML_PATH = Path("outputs/ets-dashboard/output-ets-dashboard.yaml")
@@ -45,7 +46,8 @@ ID_COLUMNS = [
 
 # Metrics to unpivot; not every metric exists for every year (RESERVE/TRANSITIONAL
 # only exist from 2013 onward).
-ALLOCATION_METRICS = ["ALLOCATION", "ALLOCATION_RESERVE", "ALLOCATION_TRANSITIONAL"]
+ALLOCATION_METRICS = ["ALLOCATION",
+                      "ALLOCATION_RESERVE", "ALLOCATION_TRANSITIONAL"]
 METRICS = ALLOCATION_METRICS + ["VERIFIED_EMISSIONS"]
 
 # Aircraft/maritime operator activity codes; these are airlines and shipping
@@ -95,6 +97,23 @@ GROUP_LABELS = {
     "other": "Ostatní odvětví",
 }
 
+# Every "Real Activity" value used in the sheet -> its short name for the mobile version
+# of the dashboard. This dict also encodes the order of real activities in the output.
+# The dashboard assumes that the first one is the primary activity ("Výroba el. a tepla")
+# outside of industry whereas the last one is the rest of industry.
+REAL_ACTIVITY_SHORT = {
+    "Výroba elektřiny a tepla": "Výroba el. a tepla",
+    "Rafinace minerálních olejů": "Rafinace",
+    "Železo a ocel": "Železo a ocel",
+    "Cement a vápno": "Cement a vápno",
+    "Sklo": "Sklo",
+    "Ostatní minerály (keramika, cihly, minerální vlna, sádra)": "Ostatní minerály",
+    "Papír": "Papír",
+    "Chemikálie a hnojiva": "Chemikálie a hnojiva",
+    "Potravinářský průmysl": "Potraviny",
+    "Ostatní odvětví": "Ostatní odvětví",
+}
+
 COUNTRY_NAME = "Česko"  # only CZ installations are kept, see build_installation_years()
 
 
@@ -139,7 +158,19 @@ def load_manual_overrides() -> pd.DataFrame | None:
     edited.columns = raw.iloc[header_row]
 
     present = [col for col in MANUAL_OVERRIDE_COLUMNS if col in edited.columns]
-    return edited[["Installation ID", *present]].rename(columns=MANUAL_OVERRIDE_COLUMNS)
+    overrides = edited[["Installation ID", *present]
+                       ].rename(columns=MANUAL_OVERRIDE_COLUMNS)
+
+    if "REAL_ACTIVITY" in overrides.columns:
+        real_activities = overrides["REAL_ACTIVITY"].dropna().unique()
+        unknown = sorted(set(real_activities) - REAL_ACTIVITY_SHORT.keys())
+        if unknown:
+            raise ValueError(
+                f"Unknown \"Real Activity\" value(s) {unknown} in the manual overrides "
+                "sheet -- add them to REAL_ACTIVITY_SHORT."
+            )
+
+    return overrides
 
 
 def build_installation_years() -> pd.DataFrame:
@@ -147,13 +178,17 @@ def build_installation_years() -> pd.DataFrame:
     df = df[df["REGISTRY_CODE"] == "CZ"]
 
     activity_codes = pd.read_excel(INPUT_PATH, sheet_name="activity codes")
-    activity_names = activity_codes.set_index("code")["new descriptions aligned"]
+    activity_names = activity_codes.set_index(
+        "code")["new descriptions aligned"]
 
     overridden_code = df["PERMIT_IDENTIFIER"].map(ACTIVITY_CODE_OVERRIDES)
-    df["MAIN_ACTIVITY_TYPE_CODE"] = overridden_code.fillna(df["MAIN_ACTIVITY_TYPE_CODE"]).astype(int)
-    df["MAIN_ACTIVITY_TYPE_NAME"] = df["MAIN_ACTIVITY_TYPE_CODE"].map(activity_names)
+    df["MAIN_ACTIVITY_TYPE_CODE"] = overridden_code.fillna(
+        df["MAIN_ACTIVITY_TYPE_CODE"]).astype(int)
+    df["MAIN_ACTIVITY_TYPE_NAME"] = df["MAIN_ACTIVITY_TYPE_CODE"].map(
+        activity_names)
 
-    df = df[~df["MAIN_ACTIVITY_TYPE_CODE"].isin(AVIATION_MARITIME_CODES + ETS2_PLACEHOLDER_CODES)]
+    df = df[~df["MAIN_ACTIVITY_TYPE_CODE"].isin(
+        AVIATION_MARITIME_CODES + ETS2_PLACEHOLDER_CODES)]
 
     installation_id = df["PERMIT_IDENTIFIER"].str.extract(r"^(CZ-\d+)")[0]
 
@@ -162,7 +197,8 @@ def build_installation_years() -> pd.DataFrame:
     # merge being skipped.
     manual_overrides = load_manual_overrides()
     if manual_overrides is None:
-        manual_overrides = pd.DataFrame(columns=["Installation ID", *MANUAL_OVERRIDE_COLUMNS.values()])
+        manual_overrides = pd.DataFrame(
+            columns=["Installation ID", *MANUAL_OVERRIDE_COLUMNS.values()])
     df = df.merge(
         manual_overrides, how="left", left_on=installation_id, right_on="Installation ID"
     ).drop(columns="Installation ID")
@@ -177,7 +213,8 @@ def build_installation_years() -> pd.DataFrame:
     # INSTALLATION_NAME_CLEAN drives the dashboard's installation name, so
     # it must never be blank; fall back to the raw name if the sheet has no
     # clean version yet for this installation (or couldn't be reached).
-    df["INSTALLATION_NAME_CLEAN"] = df["INSTALLATION_NAME_CLEAN"].fillna(df["INSTALLATION_NAME"])
+    df["INSTALLATION_NAME_CLEAN"] = df["INSTALLATION_NAME_CLEAN"].fillna(
+        df["INSTALLATION_NAME"])
 
     year_frames = []
     for year in YEARS:
@@ -201,7 +238,8 @@ def build_installation_years() -> pd.DataFrame:
     # that year (pre-2013); treat both as 0 so FREE_ALLOCATION is directly
     # comparable to VERIFIED_EMISSIONS.
     allocation_cols = long_df[ALLOCATION_METRICS].apply(pd.to_numeric)
-    long_df["FREE_ALLOCATION"] = allocation_cols.replace(-1, 0).fillna(0).sum(axis=1)
+    long_df["FREE_ALLOCATION"] = allocation_cols.replace(
+        -1, 0).fillna(0).sum(axis=1)
 
     return long_df
 
@@ -211,7 +249,8 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
     the ETS1 page loads directly (installations deduplicated, activity
     codes grouped into broad sectors)."""
     codes_in_data = df["MAIN_ACTIVITY_TYPE_CODE"].unique().tolist()
-    unmapped_codes = [code for code in codes_in_data if code not in SECTOR_GROUP]
+    unmapped_codes = [
+        code for code in codes_in_data if code not in SECTOR_GROUP]
     if unmapped_codes:
         print(
             f"WARNING: unmapped MAIN_ACTIVITY_TYPE_CODE value(s) {unmapped_codes} "
@@ -220,9 +259,12 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
         )
 
     group_index = {group: i for i, group in enumerate(GROUP_LABELS)}
-    activities = [
-        {"n": GROUP_LABELS[group], "short": GROUP_LABELS[group]}
-        for group in GROUP_LABELS.keys()
+    activities = [{"n": label} for label in GROUP_LABELS.values()]
+
+    real_activity_index = {name: i for i,
+                           name in enumerate(REAL_ACTIVITY_SHORT)}
+    real_activities = [
+        {"n": name, "short": short} for name, short in REAL_ACTIVITY_SHORT.items()
     ]
 
     install_index: dict[int, int] = {}
@@ -230,7 +272,8 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
     records = []
 
     for row in df.itertuples(index=False):
-        act_i = group_index[SECTOR_GROUP.get(row.MAIN_ACTIVITY_TYPE_CODE, "other")]
+        act_i = group_index[SECTOR_GROUP.get(
+            row.MAIN_ACTIVITY_TYPE_CODE, "other")]
 
         inst_i = install_index.get(row.INSTALLATION_IDENTIFIER)
         if inst_i is None:
@@ -240,12 +283,15 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
                 "act": act_i,
                 "own": or_none(row.OWNER_ASSIGNED),
                 "operator": or_none(row.OPERATOR_NAME_CLEAN),
-                "ra": or_none(row.REAL_ACTIVITY),
+                "ra": real_activity_index.get(or_none(row.REAL_ACTIVITY)),
             })
-            inst_i = install_index[row.INSTALLATION_IDENTIFIER] = len(installs) - 1
+            inst_i = install_index[row.INSTALLATION_IDENTIFIER] = len(
+                installs) - 1
 
-        emissions = None if pd.isna(row.VERIFIED_EMISSIONS) else round(row.VERIFIED_EMISSIONS)
-        allocation = 0 if pd.isna(row.FREE_ALLOCATION) else round(row.FREE_ALLOCATION)
+        emissions = None if pd.isna(
+            row.VERIFIED_EMISSIONS) else round(row.VERIFIED_EMISSIONS)
+        allocation = 0 if pd.isna(
+            row.FREE_ALLOCATION) else round(row.FREE_ALLOCATION)
         records.append([inst_i, int(row.PERIOD_YEAR), emissions, allocation])
 
     countries = [{"c": "CZ", "n": COUNTRY_NAME}]
@@ -253,6 +299,7 @@ def build_dashboard_data(df: pd.DataFrame) -> dict:
     return {
         "countries": countries,
         "activities": activities,
+        "real_activities": real_activities,
         "installs": installs,
         "records": records,
         "year_min": int(df["PERIOD_YEAR"].min()),
