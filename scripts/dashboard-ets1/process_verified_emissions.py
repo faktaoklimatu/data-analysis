@@ -85,7 +85,7 @@ GROUP_LABELS = {
     "combustion": "Výroba elektřiny a tepla",
     "refineries": "Rafinace minerálních olejů",
     "iron_steel": "Železo a ocel",
-    "aluminium": "Hliníku",
+    "aluminium": "Hliník",
     "other_metals": "Ostatní kovy",
     "cement_lime": "Cement a vápno",
     "glass": "Sklo",
