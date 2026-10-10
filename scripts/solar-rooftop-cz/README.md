@@ -33,7 +33,7 @@ python scripts/solar-rooftop-cz/build_rooftop_solar_curve.py --skip-download
 
 Run from the repo root (paths are relative). Output:
 `outputs/output-rooftop-solar-cz-2025-hourly.csv` (gitignored), with columns
-`time_utc` (hour-beginning), `time_cz`, `capacity_factor`, `capacity_mw`,
+`time_cet` (hour-beginning, fixed UTC+1 without summer time), `time_utc`, `capacity_factor`, `capacity_mw`,
 `production_unscaled_mw` and `production_mw`.
 
 ## Method
@@ -47,10 +47,12 @@ Run from the repo root (paths are relative). Output:
   linearly through the year. The official "MWe" may not be the same unit as
   MWp; this is not verified.
 - **Timestamps.** The PECD timestamps are not documented. Comparison with solar
-  geometry shows the values lag by about one hour relative to hour-beginning
-  UTC (in winter and summer alike), consistent with ERA5-style hour-ending
-  labels. The script prints this check and shifts the labels by one hour
-  (`LABEL_SHIFT_HOURS`; set to 0 to disable).
+  geometry shows they are hour-beginning in fixed Central European Time (UTC+1,
+  no summer time): read as UTC, the values lag the sun by one hour in winter
+  and summer alike, while read as UTC+1 the best-fit offset is 0 in all
+  seasons. The script prints this check, treats the labels as UTC+1 (`PECD_TZ`)
+  and writes both `time_cet` and `time_utc`. The output covers the CET year
+  2025 (8760 hours), i.e. it starts at 2024-12-31 23:00 UTC.
 - **Scaling.** The whole curve is scaled so its annual total equals the
   official gross production of plants up to 10 kW (1 386 466.6 MWh,
   ERÚ yearly statistics, table 5.6). The unscaled model overshoots it by
