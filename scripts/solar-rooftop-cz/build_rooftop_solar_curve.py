@@ -29,12 +29,12 @@ TECHNOLOGY = "61"
 # Czech centroid, for the solar-geometry check of the time convention.
 CZ_LAT, CZ_LON = 49.8, 15.5
 
-# The PECD timestamps are not documented, but the data lag the sun by about
-# one hour relative to hour-beginning UTC labels (see check_time_alignment()),
-# in winter and summer alike, so it is not a daylight-saving effect. This fits
-# ERA5-style hour-ending labels (or a fixed UTC+1) -- both mean that the value
-# labelled t describes the hour [t - 1 h, t). We relabel to hour-beginning UTC.
-LABEL_SHIFT_HOURS = 1
+# The PECD timestamps are not documented. Comparison with solar geometry (see
+# check_time_alignment()) shows they are hour-beginning in fixed Central
+# European Time, UTC+1 without summer time shifting: interpreted as UTC, the
+# data lag the sun by one hour in winter and summer alike. "Etc/GMT-1" is
+# UTC+1 (the sign is inverted in the tz database).
+PECD_TZ = "Etc/GMT-1"
 
 # Official statistics, table 5.6 "Fotovoltaické elektrárny", row "do 10 kW
 # včetně". Capacities are year-end values; within the year the installed
@@ -88,7 +88,7 @@ def find_residential_file(raw_dir: Path, technology: str | None) -> Path:
 
 
 def read_capacity_factors(path: Path) -> pd.Series:
-    """Hourly capacity factor (MW per MWp) for COUNTRY, indexed by UTC time."""
+    """Hourly capacity factor (MW per MWp) for COUNTRY, indexed by CET (UTC+1) time."""
     if path.suffix == ".nc":
         import xarray as xr
 
@@ -105,8 +105,7 @@ def read_capacity_factors(path: Path) -> pd.Series:
         df = pd.read_csv(path, comment="#", index_col="Date", parse_dates=True)
         s = df[COUNTRY]
     s.index = pd.DatetimeIndex(s.index)
-    if s.index.tz is None:
-        s.index = s.index.tz_localize("UTC")  # PECD timestamps are UTC
+    s.index = s.index.tz_localize(PECD_TZ)
     s = s[s.index.year == YEAR].sort_index()
     return s.rename("capacity_factor")
 
@@ -127,16 +126,16 @@ def cos_zenith(times: pd.DatetimeIndex) -> np.ndarray:
 
 def check_time_alignment(cf: pd.Series) -> None:
     """Correlate hourly CF with the hourly mean of clipped cos(zenith), with the
-    sun evaluated at the given offset from the (assumed hour-beginning UTC)
+    sun evaluated at the given offset from the (hour-beginning, interpreted as UTC+1)
     label. The best offset reveals the time convention of the data."""
     print("\nTime alignment (offset of the sun's hour window vs label; "
-          "-1 h means label = end of hour):")
+          "a best offset of 0 means the labels are hour-beginning UTC+1):")
     for name, months in [("year", range(1, 13)), ("Nov-Feb", [11, 12, 1, 2]), ("May-Aug", [5, 6, 7, 8])]:
         mask = cf.index.month.isin(list(months))
         corr = {}
         for offset in (-2, -1.5, -1, -0.5, 0, 0.5, 1):
             sun = sum(
-                np.clip(cos_zenith(cf.index + pd.Timedelta(hours=offset, minutes=m + 5)), 0, None)
+                np.clip(cos_zenith(cf.index.tz_convert("UTC") + pd.Timedelta(hours=offset, minutes=m + 5)), 0, None)
                 for m in range(0, 60, 10)
             ) / 6
             corr[offset] = np.corrcoef(cf[mask], sun[mask])[0, 1]
@@ -163,14 +162,10 @@ def main() -> None:
         sys.exit("Capacity factors outside [0, 1.2] -- check units")
 
     check_time_alignment(cf)
-    if LABEL_SHIFT_HOURS:
-        # Relabel to hour-beginning UTC; the last hour of the year is night.
-        cf = cf.shift(-LABEL_SHIFT_HOURS, freq="h").reindex(cf.index, fill_value=0.0)
-        print(f"\nShifted labels by -{LABEL_SHIFT_HOURS} h (last hour of year set to 0)")
     out = pd.DataFrame({"capacity_factor": cf})
-    # Capacity at the middle of each hour, linear from start to end of year.
-    year_start = pd.Timestamp(f"{YEAR}-01-01", tz="UTC")
-    year_end = pd.Timestamp(f"{YEAR + 1}-01-01", tz="UTC")
+    # Capacity at the middle of each hour, linear from start to end of the (CET) year.
+    year_start = pd.Timestamp(f"{YEAR}-01-01", tz=PECD_TZ)
+    year_end = pd.Timestamp(f"{YEAR + 1}-01-01", tz=PECD_TZ)
     year_fraction = (out.index + pd.Timedelta(minutes=30) - year_start) / (year_end - year_start)
     out["capacity_mw"] = CAPACITY_START_MW + (CAPACITY_END_MW - CAPACITY_START_MW) * year_fraction
     out["production_unscaled_mw"] = out["capacity_factor"] * out["capacity_mw"]
@@ -179,9 +174,9 @@ def main() -> None:
     # also change the shape), but good enough for our purposes.
     scale = GROSS_PRODUCTION_MWH / out["production_unscaled_mw"].sum()
     out["production_mw"] = out["production_unscaled_mw"] * scale
-    out.insert(0, "time_cz", out.index.tz_convert("Europe/Prague").strftime("%Y-%m-%d %H:%M"))
+    out.insert(0, "time_utc", out.index.tz_convert("UTC").strftime("%Y-%m-%d %H:%M"))
     OUTPUT_CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
-    out.index.name = "time_utc"
+    out.index = out.index.strftime("%Y-%m-%d %H:%M").rename("time_cet")
     out.to_csv(OUTPUT_CSV_PATH, float_format="%.4f")
 
     modelled = out["production_unscaled_mw"].sum()  # hourly MW == MWh per hour
