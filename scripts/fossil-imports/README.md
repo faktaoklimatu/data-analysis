@@ -1,11 +1,12 @@
-# Czech fossil fuel imports and GDP, from ČSÚ
+# Czech fossil fuel imports, GDP and public budgets, from ČSÚ and MF
 
-Two independent scripts:
+Three independent scripts:
 
 | Script | Source | Output |
 | --- | --- | --- |
-| `fetch_stazo.py` | STAZO (Pohyb zboží přes hranice) | gas and crude oil imports by month/year and country |
-| `fetch_gdp.py` | DataStat | annual GDP in nominal CZK |
+| `fetch_stazo.py` | ČSÚ STAZO (Pohyb zboží přes hranice) | gas and crude oil imports by month/year and country |
+| `fetch_gdp.py` | ČSÚ DataStat | annual GDP in nominal CZK |
+| `fetch_budgets.py` | MF MONITOR Státní pokladny | yearly budgets of MŠMT and SFDI in nominal bn CZK |
 
 Each script writes a full CSV for analysis plus a stripped-down copy in
 `output-dashboard/` for the d3 app — see [Dashboard files](#dashboard-files).
@@ -16,7 +17,10 @@ against 0.5-1.3 % in a normal year. It is a short, unremarkable script because
 DataStat has a real API; almost all the complexity below is about STAZO, which
 does not.
 
-Both scripts need only **requests**, take no arguments, and are configured by
+`fetch_budgets.py` supplies the other yardstick: what the state spends on
+schools and on transport infrastructure, to set the import bill against.
+
+All scripts need only **requests**, take no arguments, and are configured by
 constants at the top of the file.
 
 ## `fetch_stazo.py` — fossil fuel imports
@@ -257,12 +261,109 @@ downloaded today will differ slightly from one downloaded a year ago, including
 for years long past. Re-download rather than mixing vintages, and do not compare
 against older published tables without checking.
 
+## `fetch_budgets.py` — budgets of MŠMT and SFDI
+
+```bash
+python fetch_budgets.py
+```
+
+No arguments; about 20 downloads, a minute or so. Writes
+`output-monitor-budgets.csv`, one row per institution and year:
+
+`institution`, `year`, `through_month`, `approved_mld_czk`,
+`after_changes_mld_czk`, `actual_mld_czk`
+
+All amounts are **nominal billions of CZK** of *total expenditure*
+("Výdaje celkem"): for `msmt` that of state budget chapter 333 (Ministerstvo
+školství, mládeže a tělovýchovy), for `sfdi` that of the Státní fond dopravní
+infrastruktury (chapter 506 in the statements).
+
+Constants at the top of the script: `FIRST_YEAR` (2017), `BUDGET_MEASURE`,
+`INSTITUTIONS` (chapter and dataset per institution) and the output paths.
+
+### Which "budget"
+
+Three measures are published, and they can differ a lot — for SFDI the approved
+2020 budget was 87 bn but 121 bn was spent:
+
+| Measure | Meaning |
+| --- | --- |
+| `approved` | the budget as enacted at the start of the year |
+| `after_changes` | the budget after in-year changes |
+| `actual` | what was spent |
+
+`BUDGET_MEASURE` chooses which one fills `total_mld_czk` in the dashboard files.
+The default is **`approved`**: it is the figure that is quoted publicly, and it
+is the only one that is already final for the running year. With `actual` or
+`after_changes`, a year that is not complete is left out of the dashboard files,
+and the script says so, since a nine-month total drawn beside full years would
+mislead. `through_month` in the full CSV records how far each year goes: 12, or
+the last month published for the running year.
+
+### Source
+
+MONITOR Státní pokladny, the Ministry of Finance's open data on public
+budgets, <https://monitor.statnipokladna.gov.cz>. There is no query API; there
+is one zipped extract of CSV files per year-end (and per month for the running
+year), listed in a JSON catalogue. The script reads the catalogue to find the
+extracts, so a new month or year is picked up without a code change.
+
+| Institution | Dataset | Table used |
+| --- | --- | --- |
+| MŠMT | FIN 1-12 OSS (`FinOSS`), state budget chapters | `MIS-RIS_*.csv`, expenditure classes 5 and 6 of chapter 0333 |
+| SFDI | FIN 1-12 SF (`FinSF`), state funds | `FINSF02_*.csv`, item 3060 "Výdaje celkem" of chapter 0506 |
+
+Both start in 2015. The older FIN 2-04 U statement reaches back to 2010 and
+holds the same two institutions, but it is not read: only 2017 onwards was
+needed, and the script is simpler without a second source.
+
+Three traps in the data, all handled but worth knowing if you touch the parser:
+
+* **The FinOSS file is a ledger of monthly postings, not a year-to-date
+  statement.** The opening budget sits in the first fiscal period and every
+  later period holds only changes and spending. A year is therefore the *sum of
+  its periods*; reading December alone gives 21 bn for MŠMT instead of 308 bn.
+* **Negative amounts have the sign at the end**: `354240.45-`.
+* **Column order and quoting change between years**, but every header ends in
+  `:COLUMN_NAME`, so the script finds columns by that suffix, not by position.
+
+### How far to trust it
+
+SFDI's approved budget matches the published headline in every year checked:
+127.5 bn (2021), 127.6 bn (2022), 150.1 bn (2024), 160.3 bn (2025) and
+169.3 bn (2026). Note that 130.6 bn quoted for 2022 is the government's
+*proposal*; 127.6 bn is what was approved. MŠMT's approved 2024 budget,
+268,980,969,809 CZK, matches the figure in the government's budget table to the
+crown. For 2025 that table, which is the government *proposal*, shows 290.849 bn
+against 290.879 bn here, a 0.01 % difference that is consistent with
+amendments in parliament, though it was not checked against the enacted law.
+
+The `after_changes` and `actual` columns were checked only for plausibility
+(they sit in the expected order against the approved budget and move smoothly
+from year to year), not against the final accounts of the two institutions.
+
+### Caveats
+
+* **MŠMT's figure is the whole chapter**, including the state's transfers to
+  regions for regional schools (about three quarters of it) and to universities,
+  not only the ministry's own operations.
+* **SFDI's "total" is expenditure, not revenue.** The two differ: for 2025 the
+  approved revenue was 153 bn against 160 bn of expenditure. The headline
+  budget that is quoted publicly is the expenditure side.
+* **The running year (2026) is the approved budget only.** Its `actual` and
+  `after_changes` columns are year-to-date and say `through_month = 9`.
+* **Figures are nominal**, so growth over the period is partly inflation.
+
 ## Dashboard files
 
-Both scripts also write a minimal copy of their output to `output-dashboard/`, carrying
+All three scripts also write a minimal copy of their output to `output-dashboard/`, carrying
 only the columns a chart needs so the browser does not download Czech labels,
 provenance flags and notes it will never draw. Regenerated on every run; change
-`MINIMAL_DIR` at the top of either script to write them elsewhere.
+`MINIMAL_DIR` at the top of a script to write them elsewhere.
+
+`msmt.csv` and `sfdi.csv` are the approved budget in nominal billions of CZK by
+default (see [Which "budget"](#which-budget)). The last row is the running year;
+its approved budget is final, but treat it as a plan rather than an outcome.
 
 Row counts below are as of the last run; they grow as ČSÚ publishes new months.
 
@@ -271,6 +372,8 @@ Row counts below are as of the last run; they grow as ČSÚ publishes new months
 | `output-dashboard/gdp.csv` | `year`, `value_mil_czk` | 36 |
 | `output-dashboard/imports-annual.csv` | `commodity`, `year`, `country_code`, `mass_kg`, `value_mil_czk` | 1155 |
 | `output-dashboard/imports-monthly.csv` | `commodity`, `year`, `month`, `country_code`, `mass_kg`, `value_mil_czk` | 8469 |
+| `output-dashboard/msmt.csv` | `year`, `total_mld_czk` | 10 |
+| `output-dashboard/sfdi.csv` | `year`, `total_mld_czk` | 10 |
 
 Every output name contains `output-`, which the repository's `.gitignore`
 excludes via `*output-*`, so none of these files are committed.
