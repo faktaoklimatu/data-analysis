@@ -36,14 +36,33 @@ CZ_LAT, CZ_LON = 49.8, 15.5
 # UTC+1 (the sign is inverted in the tz database).
 PECD_TZ = "Etc/GMT-1"
 
-# Official statistics, table 5.6 "Fotovoltaické elektrárny", row "do 10 kW
-# včetně". Capacities are year-end values; within the year the installed
-# capacity is assumed to grow linearly between them.
-CAPACITY_START_MW = 1361.6  # end of 2024
-CAPACITY_END_MW = 1516.2  # end of 2025
-GROSS_PRODUCTION_MWH = 1_386_466.6
-NET_PRODUCTION_MWH = 1_386_388.6
-GRID_DELIVERY_MWH = 524_013.1
+# Official statistics, table 5.6 "Fotovoltaické elektrárny" (ERÚ). Capacities
+# are year-end values; within the year the installed capacity is assumed to
+# grow linearly between them.
+# Residential rooftop PV = all plants up to 10 kW plus a share of plants in the
+# "nad 10 do 30 kW včetně" band (assumed to be partly residential).
+SHARE_10_TO_30_KW = 0.5
+
+# Row "do 10 kW včetně".
+CAPACITY_UP_TO_10_KW_START_MW = 1361.6  # end of 2024
+CAPACITY_UP_TO_10_KW_END_MW = 1516.2  # end of 2025
+GROSS_UP_TO_10_KW_MWH = 1_386_466.6
+NET_UP_TO_10_KW_MWH = 1_386_388.6
+GRID_DELIVERY_UP_TO_10_KW_MWH = 524_013.1
+
+# Row "nad 10 do 30 kW včetně" (only SHARE_10_TO_30_KW of it is counted).
+CAPACITY_10_TO_30_KW_START_MW = 345.1  # end of 2024
+CAPACITY_10_TO_30_KW_END_MW = 427.2  # end of 2025
+GROSS_10_TO_30_KW_MWH = 351_031.3
+NET_10_TO_30_KW_MWH = 350_748.0
+GRID_DELIVERY_10_TO_30_KW_MWH = 165_596.2
+
+# Totals used by the model: plants up to 10 kW + share of the 10-30 kW band.
+CAPACITY_START_MW = CAPACITY_UP_TO_10_KW_START_MW + SHARE_10_TO_30_KW * CAPACITY_10_TO_30_KW_START_MW
+CAPACITY_END_MW = CAPACITY_UP_TO_10_KW_END_MW + SHARE_10_TO_30_KW * CAPACITY_10_TO_30_KW_END_MW
+GROSS_PRODUCTION_MWH = GROSS_UP_TO_10_KW_MWH + SHARE_10_TO_30_KW * GROSS_10_TO_30_KW_MWH
+NET_PRODUCTION_MWH = NET_UP_TO_10_KW_MWH + SHARE_10_TO_30_KW * NET_10_TO_30_KW_MWH
+GRID_DELIVERY_MWH = GRID_DELIVERY_UP_TO_10_KW_MWH + SHARE_10_TO_30_KW * GRID_DELIVERY_10_TO_30_KW_MWH
 
 
 def download(raw_dir: Path) -> None:
@@ -167,7 +186,12 @@ def main() -> None:
     year_start = pd.Timestamp(f"{YEAR}-01-01", tz=PECD_TZ)
     year_end = pd.Timestamp(f"{YEAR + 1}-01-01", tz=PECD_TZ)
     year_fraction = (out.index + pd.Timedelta(minutes=30) - year_start) / (year_end - year_start)
-    out["capacity_mw"] = CAPACITY_START_MW + (CAPACITY_END_MW - CAPACITY_START_MW) * year_fraction
+    out["capacity_up_to_10_kw_mw"] = CAPACITY_UP_TO_10_KW_START_MW + (
+        CAPACITY_UP_TO_10_KW_END_MW - CAPACITY_UP_TO_10_KW_START_MW) * year_fraction
+    out["capacity_10_to_30_kw_share_mw"] = SHARE_10_TO_30_KW * (
+        CAPACITY_10_TO_30_KW_START_MW + (
+            CAPACITY_10_TO_30_KW_END_MW - CAPACITY_10_TO_30_KW_START_MW) * year_fraction)
+    out["capacity_mw"] = out["capacity_up_to_10_kw_mw"] + out["capacity_10_to_30_kw_share_mw"]
     out["production_unscaled_mw"] = out["capacity_factor"] * out["capacity_mw"]
     # Scale the whole curve so that the annual total equals the official gross
     # production. Crude (real fleets differ in orientation, tilt, losses, which
@@ -181,6 +205,13 @@ def main() -> None:
 
     modelled = out["production_unscaled_mw"].sum()  # hourly MW == MWh per hour
     print(f"\nWrote {OUTPUT_CSV_PATH}")
+    print(f"Capacity start/end of year: up to 10 kW {CAPACITY_UP_TO_10_KW_START_MW:.1f}/"
+          f"{CAPACITY_UP_TO_10_KW_END_MW:.1f} MW + {SHARE_10_TO_30_KW:.0%} of 10-30 kW "
+          f"({CAPACITY_10_TO_30_KW_START_MW:.1f}/{CAPACITY_10_TO_30_KW_END_MW:.1f} MW) "
+          f"= {CAPACITY_START_MW:.1f}/{CAPACITY_END_MW:.1f} MW")
+    print(f"Official gross production: up to 10 kW {GROSS_UP_TO_10_KW_MWH / 1e6:.3f} TWh + "
+          f"{SHARE_10_TO_30_KW:.0%} of 10-30 kW ({GROSS_10_TO_30_KW_MWH / 1e6:.3f} TWh) "
+          f"= {GROSS_PRODUCTION_MWH / 1e6:.3f} TWh")
     mean_capacity = out["capacity_mw"].mean()
     print(f"Mean installed capacity (linear): {mean_capacity:.1f} MW")
     print(f"Mean capacity factor (modelled): {cf.mean():.3f} "
