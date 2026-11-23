@@ -47,18 +47,6 @@ possible in the numeric columns; read them as missing, not zero.
   time), so re-download rather than mixing vintages. A part year is just that: the annual
   row of the running year grows with every month.
 
-## Dashboard use (d3)
-
-```js
-const rows = await d3.csv("imports-annual.csv", d => ({
-  commodity: d.commodity,
-  year: +d.year,
-  country: d.country_code,
-  massKg: d.mass_kg === "" ? null : +d.mass_kg,
-  valueMilCzk: d.value_mil_czk === "" ? null : +d.value_mil_czk,
-}));
-```
-
 Budgets are nominal, so growth over the years is partly inflation. MŠMT's figure is the
 whole chapter, including transfers to regions for regional schools (about three quarters
 of it) and to universities. SFDI's is expenditure, not revenue.
