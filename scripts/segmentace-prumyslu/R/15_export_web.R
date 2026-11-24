@@ -72,11 +72,37 @@ rd("exportni_jadro_prace") %>%
 rd("figaro_obory") %>% filter(rok == 2024) %>%
   transmute(nace, obor = NACE_NAMES[nace], skupina = skupina(nace),
             penetrace = round(penetrace_pct, 1), z_eu = round(pen_eu_pct, 1), mimo_eu = round(pen_mimo_eu_pct, 1),
-            vyvoz_mimo_ets = round(mimo_ets_pct, 1), vyvoz_uk = round(uk_pct, 1), vyvoz_mimo_ets_mld = round(mimo_ets_uk_mld, 1)) %>%
+            vyvoz_mimo_ets = round(mimo_ets_pct, 1), vyvoz_uk = round(uk_pct, 1), vyvoz_mimo_ets_mld = round(mimo_ets_uk_mld, 1),
+            # str. 28: vztah k CBAM (nařízení (EU) 2023/956, příloha I)
+            cbam = case_when(nace == "C24" ~ "cely", nace %in% c("C20", "C23") ~ "cast",
+                             nace %in% c("C25", "C27", "C28", "C29", "C30") ~ "odberatel", TRUE ~ "ostatni")) %>%
   web("obchod_2024")
 rd("figaro_skupiny") %>%
-  transmute(nace, obor = name, rok, penetrace = round(penetrace_pct, 1), tj_na_mil_eur = round(tj_na_mil_eur, 1),
+  transmute(nace, obor = name, rok, penetrace = round(penetrace_pct, 1), z_eu = round(pen_eu_pct, 1), mimo_eu = round(pen_mimo_eu_pct, 1),
+            tj_na_mil_eur = round(tj_na_mil_eur, 1),
             hph_meur = round(hph_meur), skupina = skupina(nace)) %>%
   web("skupiny_oboru")
+
+# Str. 20–23 – lišty karet oborů: výroba 2015 → 2025, energie (% nákladů), přímé povolenky (% nákladů), zdarma
+idx <- rd("production_index_annual") %>% filter(geo == "CZ", time == max(time)) %>% transmute(nace, vyroba = round(index_2015 - 100) + 0)   # + 0: bez „-0“
+ets <- rd("ets_costs_2024")
+sut <- rd("naklady_sut")
+inst25 <- rd("registry_installations") %>% filter(year == 2025, !is.na(sektor)) %>% group_by(sektor) %>%
+  summarise(zdarma = round(sum(free_alloc, na.rm = TRUE) / sum(verified_em, na.rm = TRUE) * 100))
+karta <- function(n, sektor, prime_sloupec, prime_pozn) tibble(
+  nace = n, obor = NACE_NAMES[[n]], vyroba = idx$vyroba[idx$nace == n],
+  energie = round(sut$energie_pct[sut$nace == n], 1),
+  prime_ets = round(ets[[prime_sloupec]][ets$nace == n], 1) + 0, prime_pozn = prime_pozn,
+  zdarma = if (is.na(sektor)) NA_real_ else inst25$zdarma[inst25$sektor == sektor], zdarma_sektor = sektor)
+bind_rows(
+  karta("C23", "Výroba cementu", "direct_best_pct_naklady", ""),
+  karta("C24", "Výroba oceli", "direct_best_pct_naklady", "nejlepší odhad (Energetika Třinec 86,5 %)"),
+  karta("C20", "Chemikálie", "direct_pct_naklady", "horní odhad vč. elektráren a kotelen podniků")) %>%
+  web("karty_oboru")
+sut %>% filter(nace %in% SKUPINA_EXPORT) %>%
+  transmute(nace, energie = round(energie_pct, 1)) %>%
+  left_join(ets %>% transmute(nace, prime_ets = round(direct_pct_naklady, 1)), by = "nace") %>%
+  left_join(idx, by = "nace") %>%
+  web("karta_export")
 
 message("15_export_web: ", length(list.files(WEB_DIR)), " souborů v ", normalizePath(WEB_DIR))
