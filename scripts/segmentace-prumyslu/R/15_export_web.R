@@ -1,17 +1,19 @@
 # =============================================================================
 # 15_export_web.R – data pro webovou prezentaci (repozitář web-cz)
-# Zapíše malé tabulky (agregáty za obory) do web-cz/_data/segmentace_prumyslu/.
+# Zapíše malé tabulky (agregáty za obory) pro každý slajd do data_slajdy/ (popis v data_slajdy/README.md)
+# a do web-cz/_data/segmentace_prumyslu/, pokud je repozitář web-cz vedle.
 # Grafy na webu se kreslí jen z těchto souborů; žádné číslo se na webu nepíše ručně.
 # Cesta k web-cz: proměnná prostředí FOK_WEB_DIR, výchozí ../../../web-cz (vedle data-analysis).
 # =============================================================================
 source("R/00_setup.R")
 
+# Data se ukládají vždy do data_slajdy/ (v gitu, pro předání grafikům) a navíc do web-cz, pokud je k dispozici.
+OUT_DIRS <- "data_slajdy"
 WEB_DIR <- file.path(Sys.getenv("FOK_WEB_DIR", "../../../web-cz"), "_data", "segmentace_prumyslu")
-if (!dir.exists(dirname(WEB_DIR))) stop("Nenalezen repozitář web-cz: ", dirname(dirname(WEB_DIR)),
-                                        " – nastavte FOK_WEB_DIR", call. = FALSE)
-dir.create(WEB_DIR, showWarnings = FALSE)
+if (dir.exists(dirname(WEB_DIR))) OUT_DIRS <- c(OUT_DIRS, WEB_DIR)
+for (d in OUT_DIRS) dir.create(d, showWarnings = FALSE)
 rd  <- function(name) read_csv(file.path(DIR_OUT, paste0(name, ".csv")), show_col_types = FALSE)
-web <- function(df, name) write_csv(df, file.path(WEB_DIR, paste0(name, ".csv")))
+web <- function(df, name) for (d in OUT_DIRS) write_csv(df, file.path(d, paste0(name, ".csv")))
 skupina <- function(n) case_when(n %in% SKUPINA_EXPORT ~ "export", n %in% SKUPINA_ENERGIE ~ "energie", TRUE ~ "ostatni")
 
 # Str. 5, 6 – mozaika oborů
@@ -105,4 +107,8 @@ sut %>% filter(nace %in% SKUPINA_EXPORT) %>%
   left_join(idx, by = "nace") %>%
   web("karta_export")
 
-message("15_export_web: ", length(list.files(WEB_DIR)), " souborů v ", normalizePath(WEB_DIR))
+# Str. 22 – emise hutí podle závodů (Ostrava = Liberty + TAMEH, Třinec = TŽ + Energetika Třinec), kt
+rd("steel_sites") %>% transmute(zavod = site, rok = year, emise_kt = round(verified_kt), zdarma_kt = round(free_alloc_kt)) %>%
+  web("hute_zavody")
+
+message("15_export_web: ", length(list.files(OUT_DIRS[1], pattern = "csv$")), " souborů v ", paste(OUT_DIRS, collapse = " a "))

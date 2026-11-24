@@ -1,0 +1,397 @@
+nace,obor,skupina,zeme,rok,index
+C10-12,Potraviny a nápoje,ostatni,CZ,2015,100
+C10-12,Potraviny a nápoje,ostatni,CZ,2016,99.8
+C10-12,Potraviny a nápoje,ostatni,CZ,2017,101.8
+C10-12,Potraviny a nápoje,ostatni,CZ,2018,105.9
+C10-12,Potraviny a nápoje,ostatni,CZ,2019,106.7
+C10-12,Potraviny a nápoje,ostatni,CZ,2020,104.3
+C10-12,Potraviny a nápoje,ostatni,CZ,2021,108.3
+C10-12,Potraviny a nápoje,ostatni,CZ,2022,109.8
+C10-12,Potraviny a nápoje,ostatni,CZ,2023,107.6
+C10-12,Potraviny a nápoje,ostatni,CZ,2024,111.7
+C10-12,Potraviny a nápoje,ostatni,CZ,2025,113.9
+C10-12,Potraviny a nápoje,ostatni,DE,2015,100
+C10-12,Potraviny a nápoje,ostatni,DE,2016,101.1
+C10-12,Potraviny a nápoje,ostatni,DE,2017,102.4
+C10-12,Potraviny a nápoje,ostatni,DE,2018,102.1
+C10-12,Potraviny a nápoje,ostatni,DE,2019,102.3
+C10-12,Potraviny a nápoje,ostatni,DE,2020,98.8
+C10-12,Potraviny a nápoje,ostatni,DE,2021,98.7
+C10-12,Potraviny a nápoje,ostatni,DE,2022,98.8
+C10-12,Potraviny a nápoje,ostatni,DE,2023,96.1
+C10-12,Potraviny a nápoje,ostatni,DE,2024,97.2
+C10-12,Potraviny a nápoje,ostatni,DE,2025,97
+C13-15,Textil a oděvy,ostatni,CZ,2015,100
+C13-15,Textil a oděvy,ostatni,CZ,2016,103.9
+C13-15,Textil a oděvy,ostatni,CZ,2017,109.1
+C13-15,Textil a oděvy,ostatni,CZ,2018,103.9
+C13-15,Textil a oděvy,ostatni,CZ,2019,101.4
+C13-15,Textil a oděvy,ostatni,CZ,2020,94.6
+C13-15,Textil a oděvy,ostatni,CZ,2021,98
+C13-15,Textil a oděvy,ostatni,CZ,2022,104
+C13-15,Textil a oděvy,ostatni,CZ,2023,96.2
+C13-15,Textil a oděvy,ostatni,CZ,2024,96.2
+C13-15,Textil a oděvy,ostatni,CZ,2025,91.8
+C13-15,Textil a oděvy,ostatni,DE,2015,100
+C13-15,Textil a oděvy,ostatni,DE,2016,100.9
+C13-15,Textil a oděvy,ostatni,DE,2017,102.7
+C13-15,Textil a oděvy,ostatni,DE,2018,99.9
+C13-15,Textil a oděvy,ostatni,DE,2019,98
+C13-15,Textil a oděvy,ostatni,DE,2020,84.4
+C13-15,Textil a oděvy,ostatni,DE,2021,89.1
+C13-15,Textil a oděvy,ostatni,DE,2022,89.4
+C13-15,Textil a oděvy,ostatni,DE,2023,84.4
+C13-15,Textil a oděvy,ostatni,DE,2024,78.9
+C13-15,Textil a oděvy,ostatni,DE,2025,75.7
+C16,Dřevo,ostatni,CZ,2015,100
+C16,Dřevo,ostatni,CZ,2016,101.8
+C16,Dřevo,ostatni,CZ,2017,105.9
+C16,Dřevo,ostatni,CZ,2018,109.2
+C16,Dřevo,ostatni,CZ,2019,105.4
+C16,Dřevo,ostatni,CZ,2020,107
+C16,Dřevo,ostatni,CZ,2021,102.8
+C16,Dřevo,ostatni,CZ,2022,94.8
+C16,Dřevo,ostatni,CZ,2023,92.6
+C16,Dřevo,ostatni,CZ,2024,95.3
+C16,Dřevo,ostatni,CZ,2025,96.2
+C16,Dřevo,ostatni,DE,2015,100
+C16,Dřevo,ostatni,DE,2016,99.9
+C16,Dřevo,ostatni,DE,2017,104.2
+C16,Dřevo,ostatni,DE,2018,106
+C16,Dřevo,ostatni,DE,2019,104.4
+C16,Dřevo,ostatni,DE,2020,109.8
+C16,Dřevo,ostatni,DE,2021,108.6
+C16,Dřevo,ostatni,DE,2022,97.2
+C16,Dřevo,ostatni,DE,2023,91
+C16,Dřevo,ostatni,DE,2024,88.2
+C16,Dřevo,ostatni,DE,2025,84.7
+C17,Papír,energie,CZ,2015,100
+C17,Papír,energie,CZ,2016,102.2
+C17,Papír,energie,CZ,2017,105.9
+C17,Papír,energie,CZ,2018,112.2
+C17,Papír,energie,CZ,2019,115.7
+C17,Papír,energie,CZ,2020,119.9
+C17,Papír,energie,CZ,2021,130.8
+C17,Papír,energie,CZ,2022,132
+C17,Papír,energie,CZ,2023,126.2
+C17,Papír,energie,CZ,2024,131.4
+C17,Papír,energie,CZ,2025,133.9
+C17,Papír,energie,DE,2015,100
+C17,Papír,energie,DE,2016,98.9
+C17,Papír,energie,DE,2017,100.4
+C17,Papír,energie,DE,2018,100
+C17,Papír,energie,DE,2019,97.9
+C17,Papír,energie,DE,2020,93.7
+C17,Papír,energie,DE,2021,98.6
+C17,Papír,energie,DE,2022,93.2
+C17,Papír,energie,DE,2023,81.9
+C17,Papír,energie,DE,2024,82.1
+C17,Papír,energie,DE,2025,80.1
+C18,Tisk,ostatni,CZ,2015,100
+C18,Tisk,ostatni,CZ,2016,112.5
+C18,Tisk,ostatni,CZ,2017,109.1
+C18,Tisk,ostatni,CZ,2018,111.5
+C18,Tisk,ostatni,CZ,2019,107.7
+C18,Tisk,ostatni,CZ,2020,103
+C18,Tisk,ostatni,CZ,2021,113.8
+C18,Tisk,ostatni,CZ,2022,107.5
+C18,Tisk,ostatni,CZ,2023,92.1
+C18,Tisk,ostatni,CZ,2024,93.1
+C18,Tisk,ostatni,CZ,2025,89.9
+C18,Tisk,ostatni,DE,2015,100
+C18,Tisk,ostatni,DE,2016,98.1
+C18,Tisk,ostatni,DE,2017,97.5
+C18,Tisk,ostatni,DE,2018,95.4
+C18,Tisk,ostatni,DE,2019,89
+C18,Tisk,ostatni,DE,2020,77.3
+C18,Tisk,ostatni,DE,2021,78.9
+C18,Tisk,ostatni,DE,2022,72.9
+C18,Tisk,ostatni,DE,2023,63.2
+C18,Tisk,ostatni,DE,2024,59.8
+C18,Tisk,ostatni,DE,2025,57.2
+C20,Chemie,energie,CZ,2015,100
+C20,Chemie,energie,CZ,2016,92.7
+C20,Chemie,energie,CZ,2017,110.5
+C20,Chemie,energie,CZ,2018,111.4
+C20,Chemie,energie,CZ,2019,108.2
+C20,Chemie,energie,CZ,2020,103.7
+C20,Chemie,energie,CZ,2021,112.5
+C20,Chemie,energie,CZ,2022,109.6
+C20,Chemie,energie,CZ,2023,99
+C20,Chemie,energie,CZ,2024,99.8
+C20,Chemie,energie,CZ,2025,100.7
+C20,Chemie,energie,DE,2015,100
+C20,Chemie,energie,DE,2016,100.2
+C20,Chemie,energie,DE,2017,101.9
+C20,Chemie,energie,DE,2018,99.8
+C20,Chemie,energie,DE,2019,96.8
+C20,Chemie,energie,DE,2020,95.3
+C20,Chemie,energie,DE,2021,100.7
+C20,Chemie,energie,DE,2022,90.7
+C20,Chemie,energie,DE,2023,79.5
+C20,Chemie,energie,DE,2024,81.9
+C20,Chemie,energie,DE,2025,79.5
+C21,Farmacie,ostatni,CZ,2015,100
+C21,Farmacie,ostatni,CZ,2016,103
+C21,Farmacie,ostatni,CZ,2017,114
+C21,Farmacie,ostatni,CZ,2018,120.4
+C21,Farmacie,ostatni,CZ,2019,142.1
+C21,Farmacie,ostatni,CZ,2020,147.1
+C21,Farmacie,ostatni,CZ,2021,151.1
+C21,Farmacie,ostatni,CZ,2022,162.1
+C21,Farmacie,ostatni,CZ,2023,172.5
+C21,Farmacie,ostatni,CZ,2024,176.9
+C21,Farmacie,ostatni,CZ,2025,175.5
+C21,Farmacie,ostatni,DE,2015,100
+C21,Farmacie,ostatni,DE,2016,103
+C21,Farmacie,ostatni,DE,2017,108.9
+C21,Farmacie,ostatni,DE,2018,127.5
+C21,Farmacie,ostatni,DE,2019,107.6
+C21,Farmacie,ostatni,DE,2020,110.2
+C21,Farmacie,ostatni,DE,2021,116.6
+C21,Farmacie,ostatni,DE,2022,122.7
+C21,Farmacie,ostatni,DE,2023,119
+C21,Farmacie,ostatni,DE,2024,115.9
+C21,Farmacie,ostatni,DE,2025,121.3
+C22,Pryž a plasty,ostatni,CZ,2015,100
+C22,Pryž a plasty,ostatni,CZ,2016,103.9
+C22,Pryž a plasty,ostatni,CZ,2017,112.4
+C22,Pryž a plasty,ostatni,CZ,2018,112.8
+C22,Pryž a plasty,ostatni,CZ,2019,113.7
+C22,Pryž a plasty,ostatni,CZ,2020,103.1
+C22,Pryž a plasty,ostatni,CZ,2021,113.8
+C22,Pryž a plasty,ostatni,CZ,2022,111.3
+C22,Pryž a plasty,ostatni,CZ,2023,106.2
+C22,Pryž a plasty,ostatni,CZ,2024,106.6
+C22,Pryž a plasty,ostatni,CZ,2025,110.8
+C22,Pryž a plasty,ostatni,DE,2015,100
+C22,Pryž a plasty,ostatni,DE,2016,102
+C22,Pryž a plasty,ostatni,DE,2017,106
+C22,Pryž a plasty,ostatni,DE,2018,106.2
+C22,Pryž a plasty,ostatni,DE,2019,103.7
+C22,Pryž a plasty,ostatni,DE,2020,94.4
+C22,Pryž a plasty,ostatni,DE,2021,99.4
+C22,Pryž a plasty,ostatni,DE,2022,96.6
+C22,Pryž a plasty,ostatni,DE,2023,91.1
+C22,Pryž a plasty,ostatni,DE,2024,87.3
+C22,Pryž a plasty,ostatni,DE,2025,85.6
+C23,"Cement, sklo, keramika",energie,CZ,2015,100
+C23,"Cement, sklo, keramika",energie,CZ,2016,98.6
+C23,"Cement, sklo, keramika",energie,CZ,2017,106.5
+C23,"Cement, sklo, keramika",energie,CZ,2018,110.6
+C23,"Cement, sklo, keramika",energie,CZ,2019,107.5
+C23,"Cement, sklo, keramika",energie,CZ,2020,104.5
+C23,"Cement, sklo, keramika",energie,CZ,2021,114.2
+C23,"Cement, sklo, keramika",energie,CZ,2022,117
+C23,"Cement, sklo, keramika",energie,CZ,2023,97.4
+C23,"Cement, sklo, keramika",energie,CZ,2024,96.3
+C23,"Cement, sklo, keramika",energie,CZ,2025,99.7
+C23,"Cement, sklo, keramika",energie,DE,2015,100
+C23,"Cement, sklo, keramika",energie,DE,2016,102.8
+C23,"Cement, sklo, keramika",energie,DE,2017,105.1
+C23,"Cement, sklo, keramika",energie,DE,2018,105.4
+C23,"Cement, sklo, keramika",energie,DE,2019,103.9
+C23,"Cement, sklo, keramika",energie,DE,2020,101.1
+C23,"Cement, sklo, keramika",energie,DE,2021,105.8
+C23,"Cement, sklo, keramika",energie,DE,2022,103.4
+C23,"Cement, sklo, keramika",energie,DE,2023,88.7
+C23,"Cement, sklo, keramika",energie,DE,2024,85.1
+C23,"Cement, sklo, keramika",energie,DE,2025,83.2
+C24,Hutě a slévárny,energie,CZ,2015,100
+C24,Hutě a slévárny,energie,CZ,2016,98.5
+C24,Hutě a slévárny,energie,CZ,2017,97.8
+C24,Hutě a slévárny,energie,CZ,2018,100.5
+C24,Hutě a slévárny,energie,CZ,2019,94.4
+C24,Hutě a slévárny,energie,CZ,2020,87.7
+C24,Hutě a slévárny,energie,CZ,2021,97.7
+C24,Hutě a slévárny,energie,CZ,2022,89.5
+C24,Hutě a slévárny,energie,CZ,2023,77
+C24,Hutě a slévárny,energie,CZ,2024,71.4
+C24,Hutě a slévárny,energie,CZ,2025,75
+C24,Hutě a slévárny,energie,DE,2015,100
+C24,Hutě a slévárny,energie,DE,2016,98.7
+C24,Hutě a slévárny,energie,DE,2017,101.5
+C24,Hutě a slévárny,energie,DE,2018,101.7
+C24,Hutě a slévárny,energie,DE,2019,95.4
+C24,Hutě a slévárny,energie,DE,2020,82.6
+C24,Hutě a slévárny,energie,DE,2021,90.7
+C24,Hutě a slévárny,energie,DE,2022,87.2
+C24,Hutě a slévárny,energie,DE,2023,83.4
+C24,Hutě a slévárny,energie,DE,2024,82.1
+C24,Hutě a slévárny,energie,DE,2025,80.5
+C25,Kovovýroba,ostatni,CZ,2015,100
+C25,Kovovýroba,ostatni,CZ,2016,104.5
+C25,Kovovýroba,ostatni,CZ,2017,113.5
+C25,Kovovýroba,ostatni,CZ,2018,118.1
+C25,Kovovýroba,ostatni,CZ,2019,117.1
+C25,Kovovýroba,ostatni,CZ,2020,107.8
+C25,Kovovýroba,ostatni,CZ,2021,117.8
+C25,Kovovýroba,ostatni,CZ,2022,115.8
+C25,Kovovýroba,ostatni,CZ,2023,113.1
+C25,Kovovýroba,ostatni,CZ,2024,114.1
+C25,Kovovýroba,ostatni,CZ,2025,122
+C25,Kovovýroba,ostatni,DE,2015,100
+C25,Kovovýroba,ostatni,DE,2016,103.1
+C25,Kovovýroba,ostatni,DE,2017,108.4
+C25,Kovovýroba,ostatni,DE,2018,109.9
+C25,Kovovýroba,ostatni,DE,2019,106.1
+C25,Kovovýroba,ostatni,DE,2020,94
+C25,Kovovýroba,ostatni,DE,2021,102.4
+C25,Kovovýroba,ostatni,DE,2022,100.9
+C25,Kovovýroba,ostatni,DE,2023,97.1
+C25,Kovovýroba,ostatni,DE,2024,90.8
+C25,Kovovýroba,ostatni,DE,2025,88.9
+C26,Elektronika,export,CZ,2015,100
+C26,Elektronika,export,CZ,2016,103.3
+C26,Elektronika,export,CZ,2017,115.2
+C26,Elektronika,export,CZ,2018,128.3
+C26,Elektronika,export,CZ,2019,118.4
+C26,Elektronika,export,CZ,2020,114.9
+C26,Elektronika,export,CZ,2021,116.9
+C26,Elektronika,export,CZ,2022,121.4
+C26,Elektronika,export,CZ,2023,122.4
+C26,Elektronika,export,CZ,2024,127.9
+C26,Elektronika,export,CZ,2025,125.3
+C26,Elektronika,export,DE,2015,100
+C26,Elektronika,export,DE,2016,101.9
+C26,Elektronika,export,DE,2017,108.9
+C26,Elektronika,export,DE,2018,111.1
+C26,Elektronika,export,DE,2019,114.2
+C26,Elektronika,export,DE,2020,105.9
+C26,Elektronika,export,DE,2021,116.4
+C26,Elektronika,export,DE,2022,122.4
+C26,Elektronika,export,DE,2023,124.9
+C26,Elektronika,export,DE,2024,120.8
+C26,Elektronika,export,DE,2025,121.5
+C27,Elektrická zařízení,export,CZ,2015,100
+C27,Elektrická zařízení,export,CZ,2016,102
+C27,Elektrická zařízení,export,CZ,2017,110.8
+C27,Elektrická zařízení,export,CZ,2018,117.4
+C27,Elektrická zařízení,export,CZ,2019,123
+C27,Elektrická zařízení,export,CZ,2020,114.7
+C27,Elektrická zařízení,export,CZ,2021,125.4
+C27,Elektrická zařízení,export,CZ,2022,133.9
+C27,Elektrická zařízení,export,CZ,2023,139.4
+C27,Elektrická zařízení,export,CZ,2024,136.1
+C27,Elektrická zařízení,export,CZ,2025,138.5
+C27,Elektrická zařízení,export,DE,2015,100
+C27,Elektrická zařízení,export,DE,2016,100.9
+C27,Elektrická zařízení,export,DE,2017,106.1
+C27,Elektrická zařízení,export,DE,2018,107.9
+C27,Elektrická zařízení,export,DE,2019,100.9
+C27,Elektrická zařízení,export,DE,2020,93.1
+C27,Elektrická zařízení,export,DE,2021,103.1
+C27,Elektrická zařízení,export,DE,2022,105.7
+C27,Elektrická zařízení,export,DE,2023,105.2
+C27,Elektrická zařízení,export,DE,2024,89.5
+C27,Elektrická zařízení,export,DE,2025,89.5
+C28,Stroje,export,CZ,2015,100
+C28,Stroje,export,CZ,2016,102.4
+C28,Stroje,export,CZ,2017,111.8
+C28,Stroje,export,CZ,2018,113.8
+C28,Stroje,export,CZ,2019,112.8
+C28,Stroje,export,CZ,2020,98.6
+C28,Stroje,export,CZ,2021,107
+C28,Stroje,export,CZ,2022,112.3
+C28,Stroje,export,CZ,2023,110.6
+C28,Stroje,export,CZ,2024,101.2
+C28,Stroje,export,CZ,2025,103.1
+C28,Stroje,export,DE,2015,100
+C28,Stroje,export,DE,2016,100
+C28,Stroje,export,DE,2017,104.5
+C28,Stroje,export,DE,2018,106.8
+C28,Stroje,export,DE,2019,103.7
+C28,Stroje,export,DE,2020,89.8
+C28,Stroje,export,DE,2021,96.2
+C28,Stroje,export,DE,2022,97.1
+C28,Stroje,export,DE,2023,96.2
+C28,Stroje,export,DE,2024,88.9
+C28,Stroje,export,DE,2025,87.7
+C29,Auta,export,CZ,2015,100
+C29,Auta,export,CZ,2016,111.2
+C29,Auta,export,CZ,2017,122.2
+C29,Auta,export,CZ,2018,125.1
+C29,Auta,export,CZ,2019,125.2
+C29,Auta,export,CZ,2020,110.3
+C29,Auta,export,CZ,2021,114.6
+C29,Auta,export,CZ,2022,127.9
+C29,Auta,export,CZ,2023,149.9
+C29,Auta,export,CZ,2024,147.6
+C29,Auta,export,CZ,2025,148.3
+C29,Auta,export,DE,2015,100
+C29,Auta,export,DE,2016,100.1
+C29,Auta,export,DE,2017,101.9
+C29,Auta,export,DE,2018,100.3
+C29,Auta,export,DE,2019,95.4
+C29,Auta,export,DE,2020,76.2
+C29,Auta,export,DE,2021,74.1
+C29,Auta,export,DE,2022,77.1
+C29,Auta,export,DE,2023,87
+C29,Auta,export,DE,2024,80.4
+C29,Auta,export,DE,2025,79.9
+C30,Ostatní doprava,export,CZ,2015,100
+C30,Ostatní doprava,export,CZ,2016,103.8
+C30,Ostatní doprava,export,CZ,2017,94.1
+C30,Ostatní doprava,export,CZ,2018,104.4
+C30,Ostatní doprava,export,CZ,2019,102.9
+C30,Ostatní doprava,export,CZ,2020,99
+C30,Ostatní doprava,export,CZ,2021,119.8
+C30,Ostatní doprava,export,CZ,2022,111.6
+C30,Ostatní doprava,export,CZ,2023,139.5
+C30,Ostatní doprava,export,CZ,2024,133.2
+C30,Ostatní doprava,export,CZ,2025,144.3
+C30,Ostatní doprava,export,DE,2015,100
+C30,Ostatní doprava,export,DE,2016,106.6
+C30,Ostatní doprava,export,DE,2017,109.4
+C30,Ostatní doprava,export,DE,2018,117.2
+C30,Ostatní doprava,export,DE,2019,125.6
+C30,Ostatní doprava,export,DE,2020,115.5
+C30,Ostatní doprava,export,DE,2021,117.9
+C30,Ostatní doprava,export,DE,2022,124.9
+C30,Ostatní doprava,export,DE,2023,135.1
+C30,Ostatní doprava,export,DE,2024,146.2
+C30,Ostatní doprava,export,DE,2025,148.1
+C31_32,Nábytek a ostatní,ostatni,CZ,2015,100
+C31_32,Nábytek a ostatní,ostatni,CZ,2016,101.5
+C31_32,Nábytek a ostatní,ostatni,CZ,2017,103.3
+C31_32,Nábytek a ostatní,ostatni,CZ,2018,110.5
+C31_32,Nábytek a ostatní,ostatni,CZ,2019,111.4
+C31_32,Nábytek a ostatní,ostatni,CZ,2020,110.9
+C31_32,Nábytek a ostatní,ostatni,CZ,2021,119.9
+C31_32,Nábytek a ostatní,ostatni,CZ,2022,122.2
+C31_32,Nábytek a ostatní,ostatni,CZ,2023,115
+C31_32,Nábytek a ostatní,ostatni,CZ,2024,118.7
+C31_32,Nábytek a ostatní,ostatni,CZ,2025,120.7
+C31_32,Nábytek a ostatní,ostatni,DE,2015,100
+C31_32,Nábytek a ostatní,ostatni,DE,2016,102.4
+C31_32,Nábytek a ostatní,ostatni,DE,2017,102.9
+C31_32,Nábytek a ostatní,ostatni,DE,2018,107.1
+C31_32,Nábytek a ostatní,ostatni,DE,2019,105.9
+C31_32,Nábytek a ostatní,ostatni,DE,2020,100.9
+C31_32,Nábytek a ostatní,ostatni,DE,2021,104.6
+C31_32,Nábytek a ostatní,ostatni,DE,2022,102.5
+C31_32,Nábytek a ostatní,ostatni,DE,2023,99.8
+C31_32,Nábytek a ostatní,ostatni,DE,2024,95.9
+C31_32,Nábytek a ostatní,ostatni,DE,2025,95.9
+C33,Opravy a instalace,ostatni,CZ,2015,100
+C33,Opravy a instalace,ostatni,CZ,2016,102.5
+C33,Opravy a instalace,ostatni,CZ,2017,100.3
+C33,Opravy a instalace,ostatni,CZ,2018,105.3
+C33,Opravy a instalace,ostatni,CZ,2019,110.7
+C33,Opravy a instalace,ostatni,CZ,2020,104.3
+C33,Opravy a instalace,ostatni,CZ,2021,106.7
+C33,Opravy a instalace,ostatni,CZ,2022,111.7
+C33,Opravy a instalace,ostatni,CZ,2023,117.9
+C33,Opravy a instalace,ostatni,CZ,2024,115.4
+C33,Opravy a instalace,ostatni,CZ,2025,118.3
+C33,Opravy a instalace,ostatni,DE,2015,100
+C33,Opravy a instalace,ostatni,DE,2016,98.6
+C33,Opravy a instalace,ostatni,DE,2017,104.2
+C33,Opravy a instalace,ostatni,DE,2018,107.9
+C33,Opravy a instalace,ostatni,DE,2019,110.8
+C33,Opravy a instalace,ostatni,DE,2020,100
+C33,Opravy a instalace,ostatni,DE,2021,102.2
+C33,Opravy a instalace,ostatni,DE,2022,102.1
+C33,Opravy a instalace,ostatni,DE,2023,108.4
+C33,Opravy a instalace,ostatni,DE,2024,111.6
+C33,Opravy a instalace,ostatni,DE,2025,115.8
