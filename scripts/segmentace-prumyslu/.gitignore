@@ -5,3 +5,4 @@ data/cache/
 .Rhistory
 .RData
 .Rproj.user/
+out/run_log.txt
