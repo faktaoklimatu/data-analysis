@@ -29,6 +29,12 @@ source("tests/test_against_deck.R")
 Pro každé číslo vypíše `výpočet (prezentace) OK/CHYBA`. S testovacími daty bez stahování:
 `FOK_EUROSTAT_DIR=tests/fixtures Rscript tests/test_against_deck.R`.
 
+## Kontrolní notebook
+`notebook/kontrola_vypoctu.qmd` – ke každému výpočtu zdroj, vstupní data, kód a výsledek.
+Kde to jde, přepočítá výsledek přímo ze surových dat a porovná ho s výstupem skriptu
+(sloupec `shoda`). Neporovnává se slajdy – prezentace je výstup. Po `run_all.R` vyrenderujte
+v Positronu (Render) nebo `quarto render notebook/kontrola_vypoctu.qmd`.
+
 ## Zdroje dat
 Seznam všech zdrojů po slajdech je v [`data_catalog.csv`](data_catalog.csv)
 (slajd, zdroj, dataset, filtr, odkaz, způsob získání, skript, stav).

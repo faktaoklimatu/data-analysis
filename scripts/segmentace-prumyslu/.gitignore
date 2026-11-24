@@ -6,3 +6,5 @@ data/cache/
 .RData
 .Rproj.user/
 out/run_log.txt
+notebook/*.html
+notebook/*_files/
