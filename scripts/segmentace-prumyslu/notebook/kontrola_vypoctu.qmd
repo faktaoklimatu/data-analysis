@@ -151,7 +151,7 @@ Exportní jádro by mělo mít velký podíl na vývozu *a* vysoký podíl vývo
 
 ```{r s06-export}
 #| fig-width: 9
-#| fig-height: 5.5
+#| fig-height: 6.5
 library(ggplot2)
 BARVY <- c("exportní jádro" = "#3a87c8", "energeticky nejnáročnější" = "#f06a4e", "ostatní" = "#b9b9b9")
 vyvoz <- out("figaro_obory") |> filter(rok == 2024, nace != "C19") |>
@@ -161,16 +161,23 @@ vyvoz <- out("figaro_obory") |> filter(rok == 2024, nace != "C19") |>
          podil_na_vyvozu_pct = E / sum(E) * 100,     # podíl oboru na vývozu průmyslu (bez rafinerií)
          vyvoz_z_produkce_pct = E / P * 100)         # kolik z produkce oboru jde do zahraničí
 
-ggplot(vyvoz, aes(vyvoz_z_produkce_pct, podil_na_vyvozu_pct, colour = skupina)) +
-  geom_point(aes(size = E / 1000), alpha = .85) +
-  geom_text(aes(label = name), size = 3.2, vjust = -1.1, show.legend = FALSE) +
-  scale_colour_manual(values = BARVY, name = NULL) +
-  scale_size_area(max_size = 14, name = "vývoz, mld. €") +
-  scale_y_sqrt(breaks = c(1, 2, 5, 10, 20, 35)) +
-  labs(x = "Vývoz v % produkce oboru", y = "Podíl na vývozu průmyslu, % (odmocninová osa)",
+hph25 <- out("obory_velikost_2025") |> select(nace, podil_hph_pct)   # podíl na HPH (str. 5)
+vyvoz <- vyvoz |> left_join(hph25, by = "nace") |>
+  mutate(jadro = if_else(skupina == "exportní jádro", "exportní jádro", "ostatní obory"),
+         name = reorder(name, podil_na_vyvozu_pct))
+
+ggplot(vyvoz, aes(y = name)) +
+  geom_col(aes(x = podil_na_vyvozu_pct, fill = jadro), width = .7) +
+  geom_point(aes(x = podil_hph_pct), shape = 21, fill = "white", colour = "black", size = 2.3) +
+  geom_text(aes(x = podil_na_vyvozu_pct, label = sprintf("%.1f %%  (vyváží %.0f %% produkce)",
+                                                        podil_na_vyvozu_pct, vyvoz_z_produkce_pct)),
+            hjust = -0.08, size = 3) +
+  scale_fill_manual(values = c("exportní jádro" = "#3a87c8", "ostatní obory" = "#b9b9b9"), name = NULL) +
+  scale_x_continuous(expand = expansion(mult = c(0, .35))) +
+  labs(x = "% vývozu zpracovatelského průmyslu (pruh) · % HPH 2025 (tečka)", y = NULL,
        title = "Kdo nese český vývoz? (FIGARO 2024)",
-       subtitle = "Vpravo nahoře = velký vývozce, který vyváží většinu své produkce") +
-  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+       subtitle = "Pruh delší než tečka = obor se na vývozu podílí víc než na přidané hodnotě") +
+  theme_minimal(base_size = 11) + theme(legend.position = "top", panel.grid.major.y = element_blank())
 ```
 
 Souhrn za skupiny:
