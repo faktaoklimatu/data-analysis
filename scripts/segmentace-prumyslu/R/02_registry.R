@@ -60,7 +60,13 @@ if (file.exists(ovr_file)) {
 }
 
 inst <- inst %>%
-  left_join(kraj_map %>% select(installation_id, kraj), by = "installation_id")
+  left_join(kraj_map %>% select(installation_id, kraj), by = "installation_id") %>%
+  # sektory pro podíl povolenek zdarma (str. 16): cement = činnosti 29 (slínek) a 30 (vápno), sklo a keramika = zbytek C23
+  mutate(sektor = case_when(nace == "C24" ~ "Výroba oceli",
+                            activity_code %in% c(29, 30) ~ "Výroba cementu",
+                            nace == "C23" ~ "Sklo a keramika",
+                            nace == "C20" ~ "Chemikálie",
+                            TRUE ~ NA_character_))
 
 # Kontrola: všechna zařízení s emisemi 2015–2019 mají přiřazený kraj
 no_kraj <- inst %>% filter(year %in% 2015:2019, verified_em > 0, is.na(kraj)) %>% distinct(installation_id, name)

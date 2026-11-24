@@ -52,10 +52,11 @@ Seznam všech zdrojů po slajdech je v [`data_catalog.csv`](data_catalog.csv)
 | `05_regions.R` | emisní expozice krajů | – |
 | `06`, `07`, `09` | ceny elektřiny a plynu pro průmysl | – |
 | `08_production_annual.R` | roční index výroby, Česko vs. Německo | 7 |
-| `10_io_metals.R` | podíl kovů (CPA 24) na produkci oborů, IO 2020 | 21–23 |
-
-Plánované: `11_hph_zamestnanost.R` (5, 6, 20), `12_energie_pefa.R` (11, 12),
-`13_sut_csu.R` (10, 17, 21–23), `14_figaro.R` (26–28).
+| `10_io_metals.R` | podíl kovů (CPA 24) na produkci oborů, IO 2020 | příloha |
+| `11_hph_zamestnanost.R` | HPH a pracující 2025; náklady práce a výroba na pracujícího; dovoz aut z Číny (Comext) | 5, 6, 20 |
+| `12_energie_pefa.R` | energetická náročnost (TJ / mil. € HPH) a skladba paliv, PEFA 2023 | 11, 12 |
+| `13_sut_csu.R` | nákupy energie a náklady práce v % nákladů, SUT ČSÚ 2024 + 2025 | 10, 17, 21–23 |
+| `14_figaro.R` | dovozní penetrace, vývoz mimo EU ETS, čtyři skupiny oborů (FIGARO 2015, 2024) | 26, 27, 28 |
 
 Ruční převodníky jsou v `data/manual/` (kód činnosti → obor, průmyslové spalovací zdroje → obor,
 zařízení → kraj, odečet vlastní elektřiny). Jsou to úsudky autora.

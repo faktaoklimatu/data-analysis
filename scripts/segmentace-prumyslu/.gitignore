@@ -9,3 +9,4 @@ out/run_log.txt
 notebook/*.html
 notebook/*_files/
 notebook/slajdy/
+_to_delete/

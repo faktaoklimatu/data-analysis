@@ -88,6 +88,27 @@ costs <- gva %>%
     indirect_net_pct_gva = (indirect_meur - coalesce(comp_meur, 0)) / gva_meur * 100,
     share_gva_c     = gva_meur / gva_meur[nace == "C"] * 100
   )
+# Str. 17: náklady ETS v % celkových nákladů oboru; celkové náklady = nákupy zboží a služeb (PUR_MEUR)
+#   + osobní náklady (EXPN_SAL_BEN_MEUR), Eurostat sbs_ovw_act 2024
+f_pur <- file.path(DIR_ES, "sbs_ovw_act_pur.csv")
+if (!file.exists(f_pur)) {
+  options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "UTF-8"); options(fok.no_download = FALSE)
+  # sloučené obory (C10-12, C13-15, C31_32) SBS nemá jako celek -> stahují se složky a sčítají
+  es_save(es_get("sbs_ovw_act", list(geo = "CZ", nace_r2 = c("C", paste0("C", 10:33)),
+                                     indic_sbs = c("PUR_MEUR", "EXPN_SAL_BEN_MEUR"), time = YEAR_COST)), "sbs_ovw_act_pur")
+}
+slouc <- function(n) case_when(n %in% c("C10", "C11", "C12") ~ "C10-12", n %in% c("C13", "C14", "C15") ~ "C13-15",
+                               n %in% c("C31", "C32") ~ "C31_32", TRUE ~ n)
+pur <- es_read("sbs_ovw_act_pur") %>% mutate(nace = slouc(nace_r2)) %>%
+  group_by(nace, indic_sbs) %>% summarise(values = sum(values), .groups = "drop") %>%
+  pivot_wider(names_from = indic_sbs, values_from = values) %>%
+  transmute(nace, pur_meur = PUR_MEUR, osobni_meur = EXPN_SAL_BEN_MEUR)
+costs <- costs %>% left_join(pur, by = "nace") %>%
+  mutate(naklady_sbs_meur     = pur_meur + osobni_meur,
+         podil_nakladu_c_pct  = naklady_sbs_meur / naklady_sbs_meur[nace == "C"] * 100,
+         indirect_pct_naklady = indirect_meur / naklady_sbs_meur * 100,     # horní odhad, bez kompenzace
+         direct_pct_naklady   = direct_meur / naklady_sbs_meur * 100,       # horní odhad vč. energetik podniků
+         direct_best_pct_naklady = direct_best_meur / naklady_sbs_meur * 100)
 write_csv(costs, file.path(DIR_OUT, "ets_costs_2024.csv"))
 
 # Časová řada všech průmyslových zařízení (slide 22)

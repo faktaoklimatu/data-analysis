@@ -6,6 +6,8 @@
 source("R/00_setup.R")
 
 ES_API <- "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/"
+# Comext (zahraniční obchod podle HS): stejný formát JSON-stat, jiná adresa
+COMEXT_API <- "https://ec.europa.eu/eurostat/api/comext/dissemination/statistics/1.0/data/"
 
 # Převede odpověď JSON-stat na tabulku (jeden řádek = jedna hodnota)
 parse_jsonstat <- function(j) {
@@ -27,9 +29,9 @@ parse_jsonstat <- function(j) {
 }
 
 # Stáhne jeden dotaz; filtry jako pojmenovaný seznam vektorů
-es_get <- function(dataset, filters) {
+es_get <- function(dataset, filters, api = ES_API) {
   q <- paste(unlist(Map(function(k, v) paste0(k, "=", v), names(filters), filters)), collapse = "&")
-  url <- paste0(ES_API, dataset, "?", q)
+  url <- paste0(api, dataset, "?", q)
   message("Stahuji ", dataset, " …")
   parse_jsonstat(jsonlite::fromJSON(url, simplifyVector = FALSE))
 }

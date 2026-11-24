@@ -60,3 +60,7 @@ es_read <- function(name) {
 
 # Sdílené pomocné funkce
 source("R/funkce.R", encoding = "UTF-8")
+
+# --- Skupiny oborů (str. 6, 10, 11) ---------------------------------------------------------
+SKUPINA_EXPORT  <- c("C26", "C27", "C28", "C29", "C30")   # exportní jádro: elektronika, el. zařízení, stroje, auta, ost. doprava
+SKUPINA_ENERGIE <- c("C17", "C20", "C23", "C24")          # energeticky nejnáročnější: papír, chemie, cement/sklo/keramika, hutě
