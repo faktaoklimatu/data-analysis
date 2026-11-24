@@ -1,0 +1,2263 @@
+installation_id,name,activity_code,year,free_alloc,transitional,verified_em,source,nace,kraj
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2013,4286,0,5292,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2013,96676,0,102970,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2013,20996,0,17955,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2013,193343,0,106649,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2013,27060,0,24181,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2013,6100,0,6413,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2013,29070,0,50946,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2013,10351,0,7984,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2013,7955,0,5910,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2013,1332,0,942,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2013,217242,0,183653,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2013,151062,0,109868,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2013,448113,0,372439,proc,C23,Pardubický
+108,CEREPA a.s.,36,2013,2584,0,2959,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2013,10563,0,8976,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2013,25908,0,12966,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2013,195027,0,66836,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2013,561538,0,392805,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2013,8351,0,7330,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2013,5047,0,5816,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2013,3226,0,1208,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2013,2344,0,1549,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2013,150,0,150,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2013,15257,0,17344,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2013,11523,0,5836,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2013,23798,0,30495,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2013,15835,0,35263,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2013,7902,0,25550,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2013,211160,0,300143,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2013,12630,0,18886,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2013,38358,0,13492,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2013,2599,0,3855,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2013,98397,410152,1818359,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2013,9731,0,9346,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2013,31045,0,66011,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2013,15142,0,18830,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2013,14479,0,12218,proc,C23,Ústecký
+414,Glazura,32,2013,2141,0,1046,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2013,42526,0,31377,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2013,0,0,0,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2013,19655,0,15328,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2013,12768,0,34296,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2013,24307,0,23649,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2013,7520,0,9265,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2013,10608,0,12360,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2013,644075,0,453821,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2013,429308,0,439785,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2013,3766,0,4049,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2013,446598,0,325591,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2013,5975,0,8741,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2013,38926,0,36574,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2013,7608,0,17243,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2013,23916,0,5508,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2013,2833,0,1819,proc,C23,Praha
+246,KAVALIERGLASS,7,2013,17611,0,12404,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2013,254,0,337,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2013,19755,0,20628,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2013,62561,24841,75623,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2013,2698,0,488,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2013,30322,0,6632,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2013,30214,0,33894,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2013,13379,0,17081,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2013,12856,0,10421,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2013,11635,0,11466,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2013,53192,0,60737,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2013,17747,0,16769,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2013,41242,0,40510,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2013,18883,0,13675,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2013,116218,0,101727,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2013,5170,0,40279,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2013,17724,0,18134,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2013,2514,0,9248,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2013,7076,0,72696,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2013,4705866,0,2752294,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2013,85470,0,145368,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2013,98187,0,196650,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2013,169138,0,328356,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2013,0,NA,NA,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2013,44865,0,49224,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2013,21669,0,32368,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2013,195605,0,106556,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2013,39106,0,27348,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2013,689680,0,694113,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2013,384348,0,366165,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2013,481201,0,405935,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2013,11608,0,5753,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2013,20645,0,16203,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2013,27394,0,17222,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2013,84188,0,30219,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2013,37652,0,37891,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2013,5666,0,4993,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2013,0,NA,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2013,28296,0,21274,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2013,107680,0,75482,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2013,17677,0,14878,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2013,6050,0,10460,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2013,0,NA,NA,proc,C17,Ústecký
+159,Papírna Aloisov,36,2013,2934,0,3811,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2013,0,0,0,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2013,0,NA,NA,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2013,38618,0,2188,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2013,0,0,364,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2013,0,NA,NA,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2013,16660,0,15713,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2013,5756,0,4063,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2013,31447,0,25842,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2013,24597,0,45554,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2013,19335,0,23822,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2013,8796,0,6480,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2013,117575,0,73856,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2013,12202,0,12306,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2013,16443,0,21525,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2013,69789,0,12510,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2013,47,0,26091,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2013,12722,0,4503,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2013,44833,0,44277,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2013,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2013,5969,0,3019,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2013,2363,0,1895,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2013,7519,0,5352,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2013,37849,0,41689,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2013,3126,0,2882,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2013,8296,0,11903,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2013,9020,0,3669,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2013,10318,0,10461,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2013,0,NA,NA,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2013,140315,0,231706,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2013,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2013,137216,0,432120,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2013,56380,0,106336,comb,C20,Karlovarský
+421,TAMEH Czech,20,2013,193024,1158181,2489107,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2013,222751,68706,372545,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2013,12125,0,20835,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2013,345,0,555,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2013,72220,0,93870,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2013,29797,0,69973,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2013,7722,0,4186,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2013,14762,0,28625,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2013,13968,0,15203,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2013,21248,0,18800,comb,C22,Zlínský
+114,Třinecké železárny,24,2013,3839675,0,2735869,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2013,53538,0,48918,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2013,694441,0,2368045,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2013,64780,0,79281,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2013,20300,0,22021,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2013,6873,0,7745,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2013,145098,0,133441,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2013,26961,0,33653,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2013,29337,0,22867,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2013,282082,0,296437,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2013,305907,0,357897,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2013,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2013,0,NA,NA,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2013,3607,0,2716,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2013,11839,0,7366,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2013,20494,0,18523,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2013,12105,0,9465,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2013,14952,0,12644,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2013,7869,0,6582,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2013,7269,0,5778,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2013,22729,0,19383,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2013,8339,0,10,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2013,18234,0,21238,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2013,12230,0,16077,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2013,4358,0,244,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2013,3154,0,1109,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2013,10008,0,21104,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2013,3928,0,4464,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2013,5037,0,3848,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2013,18534,0,15958,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2013,3118,0,2599,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2013,88865,190154,413346,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2013,18302,0,19716,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2013,68475,0,109963,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2014,4211,0,4749,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2014,94997,0,104145,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2014,20630,0,19183,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2014,189985,0,158948,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2014,26443,0,22774,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2014,5983,0,6137,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2014,28565,0,43716,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2014,10171,0,6730,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2014,7817,0,7343,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2014,1310,0,869,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2014,213129,0,159906,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2014,148438,0,115274,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2014,440330,0,395322,proc,C23,Pardubický
+108,CEREPA a.s.,36,2014,2539,0,2691,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2014,10379,0,8523,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2014,15622,0,12841,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2014,191640,0,63421,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2014,551767,0,479095,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2014,8206,0,8555,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2014,4960,0,7633,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2014,3170,0,1393,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2014,2303,0,2081,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2014,147,0,188,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2014,14991,0,17941,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2014,11322,0,5741,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2014,23282,0,41720,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2014,15504,0,39904,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2014,7765,0,25964,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2014,204929,0,298232,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2014,11302,0,18806,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2014,37692,0,13195,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2014,2554,0,3851,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2014,88342,351559,1830527,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2014,8708,0,8880,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2014,30504,0,64293,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2014,17312,0,19304,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2014,14228,0,11314,proc,C23,Ústecký
+414,Glazura,32,2014,1203,0,1048,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2014,41694,0,28256,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2014,0,0,0,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2014,19314,0,6654,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2014,12546,0,15511,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2014,23885,0,10700,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2014,7389,0,6368,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2014,10424,0,13698,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2014,632888,0,511690,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2014,421851,0,451484,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2014,3371,0,3298,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2014,438841,0,348099,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2014,5348,0,8888,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2014,34838,0,32917,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2014,6810,0,16407,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2014,5875,0,11489,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2014,2784,0,1422,proc,C23,Praha
+246,KAVALIERGLASS,7,2014,17304,0,16834,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2014,456,0,248,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2014,19412,0,19675,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2014,53136,21292,34320,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2014,1079,0,45,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2014,29795,0,7842,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2014,29115,0,32806,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2014,13147,0,16466,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2014,11906,0,9996,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2014,11432,0,11716,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2014,52270,0,63191,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2014,17439,0,17823,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2014,40526,0,43209,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2014,18555,0,14072,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2014,114199,0,111302,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2014,5080,0,14130,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2014,17417,0,20564,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2014,2471,0,9557,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2014,6953,0,74777,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2014,4624129,0,2862942,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2014,83985,0,221271,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2014,96138,0,180800,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2014,198415,0,330003,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2014,0,NA,NA,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2014,44086,0,54358,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2014,21293,0,31349,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2014,192208,0,106855,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2014,38426,0,26727,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2014,648736,0,785752,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2014,377672,0,482653,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2014,472843,0,394512,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2014,11407,0,8726,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2014,20286,0,17374,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2014,26918,0,15350,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2014,23417,0,21185,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2014,58928,0,37577,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2014,5568,0,4214,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2014,4224,0,5595,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2014,27805,0,22094,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2014,112542,0,84905,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2014,17370,0,13600,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2014,5945,0,9277,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2014,0,NA,NA,proc,C17,Ústecký
+159,Papírna Aloisov,36,2014,2883,0,3748,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2014,0,0,0,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2014,0,NA,NA,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2014,35763,0,2086,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2014,1599,0,1646,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2014,0,NA,NA,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2014,14911,0,12552,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2014,5656,0,4042,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2014,30901,0,32259,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2014,24170,0,42092,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2014,18999,0,24040,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2014,8643,0,10969,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2014,113935,0,72947,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2014,11990,0,11862,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2014,16158,0,21234,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2014,68577,0,17076,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2014,46,0,26807,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2014,12501,0,4905,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2014,44053,0,50458,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2014,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2014,5865,0,1119,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2014,2321,0,1671,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2014,7389,0,4719,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2014,37192,0,28103,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2014,3072,0,2952,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2014,8680,0,10791,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2014,8863,0,3436,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2014,10139,0,10597,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2014,0,NA,NA,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2014,137831,0,250596,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2014,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2014,132710,0,366396,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2014,69458,0,100980,comb,C20,Karlovarský
+421,TAMEH Czech,20,2014,189665,992726,2439936,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2014,213467,58891,394051,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2014,11915,0,19475,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2014,1795,0,2800,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2014,70966,0,87302,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2014,29280,0,66095,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2014,7588,0,5395,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2014,14506,0,29176,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2014,13726,0,15055,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2014,20861,0,15687,comb,C22,Zlínský
+114,Třinecké železárny,24,2014,3772984,0,2630157,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2014,52607,0,50987,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2014,681095,0,2352248,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2014,63655,0,66825,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2014,19947,0,19893,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2014,6150,0,6319,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2014,142578,0,140586,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2014,24127,0,33319,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2014,28827,0,16018,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2014,277084,0,316802,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2014,300594,0,346671,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2014,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2014,0,NA,NA,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2014,3544,0,2632,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2014,7426,0,9243,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2014,20138,0,16093,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2014,11894,0,11502,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2014,14692,0,14204,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2014,7732,0,6411,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2014,7143,0,5665,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2014,22334,0,22609,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2014,8194,0,56,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2014,17917,0,19255,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2014,10617,0,12922,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2014,2142,0,1096,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2014,3100,0,1948,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2014,9834,0,15593,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2014,3515,0,3713,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2014,4949,0,3096,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2014,18213,0,16574,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2014,2790,0,2691,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2014,76959,162989,386998,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2014,16380,0,17811,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2014,62900,0,91692,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2015,4136,0,5004,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2015,93298,0,102843,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2015,20261,0,20958,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2015,186587,0,181691,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2015,20635,0,23256,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2015,5865,0,8322,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2015,28054,0,43598,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2015,9989,0,5760,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2015,7677,0,7465,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2015,1287,0,411,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2015,208979,0,182675,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2015,145783,0,111539,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2015,432455,0,459929,proc,C23,Pardubický
+108,CEREPA a.s.,36,2015,2494,0,2370,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2015,10194,0,9781,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2015,15212,0,14851,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2015,188213,0,61939,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2015,541882,0,471867,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2015,8059,0,7240,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2015,4871,0,5575,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2015,3113,0,821,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2015,2262,0,1597,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2015,145,0,10,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2015,14722,0,18256,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2015,11120,0,7029,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2015,22765,0,49038,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2015,15173,0,56786,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2015,7626,0,24615,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2015,199075,0,310582,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2015,10011,0,20241,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2015,24324,0,11583,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2015,2508,0,3878,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2015,79264,292966,1819211,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2015,7713,0,7458,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2015,29964,0,71737,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2015,17004,0,20012,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2015,13974,0,11434,proc,C23,Ústecký
+414,Glazura,32,2015,1181,0,1022,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2015,40856,0,27477,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2015,0,0,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2015,18968,0,7066,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2015,12322,0,17508,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2015,23458,0,9634,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2015,7258,0,6697,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2015,10238,0,10379,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2015,621569,0,558389,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2015,414307,0,450995,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2015,2986,0,3304,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2015,430993,0,350217,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2015,4736,0,9740,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2015,46959,0,37905,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2015,9177,0,17026,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2015,11540,0,11371,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2015,2734,0,851,proc,C23,Praha
+246,KAVALIERGLASS,7,2015,16996,0,16880,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2015,202,0,285,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2015,19064,0,20769,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2015,42311,17743,33776,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2015,544,0,4,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2015,104194,0,19131,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2015,28071,0,32290,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2015,12911,0,17272,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2015,10978,0,10052,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2015,11228,0,11479,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2015,51334,0,65801,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2015,17126,0,20071,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2015,39802,0,42381,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2015,18223,0,15599,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2015,112157,0,128165,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2015,4989,0,9330,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2015,17105,0,21950,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2015,2426,0,9636,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2015,6829,0,63701,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2015,4541431,0,2825625,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2015,82484,0,227541,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2015,94080,0,209017,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2015,204360,0,331381,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2015,0,NA,NA,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2015,43297,0,53379,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2015,20912,0,31357,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2015,188770,0,102065,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2015,37739,0,25696,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2015,637095,0,824149,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2015,370918,0,476744,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2015,464387,0,412674,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2015,11202,0,9379,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2015,19923,0,18871,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2015,26436,0,15734,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2015,23002,0,20330,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2015,57873,0,17975,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2015,5469,0,4493,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2015,4494,0,4679,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2015,27308,0,14223,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2015,110338,0,87156,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2015,17059,0,12429,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2015,5839,0,9513,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2015,0,NA,NA,proc,C17,Ústecký
+159,Papírna Aloisov,36,2015,2833,0,3982,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2015,0,0,0,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2015,0,NA,NA,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2015,32976,0,2289,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2015,1423,0,2198,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2015,0,NA,NA,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2015,8799,0,13214,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2015,5555,0,4768,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2015,30348,0,36226,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2015,23738,0,46681,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2015,18660,0,25732,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2015,8490,0,151,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2015,110328,0,69731,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2015,11775,0,12025,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2015,15869,0,21750,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2015,67350,0,12985,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2015,45,0,19697,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2015,12278,0,4087,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2015,43265,0,54020,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2015,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2015,2226,0,1090,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2015,2280,0,1849,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2015,7256,0,4741,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2015,36527,0,32467,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2015,3017,0,3043,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2015,9293,0,12097,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2015,8705,0,2546,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2015,9958,0,10870,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2015,0,NA,972,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2015,135318,0,239568,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2015,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2015,128481,0,279493,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2015,63496,0,101085,comb,C20,Karlovarský
+421,TAMEH Czech,20,2015,186307,827272,2209436,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2015,204750,49076,374354,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2015,11702,0,14637,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2015,1763,0,2888,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2015,69697,0,86367,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2015,28756,0,72429,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2015,7452,0,5870,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2015,14246,0,33518,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2015,13480,0,14630,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2015,20468,0,14921,comb,C22,Zlínský
+114,Třinecké železárny,24,2015,3705508,0,2497507,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2015,51666,0,47718,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2015,667652,0,2017036,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2015,62517,0,77118,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2015,19593,0,22466,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2015,5448,0,6154,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2015,140028,0,135832,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2015,21371,0,32383,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2015,28311,0,24515,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2015,272032,0,307310,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2015,295217,0,320995,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2015,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2015,0,NA,NA,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2015,3481,0,2614,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2015,11426,0,9074,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2015,19777,0,10096,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2015,11681,0,14935,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2015,14429,0,13454,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2015,7594,0,5535,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2015,7015,0,5230,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2015,21934,0,19683,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2015,5289,0,89,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2015,17597,0,21626,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2015,9180,0,9674,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2015,4206,0,380,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2015,3044,0,1033,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2015,9658,0,25890,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2015,3114,0,3807,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2015,4861,0,3488,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2015,17887,0,17707,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2015,3761,0,2797,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2015,88730,135824,391981,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2015,22079,0,18357,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2015,57837,0,88361,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2016,4060,0,5647,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2016,91581,0,96493,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2016,19890,0,22475,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2016,183154,0,190569,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2016,24896,0,23713,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2016,5747,0,7466,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2016,27538,0,46437,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2016,9804,0,5780,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2016,7535,0,7902,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2016,0,0,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2016,204807,0,171696,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2016,143101,0,86335,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2016,424498,0,531823,proc,C23,Pardubický
+108,CEREPA a.s.,36,2016,2448,0,2607,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2016,13273,0,9492,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2016,23065,0,16312,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2016,184750,0,58585,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2016,531896,0,515584,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2016,7911,0,8693,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2016,4781,0,6499,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2016,3056,0,1430,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2016,2220,0,510,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2016,0,0,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2016,16799,0,19866,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2016,10915,0,8015,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2016,22247,0,32886,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2016,14840,0,36252,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2016,7485,0,26633,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2016,221981,0,324387,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2016,8759,0,20352,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2016,21282,0,11765,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2016,2462,0,3928,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2016,71134,234373,1842539,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2016,6749,0,7529,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2016,29422,0,71092,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2016,16693,0,17661,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2016,13716,0,13125,proc,C23,Ústecký
+414,Glazura,32,2016,1159,0,1069,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2016,40014,0,27933,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2016,0,0,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2016,18619,0,8489,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2016,12095,0,15258,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2016,23026,0,14306,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2016,7124,0,6910,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2016,10049,0,12542,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2016,610133,0,626166,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2016,406684,0,483421,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2016,2612,0,3561,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2016,423063,0,368962,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2016,4391,0,10021,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2016,46095,0,39716,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2016,9009,0,17965,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2016,11328,0,1752,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2016,1342,0,1223,proc,C23,Praha
+246,KAVALIERGLASS,7,2016,16684,0,19500,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2016,177,0,39,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2016,18714,0,20347,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2016,37170,14195,33943,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2016,534,0,0,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2016,91192,0,15947,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2016,27083,0,32905,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2016,12674,0,17960,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2016,10076,0,10160,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2016,11021,0,12106,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2016,50390,0,67299,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2016,16812,0,19157,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2016,45221,0,53660,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2016,17887,0,16728,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2016,110093,0,86201,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2016,4897,0,7873,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2016,16790,0,21762,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2016,2382,0,11179,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2016,6703,0,54439,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2016,4457872,0,3237646,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2016,80965,0,169869,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2016,92020,0,205761,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2016,199349,0,326495,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2016,0,NA,NA,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2016,42501,0,53745,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2016,20528,0,24842,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2016,185297,0,107849,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2016,37045,0,26181,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2016,625334,0,906544,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2016,364093,0,341334,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2016,455842,0,336328,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2016,10996,0,9500,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2016,19556,0,17686,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2016,25950,0,15663,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2016,22587,0,20959,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2016,35668,0,34970,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2016,5368,0,4744,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2016,4413,0,686,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2016,14889,0,899,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2016,108118,0,90238,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2016,16746,0,11905,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2016,5732,0,9654,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2016,0,NA,NA,proc,C17,Ústecký
+159,Papírna Aloisov,36,2016,2781,0,4098,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2016,0,0,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2016,6378,0,6911,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2016,30265,0,2468,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2016,1246,0,2585,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2016,0,NA,NA,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2016,7698,0,15553,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2016,5453,0,4866,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2016,29790,0,37363,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2016,25674,0,42837,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2016,18316,0,25208,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2016,3161,0,698,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2016,106758,0,49655,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2016,11559,0,11521,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2016,15577,0,22669,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2016,66111,0,12730,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2016,45,0,19182,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2016,12051,0,3892,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2016,42470,0,56662,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2016,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2016,2186,0,1130,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2016,2238,0,1969,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2016,7869,0,5661,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2016,35854,0,27742,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2016,2962,0,3369,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2016,9121,0,12534,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2016,8544,0,2046,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2016,9774,0,8189,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2016,0,NA,9853,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2016,132782,0,233445,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2016,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2016,124529,0,285388,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2016,62287,0,98648,comb,C20,Karlovarský
+421,TAMEH Czech,20,2016,182948,661818,2374980,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2016,196585,39261,385060,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2016,11486,0,15105,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2016,1732,0,3000,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2016,68414,0,94079,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2016,28227,0,75497,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2016,7315,0,6895,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2016,13984,0,32525,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2016,13693,0,15625,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2016,20074,0,14595,comb,C22,Zlínský
+114,Třinecké železárny,24,2016,3637329,0,2513079,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2016,50716,0,48514,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2016,654131,0,1584691,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2016,61366,0,78129,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2016,19240,0,20847,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2016,4767,0,5386,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2016,137452,0,66866,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2016,18698,0,29449,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2016,27790,0,22252,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2016,266932,0,320238,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2016,308104,0,400873,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2016,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2016,0,NA,NA,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2016,3417,0,1948,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2016,11214,0,8165,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2016,12221,0,8812,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2016,11466,0,12925,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2016,14164,0,11857,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2016,7454,0,6883,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2016,6886,0,5696,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2016,21531,0,21878,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2016,4627,0,111,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2016,17273,0,19462,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2016,7912,0,9472,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2016,4129,0,806,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2016,2988,0,2137,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2016,9480,0,20442,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2016,2725,0,4278,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2016,4772,0,3728,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2016,17559,0,15790,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2016,3692,0,2479,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2016,84243,108659,392103,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2016,16942,0,18069,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2016,53278,0,91468,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2017,3983,0,5697,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2017,89846,0,99741,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2017,19512,0,22950,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2017,179684,0,187993,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2017,25008,0,23383,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2017,5627,0,7889,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2017,27016,0,12488,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2017,9619,0,4996,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2017,7393,0,8169,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2017,0,0,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2017,200604,0,150778,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2017,70195,0,114285,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2017,416455,0,555561,proc,C23,Pardubický
+108,CEREPA a.s.,36,2017,2401,0,2973,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2017,9816,0,10353,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2017,23862,0,19316,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2017,181249,0,68901,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2017,521801,0,569140,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2017,7762,0,9120,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2017,4691,0,8000,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2017,2998,0,1157,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2017,1089,0,592,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2017,0,0,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2017,18089,0,22935,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2017,10709,0,6032,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2017,21728,0,34647,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2017,14505,0,36982,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2017,7344,0,30813,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2017,216966,0,325456,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2017,7545,0,20859,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2017,18333,0,9197,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2017,2415,0,3887,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2017,63912,175779,1560783,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2017,5813,0,8201,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2017,28879,0,82760,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2017,16381,0,15850,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2017,13456,0,13628,proc,C23,Ústecký
+414,Glazura,32,2017,1138,0,1002,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2017,39168,0,27679,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2017,0,0,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2017,18267,0,9120,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2017,11866,0,16724,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2017,22590,0,12985,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2017,6988,0,5799,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2017,9859,0,12826,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2017,598573,0,610490,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2017,398979,0,469021,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2017,2250,0,3398,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2017,415048,0,384728,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2017,4724,0,10677,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2017,45221,0,40728,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2017,8839,0,18703,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2017,11113,0,1935,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2017,1317,0,1221,proc,C23,Praha
+246,KAVALIERGLASS,7,2017,16367,0,17663,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2017,0,0,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2017,18359,0,23852,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2017,32719,10646,41427,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2017,0,0,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2017,78597,0,16544,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2017,26151,0,33611,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2017,12434,0,18713,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2017,9198,0,10359,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2017,10812,0,12261,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2017,49435,0,64038,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2017,16493,0,14304,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2017,48039,0,58669,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2017,17548,0,17978,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2017,108007,0,142884,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2017,4805,0,6754,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2017,16472,0,23275,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2017,2337,0,12341,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2017,6576,0,60181,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2017,4373411,0,2535886,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2017,79432,0,106915,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2017,89950,0,218574,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2017,194354,0,324676,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2017,0,NA,NA,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2017,41695,0,54645,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2017,20138,0,28482,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2017,181786,0,115268,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2017,36343,0,26513,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2017,599771,0,912843,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2017,357195,0,535977,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2017,447206,0,418035,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2017,10788,0,8478,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2017,19186,0,16607,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2017,25459,0,18359,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2017,22172,0,23309,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2017,55733,0,38009,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2017,5267,0,4588,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2017,4332,0,686,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2017,2918,0,899,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2017,105884,0,96285,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2017,16428,0,10815,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2017,5623,0,9999,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2017,0,NA,287,proc,C17,Ústecký
+159,Papírna Aloisov,36,2017,2727,0,4147,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2017,0,0,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2017,6586,0,7300,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2017,27624,0,2639,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2017,1074,0,2670,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2017,0,NA,NA,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2017,9954,0,14317,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2017,5349,0,3708,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2017,29226,0,39571,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2017,26851,0,50787,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2017,17969,0,25897,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2017,3101,0,698,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2017,67109,0,33798,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2017,11340,0,11020,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2017,15282,0,22052,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2017,64858,0,13227,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2017,44,0,26134,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2017,11823,0,4048,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2017,41665,0,58658,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2017,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2017,2144,0,1155,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2017,2195,0,1999,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2017,7718,0,5846,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2017,35175,0,33069,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2017,2905,0,3513,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2017,8950,0,14241,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2017,3665,0,2139,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2017,9589,0,6509,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2017,0,NA,9316,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2017,130221,0,208336,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2017,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2017,120831,0,259292,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2017,61069,0,102322,comb,C20,Karlovarský
+421,TAMEH Czech,20,2017,179590,496363,2252840,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2017,188951,29446,407611,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2017,11269,0,14712,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2017,1700,0,2915,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2017,67118,0,94615,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2017,27692,0,75301,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2017,7177,0,7742,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2017,13719,0,30516,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2017,14778,0,15147,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2017,19676,0,14133,comb,C22,Zlínský
+114,Třinecké železárny,24,2017,3568414,0,2629576,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2017,49755,0,51122,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2017,227717,0,2411337,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2017,60203,0,75834,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2017,18887,0,15062,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2017,3647,0,5044,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2017,134847,0,69897,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2017,16107,0,29073,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2017,27264,0,24225,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2017,261781,0,307386,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2017,326638,0,383522,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2017,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2017,0,NA,NA,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2017,1676,0,2873,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2017,11003,0,7427,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2017,8971,0,12207,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2017,11250,0,14999,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2017,13896,0,14739,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2017,7313,0,7166,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2017,6755,0,6571,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2017,21123,0,22422,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2017,3985,0,138,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2017,16946,0,21857,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2017,6805,0,9804,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2017,2025,0,1082,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2017,2932,0,2082,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2017,9301,0,19322,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2017,2347,0,4485,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2017,4681,0,3803,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2017,17226,0,16412,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2017,3622,0,3234,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2017,79863,81495,405451,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2017,16622,0,22386,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2017,49198,0,89814,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2018,3905,0,3171,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2018,88094,0,100600,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2018,19132,0,23839,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2018,176180,0,184422,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2018,24521,0,23172,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2018,5509,0,8541,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2018,0,0,NA,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2018,9432,0,5430,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2018,7249,0,8251,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2018,0,0,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2018,196377,0,141870,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2018,137652,0,135632,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2018,408335,0,567456,proc,C23,Pardubický
+108,CEREPA a.s.,36,2018,2355,0,2583,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2018,12768,0,10631,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2018,23398,0,16729,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2018,177715,0,87915,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2018,511610,0,617659,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2018,7610,0,8438,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2018,4599,0,12789,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2018,2940,0,1584,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2018,534,0,382,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2018,0,0,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2018,17739,0,23281,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2018,10500,0,5501,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2018,21209,0,35159,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2018,14171,0,43258,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2018,7200,0,22543,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2018,211498,0,308976,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2018,6371,0,20900,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2018,15480,0,7144,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2018,2368,0,3484,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2018,57560,117186,1577655,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2018,4909,0,2299,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2018,28334,0,25838,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2018,16067,0,15843,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2018,13194,0,14443,proc,C23,Ústecký
+414,Glazura,32,2018,1115,0,1123,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2018,38318,0,31638,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2018,0,0,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2018,17910,0,9711,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2018,11635,0,15909,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2018,22150,0,16869,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2018,6852,0,7371,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2018,9666,0,13075,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2018,586901,0,708533,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2018,391199,0,468992,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2018,1327,0,3644,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2018,406954,0,429958,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2018,3989,0,11036,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2018,44339,0,34945,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2018,8666,0,14157,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2018,10897,0,1926,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2018,1291,0,1085,proc,C23,Praha
+246,KAVALIERGLASS,7,2018,16048,0,17033,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2018,0,0,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2018,18001,0,24019,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2018,28931,7097,32838,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2018,0,0,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2018,66409,0,19355,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2018,25268,0,33403,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2018,12192,0,18730,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2018,8345,0,10249,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2018,10602,0,12103,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2018,52884,0,62769,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2018,8690,0,9332,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2018,47110,0,54712,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2018,17206,0,17958,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2018,105901,0,156968,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2018,4711,0,6378,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2018,16151,0,26112,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2018,2291,0,13588,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2018,6448,0,57724,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2018,4288129,0,2868088,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2018,77883,0,81909,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2018,87879,0,219354,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2018,189379,0,339639,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2018,0,NA,NA,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2018,40882,0,52361,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2018,19746,0,29995,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2018,178242,0,119847,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2018,35635,0,27366,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2018,560334,0,826610,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2018,350229,0,473399,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2018,438485,0,406600,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2018,10577,0,8512,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2018,18812,0,16778,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2018,24962,0,19954,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2018,21758,0,22973,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2018,54647,0,15166,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2018,5164,0,4348,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2018,0,0,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2018,0,0,NA,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2018,103638,0,90455,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2018,16108,0,10257,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2018,5513,0,8299,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2018,1532,0,3076,proc,C17,Ústecký
+159,Papírna Aloisov,36,2018,2674,0,4005,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2018,0,0,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2018,6462,0,7200,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2018,25061,0,2800,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2018,907,0,2942,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2018,0,NA,NA,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2018,8404,0,14625,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2018,5245,0,3854,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2018,28656,0,40194,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2018,26331,0,52433,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2018,17619,0,25912,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2018,3041,0,0,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2018,64318,0,30637,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2018,11119,0,11103,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2018,14984,0,21214,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2018,63594,0,14622,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2018,43,0,26473,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2018,11593,0,4162,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2018,40853,0,57769,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2018,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2018,2103,0,1143,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2018,2152,0,1927,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2018,7569,0,5486,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2018,34489,0,30879,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2018,2849,0,2882,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2018,8776,0,11624,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2018,3594,0,1824,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2018,9402,0,7925,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2018,0,NA,8750,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2018,127637,0,203618,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2018,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2018,117437,0,262924,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2018,59847,0,106773,comb,C20,Karlovarský
+421,TAMEH Czech,20,2018,176231,330909,2393464,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2018,181826,19630,401632,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2018,11049,0,19799,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2018,1668,0,3038,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2018,65810,0,94273,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2018,27152,0,75719,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2018,7037,0,7200,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2018,13452,0,33686,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2018,14491,0,14500,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2018,19274,0,13404,comb,C22,Zlínský
+114,Třinecké železárny,24,2018,3498832,0,2696598,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2018,48785,0,50757,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2018,626841,0,2383198,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2018,59030,0,74274,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2018,18534,0,11959,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2018,3079,0,5375,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2018,132218,0,76354,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2018,13600,0,29500,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2018,26733,0,21309,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2018,256585,0,335823,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2018,320303,0,436931,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2018,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2018,0,NA,NA,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2018,3287,0,2429,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2018,10788,0,7842,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2018,11756,0,7041,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2018,11030,0,8997,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2018,13625,0,17661,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2018,7170,0,16200,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2018,6624,0,3361,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2018,20711,0,30015,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2018,3366,0,130,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2018,16615,0,17753,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2018,5853,0,9646,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2018,3971,0,1259,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2018,2874,0,1361,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2018,9120,0,25276,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2018,1982,0,4865,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2018,4590,0,3459,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2018,16890,0,18717,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2018,3551,0,2803,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2018,75590,54330,365504,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2018,16298,0,19967,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2018,46040,0,77209,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2019,3827,0,3348,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2019,86320,0,102956,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2019,18746,0,21275,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2019,172632,0,183718,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2019,19225,0,23364,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2019,5387,0,7963,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2019,0,0,NA,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2019,9242,0,3981,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2019,7103,0,8295,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2019,0,0,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2019,192111,0,157623,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2019,134880,0,124772,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2019,400112,0,594410,proc,C23,Pardubický
+108,CEREPA a.s.,36,2019,2307,0,2853,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2019,12510,0,10634,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2019,22927,0,14827,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2019,174137,0,77753,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2019,501292,0,585507,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2019,7457,0,7144,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2019,4507,0,12553,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2019,2880,0,1350,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2019,523,0,257,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2019,0,0,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2019,17386,0,22547,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2019,5749,0,5517,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2019,20689,0,28962,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2019,13835,0,40114,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2019,7055,0,27024,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2019,206035,0,295011,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2019,5235,0,19968,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2019,12720,0,7809,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2019,2321,0,3660,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2019,52039,58593,1571869,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2019,0,0,NA,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2019,27790,0,30300,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2019,15750,0,15540,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2019,12928,0,13702,proc,C23,Ústecký
+414,Glazura,32,2019,1912,0,841,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2019,37461,0,29655,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2019,0,0,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2019,17550,0,10544,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2019,11400,0,15901,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2019,21704,0,17177,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2019,6714,0,6200,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2019,9472,0,13862,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2019,575083,0,767918,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2019,383321,0,473988,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2019,1090,0,2295,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2019,398760,0,495446,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2019,3279,0,12034,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2019,43446,0,31444,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2019,8491,0,3380,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2019,10677,0,1663,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2019,1265,0,1400,proc,C23,Praha
+246,KAVALIERGLASS,7,2019,15724,0,18455,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2019,0,0,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2019,17639,0,24535,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2019,25768,3549,21055,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2019,0,0,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2019,54616,0,13560,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2019,24432,0,33431,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2019,12249,0,18270,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2019,7516,0,10186,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2019,10388,0,12029,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2019,64672,0,75885,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2019,6838,0,9629,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2019,46172,0,54160,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2019,16861,0,15164,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2019,103769,0,150023,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2019,4616,0,7056,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2019,15825,0,23325,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2019,2245,0,12612,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2019,6318,0,48194,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2019,4201783,0,2455839,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2019,76315,0,56001,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2019,85798,0,215642,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2019,184415,0,387525,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2019,0,NA,NA,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2019,40059,0,56223,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2019,19348,0,29138,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2019,174653,0,124800,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2019,34917,0,26386,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2019,549019,0,751603,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2019,343177,0,520067,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2019,429656,0,420734,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2019,10365,0,9334,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2019,18434,0,19122,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2019,24459,0,16086,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2019,21343,0,23813,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2019,33619,0,37,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2019,5060,0,2680,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2019,0,0,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2019,0,0,NA,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2019,101372,0,100896,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2019,9523,0,9260,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2019,5402,0,8061,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2019,1249,0,1697,proc,C17,Ústecký
+159,Papírna Aloisov,36,2019,2620,0,3952,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2019,0,0,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2019,6339,0,6615,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2019,22569,0,2616,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2019,746,0,2723,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2019,0,NA,NA,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2019,6906,0,14709,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2019,5139,0,4354,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2019,28079,0,36771,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2019,25804,0,53312,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2019,17264,0,20271,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2019,2979,0,0,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2019,44220,0,41961,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2019,10895,0,8023,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2019,14682,0,20636,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2019,62313,0,11239,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2019,43,0,27198,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2019,11359,0,3950,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2019,40030,0,50639,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2019,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2019,2060,0,586,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2019,2109,0,1752,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2019,7417,0,2529,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2019,33795,0,30988,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2019,2791,0,3150,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2019,8602,0,12238,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2019,3521,0,1970,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2019,9213,0,6454,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2019,0,NA,7765,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2019,125024,0,158874,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2019,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2019,114765,0,244171,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2019,58618,0,110491,comb,C20,Karlovarský
+421,TAMEH Czech,20,2019,172872,165454,1931885,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2019,175187,9815,403742,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2019,10826,0,21151,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2019,1636,0,2957,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2019,64484,0,83669,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2019,26605,0,64364,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2019,6895,0,3143,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2019,13181,0,34293,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2019,14201,0,14409,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2019,18869,0,11446,comb,C22,Zlínský
+114,Třinecké železárny,24,2019,3428377,0,2650392,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2019,47802,0,44213,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2019,613052,0,2469797,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2019,57841,0,74956,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2019,18181,0,5583,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2019,2529,0,5185,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2019,129555,0,72106,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2019,11175,0,33184,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2019,26195,0,17886,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2019,251330,0,300162,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2019,313899,0,391306,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2019,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2019,0,NA,NA,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2019,3220,0,2431,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2019,10571,0,9470,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2019,7169,0,5512,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2019,10808,0,15601,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2019,13350,0,20289,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2019,7026,0,23431,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2019,6491,0,5705,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2019,20294,0,29259,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2019,2765,0,149,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2019,16280,0,8534,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2019,5148,0,10523,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2019,3891,0,1142,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2019,2816,0,2164,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2019,8936,0,27168,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2019,1629,0,4919,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2019,4497,0,3357,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2019,16549,0,19244,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2019,3480,0,2843,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2019,71418,27165,363212,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2019,15969,0,18956,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2019,43679,0,74233,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2020,3748,0,4510,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2020,84540,0,89327,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2020,18360,0,22942,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2020,169073,0,185413,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2020,23534,0,20582,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2020,5266,0,8525,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2020,0,0,NA,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2020,9051,0,3843,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2020,6956,0,8125,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2020,0,0,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2020,187845,0,153915,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2020,132099,0,96158,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2020,391862,0,565801,proc,C23,Pardubický
+108,CEREPA a.s.,36,2020,2260,0,2348,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2020,12254,0,9290,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2020,13851,0,10579,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2020,170546,0,68537,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2020,490941,0,544348,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2020,7303,0,4441,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2020,4414,0,8261,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2020,2821,0,1432,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2020,0,0,NA,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2020,0,0,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2020,17029,0,20861,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2020,5630,0,4435,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2020,20170,0,20804,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2020,13501,0,45614,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2020,6910,0,22473,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2020,200612,0,289310,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2020,4142,0,17955,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2020,10064,0,8052,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2020,2273,0,3570,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2020,48162,0,1545462,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2020,0,0,NA,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2020,27245,0,29675,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2020,15434,0,14898,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2020,12662,0,11647,proc,C23,Ústecký
+414,Glazura,32,2020,1070,0,360,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2020,36605,0,28128,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2020,0,0,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2020,17188,0,10995,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2020,11165,0,16420,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2020,21256,0,12798,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2020,6576,0,5446,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2020,9277,0,15251,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2020,563224,0,695958,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2020,375417,0,465404,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2020,0,0,NA,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2020,390537,0,476623,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2020,2595,0,12419,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2020,42551,0,28983,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2020,0,0,NA,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2020,10457,0,1953,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2020,1239,0,1573,proc,C23,Praha
+246,KAVALIERGLASS,7,2020,15400,0,15773,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2020,0,0,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2020,17275,0,25851,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2020,24092,0,16796,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2020,0,0,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2020,43249,0,12279,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2020,23665,0,30637,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2020,15194,0,18781,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2020,6715,0,11177,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2020,10173,0,11530,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2020,63358,0,67989,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2020,6697,0,8773,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2020,45232,0,46867,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2020,16513,0,14889,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2020,101629,0,147230,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2020,4521,0,6828,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2020,15499,0,24061,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2020,2199,0,10884,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2020,6188,0,50958,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2020,4115139,0,2341035,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2020,74741,0,45154,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2020,83724,0,203224,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2020,179489,0,374568,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2020,0,NA,NA,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2020,39233,0,55908,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2020,18949,0,29442,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2020,171051,0,119106,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2020,34197,0,26776,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2020,537663,0,644524,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2020,336101,0,442708,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2020,420796,0,321528,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2020,10150,0,8917,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2020,18053,0,16310,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2020,23955,0,16004,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2020,20929,0,24083,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2020,13410,0,0,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2020,0,0,NA,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2020,0,0,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2020,0,0,NA,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2020,99108,0,103263,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2020,9326,0,8300,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2020,5291,0,8576,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2020,1225,0,1584,proc,C17,Ústecký
+159,Papírna Aloisov,36,2020,2567,0,3792,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2020,0,0,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2020,6216,0,6621,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2020,20162,0,2394,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2020,591,0,2921,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2020,0,NA,37,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2020,5463,0,12946,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2020,5034,0,4338,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2020,27500,0,33018,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2020,25277,0,52505,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2020,16909,0,28226,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2020,0,0,NA,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2020,58879,0,15443,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2020,10670,0,6217,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2020,14379,0,20871,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2020,61028,0,10067,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2020,41,0,21376,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2020,11125,0,4177,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2020,39204,0,49600,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2020,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2020,0,0,NA,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2020,2065,0,382,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2020,0,0,NA,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2020,33098,0,30609,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2020,2734,0,2970,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2020,8426,0,10511,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2020,3448,0,1432,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2020,9023,0,5452,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2020,0,NA,8388,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2020,122404,0,81076,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2020,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2020,112098,0,221091,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2020,57386,0,123149,comb,C20,Karlovarský
+421,TAMEH Czech,20,2020,169514,0,1649122,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2020,169017,0,397481,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2020,10603,0,21636,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2020,1604,0,2557,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2020,63154,0,88586,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2020,26057,0,71241,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2020,0,0,NA,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2020,0,0,NA,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2020,13911,0,14868,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2020,18464,0,10778,comb,C22,Zlínský
+114,Třinecké železárny,24,2020,3357682,0,2843953,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2020,46817,0,44289,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2020,599267,0,2230173,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2020,56648,0,75594,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2020,0,0,NA,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2020,2002,0,4864,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2020,126884,0,69709,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2020,8842,0,31923,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2020,25654,0,15603,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2020,246060,0,296932,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2020,307475,0,361016,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2020,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2020,3682,0,5355,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2020,3154,0,3132,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2020,10353,0,9255,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2020,5601,0,13521,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2020,10586,0,15029,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2020,13076,0,11861,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2020,6881,0,13549,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2020,6357,0,4217,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2020,19876,0,37979,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2020,2188,0,148,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2020,15945,0,6971,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2020,4710,0,9503,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2020,3811,0,642,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2020,2758,0,1223,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2020,8751,0,21764,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2020,1289,0,4786,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2020,4405,0,3333,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2020,16208,0,16225,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2020,3408,0,2027,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2020,67356,0,379193,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2020,15640,0,16745,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2020,41376,0,72212,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2021,1145,0,4983,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2021,90433,0,101718,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2021,17549,0,24995,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2021,171255,0,175298,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2021,16981,0,25175,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2021,1148,0,1666,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2021,0,NA,NA,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2021,3040,0,4581,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2021,5571,0,9051,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2021,0,NA,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2021,135442,0,150934,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2021,65638,0,79783,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2021,510994,0,545223,proc,C23,Pardubický
+108,CEREPA a.s.,36,2021,958,0,2958,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2021,7632,0,11042,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2021,9222,0,12377,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2021,135867,0,71364,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2021,474188,0,576696,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2021,5250,0,5819,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2021,13494,0,7477,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2021,1986,0,1527,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2021,0,NA,NA,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2021,0,NA,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2021,15401,0,24131,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2021,3940,0,5702,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2021,15668,0,22457,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2021,17512,0,43997,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2021,10952,0,28141,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2021,157170,0,287896,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2021,4913,0,20784,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2021,22116,0,7456,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2021,2347,0,3863,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2021,55274,0,1507125,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2021,0,NA,NA,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2021,24277,0,32702,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2021,10688,0,15211,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2021,10156,0,14775,proc,C23,Ústecký
+414,Glazura,32,2021,839,0,0,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2021,21803,0,25072,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2021,0,NA,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2021,15911,0,7375,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2021,29972,0,12170,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2021,20738,0,22244,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2021,8707,0,5715,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2021,10017,0,18588,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2021,650754,0,781873,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2021,384067,0,450035,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2021,0,NA,NA,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2021,436048,0,468331,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2021,2838,0,12422,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2021,7036,0,34287,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2021,0,NA,NA,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2021,7712,0,2067,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2021,0,NA,NA,proc,C23,Praha
+246,KAVALIERGLASS,7,2021,13230,0,16760,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2021,0,NA,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2021,20429,0,26971,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2021,5177,0,7542,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2021,0,NA,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2021,116660,0,17174,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2021,17804,0,34048,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2021,12159,0,19412,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2021,4994,0,11150,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2021,9104,0,11928,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2021,52146,0,75236,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2021,7259,0,10007,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2021,40246,0,44355,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2021,12825,0,16979,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2021,103251,0,137434,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2021,3929,0,6290,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2021,15211,0,23953,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2021,7718,0,9209,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2021,28027,0,54653,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2021,2669717,0,3083425,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2021,67804,0,92308,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2021,101255,0,237495,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2021,155156,0,375523,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2021,3246,0,13177,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2021,35763,0,52203,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2021,21098,0,30233,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2021,134097,0,125184,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2021,26940,0,35855,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2021,333995,0,838445,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2021,306078,0,535035,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2021,383695,0,382476,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2021,6799,0,8659,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2021,13503,0,15842,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2021,19150,0,16127,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2021,15951,0,24024,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2021,132,0,0,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2021,0,NA,NA,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2021,0,NA,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2021,0,NA,NA,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2021,120989,0,94854,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2021,7274,0,8367,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2021,3645,0,8903,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2021,836,0,1694,proc,C17,Ústecký
+159,Papírna Aloisov,36,2021,3118,0,4050,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2021,0,NA,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2021,5588,0,6386,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2021,14793,0,2576,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2021,2168,0,2985,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2021,551,0,2391,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2021,3208,0,12432,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2021,3782,0,4575,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2021,25167,0,37804,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2021,25516,0,53476,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2021,12274,0,36115,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2021,0,NA,NA,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2021,13346,0,5700,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2021,5768,0,7352,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2021,15974,0,19583,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2021,55830,0,10435,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2021,41,0,25238,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2021,7954,0,4072,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2021,42133,0,54398,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2021,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2021,0,NA,NA,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2021,0,NA,NA,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2021,0,NA,NA,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2021,24961,0,35311,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2021,2438,0,3093,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2021,7386,0,11648,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2021,564,0,2572,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2021,5290,0,7039,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2021,0,NA,8195,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2021,56976,0,82110,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2021,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2021,75206,0,224220,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2021,65580,0,136322,comb,C20,Karlovarský
+421,TAMEH Czech,20,2021,45743,0,2040795,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2021,103952,0,429603,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2021,10631,0,20227,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2021,1852,0,2901,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2021,64219,0,88412,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2021,31212,0,75381,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2021,0,NA,NA,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2021,0,NA,NA,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2021,9608,0,15373,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2021,0,NA,NA,comb,C22,Zlínský
+114,Třinecké železárny,24,2021,3375076,0,2532658,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2021,38934,0,43832,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2021,582321,0,2487570,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2021,55476,0,70007,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2021,0,NA,NA,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2021,953,0,2090,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2021,48951,0,61118,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2021,27592,0,29085,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2021,13118,0,15833,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2021,218235,0,307939,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2021,251346,0,403939,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2021,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2021,6503,0,5634,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2021,1863,0,815,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2021,6045,0,10125,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2021,8156,0,10721,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2021,20470,0,15011,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2021,23794,0,12736,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2021,26638,0,16328,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2021,4224,0,3735,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2021,47708,0,30856,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2021,5345,0,186,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2021,2872,0,5472,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2021,1840,0,2943,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2021,1374,0,82,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2021,1332,0,1451,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2021,9011,0,25699,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2021,1192,0,712,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2021,810,0,176,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2021,8857,0,19300,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2021,0,NA,NA,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2021,19555,0,378690,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2021,4511,0,18994,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2021,24388,0,80116,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2022,1145,0,3412,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2022,90433,0,102767,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2022,17549,0,22385,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2022,171255,0,191041,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2022,16981,0,23560,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2022,0,0,NA,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2022,0,NA,NA,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2022,3228,0,2878,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2022,6045,0,6783,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2022,0,NA,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2022,135838,0,135617,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2022,52567,0,2029,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2022,510994,0,536650,proc,C23,Pardubický
+108,CEREPA a.s.,36,2022,1262,0,2295,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2022,7632,0,9435,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2022,8245,0,12116,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2022,135867,0,69093,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2022,474188,0,587598,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2022,3960,0,4029,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2022,9692,0,10193,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2022,1986,0,1411,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2022,0,NA,NA,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2022,0,NA,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2022,15508,0,22998,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2022,3940,0,5270,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2022,12695,0,17373,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2022,17719,0,46219,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2022,10767,0,26588,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2022,157170,0,254285,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2022,4913,0,21925,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2022,23421,0,4205,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2022,2347,0,3557,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2022,53854,0,1540047,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2022,0,NA,NA,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2022,24277,0,27368,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2022,10402,0,12202,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2022,10156,0,9639,proc,C23,Ústecký
+414,Glazura,32,2022,0,0,NA,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2022,18266,0,24131,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2022,0,NA,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2022,12876,0,12434,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2022,23013,0,20989,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2022,22364,0,25236,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2022,7304,0,6057,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2022,11703,0,22723,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2022,650754,0,669974,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2022,384067,0,391015,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2022,0,NA,NA,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2022,436048,0,462711,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2022,2838,0,12300,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2022,7036,0,32205,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2022,0,NA,NA,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2022,7994,0,1844,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2022,0,NA,NA,proc,C23,Praha
+246,KAVALIERGLASS,7,2022,13230,0,12217,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2022,0,NA,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2022,21368,0,28878,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2022,5217,0,13645,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2022,0,NA,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2022,116660,0,10134,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2022,17675,0,33200,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2022,12159,0,18210,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2022,4994,0,11828,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2022,9104,0,10233,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2022,57131,0,75672,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2022,7387,0,8549,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2022,39194,0,49961,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2022,12825,0,14184,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2022,98505,0,134527,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2022,3929,0,8116,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2022,15211,0,26253,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2022,7419,0,7256,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2022,34152,0,48605,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2022,3319634,0,2380156,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2022,68440,0,76190,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2022,102468,0,191623,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2022,163298,0,348076,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2022,3174,0,12582,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2022,35763,0,57937,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2022,21098,0,28178,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2022,134097,0,116582,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2022,32234,0,37960,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2022,412854,0,850651,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2022,306078,0,483476,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2022,383695,0,391459,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2022,7038,0,9213,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2022,13503,0,14430,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2022,18937,0,3239,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2022,15951,0,23744,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2022,13,0,0,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2022,0,NA,NA,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2022,0,NA,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2022,0,NA,NA,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2022,120989,0,91919,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2022,6735,0,7316,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2022,3645,0,7013,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2022,836,0,578,proc,C17,Ústecký
+159,Papírna Aloisov,36,2022,3118,0,3843,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2022,0,NA,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2022,5454,0,6406,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2022,14793,0,2756,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2022,2269,0,2906,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2022,539,0,1056,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2022,2866,0,8922,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2022,3782,0,4569,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2022,25167,0,38791,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2022,26549,0,46616,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2022,12274,0,37989,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2022,0,NA,NA,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2022,5133,0,5164,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2022,5497,0,7399,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2022,15316,0,19345,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2022,46702,0,13450,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2022,41,0,22782,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2022,8535,0,3868,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2022,42133,0,56992,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2022,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2022,0,NA,NA,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2022,0,NA,NA,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2022,0,NA,NA,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2022,24961,0,15883,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2022,2438,0,2664,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2022,7124,0,11247,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2022,922,0,1810,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2022,5290,0,6072,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2022,0,NA,7775,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2022,56879,0,71238,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2022,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2022,63890,0,231506,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2022,68637,0,75105,comb,C20,Karlovarský
+421,TAMEH Czech,20,2022,53748,0,1784768,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2022,101281,0,404816,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2022,10631,0,21296,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2022,1852,0,2837,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2022,64219,0,88703,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2022,31212,0,74434,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2022,0,NA,NA,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2022,0,NA,NA,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2022,9834,0,14525,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2022,0,NA,NA,comb,C22,Zlínský
+114,Třinecké železárny,24,2022,3322662,0,2488863,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2022,38934,0,43475,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2022,592451,0,2426443,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2022,55215,0,71120,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2022,0,NA,NA,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2022,0,0,NA,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2022,48951,0,45669,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2022,28203,0,30662,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2022,12314,0,4879,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2022,218235,0,298924,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2022,251640,0,332862,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2022,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2022,6360,0,4941,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2022,0,0,0,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2022,6862,0,10005,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2022,13424,0,12393,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2022,20358,0,15031,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2022,17060,0,13546,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2022,24475,0,14808,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2022,3375,0,6061,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2022,48766,0,20824,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2022,5345,0,151,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2022,2597,0,3575,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2022,0,0,NA,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2022,537,0,13,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2022,1332,0,1253,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2022,9011,0,27146,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2022,0,0,NA,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2022,0,0,NA,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2022,8963,0,15143,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2022,0,NA,NA,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2022,19052,0,414736,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2022,4511,0,19513,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2022,24655,0,73546,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2023,0,0,NA,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2023,90433,0,96941,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2023,16994,0,21932,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2023,171255,0,186415,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2023,17619,0,15891,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2023,0,0,NA,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2023,0,NA,NA,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2023,2927,0,1660,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2023,5901,0,6855,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2023,0,NA,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2023,137212,0,119248,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2023,24226,0,76,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2023,510994,0,451157,proc,C23,Pardubický
+108,CEREPA a.s.,36,2023,1262,0,2801,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2023,8178,0,8290,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2023,9303,0,12657,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2023,135867,0,65162,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2023,546005,0,427513,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2023,3825,0,3187,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2023,10886,0,5172,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2023,1986,0,703,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2023,0,NA,NA,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2023,0,NA,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2023,18301,0,20233,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2023,4246,0,5107,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2023,11668,0,21050,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2023,17840,0,45566,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2023,10610,0,29047,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2023,156625,0,252399,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2023,4913,0,19223,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2023,23421,0,4914,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2023,2347,0,3298,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2023,52434,0,1418581,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2023,0,NA,NA,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2023,24277,0,30349,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2023,9825,0,11549,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2023,9914,0,6175,proc,C23,Ústecký
+414,Glazura,32,2023,0,0,NA,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2023,16827,0,18251,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2023,0,NA,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2023,12071,0,3056,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2023,24889,0,11320,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2023,26934,0,10592,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2023,9394,0,4785,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2023,13037,0,18203,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2023,650754,0,460795,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2023,384067,0,390322,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2023,0,NA,NA,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2023,436048,0,393232,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2023,2838,0,12206,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2023,8612,0,31024,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2023,0,NA,NA,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2023,7994,0,1933,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2023,0,NA,NA,proc,C23,Praha
+246,KAVALIERGLASS,7,2023,11281,0,10405,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2023,0,NA,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2023,22641,0,25831,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2023,5525,0,12614,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2023,0,NA,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2023,116660,0,18265,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2023,17675,0,29874,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2023,12159,0,15036,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2023,4994,0,11383,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2023,9104,0,49,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2023,60316,0,55577,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2023,7284,0,6569,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2023,47225,0,30217,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2023,12825,0,10186,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2023,85648,0,109470,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2023,3929,0,8539,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2023,16303,0,20874,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2023,5540,0,5013,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2023,30130,0,41000,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2023,3319867,0,1281302,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2023,82112,0,56342,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2023,98571,0,190399,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2023,143429,0,274695,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2023,3103,0,15002,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2023,35763,0,52122,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2023,21795,0,26342,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2023,134097,0,112604,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2023,37777,0,30372,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2023,418635,0,746295,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2023,306078,0,517141,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2023,383695,0,404764,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2023,7038,0,9131,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2023,13503,0,11987,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2023,13430,0,6,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2023,15951,0,24200,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2023,0,0,NA,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2023,0,NA,NA,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2023,0,NA,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2023,0,NA,NA,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2023,112534,0,88966,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2023,6284,0,7283,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2023,3645,0,5258,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2023,534,0,113,proc,C17,Ústecký
+159,Papírna Aloisov,36,2023,3118,0,3479,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2023,0,NA,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2023,5454,0,6899,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2023,14793,0,2685,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2023,2269,0,2909,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2023,408,0,2169,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2023,2434,0,5903,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2023,4294,0,4443,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2023,25167,0,37426,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2023,25161,0,36769,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2023,16824,0,33334,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2023,0,NA,NA,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2023,3266,0,3826,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2023,5976,0,6733,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2023,14892,0,20024,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2023,55830,0,11834,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2023,41,0,18140,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2023,8535,0,3729,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2023,42133,0,47832,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2023,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2023,0,NA,NA,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2023,0,NA,NA,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2023,0,NA,NA,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2023,23364,0,20548,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2023,2438,0,2469,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2023,7678,0,11474,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2023,922,0,1579,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2023,5290,0,6352,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2023,0,NA,7728,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2023,52701,0,45851,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2023,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2023,63706,0,206465,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2023,68637,0,62956,comb,C20,Karlovarský
+421,TAMEH Czech,20,2023,54245,0,1110904,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2023,98610,0,325753,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2023,11196,0,13515,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2023,2460,0,2575,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2023,64219,0,90813,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2023,31212,0,71946,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2023,0,NA,NA,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2023,0,NA,NA,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2023,9834,0,13861,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2023,0,NA,NA,comb,C22,Zlínský
+114,Třinecké železárny,24,2023,3326092,0,2536457,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2023,38934,0,40246,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2023,718040,0,2292832,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2023,55215,0,59304,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2023,0,NA,NA,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2023,0,0,NA,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2023,40780,0,60082,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2023,27592,0,30710,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2023,7999,0,4783,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2023,218235,0,245936,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2023,251977,0,230892,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2023,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2023,6216,0,3365,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2023,0,0,0,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2023,7079,0,8450,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2023,16199,0,3214,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2023,21601,0,7619,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2023,17060,0,6729,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2023,25577,0,5966,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2023,4327,0,2911,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2023,41736,0,8781,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2023,5345,0,157,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2023,2310,0,2681,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2023,0,0,NA,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2023,45,0,10,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2023,1669,0,788,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2023,9706,0,13686,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2023,0,0,NA,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2023,0,0,NA,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2023,8857,0,14799,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2023,0,NA,NA,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2023,18550,0,360807,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2023,4511,0,16741,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2023,25111,0,64223,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2024,0,0,NA,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2024,90433,0,95680,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2024,16795,0,10381,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2024,171255,0,192737,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2024,14545,0,16296,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2024,0,0,NA,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2024,0,NA,NA,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2024,1684,0,1431,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2024,5571,0,4824,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2024,0,NA,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2024,105019,0,116726,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2024,368,0,43,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2024,440183,0,443390,proc,C23,Pardubický
+108,CEREPA a.s.,36,2024,1262,0,1783,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2024,6760,0,7017,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2024,9236,0,11793,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2024,135867,0,72908,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2024,474188,0,460278,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2024,2851,0,2342,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2024,8986,0,9467,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2024,1986,0,1041,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2024,0,NA,NA,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2024,0,NA,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2024,15069,0,20737,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2024,4098,0,5202,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2024,12468,0,24555,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2024,18154,0,49166,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2024,10610,0,30631,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2024,128569,0,229491,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2024,0,0,NA,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2024,21479,0,5348,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2024,2347,0,3325,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2024,51014,0,1337644,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2024,0,NA,NA,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2024,24277,0,31241,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2024,7830,0,10911,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2024,6272,0,6406,proc,C23,Ústecký
+414,Glazura,32,2024,0,0,NA,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2024,14472,0,15508,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2024,0,NA,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2024,12071,0,0,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2024,26040,0,12019,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2024,19652,0,1760,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2024,8606,0,2902,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2024,8228,0,3574,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2024,530745,0,452565,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2024,384067,0,384851,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2024,0,NA,NA,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2024,393338,0,334528,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2024,2838,0,12677,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2024,7363,0,29206,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2024,0,NA,NA,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2024,7712,0,2153,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2024,0,NA,NA,proc,C23,Praha
+246,KAVALIERGLASS,7,2024,8693,0,9355,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2024,0,NA,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2024,22340,0,28361,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2024,4872,0,5066,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2024,0,NA,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2024,96863,0,15503,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2024,17675,0,31466,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2024,12159,0,16039,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2024,4994,0,11180,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2024,4014,0,5593,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2024,48308,0,61449,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2024,5964,0,8695,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2024,35952,0,27131,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2024,9750,0,9853,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2024,85648,0,115354,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2024,3929,0,12294,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2024,15211,0,17537,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2024,3755,0,894,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2024,27455,0,8968,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2024,272701,0,39615,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2024,68957,0,66804,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2024,90040,0,198618,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2024,131114,0,225247,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2024,2927,0,19025,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2024,35763,0,47276,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2024,21900,0,24290,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2024,134097,0,114887,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2024,34161,0,32801,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2024,419880,0,572674,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2024,306078,0,537990,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2024,383695,0,319774,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2024,6799,0,7692,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2024,10198,0,8382,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2024,4007,0,5,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2024,15951,0,21925,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2024,0,0,NA,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2024,0,NA,NA,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2024,0,NA,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2024,0,NA,NA,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2024,112534,0,88599,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2024,5842,0,7293,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2024,2397,0,5016,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2024,0,0,0,proc,C17,Ústecký
+159,Papírna Aloisov,36,2024,3118,0,3327,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2024,0,NA,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2024,5588,0,6219,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2024,14793,0,2752,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2024,2269,0,2901,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2024,325,0,1178,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2024,1703,0,9770,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2024,4294,0,4031,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2024,25167,0,33622,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2024,21670,0,22010,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2024,15442,0,37655,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2024,0,NA,NA,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2024,2750,0,1235,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2024,5976,0,5301,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2024,14892,0,19126,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2024,46947,0,10408,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2024,41,0,16176,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2024,7164,0,3698,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2024,42133,0,56015,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2024,0,NA,NA,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2024,0,NA,NA,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2024,0,NA,NA,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2024,0,NA,NA,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2024,14845,0,24055,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2024,1986,0,2096,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2024,7678,0,10179,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2024,793,0,1882,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2024,5290,0,3844,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2024,0,NA,7310,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2024,40398,0,60698,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2024,0,NA,NA,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2024,57574,0,191828,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2024,54728,0,73331,comb,C20,Karlovarský
+421,TAMEH Czech,20,2024,0,0,NA,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2024,95939,0,315795,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2024,8320,0,12372,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2024,1980,0,2810,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2024,64219,0,80729,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2024,28633,0,72239,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2024,0,NA,NA,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2024,0,NA,NA,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2024,9834,0,13879,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2024,0,NA,NA,comb,C22,Zlínský
+114,Třinecké železárny,24,2024,3325691,0,2573324,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2024,32694,0,40381,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2024,690927,0,2038687,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2024,55030,0,65951,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2024,0,NA,NA,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2024,0,0,NA,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2024,40780,0,74751,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2024,26903,0,27392,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2024,3712,0,6644,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2024,218235,0,223210,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2024,190062,0,219055,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2024,0,NA,NA,proc,C23,NA
+212941,Výrobní linky formalínu,42,2024,4985,0,2309,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2024,0,0,NA,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2024,6450,0,8199,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2024,10553,0,7513,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2024,14830,0,10573,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2024,12547,0,7808,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2024,0,0,0,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2024,3898,0,4687,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2024,22261,0,14317,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2024,5345,0,155,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2024,1366,0,3164,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2024,0,0,NA,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2024,33,0,0,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2024,0,0,NA,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2024,0,0,NA,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2024,0,0,NA,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2024,0,0,NA,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2024,7081,0,10633,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2024,0,NA,NA,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2024,18047,0,356704,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2024,4511,0,16933,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2024,22211,0,60193,comb,C24,Vysočina
+192,AERO Vodochody AERO - plynová kotelna Odolena Voda,20,2025,0,0,NA,comb,C30,Středočeský
+409,AGC Flat Glass Czech - výrobní linka R3,31,2025,90433,0,88998,proc,C23,Ústecký
+263,AGC Flat Glass Czech - závod Barevka,31,2025,12812,0,8437,proc,C23,Ústecký
+262,AGC Flat Glass Czech - závod Řetenice,31,2025,171255,0,172660,proc,C23,Ústecký
+49,"AL INVEST Břidličná, a.s.",20,2025,11995,0,15323,comb,C24,Moravskoslezský
+346,"Aircraft Industries, a. s. kotelna",20,2025,0,0,NA,comb,C30,Zlínský
+24,ArcelorMittal Frýdek-Místek,24,2025,0,NA,NA,proc,C24,Moravskoslezský
+4,ArcelorMittal Tubular Products Karviná,1,2025,1208,0,1475,comb,C24,Moravskoslezský
+157,Balsac papermill s.r.o. - Lukavice,36,2025,4205,0,6621,proc,C17,Olomoucký
+360,"Best - Business, a. s. - provozovna Kunštát",32,2025,0,NA,NA,proc,C23,Jihomoravský
+201865,"BorsodChem MCHZ, s.r.o.",38,2025,94205,0,101911,proc,C20,Moravskoslezský
+333,CARMEUSE CZECH REPUBLIC s.r.o. - Vápenka Mokrá,30,2025,0,0,NA,proc,C23,Jihomoravský
+342,"CEMEX Czech Republic, s.r.o.",29,2025,440183,0,471167,proc,C23,Pardubický
+108,CEREPA a.s.,36,2025,1262,0,NA,proc,C17,Vysočina
+155,CRYSTALEX CZ - závod Nový Bor,7,2025,6428,0,7474,proc,C23,Liberecký
+284,CRYSTALITE BOHEMIA a.s.,31,2025,8993,0,10584,proc,C23,Vysočina
+201951,"CS CABOT, spol. s r.o.",99,2025,135867,0,67495,proc,C20,Zlínský
+75,Cement Hranice - rotační pec,29,2025,474188,0,480960,proc,C23,Olomoucký
+341,"Cihelna Hodonín, s.r.o.",8,2025,2150,0,3249,proc,C23,Jihomoravský
+265,Cihelna Kinský spol. s r.o,8,2025,7830,0,6744,proc,C23,Královéhradecký
+358,Cihelna Polom spol. s r.o.,8,2025,1986,0,1055,proc,C23,Olomoucký
+385,"Cihelna Vysoké Mýto, s.r.o.",32,2025,0,NA,NA,proc,C23,Pardubický
+266,"Cihelny STAMP Miskolezy, s.r.o.",32,2025,0,NA,NA,proc,C23,Královéhradecký
+202610,Constellium Extrusions Děčín s.r.o.,27,2025,14765,0,21640,proc,C24,Ústecký
+312,"Crystal BOHEMIA, a.s.",31,2025,4098,0,4718,proc,C23,Středočeský
+347,Cukrovar Hrušovany,20,2025,6292,0,8881,comb,C10-12,Jihomoravský
+53,Cukrovar Opava,1,2025,18487,0,36861,comb,C10-12,Moravskoslezský
+5,Cukrovar Vrbátky - uhelná kotelna,20,2025,0,0,NA,comb,C10-12,Olomoucký
+149,DEZA - teplárna závodu,20,2025,119569,0,218778,comb,C20,Zlínský
+145,Devro - plynová kotelna,20,2025,0,0,NA,comb,C10-12,Liberecký
+77,Dřevozpracující družstvo - Kotelny družstva,99,2025,21245,0,4577,proc,C16,Vysočina
+83,EMBA spol. s r.o.,36,2025,2347,0,3428,proc,C17,Liberecký
+252,ENERGETIKA TŘINEC - Teplárny a Tepelná zařízení,20,2025,47397,0,1336755,comb,C24,Moravskoslezský
+302,EUROSERUM s.r.o.,20,2025,0,NA,NA,comb,C10-12,Jihočeský
+148,Ethanol Energy - Kotle K1-K3 (Cukrovar Vrdy),1,2025,24277,0,30661,comb,C10-12,Středočeský
+335,Fosfa - kotelna Fosfa,20,2025,0,0,NA,comb,C20,Jihomoravský
+233,GLAZURA - Výroba keramických frit,32,2025,4993,0,5861,proc,C23,Ústecký
+414,Glazura,32,2025,0,0,NA,proc,C23,Ústecký
+275,"HASIT Šumavské vápenice a omítkárny, s.r.o.",30,2025,11803,0,17041,proc,C23,Plzeňský
+253,HELUZ cihl. prům. - Cihelna Kryry,32,2025,0,NA,NA,proc,C23,NA
+334,HELUZ cihlářský průmysl - Cihelna Hevlín,32,2025,2862,0,0,proc,C23,Jihomoravský
+416,HELUZ cihlářský průmysl v.o.s.,20,2025,17113,0,15614,comb,C23,Jihomoravský
+329,HELUZ cihlářský průmysl v.o.s.-Cihelna Libochovice,32,2025,8694,0,13216,proc,C23,Ústecký
+336,HELUZ cihlářský průmysl-Cihelna Dolní Bukovsko,32,2025,5258,0,6679,proc,C23,Jihočeský
+366,"Hanácká p.s., Cukrovar Prosenice",20,2025,0,0,NA,comb,C10-12,Olomoucký
+324,Heidelberg Materials CZ - závod Mokrá,29,2025,418504,0,454903,proc,C23,Jihomoravský
+325,Heidelberg Materials CZ - závod Radotín,29,2025,384067,0,361390,proc,C23,Praha
+51,Heineken - Královský pivovar Krušovice,20,2025,0,NA,NA,comb,C10-12,Středočeský
+277,"Holcim (Česko), a.s. - Cementárna Čížkovice",29,2025,341689,0,386464,proc,C23,Ústecký
+32,"Huhtamaki Česká republika, a.s.",36,2025,2838,0,12914,proc,C17,Vysočina
+203599,Hyundai Motor Manufacturing Czech s.r.o.,20,2025,6998,0,29419,comb,C29,Moravskoslezský
+13,Iveco - Výtopna E-1,20,2025,0,NA,NA,comb,C29,Pardubický
+259,"JIP - Papírny Větřní, a.s.",1,2025,8019,0,1449,comb,C17,Jihočeský
+310,Jan Fiala - Cihelna Šterboholy,32,2025,0,NA,NA,proc,C23,Praha
+246,KAVALIERGLASS,7,2025,7586,0,9320,proc,C23,Středočeský
+115,KAVALIERGLASS - Kotelna Papírny Bělá,31,2025,0,NA,NA,proc,C23,Středočeský
+405,KNAUF INSULATION,33,2025,22340,0,26798,proc,C23,Ústecký
+200,"KOMTERM Morava - Kotelna Areál Tatry, Kopřivnice",20,2025,4457,0,6241,comb,C29,Moravskoslezský
+185,"KOVOBRASIV Mníšek, spol s r.o.",24,2025,0,NA,NA,proc,C24,Středočeský
+103,KRONOSPAN CR,20,2025,116660,0,15755,comb,C16,Vysočina
+43,KRPA PAPER - Závodní elektrárna,1,2025,17675,0,32009,comb,C17,Královéhradecký
+21,Kappa Morava Paper a Kappa Žimrovice,1,2025,12159,0,15507,comb,C17,Moravskoslezský
+223,Kotelna Pivovaru Radegast,20,2025,4994,0,11262,comb,C10-12,Moravskoslezský
+313,LASSELSBERGER - závod Borovany,8,2025,2262,0,21081,proc,C23,Jihočeský
+314,LASSELSBERGER - závod Chlumčany,8,2025,47676,0,53599,proc,C23,Plzeňský
+339,LASSELSBERGER - závod Podbořany,8,2025,5964,0,8191,proc,C23,Ústecký
+317,LASSELSBERGER - závod RAKO 3,8,2025,23545,0,19691,proc,C23,Středočeský
+261,"LAUFEN CZ s.r.o.,  provozovna Bechyně",32,2025,7845,0,11135,proc,C23,Jihočeský
+278,"LB Cemix, s.r.o.",30,2025,85648,0,113042,proc,C23,Jihočeský
+280,Lenzing Biocel Paskov a.s.,35,2025,3929,0,9116,proc,C17,Moravskoslezský
+386,Liapor s.r.o.,32,2025,11071,0,19585,proc,C23,Karlovarský
+423,Liberty Engineering Products Ostrava,20,2025,1848,0,1263,comb,C24,Moravskoslezský
+410,Liberty Ostrava,25,2025,16251,0,NA,proc,C24,Moravskoslezský
+73,Liberty Ostrava a.s.,20,2025,0,0,NA,comb,C24,Moravskoslezský
+107,Lovochemie - Plynová kotelna,20,2025,69075,0,61816,comb,C20,Ústecký
+106,Lovochemie - Uhelná kotelna,20,2025,91508,0,210431,comb,C20,Ústecký
+273,Mondi Štětí - Energetika,20,2025,132310,0,250502,comb,C17,Ústecký
+216561,Nexen Tire Europe s.r.o.,20,2025,3809,0,21509,comb,C22,Ústecký
+237,O-I Czech Republic - Nové Sedlo,31,2025,35763,0,41811,proc,C23,Ústecký
+238,O-I Czech Republic - Rudolfova huť,31,2025,18772,0,22536,proc,C23,Ústecký
+62,OKK - Koksovna Svoboda,20,2025,134097,0,109939,comb,C19,Moravskoslezský
+116,OP papírna - Nové energocentrum,36,2025,31680,0,35475,proc,C17,Olomoucký
+92,ORLEN UNIPETROL - AGROCHEMIE,20,2025,317736,0,551844,comb,C20,Ústecký
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2025,306078,0,559740,proc,C19,Středočeský
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2025,383695,0,343401,proc,C19,Ústecký
+231,P-D Refractories - Lokalita Svitavy,32,2025,6799,0,6510,proc,C23,Pardubický
+232,P-D Refractories - Lokalita Velké Opatovice,32,2025,7970,0,9057,proc,C23,Jihomoravský
+3,PARAMO-HS Kolín,21,2025,1002,0,3,proc,C19,Středočeský
+2,PARAMO-HS Pardubice,21,2025,15951,0,21984,proc,C19,Pardubický
+80,PILSEN STEEL - Elektrické obloukové pece,24,2025,0,0,NA,proc,C24,Plzeňský
+306,"PLEAS a.s., Havlíčkův Brod",20,2025,0,NA,NA,comb,C13-15,Vysočina
+206785,POLDI TRADE a.s.,24,2025,0,NA,NA,proc,C24,Středočeský
+311,POLDI s.r.o.,24,2025,0,NA,NA,proc,C24,Středočeský
+202156,PRECHEZA výroba síranu vápenatého a anorg.pigmentů,42,2025,112534,0,97517,proc,C20,Olomoucký
+319,"PRECIOSA ORNELA-Polubný,Příchovice a Desná",31,2025,5842,0,6902,proc,C23,Liberecký
+301,Papos Trade s.r.o.,35,2025,1995,0,2942,proc,C17,Karlovarský
+210084,Papírna APIS s.r.o.,36,2025,0,0,0,proc,C17,Ústecký
+159,Papírna Aloisov,36,2025,3118,0,3249,proc,C17,Moravskoslezský
+300,Paralax a.s. - Cihelna Nebužely,32,2025,0,NA,NA,proc,C23,NA
+208023,Pittsburgh Corning CR,31,2025,5449,0,5921,proc,C23,Ústecký
+19,Plzeňský Prazdroj - varny závodu Plzeň,20,2025,14793,0,2708,comb,C10-12,Plzeňský
+205510,Porr a.s. - Středokluky,20,2025,2269,0,2675,comb,C23,Středočeský
+213780,"Pražská obalovna Herink, s.r.o.",20,2025,0,0,NA,comb,C23,Středočeský
+1,Procter&Gamble - Rakona - Kotelna,20,2025,1829,0,9627,comb,C20,Středočeský
+299,"REFRASIL, s.r.o.",32,2025,3678,0,4542,proc,C23,Moravskoslezský
+415,"Rockwool, Technologická linka BOH2",31,2025,25167,0,32735,proc,C23,Moravskoslezský
+272,SAINT-GOBAIN ADFORS CZ - Litomyšl,31,2025,12968,0,23008,proc,C23,Pardubický
+381,SAINT-GOBAIN ADFORS CZ - závod Hodonice,31,2025,15442,0,35013,proc,C23,Jihomoravský
+15,SCB Foundry - Slévárna České Budějovice,25,2025,0,NA,NA,proc,C24,Jihočeský
+37,SKATLOP a.s.,20,2025,0,0,NA,comb,C24,neurčeno
+418,SLADOVNY SOUFFLET ČR - závod Kroměříž,20,2025,4873,0,5583,comb,C10-12,Zlínský
+330,STOELZLE UNION s.r.o.,31,2025,14428,0,18707,proc,C23,Plzeňský
+202753,SYNTHOS Kralupy a.s. - provoz Styren,42,2025,36909,0,6645,proc,C20,Středočeský
+202754,SYNTHOS Kralupy a.s.- výroba Etylbenzen,42,2025,41,0,12439,proc,C20,Středočeský
+202755,SYNTHOS Kralupy a.s.-výroba Polystyreny,42,2025,6682,0,3064,proc,C20,Středočeský
+417,Saint-Gobain Construction Products CZ a.s.,1,2025,42133,0,57775,comb,C23,Královéhradecký
+229761,"Saint-Gobain Construction Products CZ a.s., Rigips",34,2025,0,NA,23521,proc,C23,NA
+365,"Schiedel, závod Zliv",32,2025,0,NA,NA,proc,C23,Jihočeský
+138,Seco Industries - Kotelna AGS,20,2025,0,NA,NA,comb,C28,Pardubický
+29,Sellier & Bellot - Centrální kotelna,20,2025,0,NA,NA,comb,C25,Středočeský
+279,Seves Glass Block s.r.o.,31,2025,18146,0,18635,proc,C23,Ústecký
+357,Silike keramika - provozovna Děčín,8,2025,1752,0,2004,proc,C23,Ústecký
+242,"Sklárny Moravia, a.s.",7,2025,7817,0,11613,proc,C23,Jihomoravský
+11,"Slévárna ČKD Kutná Hora, a.s.",20,2025,793,0,1615,comb,C24,Středočeský
+205490,"Slévárny Třinec, a.s.",25,2025,4125,0,4184,proc,C24,Moravskoslezský
+207543,Spalovací zařízení kotelny,20,2025,0,NA,5250,comb,C17,Jihočeský
+105,Spolana - Závod Energetika,42,2025,33684,0,18958,proc,C20,Středočeský
+230141,Synthesia Nitrocellulose,38,2025,0,NA,618,proc,C20,NA
+22,"Synthesia a.s., odštěpný závod SYNTHESIA",20,2025,57574,0,198370,comb,C20,Pardubický
+372,"Synthomer, kotelna",20,2025,65580,0,68430,comb,C20,Karlovarský
+421,TAMEH Czech,20,2025,0,0,NA,comb,C24,Moravskoslezský
+167,TAMERO INVEST - Teplárna Kralupy,20,2025,64429,0,272697,comb,C20,Středočeský
+270,TONDACH Česká republika s.r.o. - Závod Hranice,32,2025,6301,0,12881,proc,C23,Olomoucký
+205946,Tepelná a zvuková izolace Rotaflex,33,2025,1980,0,2410,proc,C23,Ústecký
+371,Tereos TTD - Cukrovar Dobrovice,1,2025,64219,0,102691,comb,C10-12,Středočeský
+370,Tereos TTD - Cukrovar ČeskéMeziříčí,1,2025,29171,0,44448,comb,C10-12,Královéhradecký
+204,Tereos TTD - Lihovar Chrudim,20,2025,0,NA,NA,comb,C10-12,Pardubický
+352,Tereos TTD - Moravský Lihovar Kojetín kotelna,20,2025,0,NA,NA,comb,C10-12,Olomoucký
+25,Teva Czech Industries - Energetika - kotelna,1,2025,8493,0,14633,comb,C21,Moravskoslezský
+188,Trelleborg Wheel Systems CR - Plynová kotelna,20,2025,0,NA,NA,comb,C22,Zlínský
+114,Třinecké železárny,24,2025,3324943,0,2504528,proc,C24,Moravskoslezský
+201994,"Třinecké železárny, a.s. -  Kladno",20,2025,32694,0,39824,comb,C24,Středočeský
+234,UNIPETROL - Petrochemie,20,2025,577162,0,2003876,comb,C20,Ústecký
+320,VETROPACK MORAVIA GLASS,31,2025,50009,0,65987,proc,C23,Jihomoravský
+201588,VIADRUS a.s.,24,2025,0,NA,NA,proc,C24,Moravskoslezský
+338,Varroc Lighting Systems - kotelna,20,2025,0,0,NA,comb,C29,Moravskoslezský
+52,"VÍTKOVICE STEEL, a.s. - Ocelárna I",24,2025,48951,0,79221,proc,C24,Moravskoslezský
+203591,"Válcovna kol, kovárna náprav BONATRANS GROUP a.s.",25,2025,25824,0,30351,proc,C24,Moravskoslezský
+202027,Válcovny trub Chomutov - divize Chomutov,20,2025,4431,0,4472,comb,C24,Ústecký
+276,Vápenka Vitošov s.r.o.,30,2025,161663,0,208337,proc,C23,Olomoucký
+283,Vápenka Čertovy schody,30,2025,149708,0,237503,proc,C23,Středočeský
+226380,Výroba sádry a sádrokartonových desek,34,2025,0,NA,13826,proc,C23,NA
+212941,Výrobní linky formalínu,42,2025,3308,0,2149,proc,C20,NA
+269,Wienerberger - Závod Blížejov,32,2025,0,0,NA,proc,C23,Plzeňský
+268,Wienerberger - Závod Stod,32,2025,5630,0,8083,proc,C23,Plzeňský
+271,Wienerberger - Závod Šlapanice,32,2025,6498,0,7508,proc,C23,Jihomoravský
+256,Wienerberger - závod Holice,32,2025,10620,0,13134,proc,C23,Pardubický
+248,Wienerberger - závod Novosedly,32,2025,8270,0,8610,proc,C23,Jihomoravský
+250,Wienerberger - závod Týn n/Vltavou,32,2025,0,0,0,proc,C23,Jihočeský
+243,Wienerberger - závod Řepov,32,2025,3543,0,3534,proc,C23,Středočeský
+380,Wienerberger cihelna Jezernice,32,2025,14832,0,14349,proc,C23,Olomoucký
+183,"Wotan Forest, a.s.",20,2025,5345,0,148,comb,C16,Královéhradecký
+171,Z-Group - Železárny Hrádek,24,2025,1366,0,2203,proc,C24,Plzeňský
+186,"ZVVZ ENERGO, s.r.o. - Milevsko - kotelna",20,2025,0,0,NA,comb,C28,Jihočeský
+332,"Zlínské cihelny s.r.o., cihelna Malenovice",20,2025,0,0,NA,comb,C23,Zlínský
+331,"Zlínské cihelny s.r.o., cihelna Žopy",32,2025,0,0,NA,proc,C23,Zlínský
+160,kotelna Cukrovar Litovel,20,2025,0,0,NA,comb,C10-12,Olomoucký
+162,kotelna Semperflex Optimit,20,2025,0,0,NA,comb,C22,Moravskoslezský
+174,Česká zbrojovka - kotelna v hlavním závodě,20,2025,0,0,NA,comb,C25,Zlínský
+315,České lupkové závody - Nové Strašecí,32,2025,6039,0,11374,proc,C23,Středočeský
+165,ŠKO-ENERGO - Výtopna Vrchlabí,20,2025,0,NA,NA,comb,C29,Královéhradecký
+164,ŠKO-ENERGO Teplárna Mladá Boleslav,20,2025,17545,0,359196,comb,C29,Středočeský
+292,"ŠKODA AUTO, Plynová kotelna, Kvasiny",20,2025,4511,0,16756,comb,C29,Královéhradecký
+187,"ŽĎAS, a.s. - metalurgie a teplárna",20,2025,21331,0,60149,comb,C24,Vysočina

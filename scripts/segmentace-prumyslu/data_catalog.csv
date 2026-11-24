@@ -1,0 +1,15 @@
+slajd,obsah,zdroj,dataset,filtr,odkaz,ziskani,skript,stav
+"5, 6",Treemap a skupiny oborů (HPH),Eurostat,nama_10_a64,"geo=CZ, na_item=B1G, unit=CP_MEUR, nace_r2=C10..C33, 2025",https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64/default/table,API (es_get),R/11_hph_zamestnanost.R,chybí
+"5, 6, 20",Zaměstnanost podle oborů,Eurostat,nama_10_a64_e,"geo=CZ, na_item=EMP_DC, unit=THS_PER, 2025",https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table,API (es_get),R/11_hph_zamestnanost.R,chybí
+7,Index výroby CZ vs. DE,Eurostat,sts_inpr_a,"geo=CZ,DE, indic_bt=PRD, s_adj=CA, unit=I21, 2015–2025",https://ec.europa.eu/eurostat/databrowser/view/sts_inpr_a/default/table,API (es_get),R/08_production_annual.R,hotovo
+7,Váhy sloučených oborů,Eurostat,sbs_ovw_act,"indic_sbs=AV_MEUR, 2021",https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table,API (es_get),R/01_download_eurostat.R,hotovo
+10,Energie vs. mzdy (% nákladů),ČSÚ,Tabulky dodávek a užití (SUT) 2024 a 2025,"energie = CPA 05, 06, 19, 35",https://csu.gov.cz/rocni-narodni-ucty,přímý odkaz na soubor (dodá autor),R/13_sut_csu.R,chybí URL
+"11, 12",Energie TJ na mil. € HPH a skladba paliv,Eurostat,env_ac_pefasu,"geo=CZ, stk_flow=USE, všechna paliva, unit=TJ, 2023",https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table,API (es_get),R/12_energie_pefa.R,"jen elektřina P26, doplnit"
+"15, 16",Bezplatné povolenky a podíly sektorů,Union Registry,verified_emissions_2025_en.xlsx,ČR,https://climate.ec.europa.eu/eu-action/carbon-markets/eu-emissions-trading-system-eu-ets/union-registry_en,download.file,R/02_registry.R,hotovo
+"15, 16",Přiřazení zařízení k oborům a krajům,ruční převodník,data/manual/*.csv,,,ruční (autor),R/02_registry.R,hotovo
+17,Energie vs. ETS,ČSÚ + Eurostat + registr,SUT; sbs_ovw_act; registr,2024,,kombinace,R/03_ets_costs.R + R/13_sut_csu.R,chybí SUT
+20,Exportní jádro – výroba a náklady práce,Eurostat,"sts_inpr_a, nama_10_a64(_e)",CZ,,API (es_get),R/11_hph_zamestnanost.R,chybí
+20,Vývoz aut HS 8703,Eurostat Comext,DS-059341,"reporter=CZ, product=8703",https://ec.europa.eu/eurostat/comext/newxtweb/,API Comext,R/11_hph_zamestnanost.R,chybí
+21–23,"Cement, ocel, chemie – energie podoborů",Eurostat,sbs_na_ind_r2,"CZ, 2019 (novější v tomto členění není)",https://ec.europa.eu/eurostat/databrowser/view/sbs_na_ind_r2/default/table,API (es_get),R/13_sut_csu.R,chybí
+21–23,Hutní vstupy v oborech (IO tabulka),Eurostat,naio_10_cp1750,"CZ, MIO_EUR, 2020",https://ec.europa.eu/eurostat/databrowser/view/naio_10_cp1750/default/table,API (es_get),R/10_io_metals.R,hotovo
+"26, 27, 28","Dovozní penetrace, export mimo EU ETS",Eurostat FIGARO,naio_10_fcp_ii4,"2015 a 2024, CZ",https://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/database,API (es_get),R/14_figaro.R,"chybí, metodu rekonstruovat"

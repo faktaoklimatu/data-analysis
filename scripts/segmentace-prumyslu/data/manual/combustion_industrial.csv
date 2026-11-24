@@ -1,0 +1,69 @@
+installation_id,nace,energetika,podil_obor,note
+73,C24,0,1.0,"Liberty Ostrava a.s. – integrovaná huť (aglomerace, vysoké pece), v registru vedená jako spalování"
+421,C24,1,1.0,TAMEH Czech (energetika hutí; dodává i teplo Ostravě)
+252,C24,1,0.865,"Energetika Třinec – podíl výroby pro hutě 86,5 % = 1 − teplo konečným zákazníkům v Třinci (ERÚ 2024: 1,73 PJ) / celková výroba (12,8 PJ; výrobní ukazatele ET 2024); dříve 79 % tržeb (VZ 2019)"
+201994,C24,0,1.0,Třinecké železárny Kladno
+187,C24,0,1.0,ŽĎAS
+49,C24,0,1.0,AL INVEST Břidličná
+202027,C24,0,1.0,Válcovny trub Chomutov
+234,C20,1,1.0,Unipetrol Petrochemie
+92,C20,1,1.0,Unipetrol Agrochemie
+149,C20,1,1.0,DEZA
+22,C20,1,1.0,Synthesia
+106,C20,1,1.0,Lovochemie – uhelná kotelna
+107,C20,1,1.0,Lovochemie – plynová kotelna
+372,C20,1,1.0,Synthomer Sokolov
+273,C17,1,1.0,Mondi Štětí
+62,C19,0,1.0,OKK Koksovna Svoboda
+347,C10-12,1,1.0,Cukrovar Hrušovany
+352,C10-12,1,1.0,Tereos Kojetín
+5,C10-12,1,1.0,Cukrovar Vrbátky
+160,C10-12,1,1.0,Cukrovar Litovel
+145,C10-12,1,1.0,Devro Jilemnice
+203599,C29,1,1.0,Hyundai Nošovice
+164,C29,1,0.78,"ŠKO-ENERGO Mladá Boleslav – dodavatel energie Škoda Auto; teplo městu ≈ 22 % dodávek tepla (ERÚ 2024)"
+167,C20,1,0.92,"TAMERO INVEST Teplárna Kralupy – teplo a elektřina pro areál Synthos; teplo městu ≈ 8 % (ERÚ 2024)"
+370,C10-12,1,1.0,Tereos TTD – Cukrovar České Meziříčí
+53,C10-12,1,1.0,Cukrovar Opava
+371,C10-12,1,1.0,Tereos TTD – Cukrovar Dobrovice
+148,C10-12,1,1.0,Ethanol Energy – kotle K1-K3 (Cukrovar Vrdy)
+417,C23,0,1.0,Saint-Gobain Construction Products CZ
+43,C17,1,1.0,KRPA PAPER – závodní elektrárna
+216561,C22,0,1.0,Nexen Tire Europe (Bitozeves) – podle dashboardu FoK (kategorizace ETS)
+292,C29,1,1.0,ŠKODA AUTO – plynová kotelna Kvasiny – podle dashboardu FoK (kategorizace ETS)
+21,C17,1,1.0,Kappa Morava Paper a Kappa Žimrovice – podle dashboardu FoK (kategorizace ETS)
+103,C16,0,1.0,KRONOSPAN CR (Jihlava) – podle dashboardu FoK (kategorizace ETS)
+25,C21,1,1.0,Teva Czech Industries – energetika (Opava) – podle dashboardu FoK (kategorizace ETS)
+416,C23,0,1.0,HELUZ – cihelna Hevlín – podle dashboardu FoK (kategorizace ETS)
+223,C10-12,1,1.0,Pivovar Radegast – kotelna (Nošovice) – podle dashboardu FoK (kategorizace ETS)
+335,C20,1,1.0,Fosfa – kotelna (Břeclav) – podle dashboardu FoK (kategorizace ETS)
+1,C20,1,1.0,Procter & Gamble Rakona – kotelna (Rakovník) – podle dashboardu FoK (kategorizace ETS)
+207543,C17,1,1.0,Papírna Větřní – spalovací zařízení kotelny – podle dashboardu FoK (kategorizace ETS)
+418,C10-12,1,1.0,Sladovny Soufflet – Kroměříž – podle dashboardu FoK (kategorizace ETS)
+200,C29,1,1.0,KOMTERM Morava – kotelna areálu Tatry (Kopřivnice) – podle dashboardu FoK (kategorizace ETS)
+366,C10-12,1,1.0,Hanácká p.s. – cukrovar Prosenice – podle dashboardu FoK (kategorizace ETS)
+205510,C23,0,1.0,Porr – obalovna Středokluky (asfaltové směsi) – podle dashboardu FoK (kategorizace ETS)
+19,C10-12,1,1.0,Plzeňský Prazdroj – varny Plzeň – podle dashboardu FoK (kategorizace ETS)
+259,C17,1,1.0,JIP – Papírny Větřní – podle dashboardu FoK (kategorizace ETS)
+11,C24,0,1.0,Slévárna ČKD Kutná Hora – podle dashboardu FoK (kategorizace ETS)
+4,C24,0,1.0,ArcelorMittal Tubular Products Karviná – podle dashboardu FoK (kategorizace ETS)
+37,C24,0,1.0,SKATLOP a.s. – podle dashboardu FoK (kategorizace ETS)
+213780,C23,0,1.0,Pražská obalovna Herink (asfaltové směsi) – podle dashboardu FoK (kategorizace ETS)
+423,C24,0,1.0,Liberty Engineering Products Ostrava – přeřazeno do C24 (skupina Liberty; dříve C25 podle dashboardu FoK)
+183,C16,1,1.0,Wotan Forest (Solnice) – podle dashboardu FoK (kategorizace ETS)
+51,C10-12,1,1.0,Heineken – pivovar Krušovice – podle dashboardu FoK (kategorizace ETS)
+346,C30,1,1.0,Aircraft Industries – kotelna (Kunovice) – podle dashboardu FoK (kategorizace ETS)
+192,C30,1,1.0,AERO Vodochody – kotelna Odolena Voda – podle dashboardu FoK (kategorizace ETS)
+302,C10-12,1,1.0,EUROSERUM (Strážný) – podle dashboardu FoK (kategorizace ETS)
+13,C29,1,1.0,Iveco – výtopna (Vysoké Mýto) – podle dashboardu FoK (kategorizace ETS)
+138,C28,1,1.0,Seco Industries – kotelna (Přelouč) – přeřazeno do C28 (výroba nástrojů; dříve C25 podle dashboardu FoK)
+306,C13-15,1,1.0,PLEAS – Havlíčkův Brod – podle dashboardu FoK (kategorizace ETS)
+29,C25,1,1.0,Sellier & Bellot – centrální kotelna (Vlašim) – podle dashboardu FoK (kategorizace ETS)
+338,C29,1,1.0,Varroc Lighting Systems – kotelna (Nový Jičín) – podle dashboardu FoK (kategorizace ETS)
+188,C22,1,1.0,Trelleborg Wheel Systems – kotelna (Hulín) – podle dashboardu FoK (kategorizace ETS)
+204,C10-12,1,1.0,Tereos TTD – lihovar Chrudim – podle dashboardu FoK (kategorizace ETS)
+186,C28,1,1.0,ZVVZ ENERGO – kotelna Milevsko – podle dashboardu FoK (kategorizace ETS)
+332,C23,0,1.0,Zlínské cihelny – cihelna Malenovice – podle dashboardu FoK (kategorizace ETS)
+162,C22,1,1.0,Semperflex Optimit – kotelna (Odry) – podle dashboardu FoK (kategorizace ETS)
+174,C25,1,1.0,Česká zbrojovka – kotelna (Uherský Brod) – podle dashboardu FoK (kategorizace ETS)
+165,C29,1,1.0,ŠKO-ENERGO – výtopna Vrchlabí (závod Škoda Auto) – podle dashboardu FoK (kategorizace ETS)

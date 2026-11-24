@@ -1,0 +1,7 @@
+# stažená data se stahují kódem (R/01_download_eurostat.R, R/02_registry.R)
+data/raw/
+data/eurostat/
+data/cache/
+.Rhistory
+.RData
+.Rproj.user/

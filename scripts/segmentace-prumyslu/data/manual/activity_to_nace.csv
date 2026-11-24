@@ -1,0 +1,28 @@
+activity_code,nace,description
+7,C23,Manufacture of glass (old code)
+8,C23,Manufacture of ceramics (old code)
+21,C19,Refining of mineral oil
+22,C19,Production of coke
+23,C24,Metal ore roasting or sintering
+24,C24,Production of pig iron or steel
+25,C24,Production or processing of ferrous metals
+26,C24,Production of primary aluminium
+27,C24,Production of secondary aluminium
+28,C24,Production or processing of non-ferrous metals
+29,C23,Production of cement clinker
+30,C23,Production of lime or calcination of dolomite/magnesite
+31,C23,Manufacture of glass
+32,C23,Manufacture of ceramics
+33,C23,Manufacture of mineral wool
+34,C23,Production or processing of gypsum
+35,C17,Production of pulp
+36,C17,Production of paper or cardboard
+37,C20,Production of carbon black
+38,C20,Production of nitric acid
+39,C20,Production of adipic acid
+40,C20,Production of glyoxal and glyoxylic acid
+41,C20,Production of ammonia
+42,C20,Production of bulk organic chemicals
+43,C20,Production of hydrogen and synthesis gas
+44,C20,Production of soda ash and sodium bicarbonate
+99,C99,Other activity opted-in
