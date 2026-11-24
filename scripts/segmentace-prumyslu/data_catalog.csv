@@ -10,7 +10,6 @@ slajd,obsah,zdroj,dataset,filtr,odkaz,ziskani,skript,stav
 17,Náklady ETS (% nákladů),Eurostat + registr,"sbs_ovw_act (PUR_MEUR, EXPN_SAL_BEN_MEUR), env_ac_pefasu (P26)","CZ, 2024; elektřina 2023",https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table,API (es_get),R/03_ets_costs.R,hotovo
 20,Náklady práce a výroba na pracujícího,Eurostat,"nama_10_a64 (D1), nama_10_a64_e (SAL_DC, EMP_DC), sts_inpr_a","CZ, C28, C29, 2015–2025",https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table,API (es_get),R/11_hph_zamestnanost.R,hotovo
 20,Dovoz aut z Číny do EU (HS 8703),Eurostat Comext,DS-059341,"EU27_2020 ← CN, flow 1, VALUE_EUR, roční",https://ec.europa.eu/eurostat/comext/newxtweb/,API Comext (es_get),R/11_hph_zamestnanost.R,hotovo
-21–23,Hutní vstupy v oborech (IO tabulka),Eurostat,naio_10_cp1750,"CZ, MIO_EUR, 2020",https://ec.europa.eu/eurostat/databrowser/view/naio_10_cp1750/default/table,API (es_get),R/10_io_metals.R,hotovo
 "26, 28","Dovozní penetrace, vývoz mimo EU ETS",Eurostat FIGARO,naio_10_fcp_ii4,"CZ, MIO_EUR, 2024",https://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/database,API (es_get),R/14_figaro.R,hotovo
 27,Dovozní penetrace 2015,Eurostat FIGARO,naio_10_fcp_ii2,"CZ, MIO_EUR, 2015",https://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/database,API (es_get),R/14_figaro.R,hotovo
 27,Čisté domácí užití energie,Eurostat,env_ac_pefa04,"CZ, NETDOM_EUSE, TJ, 2015 a 2023",https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefa04/default/table,API (es_get),R/14_figaro.R,hotovo

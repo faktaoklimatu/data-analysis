@@ -1,17 +1,15 @@
 # =============================================================================
 # 03_ets_costs.R – přímé a nepřímé náklady EU ETS a nákupy energie podle oborů (ČR, 2024)
-# Slidy 10, 16–20 (náklady na 100 € tržeb), 22 (časová řada), 26 (bod 3)
+# Str. 17 (náklady ETS v % nákladů), 22 (hutě podle závodů)
 # Vstup:  out/registry_by_nace_year.csv (02_registry.R)
 #         data/eurostat: nama_10_a64_B1G, sbs_ovw_act, env_ac_pefasu
-# Výstup: out/ets_costs_2024.csv, out/ets_timeseries.csv, out/steel_sites.csv
+# Výstup: out/ets_costs_2024.csv, out/steel_sites.csv
 # =============================================================================
 source("R/00_setup.R")
 
 YEAR_COST <- 2024   # rok cen a HPH
 YEAR_ELEC <- 2023   # poslední rok PEFA
 price_cost <- EUA_PRICE$price[EUA_PRICE$year == YEAR_COST]
-
-reg <- read_csv(file.path(DIR_OUT, "registry_by_nace_year.csv"), show_col_types = FALSE)
 
 gva <- es_read("nama_10_a64_B1G") %>% filter(geo == "CZ", time == YEAR_COST) %>%
   transmute(nace = from_es(nace_r2), gva_meur = values)
@@ -111,17 +109,7 @@ costs <- costs %>% left_join(pur, by = "nace") %>%
          direct_best_pct_naklady = direct_best_meur / naklady_sbs_meur * 100)
 write_csv(costs, file.path(DIR_OUT, "ets_costs_2024.csv"))
 
-# Časová řada všech průmyslových zařízení (slide 22)
-ts <- reg %>% group_by(year) %>%
-  summarise(free_alloc_mt = sum(free_alloc) / 1e6, verified_mt = sum(verified_em) / 1e6,
-            free_alloc_proc_mt = sum(free_alloc[source == "proc"]) / 1e6,
-            verified_proc_mt   = sum(verified_em[source == "proc"]) / 1e6,
-            net_mt = sum(net_t) / 1e6, net_eur_m = sum(net_eur_m), .groups = "drop") %>%
-  left_join(EUA_PRICE, by = "year") %>%
-  mutate(coverage_pct = free_alloc_mt / verified_mt * 100)
-write_csv(ts, file.path(DIR_OUT, "ets_timeseries.csv"))
-
-# Hutě podle lokalit (slide 18): Ostrava = Liberty + TAMEH, Třinec = TŽ + Energetika Třinec
+# Hutě podle lokalit (str. 22): Ostrava = Liberty + TAMEH, Třinec = TŽ + Energetika Třinec
 SITES <- c(`73` = "Ostrava", `410` = "Ostrava", `421` = "Ostrava", `114` = "Třinec", `252` = "Třinec")
 steel <- read_csv(file.path(DIR_OUT, "registry_installations.csv"), show_col_types = FALSE) %>%
   filter(nace == "C24") %>%
@@ -132,9 +120,5 @@ steel <- read_csv(file.path(DIR_OUT, "registry_installations.csv"), show_col_typ
             net_kt = sum(net) / 1e3, .groups = "drop")
 write_csv(steel, file.path(DIR_OUT, "steel_sites.csv"))
 
-cum <- reg %>% group_by(nace) %>% summarise(net_mt = sum(net_t) / 1e6, net_eur_m = sum(net_eur_m))
-write_csv(cum, file.path(DIR_OUT, "ets_cumulative_2013_2025.csv"))
-
-message(sprintf("03_ets_costs: přímý náklad průmyslu %s mil. € = %.2f %% HPH; kumulativně 2013–2025 %.1f Mt, %.2f mld. €",
-                round(direct$direct_meur[direct$nace == "C"], 1),
-                costs$direct_pct_gva[costs$nace == "C"], sum(cum$net_mt), sum(cum$net_eur_m) / 1000))
+message(sprintf("03_ets_costs: přímý náklad průmyslu %s mil. € = %.2f %% HPH",
+                round(direct$direct_meur[direct$nace == "C"], 1), costs$direct_pct_gva[costs$nace == "C"]))

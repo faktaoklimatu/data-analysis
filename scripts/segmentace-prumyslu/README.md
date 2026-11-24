@@ -17,8 +17,6 @@ source("R/run_all.R")   # nebo: Rscript R/run_all.R
   a registr EU ETS (8 MB) do `data/raw/`. Obě složky nejsou v gitu.
 - Výsledky jsou v `out/` (CSV, verzované v gitu – změna čísla je vidět v diffu).
 - Výpis běhu včetně chyb: `out/run_log.txt`.
-- Slovenský index výroby (ŠÚ SR, DATAcube pm0040ms) se zatím ukládá ručně do
-  `data/eurostat/sk_prod.csv` (vzor v `tests/fixtures/sk_prod.csv`).
 
 Balíčky: `readxl, dplyr, tidyr, readr, jsonlite, stringr` (doinstaluje `R/00_setup.R`).
 
@@ -44,18 +42,15 @@ Seznam všech zdrojů po slajdech je v [`data_catalog.csv`](data_catalog.csv)
 | `funkce.R` | sdílené funkce (`sts_composite`) | – |
 | `01_download_eurostat.R` | stažení dat z API Eurostatu (`es_get`, `es_save`) | – |
 | `02_registry.R` | zařízení EU ETS v ČR → obor (NACE) a kraj | 15, 16 |
-| `03_ets_costs.R` | přímé a nepřímé náklady ETS, nákupy energie (2024) | 17 |
-| `04_intensity.R` | emisní náročnost vs. změna výroby | – |
-| `05_regions.R` | emisní expozice krajů | – |
-| `06`, `07`, `09` | ceny elektřiny a plynu pro průmysl | – |
+| `03_ets_costs.R` | přímé a nepřímé náklady ETS v % nákladů (2024), hutě podle závodů | 17, 22 |
 | `08_production_annual.R` | roční index výroby, Česko vs. Německo | 7 |
-| `10_io_metals.R` | podíl kovů (CPA 24) na produkci oborů, IO 2020 | příloha |
 | `11_hph_zamestnanost.R` | HPH a pracující 2025; náklady práce a výroba na pracujícího; dovoz aut z Číny (Comext) | 5, 6, 20 |
 | `12_energie_pefa.R` | energetická náročnost (TJ / mil. € HPH) a skladba paliv, PEFA 2023 | 11, 12 |
 | `13_sut_csu.R` | nákupy energie a náklady práce v % nákladů, SUT ČSÚ 2024 + 2025 | 10, 17, 21–23 |
 | `14_figaro.R` | dovozní penetrace, vývoz mimo EU ETS, čtyři skupiny oborů (FIGARO 2015, 2024) | 26, 27, 28 |
+| `15_export_web.R` | data pro webovou prezentaci do `web-cz/_data/segmentace_prumyslu/` | web |
 
 Ruční převodníky jsou v `data/manual/` (kód činnosti → obor, průmyslové spalovací zdroje → obor,
-zařízení → kraj, odečet vlastní elektřiny). Jsou to úsudky autora.
+zařízení → kraj, odečet vlastní elektřiny, kompenzace nepřímých nákladů). Jsou to úsudky autora.
 
 Skripty jsou v UTF-8; ve Windows použijte R ≥ 4.2.

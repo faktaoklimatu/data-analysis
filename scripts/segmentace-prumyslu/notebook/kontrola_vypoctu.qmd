@@ -779,19 +779,3 @@ fo |> filter(rok == 2024, !nace %in% c("C18", "C19")) |>
             objem_mld_eur = round(mimo_ets_uk_mld, 1)) |>
   arrange(desc(mimo_ets_pct + uk_pct))
 ```
-
-# Příloha – výpočty mimo slajdy PDF 2026
-
-Kovy ve výrobě ostatních oborů, Eurostat
-[`naio_10_cp1750`](https://ec.europa.eu/eurostat/databrowser/view/naio_10_cp1750/default/table), ČR 2020
-(`R/10_io_metals.R`). Přímý podíl = vstup výrobků hutí (C24) / produkce oboru (P1).
-
-```{r io}
-io <- es("naio_10_cp1750_CZ") |> select(ind_ava, ind_use, values) |>
-  pivot_wider(names_from = ind_ava, values_from = values) |>
-  mutate(prime_pct = C24 / P1 * 100)
-
-out("io_metals") |> left_join(io |> select(nace = ind_use, C24_meur = C24, P1_meur = P1, prime_pct), by = "nace") |>
-  mutate(shoda = mapply(shoda, direct_pct, prime_pct)) |>
-  transmute(nace, C24_meur, P1_meur, prime_pct = round(prime_pct, 2), celkem_pct = round(approx_total_pct, 2), shoda)
-```
