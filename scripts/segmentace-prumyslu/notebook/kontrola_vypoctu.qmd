@@ -304,31 +304,46 @@ tibble(median_energie_pct = median(obory_sut$energie_pct), median_prace_pct = me
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
 ## Co jsou to za data
-*Eurostat PEFA · 2023 (poslední rok) · TJ na mil. € HPH*
+*Eurostat PEFA (env_ac_pefa04) · 2023 (poslední rok) · TJ na mil. € HPH*
 
-- **Energetická náročnost** = kolik energie obor spotřebuje na každý milion eur přidané hodnoty. Hutě 113 TJ ≈ 31 GWh na 1 mil. € HPH.
-- **Hrubé užití** zahrnuje veškerou energii, i tu, která se spotřebuje jako surovina: koks ve vysoké peci, nafta (benzín) pro výrobu plastů.
-- **Hlavní palivo** = palivo s největším podílem na užité energii oboru.
+- **Energetická náročnost** = kolik energie obor spotřebuje na každý milion eur přidané hodnoty. Hutě 63 TJ ≈ 17,5 GWh na 1 mil. € HPH.
+- Počítá se jen energie pro **energetické účely**: bez surovin (nafta a plyn pro chemii) a bez energie, kterou si obor sám vyrobí (plyny z koksoven a vysokých pecí, černý louh v papírnách).
+- Koks ve vysoké peci Eurostat počítá jako energii; varianta bez uhlí a koksu je níže.
+- **Hlavní palivo** = palivo s největším podílem na užité energii oboru (str. 12).
 :::
 :::
 :::
 
-**Data:** Eurostat [`env_ac_pefasu`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table)
-(užití energie `USE`, TJ, ČR 2023 – poslední rok) a HPH 2023 `nama_10_a64`. Skript: `R/12_energie_pefa.R`.
+**Data:** Eurostat [`env_ac_pefa04`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefa04/default/table)
+– čisté domácí užití energie pro energetické účely (`NETDOM_EUSE_EP`), TJ, ČR 2023 (poslední rok);
+HPH 2023 `nama_10_a64`. Skript: `R/12_energie_pefa.R`.
 
-**Definice:** hrubé užití = energetické produkty `P00` + energetické zbytky `R00`, tj. včetně koksu
-do vysokých pecí a nafty jako suroviny pro chemii. Bez přírodních vstupů `N00` (u chemie 11 890 TJ biomasy).
+Od hrubého užití k energii (TJ na mil. € HPH): hrubé užití − suroviny − energie vyrobená v oboru ≈ energie pro energetické účely.
 
 ```{r s11}
-pefa_raw <- es("env_ac_pefasu_all")
-pefa_raw |> filter(nace_r2 == "C24") |> select(nace_r2, prod_nrg, values) |> filter(values > 0)   # vstup: hutě
-
 e11 <- out("energie_narocnost_2023")
-z_es <- pefa_raw |> filter(prod_nrg %in% c("P00", "R00")) |> group_by(nace_r2) |> summarise(tj = sum(values)) |>
-  transmute(nace = recode(nace_r2, "C10-C12" = "C10-12", "C13-C15" = "C13-15", "C31_C32" = "C31_32"), tj_es = tj)
-e11 |> left_join(z_es, by = "nace") |>
-  transmute(nace, obor = name, skupina, tj = tj_celkem, hph_meur, tj_na_mil_eur = round(tj_na_mil_eur, 1),
-            hlavni_palivo, hlavni_podil_pct = round(hlavni_podil_pct), shoda = mapply(shoda, tj_celkem, tj_es))
+ep_raw <- es("env_ac_pefa04_ep") |> filter(time == 2023, indic_pefa == "NETDOM_EUSE_EP") |>
+  transmute(nace = recode(nace_r2, "C10-C12" = "C10-12", "C13-C15" = "C13-15", "C31_C32" = "C31_32"), tj_es = values)
+e11 |> filter(nace != "C") |> left_join(ep_raw, by = "nace") |>
+  mutate(shoda = mapply(shoda, tj_energie, tj_es)) |>
+  transmute(nace, obor = name, skupina, hrube = round(tj_hrube_na_mil_eur, 1),
+            suroviny = round(tj_suroviny / hph_meur, 1), vlastni_vyroba = round(tj_vlastni_vyroba / hph_meur, 1),
+            energie = round(tj_na_mil_eur, 1), hlavni_palivo, hlavni_podil_pct = round(hlavni_podil_pct), shoda) |>
+  arrange(desc(energie))
+```
+
+**Varianta bez uhlí a koksu (hutě).** Eurostat počítá koks ve vysoké peci jako energii (po odečtení vysokopecního plynu).
+Pokud ho chceme brát jako vstup (redukční činidlo), odečteme čisté užití uhlí a koksu = užití uhlí (P08, P09)
+a koksu (P11) − vlastní výroba energie v oboru (koks a plyny). Jde o dopočet, ne oficiální ukazatel.
+
+```{r s11-koks}
+pefa_raw <- es("env_ac_pefasu_all")
+c24 <- pefa_raw |> filter(nace_r2 == "C24")
+uhli_koks <- sum(c24$values[c24$prod_nrg %in% c("P08", "P09", "P11")])
+h24 <- e11 |> filter(nace == "C24")
+tibble(energie_tj = h24$tj_energie, uhli_a_koks_tj = uhli_koks, vlastni_vyroba_tj = h24$tj_vlastni_vyroba,
+       bez_koksu_tj = h24$tj_energie - (uhli_koks - h24$tj_vlastni_vyroba)) |>
+  mutate(energie_na_mil_eur = round(energie_tj / h24$hph_meur, 1), bez_koksu_na_mil_eur = round(bez_koksu_tj / h24$hph_meur, 1))
 ```
 
 # Str. 12 – Skladba paliv
@@ -342,14 +357,14 @@ e11 |> left_join(z_es, by = "nace") |>
 ## Co jsou to za data
 *Eurostat PEFA · 2023 · % užité energie*
 
-- Rozdělení spotřebované energie oboru podle druhu: elektřina, zemní plyn, uhlí a koks, teplo, biomasa, odpady…
+- Rozdělení spotřebované energie oboru podle druhu: elektřina, zemní plyn, uhlí a koks, teplo, biomasa, odpady… Bez nafty jako suroviny pro chemii.
 - **Koksárenský a vysokopecní plyn** vzniká v hutích při výrobě koksu a železa a spaluje se dál.
 - **Nafta (surovina)** = benzínová frakce z ropy (naphtha), ze které chemie vyrábí plasty – nejde o motorovou naftu.
 :::
 :::
 :::
 
-**Data:** jako str. 11. Skupiny paliv (kódy PEFA) jsou v `R/12_energie_pefa.R` (tabulka `PALIVA`).
+**Data:** Eurostat [`env_ac_pefasu`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table) (užití `USE`, TJ, 2023), hrubé užití bez nafty jako suroviny. Skupiny paliv (kódy PEFA) jsou v `R/12_energie_pefa.R` (tabulka `PALIVA`). Délka pruhu vpravo = energetická náročnost ze str. 11.
 
 ```{r s12}
 out("energie_skladba_2023") |> filter(nace != "C", tj > 0) |>
@@ -720,21 +735,17 @@ fs |> filter(rok == 2024, !nace %in% c("C18", "C19_20", "C21", "C31_32", "C33"))
 *FIGARO 2015 a 2024 + Eurostat PEFA (čisté užití) 2015 a 2023*
 
 - Osa x = dovozní penetrace (str. 26), osa y = energetická náročnost.
-- Energie je tu **čisté domácí užití**: bez energie, kterou si obor sám vyrobí (např. plyn z koksoven v hutích). Proto vychází nižší než na str. 11.
+- Energie je stejná jako na str. 11: čisté užití pro energetické účely.
 - Prahy 10 TJ / mil. € a 50 % dělí obory do čtyř skupin.
 :::
 :::
 :::
 
 **Data:** dovozní penetrace FIGARO 2015 ([`naio_10_fcp_ii2`](https://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/database))
-a 2024 (str. 26); energie = **čisté domácí užití energie** (`NETDOM_EUSE`), Eurostat
+a 2024 (str. 26); energie = **čisté užití pro energetické účely** (`NETDOM_EUSE_EP`, stejně jako str. 11), Eurostat
 [`env_ac_pefa04`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefa04/default/table), 2015 a 2023,
 na mil. € HPH; velikost = HPH. Rafinerie a chemie sloučené (zlom v národních účtech 2018), dřevo a papír sloučené.
 Prahy: 10 TJ / mil. € HPH a 50 % dovozní penetrace.
-
-*Pozn. k definici energie:* str. 11 používá hrubé užití (`env_ac_pefasu`, P00 + R00), str. 27 čisté domácí
-užití (`env_ac_pefa04`), tj. bez energie, kterou obor sám vyrobí (např. koksárenský a vysokopecní plyn v hutích).
-Proto hutě 113 vs. 63 TJ / mil. €.
 
 ```{r s27}
 fs |> transmute(nace, obor = name, rok, penetrace_pct = round(penetrace_pct, 1), rok_energie,

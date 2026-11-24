@@ -4,7 +4,7 @@
 # Hrubé užití energie = P00 (energetické produkty) + R00 (energetické zbytky); bez přírodních vstupů N00
 #   (u chemie N06 = 11 890 TJ biomasy jako přírodní vstup, nejde o nakoupenou energii), tj. včetně koksu do vysokých pecí
 #   a surovin pro chemii (nafta P16). HPH 2023 z nama_10_a64 (11_hph_zamestnanost.R).
-# Výstup: out/energie_narocnost_2023.csv – TJ, HPH, TJ / mil. € HPH, hlavní palivo (str. 11)
+# Výstup: out/energie_narocnost_2023.csv – TJ pro energetické účely, HPH, TJ / mil. € HPH, hlavní palivo (str. 11)
 #         out/energie_skladba_2023.csv   – obor × skupina paliv, TJ a % (str. 12)
 # =============================================================================
 source("R/00_setup.R")
@@ -23,7 +23,7 @@ PALIVA <- tribble(
   "P13", "Zemní plyn",
   "P08", "Uhlí a koks", "P09", "Uhlí a koks", "P11", "Uhlí a koks",
   "P10", "Koksárenský a vysokopecní plyn",
-  "P16", "Nafta (surovina)",
+  "P16", "Nafta (surovina)",     # neenergetické užití, ze skladby se vynechává
   "P12", "Ostatní ropné produkty", "P14", "Ostatní ropné produkty", "P15", "Ostatní ropné produkty",
   "P17", "Ostatní ropné produkty", "P18", "Ostatní ropné produkty", "P19", "Ostatní ropné produkty",
   "P20", "Ostatní ropné produkty", "P21", "Ostatní ropné produkty",
@@ -35,13 +35,14 @@ PALIVA <- tribble(
 
 pefa <- es_read("env_ac_pefasu_all") %>% transmute(nace = from_es(nace_r2), prod_nrg, tj = values)
 
-skladba <- pefa %>% inner_join(PALIVA, by = "prod_nrg") %>%
+skladba_vse <- pefa %>% inner_join(PALIVA, by = "prod_nrg")
+skladba <- skladba_vse %>% filter(palivo != "Nafta (surovina)") %>%
   group_by(nace, palivo) %>% summarise(tj = sum(tj, na.rm = TRUE), .groups = "drop") %>%
   group_by(nace) %>% mutate(podil_pct = tj / sum(tj) * 100) %>% ungroup()
 
 # kontrola: skupiny paliv dávají dohromady celkové hrubé užití P00 + R00
 celkem <- pefa %>% filter(prod_nrg %in% c("P00", "R00")) %>% group_by(nace) %>% summarise(tj_celkem = sum(tj))
-rozdil <- skladba %>% group_by(nace) %>% summarise(tj = sum(tj)) %>% inner_join(celkem, by = "nace") %>%
+rozdil <- skladba_vse %>% group_by(nace) %>% summarise(tj = sum(tj, na.rm = TRUE)) %>% inner_join(celkem, by = "nace") %>%
   filter(abs(tj - tj_celkem) > 1)
 if (nrow(rozdil)) warning("Skupiny paliv nedávají celkové užití: ", paste(rozdil$nace, collapse = ", "))
 
@@ -50,8 +51,17 @@ hph <- es_read("nama_10_a64_CZ") %>% filter(na_item == "B1G", time == YEAR_PEFA)
 hlavni <- skladba %>% group_by(nace) %>% slice_max(tj, n = 1, with_ties = FALSE) %>%
   select(nace, hlavni_palivo = palivo, hlavni_podil_pct = podil_pct)
 
-narocnost <- celkem %>% inner_join(hph, by = "nace") %>% left_join(hlavni, by = "nace") %>%
-  mutate(name = NACE_NAMES[nace], tj_na_mil_eur = tj_celkem / hph_meur,
+f_ep <- file.path(DIR_ES, "env_ac_pefa04_ep.csv")
+if (!file.exists(f_ep)) es_save(es_get("env_ac_pefa04", list(geo = "CZ", unit = "TJ",
+                                                            indic_pefa = c("NETDOM_EUSE_EP", "NETDOM_EUSE_NEP", "EPRD_DOM"),
+                                                            nace_r2 = to_es(c("C", OBORY, "C19")), time = c(2015, YEAR_PEFA))), "env_ac_pefa04_ep")
+ep <- es_read("env_ac_pefa04_ep") %>% filter(time == YEAR_PEFA) %>%
+  transmute(nace = from_es(nace_r2), indic_pefa, values) %>% pivot_wider(names_from = indic_pefa, values_from = values) %>%
+  transmute(nace, tj_energie = NETDOM_EUSE_EP, tj_suroviny = NETDOM_EUSE_NEP, tj_vlastni_vyroba = EPRD_DOM)
+
+narocnost <- celkem %>% rename(tj_hrube = tj_celkem) %>% inner_join(ep, by = "nace") %>%
+  inner_join(hph, by = "nace") %>% left_join(hlavni, by = "nace") %>%
+  mutate(name = NACE_NAMES[nace], tj_na_mil_eur = tj_energie / hph_meur, tj_hrube_na_mil_eur = tj_hrube / hph_meur,
          skupina = case_when(nace %in% SKUPINA_EXPORT ~ "exportní jádro",
                              nace %in% SKUPINA_ENERGIE ~ "energeticky nejnáročnější", TRUE ~ "ostatní")) %>%
   arrange(desc(tj_na_mil_eur))

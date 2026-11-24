@@ -7,7 +7,7 @@
 # Nákupy energie  = užití produktů CZ-CPA 05 (uhlí), 06 (ropa a zemní plyn), 19 (koks a ropné produkty),
 #                   35 (elektřina, plyn, pára) – včetně uhlí a koksu do vysokých pecí
 # Chemie (C20): v národních účtech ČR obsahuje i rafinerii. Za energii se bere jen podíl k z CPA 19
-#   (topné oleje; k = ostatní ropné produkty / (nafta + ostatní ropné produkty) v PEFA 2023, 12_energie_pefa.R),
+#   (topné oleje; k = ostatní ropné produkty / (nafta + ostatní ropné produkty) v PEFA 2023),
 #   ropa (CPA 06) a zbytek CPA 19 (petrochemická surovina) se odečítají i z celkových nákladů.
 # C = zpracovatelský průmysl bez rafinerií (C19).
 # Výstup: out/naklady_sut.csv
@@ -33,10 +33,11 @@ read_sut <- function(rok) {
 }
 sut <- bind_rows(lapply(names(SUT_URL), read_sut))
 
-# podíl topných olejů na CPA 19 v chemii, z PEFA (12_energie_pefa.R)
-pefa_c20 <- read_csv(file.path(DIR_OUT, "energie_skladba_2023.csv"), show_col_types = FALSE) %>% filter(nace == "C20")
-K_C20 <- with(pefa_c20, tj[palivo == "Ostatní ropné produkty"] /
-                        (tj[palivo == "Nafta (surovina)"] + tj[palivo == "Ostatní ropné produkty"]))
+# podíl topných olejů na CPA 19 v chemii, z PEFA 2023 (env_ac_pefasu, stahuje 12_energie_pefa.R):
+# ostatní ropné produkty / (nafta P16 + ostatní ropné produkty)
+ROPNE_OST <- c("P12", "P14", "P15", "P17", "P18", "P19", "P20", "P21")
+pefa_c20 <- es_read("env_ac_pefasu_all") %>% filter(nace_r2 == "C20")
+K_C20 <- with(pefa_c20, sum(values[prod_nrg %in% ROPNE_OST]) / (values[prod_nrg == "P16"] + sum(values[prod_nrg %in% ROPNE_OST])))
 
 # obor po dvou místech -> obor prezentace
 to_obor <- function(n2) case_when(n2 %in% c("10", "11", "12") ~ "C10-12", n2 %in% c("13", "14", "15") ~ "C13-15",

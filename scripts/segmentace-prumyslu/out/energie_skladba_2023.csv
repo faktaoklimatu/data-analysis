@@ -1,19 +1,17 @@
 nace,palivo,tj,podil_pct
-C,Biomasa,33786.3,3.817520825506408
-C,Elektřina,81429.1,9.200690370127651
+C,Biomasa,33786.3,3.985182321121032
+C,Elektřina,81429.1,9.604775004803622
 C,Jaderné palivo,0,0
-C,Koksárenský a vysokopecní plyn,20617.5,2.3295754675675755
-C,Nafta (surovina),37234.4,4.207122337315297
-C,Odpady,8592.9,0.9709134975269269
-C,Ostatní ropné produkty,392379.89999999997,44.335083739862654
-C,Teplo,65491.2,7.399863846807886
-C,Uhlí a koks,160484.7,18.13319849836023
-C,Zemní plyn,85016.5,9.606031416925367
+C,Koksárenský a vysokopecní plyn,20617.5,2.4318879695531286
+C,Odpady,8592.9,1.0135549961718482
+C,Ostatní ropné produkty,392379.89999999997,46.28223394225583
+C,Teplo,65491.2,7.724858076468914
+C,Uhlí a koks,160484.7,18.929589485987293
+C,Zemní plyn,85016.5,10.027918203638345
 C10-12,Biomasa,646.8,1.904806780499585
 C10-12,Elektřina,6646,19.572272515770315
 C10-12,Jaderné palivo,0,0
 C10-12,Koksárenský a vysokopecní plyn,0,0
-C10-12,Nafta (surovina),0,0
 C10-12,Odpady,0,0
 C10-12,Ostatní ropné produkty,6467.799999999999,19.0474788109388
 C10-12,Teplo,6414.3,18.889922900677934
@@ -23,7 +21,6 @@ C13-15,Biomasa,6.4,0.09937425275220099
 C13-15,Elektřina,2001.1,31.07153393475459
 C13-15,Jaderné palivo,0,0
 C13-15,Koksárenský a vysokopecní plyn,0,0
-C13-15,Nafta (surovina),0,0
 C13-15,Odpady,0,0
 C13-15,Ostatní ropné produkty,693.1,10.761921028523517
 C13-15,Teplo,267.2,4.148875052404391
@@ -33,7 +30,6 @@ C16,Biomasa,6348.7,38.984476702773065
 C16,Elektřina,1883,11.56264583793874
 C16,Jaderné palivo,0,0
 C16,Koksárenský a vysokopecní plyn,0,0
-C16,Nafta (surovina),0,0
 C16,Odpady,0,0
 C16,Ostatní ropné produkty,1919.1000000000001,11.784319504826469
 C16,Teplo,4772.9,29.308206224056192
@@ -43,7 +39,6 @@ C17,Biomasa,20407.6,43.560188861282576
 C17,Elektřina,6331.9,13.515492260273385
 C17,Jaderné palivo,0,0
 C17,Koksárenský a vysokopecní plyn,0,0
-C17,Nafta (surovina),0,0
 C17,Odpady,0,0
 C17,Ostatní ropné produkty,590.3,1.2600001707606532
 C17,Teplo,13269,28.32278886299019
@@ -53,27 +48,24 @@ C18,Biomasa,1.4,0.05473025801407349
 C18,Elektřina,549.3,21.47380766223612
 C18,Jaderné palivo,0,0
 C18,Koksárenský a vysokopecní plyn,0,0
-C18,Nafta (surovina),0,0
 C18,Odpady,0,0
 C18,Ostatní ropné produkty,223.7,8.745113369820173
 C18,Teplo,82.9,3.240813135261924
 C18,Uhlí a koks,5.1000000000000005,0.19937451133698203
 C18,Zemní plyn,1695.6,66.28616106333072
-C20,Biomasa,308.3,0.22542630285508303
-C20,Elektřina,11105,8.119880289347055
+C20,Biomasa,308.3,0.3097598984011647
+C20,Elektřina,11105,11.15758570141075
 C20,Jaderné palivo,0,0
-C20,Koksárenský a vysokopecní plyn,1407.5,1.0291518691810877
-C20,Nafta (surovina),37234.4,27.22547236791211
-C20,Odpady,111,0.0811622433244055
-C20,Ostatní ropné produkty,27792.6,20.321709583944795
-C20,Teplo,16469.3,12.042210216059743
-C20,Uhlí a koks,31933.699999999997,23.34964621305016
-C20,Zemní plyn,10401.3,7.605340914325575
+C20,Koksárenský a vysokopecní plyn,1407.5,1.4141649594539063
+C20,Odpady,111,0.11152562024822991
+C20,Ostatní ropné produkty,27792.6,27.924206786585177
+C20,Teplo,16469.3,16.547287365352908
+C20,Uhlí a koks,31933.699999999997,32.08491621009819
+C20,Zemní plyn,10401.3,10.450553458449672
 C21,Biomasa,11,0.5053753560599099
 C21,Elektřina,670.1,30.786547826885975
 C21,Jaderné palivo,0,0
 C21,Koksárenský a vysokopecní plyn,375.4,17.24708260589911
-C21,Nafta (surovina),0,0
 C21,Odpady,0,0
 C21,Ostatní ropné produkty,125.7,5.775062023339153
 C21,Teplo,350.9,16.121473858311127
@@ -83,7 +75,6 @@ C22,Biomasa,22.1,0.13847898691028945
 C22,Elektřina,7250.7,45.43301313983872
 C22,Jaderné palivo,0,0
 C22,Koksárenský a vysokopecní plyn,0,0
-C22,Nafta (surovina),0,0
 C22,Odpady,0,0
 C22,Ostatní ropné produkty,3358.5,21.04441979810892
 C22,Teplo,1838.8,11.521952992336661
@@ -93,7 +84,6 @@ C23,Biomasa,117.1,0.23275783247001577
 C23,Elektřina,7558,15.022918000071556
 C23,Jaderné palivo,0,0
 C23,Koksárenský a vysokopecní plyn,108.5,0.2156637474209796
-C23,Nafta (surovina),0,0
 C23,Odpady,8481.9,16.859339532258126
 C23,Ostatní ropné produkty,2757.2,5.480443174093317
 C23,Teplo,9049.3,17.98715160863291
@@ -103,7 +93,6 @@ C24,Biomasa,18.3,0.014628238895927676
 C24,Elektřina,7981.2,6.379830616184587
 C24,Jaderné palivo,0,0
 C24,Koksárenský a vysokopecní plyn,10850.4,8.673346629310034
-C24,Nafta (surovina),0,0
 C24,Odpady,0,0
 C24,Ostatní ropné produkty,864.4,0.6909644645704853
 C24,Teplo,2141.2,1.7115838865552093
@@ -113,7 +102,6 @@ C25,Biomasa,110.6,0.7802359049607765
 C25,Elektřina,5875.1,41.44632879959366
 C25,Jaderné palivo,0,0
 C25,Koksárenský a vysokopecní plyn,0,0
-C25,Nafta (surovina),0,0
 C25,Odpady,0,0
 C25,Ostatní ropné produkty,2949.1000000000004,20.804644731644
 C25,Teplo,627.8,4.4288616739093625
@@ -123,7 +111,6 @@ C26,Biomasa,127.6,4.238076258801648
 C26,Elektřina,1373.3,45.61246180417165
 C26,Jaderné palivo,0,0
 C26,Koksárenský a vysokopecní plyn,0,0
-C26,Nafta (surovina),0,0
 C26,Odpady,0,0
 C26,Ostatní ropné produkty,351.09999999999997,11.661352464461272
 C26,Teplo,820.1,27.23860767902219
@@ -133,7 +120,6 @@ C27,Biomasa,31.8,0.44177711094440275
 C27,Elektřina,3461.6,48.08980022783473
 C27,Jaderné palivo,0,0
 C27,Koksárenský a vysokopecní plyn,0,0
-C27,Nafta (surovina),0,0
 C27,Odpady,0,0
 C27,Ostatní ropné produkty,991.1,13.76871995776722
 C27,Teplo,467.7,6.497457697757772
@@ -143,7 +129,6 @@ C28,Biomasa,9.6,0.10146489948633394
 C28,Elektřina,3816.1,40.33335447185406
 C28,Jaderné palivo,0,0
 C28,Koksárenský a vysokopecní plyn,0,0
-C28,Nafta (surovina),0,0
 C28,Odpady,0,0
 C28,Ostatní ropné produkty,2237,23.643435432388443
 C28,Teplo,644.7,6.814002156129114
@@ -153,7 +138,6 @@ C29,Biomasa,19.1,0.08941487095702001
 C29,Elektřina,10990.7,51.451938336508896
 C29,Jaderné palivo,0,0
 C29,Koksárenský a vysokopecní plyn,0,0
-C29,Nafta (surovina),0,0
 C29,Odpady,0,0
 C29,Ostatní ropné produkty,2020.8,9.460186975389846
 C29,Teplo,1620,7.583879107349341
@@ -163,7 +147,6 @@ C30,Biomasa,5,0.19859395480001588
 C30,Elektřina,788.7,31.326210430154504
 C30,Jaderné palivo,0,0
 C30,Koksárenský a vysokopecní plyn,0,0
-C30,Nafta (surovina),0,0
 C30,Odpady,0,0
 C30,Ostatní ropné produkty,290.90000000000003,11.554196290264924
 C30,Teplo,232.8,9.246534535488738
@@ -173,7 +156,6 @@ C31_32,Biomasa,120.1,3.8050882362259606
 C31_32,Elektřina,1215,38.49443969204448
 C31_32,Jaderné palivo,0,0
 C31_32,Koksárenský a vysokopecní plyn,0,0
-C31_32,Nafta (surovina),0,0
 C31_32,Odpady,0,0
 C31_32,Ostatní ropné produkty,1072.8999999999999,33.992332794728
 C31_32,Teplo,246,7.793935937648512
@@ -183,7 +165,6 @@ C33,Biomasa,32.9,1.0473704316821595
 C33,Elektřina,365.8,11.645231121864255
 C33,Jaderné palivo,0,0
 C33,Koksárenský a vysokopecní plyn,0,0
-C33,Nafta (surovina),0,0
 C33,Odpady,0,0
 C33,Ostatní ropné produkty,1584.7,50.448873042149486
 C33,Teplo,236.4,7.52578632369795

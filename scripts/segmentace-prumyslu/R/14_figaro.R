@@ -8,7 +8,8 @@
 #   dovoz M    = výrobky oboru X ze zahraničí užité v ČR (c_orig ≠ CZ, c_dest = CZ)
 #   dovozní penetrace = M / (P − E + M)  (podíl dovozu na domácí spotřebě)
 #   vývoz mimo oblast EU ETS = vývoz mimo EU27, Norsko, Island, Lichtenštejnsko a Švýcarsko; UK zvlášť
-# Energie (str. 27): Eurostat env_ac_pefa04, čisté domácí užití energie (NETDOM_EUSE), TJ, 2015 a 2023
+# Energie (str. 27): Eurostat env_ac_pefa04, čisté domácí užití energie pro energetické účely (NETDOM_EUSE_EP),
+#   TJ, 2015 a 2023 – stejná definice jako str. 11 (12_energie_pefa.R)
 # Výstup: out/figaro_obory.csv – obor × rok: P, E, M, penetrace (z EU / mimo EU), vývoz mimo EU ETS, UK
 #         out/figaro_skupiny.csv – str. 26 a 27 se sloučenými obory (dřevo + papír, rafinerie + chemie)
 # =============================================================================
@@ -56,10 +57,9 @@ write_csv(obory, file.path(DIR_OUT, "figaro_obory.csv"))
 # --- Str. 26, 27: sloučené obory, energie a HPH -----------------------------------
 SLOUC <- c(C16 = "C16_17", C17 = "C16_17", C19 = "C19_20", C20 = "C19_20")
 SLOUC_NAMES <- c(C16_17 = "Dřevo a papír", C19_20 = "Rafinerie a chemie")
-f_pefa <- file.path(DIR_ES, "env_ac_pefa04_netdom.csv")
-if (!file.exists(f_pefa)) es_save(es_get("env_ac_pefa04", list(geo = "CZ", indic_pefa = "NETDOM_EUSE", unit = "TJ",
-                                                              nace_r2 = to_es(OBORY), time = c(2015, 2023))), "env_ac_pefa04_netdom")
-energie <- es_read("env_ac_pefa04_netdom") %>% transmute(nace = from_es(nace_r2), rok_e = time, tj = values)
+# data stahuje 12_energie_pefa.R (env_ac_pefa04_ep.csv)
+energie <- es_read("env_ac_pefa04_ep") %>% filter(indic_pefa == "NETDOM_EUSE_EP", nace_r2 != "C") %>%
+  transmute(nace = from_es(nace_r2), rok_e = time, tj = values)
 hph <- es_read("nama_10_a64_CZ") %>% filter(na_item == "B1G", time %in% c(2015, 2023, 2024)) %>%
   transmute(nace = from_es(nace_r2), rok_h = time, hph_meur = values)
 
