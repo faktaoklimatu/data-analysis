@@ -96,7 +96,7 @@ karta <- function(n, sektor, prime_sloupec, prime_pozn) tibble(
   zdarma = if (is.na(sektor)) NA_real_ else inst25$zdarma[inst25$sektor == sektor], zdarma_sektor = sektor)
 bind_rows(
   karta("C23", "Výroba cementu", "direct_best_pct_naklady", ""),
-  karta("C24", "Výroba oceli", "direct_best_pct_naklady", "nejlepší odhad (Energetika Třinec 86,5 %)"),
+  karta("C24", "Výroba oceli", "direct_best_pct_naklady", "nejlepší odhad, Energetika Třinec 86,5 %"),
   karta("C20", "Chemikálie", "direct_pct_naklady", "horní odhad vč. elektráren a kotelen podniků")) %>%
   web("karty_oboru")
 sut %>% filter(nace %in% SKUPINA_EXPORT) %>%
