@@ -22,12 +22,9 @@ source("R/run_all.R")   # nebo: Rscript R/run_all.R
 
 Balíčky: `readxl, dplyr, tidyr, readr, jsonlite, stringr` (doinstaluje `R/00_setup.R`).
 
-## Kontrola proti prezentaci
-```r
-source("tests/test_against_deck.R")
-```
-Pro každé číslo vypíše `výpočet (prezentace) OK/CHYBA`. S testovacími daty bez stahování:
-`FOK_EUROSTAT_DIR=tests/fixtures Rscript tests/test_against_deck.R`.
+## Testy
+`tests/test_parser.R` – převod odpovědi API Eurostatu na tabulku (uložená skutečná odpověď v `tests/fixtures`).
+Kontrola výpočtů je v notebooku níže; s prezentací se nic neporovnává – prezentace je výstup.
 
 ## Kontrolní notebook
 `notebook/kontrola_vypoctu.qmd` – po slajdech: obrázek slajdu, data (zdroj), kód a výsledek.
