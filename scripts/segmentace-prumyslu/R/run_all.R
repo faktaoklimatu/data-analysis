@@ -25,7 +25,7 @@ step("R/00_setup.R")
 if (!ok) { sink(type = "message"); sink(); close(con)
   stop("Nepodařilo se načíst R/00_setup.R – viz out/run_log.txt", call. = FALSE) }
 if (!file.exists(file.path(DIR_ES, "env_ac_ainah_r2.csv"))) step("R/01_download_eurostat.R")
-for (f in c("R/02_registry.R", "R/03_ets_costs.R", "R/04_intensity.R", "R/05_regions.R", "R/06_electricity_price.R", "R/07_electricity_components.R", "R/08_production_annual.R", "R/09_energy_prices_real.R", "R/10_io_metals.R", "R/11_hph_zamestnanost.R", "R/12_energie_pefa.R", "R/13_sut_csu.R", "R/14_figaro.R")) if (ok) step(f)
+for (f in c("R/02_registry.R", "R/03_ets_costs.R", "R/04_intensity.R", "R/05_regions.R", "R/06_electricity_price.R", "R/07_electricity_components.R", "R/08_production_annual.R", "R/09_energy_prices_real.R", "R/10_io_metals.R", "R/11_hph_zamestnanost.R", "R/12_energie_pefa.R", "R/13_sut_csu.R", "R/14_figaro.R", "R/15_export_web.R")) if (ok) step(f)
 cat("\n=== Stav:", if (ok) "HOTOVO" else "SKONČILO CHYBOU", "===\n")
 cat("\nSoubory v data/eurostat:\n"); print(list.files(DIR_ES))
 cat("\n"); print(sessionInfo())

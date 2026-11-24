@@ -150,25 +150,38 @@ Eurostat FIGARO 2024 (`R/14_figaro.R`; vývoz = dodávky z ČR do zahraničí, m
 Exportní jádro by mělo mít velký podíl na vývozu *a* vysoký podíl vývozu na vlastní produkci.
 
 ```{r s06-export}
-#| code-fold: show
+#| fig-width: 9
+#| fig-height: 5.5
+library(ggplot2)
+BARVY <- c("exportní jádro" = "#3a87c8", "energeticky nejnáročnější" = "#f06a4e", "ostatní" = "#b9b9b9")
 vyvoz <- out("figaro_obory") |> filter(rok == 2024, nace != "C19") |>
   mutate(skupina = case_when(nace %in% c("C26", "C27", "C28", "C29", "C30") ~ "exportní jádro",
                              nace %in% c("C17", "C20", "C23", "C24") ~ "energeticky nejnáročnější",
                              TRUE ~ "ostatní"),
          podil_na_vyvozu_pct = E / sum(E) * 100,     # podíl oboru na vývozu průmyslu (bez rafinerií)
-         vyvoz_z_produkce_pct = E / P * 100) |>      # kolik z produkce oboru jde do zahraničí
-  arrange(desc(E)) |>
-  mutate(kumulativne_pct = cumsum(podil_na_vyvozu_pct))
+         vyvoz_z_produkce_pct = E / P * 100)         # kolik z produkce oboru jde do zahraničí
 
-vyvoz |> transmute(nace, obor = name, skupina, vyvoz_mld_eur = round(E / 1000, 1),
-                   podil_na_vyvozu_pct = round(podil_na_vyvozu_pct, 1),
-                   kumulativne_pct = round(kumulativne_pct), vyvoz_z_produkce_pct = round(vyvoz_z_produkce_pct))
+ggplot(vyvoz, aes(vyvoz_z_produkce_pct, podil_na_vyvozu_pct, colour = skupina)) +
+  geom_point(aes(size = E / 1000), alpha = .85) +
+  geom_text(aes(label = name), size = 3.2, vjust = -1.1, show.legend = FALSE) +
+  scale_colour_manual(values = BARVY, name = NULL) +
+  scale_size_area(max_size = 14, name = "vývoz, mld. €") +
+  scale_y_sqrt(breaks = c(1, 2, 5, 10, 20, 35)) +
+  labs(x = "Vývoz v % produkce oboru", y = "Podíl na vývozu průmyslu, % (odmocninová osa)",
+       title = "Kdo nese český vývoz? (FIGARO 2024)",
+       subtitle = "Vpravo nahoře = velký vývozce, který vyváží většinu své produkce") +
+  theme_minimal(base_size = 11) + theme(legend.position = "bottom")
+```
 
+Souhrn za skupiny:
+
+```{r s06-export-souhrn}
 vyvoz |> group_by(skupina) |>
   summarise(obory = paste(nace, collapse = ", "), vyvoz_mld_eur = round(sum(E) / 1000, 1),
             podil_na_vyvozu_pct = round(sum(podil_na_vyvozu_pct), 1),
             vyvoz_z_produkce_pct = round(sum(E) / sum(P) * 100))
 ```
+
 
 # Str. 7 – Index výroby: Česko vs. Německo
 

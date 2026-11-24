@@ -41,7 +41,7 @@ NACE_NAMES <- c(
   "C10-12" = "Potraviny a nápoje", "C13-15" = "Textil a oděvy", "C16" = "Dřevo",
   "C17" = "Papír", "C18" = "Tisk", "C19" = "Rafinerie", "C20" = "Chemie",
   "C21" = "Farmacie", "C22" = "Pryž a plasty", "C23" = "Cement, sklo, keramika",
-  "C24" = "Hutě (základní kovy)", "C25" = "Kovovýroba", "C26" = "Elektronika",
+  "C24" = "Hutě a slévárny", "C25" = "Kovovýroba", "C26" = "Elektronika",
   "C27" = "Elektrická zařízení", "C28" = "Stroje", "C29" = "Auta",
   "C30" = "Ostatní doprava", "C31_32" = "Nábytek a ostatní", "C33" = "Opravy a instalace",
   "C" = "Zpracovatelský průmysl celkem"
