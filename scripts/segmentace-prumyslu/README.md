@@ -30,7 +30,8 @@ Pro každé číslo vypíše `výpočet (prezentace) OK/CHYBA`. S testovacími d
 `FOK_EUROSTAT_DIR=tests/fixtures Rscript tests/test_against_deck.R`.
 
 ## Kontrolní notebook
-`notebook/kontrola_vypoctu.qmd` – ke každému výpočtu zdroj, vstupní data, kód a výsledek.
+`notebook/kontrola_vypoctu.qmd` – po slajdech: obrázek slajdu, data (zdroj), kód a výsledek.
+Obrázky slajdů (`notebook/slajdy/sNN.png`) nejsou v gitu, kopírují se ze sdíleného disku projektu.
 Kde to jde, přepočítá výsledek přímo ze surových dat a porovná ho s výstupem skriptu
 (sloupec `shoda`). Neporovnává se slajdy – prezentace je výstup. Po `run_all.R` vyrenderujte
 v Positronu (Render) nebo `quarto render notebook/kontrola_vypoctu.qmd`.
