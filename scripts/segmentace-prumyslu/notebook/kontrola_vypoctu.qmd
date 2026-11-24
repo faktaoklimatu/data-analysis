@@ -150,8 +150,8 @@ Eurostat FIGARO 2024 (`R/14_figaro.R`; vývoz = dodávky z ČR do zahraničí, m
 Exportní jádro by mělo mít velký podíl na vývozu *a* vysoký podíl vývozu na vlastní produkci.
 
 ```{r s06-export}
-#| fig-width: 9
-#| fig-height: 6.5
+#| fig-width: 11
+#| fig-height: 3.2
 library(ggplot2)
 BARVY <- c("exportní jádro" = "#3a87c8", "energeticky nejnáročnější" = "#f06a4e", "ostatní" = "#b9b9b9")
 vyvoz <- out("figaro_obory") |> filter(rok == 2024, nace != "C19") |>
@@ -161,23 +161,24 @@ vyvoz <- out("figaro_obory") |> filter(rok == 2024, nace != "C19") |>
          podil_na_vyvozu_pct = E / sum(E) * 100,     # podíl oboru na vývozu průmyslu (bez rafinerií)
          vyvoz_z_produkce_pct = E / P * 100)         # kolik z produkce oboru jde do zahraničí
 
-hph25 <- out("obory_velikost_2025") |> select(nace, podil_hph_pct)   # podíl na HPH (str. 5)
-vyvoz <- vyvoz |> left_join(hph25, by = "nace") |>
-  mutate(jadro = if_else(skupina == "exportní jádro", "exportní jádro", "ostatní obory"),
-         name = reorder(name, podil_na_vyvozu_pct))
+# jeden pruh = celý vývoz zpracovatelského průmyslu; díly = obory (jádro vlevo, pak ostatní, od největšího)
+vyvoz <- vyvoz |>
+  mutate(jadro = if_else(skupina == "exportní jádro", "exportní jádro", "ostatní obory")) |>
+  arrange(jadro, desc(E)) |>
+  mutate(name = factor(name, levels = rev(name)),
+         popisek = if_else(podil_na_vyvozu_pct >= 5, sprintf("%s\n%.0f %%", stringr::str_wrap(name, 10), podil_na_vyvozu_pct), ""))
+celkem <- vyvoz |> group_by(jadro) |> summarise(mld = sum(E) / 1000, pct = sum(podil_na_vyvozu_pct))
 
-ggplot(vyvoz, aes(y = name)) +
-  geom_col(aes(x = podil_na_vyvozu_pct, fill = jadro), width = .7) +
-  geom_point(aes(x = podil_hph_pct), shape = 21, fill = "white", colour = "black", size = 2.3) +
-  geom_text(aes(x = podil_na_vyvozu_pct, label = sprintf("%.1f %%  (vyváží %.0f %% produkce)",
-                                                        podil_na_vyvozu_pct, vyvoz_z_produkce_pct)),
-            hjust = -0.08, size = 3) +
+ggplot(vyvoz, aes(x = E / 1000, y = "vývoz", fill = jadro, group = name)) +
+  geom_col(colour = "white", linewidth = .4, width = .6) +
+  geom_text(aes(label = popisek), position = position_stack(vjust = .5), size = 3, colour = "white", lineheight = .9) +
   scale_fill_manual(values = c("exportní jádro" = "#3a87c8", "ostatní obory" = "#b9b9b9"), name = NULL) +
-  scale_x_continuous(expand = expansion(mult = c(0, .35))) +
-  labs(x = "% vývozu zpracovatelského průmyslu (pruh) · % HPH 2025 (tečka)", y = NULL,
-       title = "Kdo nese český vývoz? (FIGARO 2024)",
-       subtitle = "Pruh delší než tečka = obor se na vývozu podílí víc než na přidané hodnotě") +
-  theme_minimal(base_size = 11) + theme(legend.position = "top", panel.grid.major.y = element_blank())
+  labs(x = "Vývoz zpracovatelského průmyslu 2024, mld. € (bez rafinerií)", y = NULL,
+       title = sprintf("Exportní jádro = %.0f %% vývozu (%.0f mld. € z %.0f mld. €)",
+                       celkem$pct[celkem$jadro == "exportní jádro"], celkem$mld[celkem$jadro == "exportní jádro"], sum(celkem$mld)),
+       subtitle = "Eurostat FIGARO 2024; popisky u oborů s aspoň 5 % vývozu") +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "top", axis.text.y = element_blank(), panel.grid.major.y = element_blank())
 ```
 
 Souhrn za skupiny:
