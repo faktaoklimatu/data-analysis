@@ -6,7 +6,9 @@ data/cache/
 .RData
 .Rproj.user/
 out/run_log.txt
+# vyrenderovaný notebook je v gitu kvůli sdílení (se souhlasem autora i s obrázky slajdů); jiné HTML ne
 notebook/*.html
+!notebook/kontrola_vypoctu.html
 notebook/*_files/
 notebook/slajdy/
 _to_delete/
