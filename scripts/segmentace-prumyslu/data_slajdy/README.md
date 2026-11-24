@@ -43,13 +43,14 @@ Hodnoty `%` jsou v procentech (15.5 = 15,5 %). Prázdná buňka = obor nemá dat
 Snímky bez dat (1–4, 8, 9, 13, 14, 18, 19, 24, 25, 29) mají texty v PDF. Jediné číslo v nich, „náklady ETS průmyslu zhruba X % nákladů“
 na str. 24, je součet `nepr_ets` + `prime_ets` pro `nace = C` v `naklady_ets.csv` (teď 0,7 %).
 
-## Co se oproti PDF změnilo
+## Známé problémy
 
-- Chemie zahrnuje rafinerie Litvínov a Kralupy (jako ČSÚ): povolenky zdarma 52 % místo 46 %, přímý náklad ETS 1,7 % místo 1,0 %.
-- Energetická náročnost (str. 11, 27) je jen energie pro energetické účely: hutě 63, chemie 17, papír 16 TJ / mil. € (dřív 113 / 51 / 39).
-- Str. 17: všechny % jsou ze stejného jmenovatele (SUT ČSÚ).
-- Str. 20, karta 3: podíl práce na HPH místo mezd vs. objemu výroby.
-- Eurostat průběžně reviduje data: str. 7 je teď 16 z 18 oborů (dřív 17), dovoz čínských aut 13,9 mld. € (dřív 13,8).
+- **Rafinerie vs. chemie.** ČSÚ řadí podnik ORLEN Unipetrol RPA podle hlavní činnosti celý do chemie (C20),
+  i s rafineriemi Litvínov a Kralupy; obor rafinerie (C19) má proto v národních účtech skoro nulovou přidanou hodnotu.
+  Registr EU ETS ale vede rafinerie jako samostatná zařízení. Aby čitatel i jmenovatel seděly, jsou rafinerie
+  ve všech datech v chemii (C20). „Chemie“ tak znamená chemii včetně rafinerií a z velké části skupinu ORLEN Unipetrol
+  (72 % emisí chemie). Oddělit náklady rafinerií od zbytku chemie z veřejných dat čistě nejde. Na slajdech s chemií
+  proto uvádět „vč. rafinerií Litvínov a Kralupy (ORLEN Unipetrol)“.
 
 ## Jak data obnovit
 
