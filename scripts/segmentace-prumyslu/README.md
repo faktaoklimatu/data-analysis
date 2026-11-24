@@ -54,3 +54,11 @@ Ruční převodníky jsou v `data/manual/` (kód činnosti → obor, průmyslov�
 zařízení → kraj, odečet vlastní elektřiny, kompenzace nepřímých nákladů). Jsou to úsudky autora.
 
 Skripty jsou v UTF-8; ve Windows použijte R ≥ 4.2.
+
+## Poznámky ke slajdům (dohodnuto)
+- **Chemie (C20) = vč. rafinerií Litvínov a Kralupy** (ORLEN Unipetrol RPA), jak ji vede ČSÚ – poznámka na str. 10, 11, 17.
+- **Str. 17:** přímý náklad ETS je netto (přebytky povolenek snižují náklad, lze je prodat); nepřímý je horní odhad
+  (0,85 t/MWh, plné promítnutí ceny, elektřina 2023). Jmenovatel = celkové náklady 2024 ze SUT ČSÚ.
+- **Str. 20, karta 3:** podíl náhrad zaměstnancům na HPH (auta 41 → 52 %, stroje 57 → 69 %, 2015 → 2025).
+- **Str. 10 / 23:** energie chemie 11–20 % nákladů podle zacházení s ropnými produkty (citlivost v notebooku).
+- **Str. 23:** skupina ORLEN Unipetrol = 72 % emisí chemie; povolenky 2,1 % nákladů firmy (výroční zpráva 2025, údaj 2024).
