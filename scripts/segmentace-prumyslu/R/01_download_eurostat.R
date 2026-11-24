@@ -24,7 +24,9 @@ parse_jsonstat <- function(j) {
     out[[ids[i]]] <- cats[[i]][rem %% sizes[i] + 1]
     rem <- rem %/% sizes[i]
   }
-  as_tibble(out) %>% mutate(values = as.numeric(unlist(j$value)),
+  # hodnota null (chybějící údaj) se nesmí ztratit, jinak by se hodnoty posunuly vůči pozicím
+  vals <- vapply(j$value, function(v) if (is.null(v)) NA_real_ else as.numeric(v), numeric(1))
+  as_tibble(out) %>% mutate(values = unname(vals),
                           time = if (all(grepl("^[0-9]{4}$", time))) as.integer(time) else time)  # pololetí "2025-S1" zůstávají text
 }
 
@@ -33,10 +35,17 @@ es_get <- function(dataset, filters, api = ES_API) {
   q <- paste(unlist(Map(function(k, v) paste0(k, "=", v), names(filters), filters)), collapse = "&")
   url <- paste0(api, dataset, "?", q)
   message("Stahuji ", dataset, " …")
-  parse_jsonstat(jsonlite::fromJSON(url, simplifyVector = FALSE))
+  j <- jsonlite::fromJSON(url, simplifyVector = FALSE)
+  df <- parse_jsonstat(j)
+  attr(df, "url") <- url; attr(df, "updated") <- if (is.null(j$updated)) NA_character_ else j$updated
+  df
 }
 
-es_save <- function(df, name) write_csv(df, file.path(DIR_ES, paste0(name, ".csv")))
+# Uloží stažená data a zapíše stažení do out/stazena_data.csv
+es_save <- function(df, name) {
+  write_csv(df, file.path(DIR_ES, paste0(name, ".csv")))
+  zapis_stazeni(paste0("data/eurostat/", name, ".csv"), attr(df, "url"), attr(df, "updated"))
+}
 
 NACE_C  <- c("C", "C10-C12", "C13-C15", paste0("C", 16:30), "C31_C32", "C33")
 

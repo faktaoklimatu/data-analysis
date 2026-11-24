@@ -16,7 +16,8 @@
 source("R/00_setup.R")
 options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "UTF-8"); options(fok.no_download = FALSE)
 
-EU27 <- c("AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "GR", "HR", "HU", "IE", "IT", "LT",
+# Pozn.: Řecko má ve FIGARO kód EL (ne GR)
+EU27 <- c("AT", "BE", "BG", "CY", "CZ", "DE", "DK", "EE", "ES", "FI", "FR", "EL", "HR", "HU", "IE", "IT", "LT",
           "LU", "LV", "MT", "NL", "PL", "PT", "RO", "SE", "SI", "SK")
 ETS_OBLAST <- c(EU27, "NO", "IS", "LI", "CH")   # Island a Lichtenštejnsko FIGARO neuvádí (jsou v WRL_REST)
 OBORY <- setdiff(names(NACE_NAMES), "C")        # 19 oborů vč. rafinerií; kódy FIGARO jsou shodné
@@ -24,7 +25,7 @@ FIG <- c(`2024` = "naio_10_fcp_ii4", `2015` = "naio_10_fcp_ii2")
 
 fig_get <- function(rok, smer) {
   name <- paste0("figaro_", rok, "_", smer)
-  if (!file.exists(file.path(DIR_ES, paste0(name, ".csv")))) {
+  if (stahnout(file.path(DIR_ES, paste0(name, ".csv")))) {
     flt <- list(ind_ava = OBORY, unit = "MIO_EUR", time = as.integer(rok))
     if (smer == "z_cz") flt$c_orig <- "CZ" else flt$c_dest <- "CZ"
     es_save(es_get(FIG[[rok]], flt), name)
@@ -34,6 +35,9 @@ fig_get <- function(rok, smer) {
 
 fig <- bind_rows(lapply(names(FIG), function(rok) {
   z <- fig_get(rok, "z_cz"); do <- fig_get(rok, "do_cz")
+  # kontrola: všechny země EU a oblasti ETS musí mít ve FIGARO svůj kód (jinak by spadly do „mimo EU“)
+  chybi <- setdiff(c(EU27, "NO", "CH", "UK"), unique(z$c_dest))
+  if (length(chybi)) stop("FIGARO ", rok, ": chybí kódy zemí ", paste(chybi, collapse = ", "))
   vyst <- z %>% group_by(nace = ind_ava) %>%
     summarise(P = sum(values),
               E = sum(values[c_dest != "CZ"]),

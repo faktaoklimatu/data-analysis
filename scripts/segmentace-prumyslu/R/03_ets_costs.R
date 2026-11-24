@@ -89,7 +89,7 @@ costs <- gva %>%
 # Str. 17: náklady ETS v % celkových nákladů oboru; celkové náklady = nákupy zboží a služeb (PUR_MEUR)
 #   + osobní náklady (EXPN_SAL_BEN_MEUR), Eurostat sbs_ovw_act 2024
 f_pur <- file.path(DIR_ES, "sbs_ovw_act_pur.csv")
-if (!file.exists(f_pur)) {
+if (stahnout(f_pur)) {
   options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "UTF-8"); options(fok.no_download = FALSE)
   # sloučené obory (C10-12, C13-15, C31_32) SBS nemá jako celek -> stahují se složky a sčítají
   es_save(es_get("sbs_ovw_act", list(geo = "CZ", nace_r2 = c("C", paste0("C", 10:33)),

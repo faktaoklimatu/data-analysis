@@ -1,9 +1,9 @@
 # Spustí celý výpočet: stažení dat -> registr -> náklady ETS -> … -> HPH, PEFA, SUT (ČSÚ), FIGARO
 # Data Eurostatu se stahují jen tehdy, když ve složce data/eurostat chybí.
 # Celý výpis včetně chyb se ukládá do out/run_log.txt (Claude ho čte při ladění).
-# Skript se musí spouštět ze složky R_ETS (tam, kde je podsložka R/)
+# Skript se musí spouštět ze složky projektu (tam, kde je podsložka R/)
 if (!file.exists("R/00_setup.R")) {
-  stop("Pracovní složka není R_ETS (je: ", getwd(), "). V Positronu otevřete složku R_ETS ",
+  stop("Pracovní složka není složka projektu (je: ", getwd(), "). V Positronu otevřete složku segmentace-prumyslu ",
        "(File → Open Folder) nebo nastavte setwd() na cestu k R_ETS a spusťte znovu.", call. = FALSE)
 }
 # skripty jsou v UTF-8; v prostředí s locale "C" by se čeština nenačetla
@@ -24,7 +24,7 @@ step <- function(f) {
 step("R/00_setup.R")
 if (!ok) { sink(type = "message"); sink(); close(con)
   stop("Nepodařilo se načíst R/00_setup.R – viz out/run_log.txt", call. = FALSE) }
-if (!file.exists(file.path(DIR_ES, "sbs_ovw_act.csv"))) step("R/01_download_eurostat.R")
+if (stahnout(file.path(DIR_ES, "sbs_ovw_act.csv"))) step("R/01_download_eurostat.R")
 for (f in c("R/02_registry.R", "R/03_ets_costs.R", "R/08_production_annual.R", "R/11_hph_zamestnanost.R",
             "R/12_energie_pefa.R", "R/13_sut_csu.R", "R/14_figaro.R", "R/15_export_web.R")) if (ok) step(f)
 cat("\n=== Stav:", if (ok) "HOTOVO" else "SKONČILO CHYBOU", "===\n")

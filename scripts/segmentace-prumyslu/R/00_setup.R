@@ -54,7 +54,7 @@ from_es <- function(x) { inv <- setNames(names(NACE_ES), NACE_ES); ifelse(x %in%
 # Pomocná funkce: načte uložená data Eurostatu (viz 01_download_eurostat.R)
 es_read <- function(name) {
   f <- file.path(DIR_ES, paste0(name, ".csv"))
-  if (!file.exists(f)) stop("Chybí ", f, " – spusťte nejdřív R/01_download_eurostat.R")
+  if (!file.exists(f)) stop("Chybí ", f, " – spusťte R/run_all.R (soubor stahuje jiný skript)")
   read_csv(f, show_col_types = FALSE, col_types = cols(time = col_integer(), .default = col_guess()))
 }
 
@@ -64,3 +64,17 @@ source("R/funkce.R", encoding = "UTF-8")
 # --- Skupiny oborů (str. 6, 10, 11) ---------------------------------------------------------
 SKUPINA_EXPORT  <- c("C26", "C27", "C28", "C29", "C30")   # exportní jádro: elektronika, el. zařízení, stroje, auta, ost. doprava
 SKUPINA_ENERGIE <- c("C17", "C20", "C23", "C24")          # energeticky nejnáročnější: papír, chemie, cement/sklo/keramika, hutě
+
+# --- Stahování a záznam o něm ----------------------------------------------------------------
+# Data se stahují, jen když soubor chybí. Znovu vše stáhnete: Sys.setenv(FOK_REFRESH = "1") před run_all.R
+# (nebo FOK_REFRESH=1 Rscript R/run_all.R). Každé stažení se zapíše do out/stazena_data.csv
+# (soubor, zdroj, datum aktualizace u zdroje, datum stažení) – tak je vidět, z jakého ročníku dat čísla jsou.
+stahnout <- function(f) !file.exists(f) || Sys.getenv("FOK_REFRESH") == "1"
+LOG_STAZENI <- file.path(DIR_OUT, "stazena_data.csv")
+zapis_stazeni <- function(soubor, url, aktualizace_zdroje = NA_character_) {
+  radek <- tibble(soubor = soubor, url = url, aktualizace_zdroje = as.character(aktualizace_zdroje),
+                  stazeno = format(Sys.time(), "%Y-%m-%d %H:%M"))
+  log <- if (file.exists(LOG_STAZENI)) read_csv(LOG_STAZENI, show_col_types = FALSE, col_types = cols(.default = "c")) else radek[0, ]
+  log <- bind_rows(log[log$soubor != soubor, ], radek) %>% arrange(soubor)
+  write_csv(log, LOG_STAZENI)
+}

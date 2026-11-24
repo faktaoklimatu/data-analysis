@@ -22,10 +22,15 @@ SUT_URL <- c(`2024` = "https://apl.czso.cz/nufile/sut/ldrj8f6d54gw/SUT_2024s.xls
 # Načte list „Matice dodávek a užití“ jako dlouhou tabulku řádek (CPA nebo položka D.11…) × obor NACE
 read_sut <- function(rok) {
   f <- file.path(DIR_RAW, basename(SUT_URL[[rok]]))
-  if (!file.exists(f)) download.file(SUT_URL[[rok]], f, mode = "wb")
+  if (stahnout(f)) { download.file(SUT_URL[[rok]], f, mode = "wb"); zapis_stazeni(f, SUT_URL[[rok]]) }
   x <- read_excel(f, sheet = "Matice dodávek a užití", col_names = FALSE, col_types = "text", .name_repair = "minimal")
   nace_cols <- which(grepl("^[0-9]{2}$", unlist(x[8, ])))          # sloupce oborů 01–99 (kódy v 8. řádku)
   radky <- 9:nrow(x)
+  # kontrola rozložení souboru: když ČSÚ list posune, ať výpočet spadne, ne tiše počítá špatně
+  popisky <- trimws(x[[9]][radky])
+  stopifnot("SUT: čekám 88 oborů (01–99) v 8. řádku" = length(nace_cols) == 88,
+            "SUT: chybí nebo se opakuje řádek CELKEM / D.11 / D.12 / B.1g / CPA 05, 06, 19, 35" =
+              all(table(factor(popisky, levels = c("CELKEM", "D.11", "D.12", "B.1g", "05", "06", "19", "35"))) == 1))
   tibble(radek = rep(trimws(x[[9]][radky]), times = length(nace_cols)),
          nace2 = rep(unlist(x[8, nace_cols]), each = length(radky)),
          mil_kc = as.numeric(unlist(x[radky, nace_cols])),

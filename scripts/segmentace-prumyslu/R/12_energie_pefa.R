@@ -13,7 +13,7 @@ options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "
 YEAR_PEFA <- 2023
 OBORY <- setdiff(names(NACE_NAMES), c("C", "C19"))   # rafinerie vynechány (slajd)
 f <- file.path(DIR_ES, "env_ac_pefasu_all.csv")
-if (!file.exists(f)) es_save(es_get("env_ac_pefasu", list(geo = "CZ", stk_flow = "USE", unit = "TJ",
+if (stahnout(f)) es_save(es_get("env_ac_pefasu", list(geo = "CZ", stk_flow = "USE", unit = "TJ",
                                                          nace_r2 = to_es(c("C", OBORY)), time = YEAR_PEFA)), "env_ac_pefasu_all")
 
 # Skupiny paliv (kódy PEFA: https://ec.europa.eu/eurostat/cache/metadata/en/env_ac_pefa_esms.htm)
@@ -52,7 +52,7 @@ hlavni <- skladba %>% group_by(nace) %>% slice_max(tj, n = 1, with_ties = FALSE)
   select(nace, hlavni_palivo = palivo, hlavni_podil_pct = podil_pct)
 
 f_ep <- file.path(DIR_ES, "env_ac_pefa04_ep.csv")
-if (!file.exists(f_ep)) es_save(es_get("env_ac_pefa04", list(geo = "CZ", unit = "TJ",
+if (stahnout(f_ep)) es_save(es_get("env_ac_pefa04", list(geo = "CZ", unit = "TJ",
                                                             indic_pefa = c("NETDOM_EUSE_EP", "NETDOM_EUSE_NEP", "EPRD_DOM"),
                                                             nace_r2 = to_es(c("C", OBORY, "C19")), time = c(2015, YEAR_PEFA))), "env_ac_pefa04_ep")
 ep <- es_read("env_ac_pefa04_ep") %>% filter(time == YEAR_PEFA) %>%

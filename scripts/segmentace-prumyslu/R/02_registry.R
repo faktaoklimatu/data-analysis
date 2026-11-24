@@ -10,7 +10,10 @@
 # =============================================================================
 source("R/00_setup.R")
 
-if (!file.exists(REGISTRY_FILE)) download.file(REGISTRY_URL, REGISTRY_FILE, mode = "wb")
+if (stahnout(REGISTRY_FILE)) {
+  download.file(REGISTRY_URL, REGISTRY_FILE, mode = "wb")
+  zapis_stazeni(REGISTRY_FILE, REGISTRY_URL)
+}
 
 raw <- read_excel(REGISTRY_FILE, sheet = "data", skip = 2, col_types = "text")
 

@@ -10,7 +10,7 @@ options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "
 
 f <- file.path(DIR_ES, "sts_inpr_a_annual.csv")
 sub <- c(paste0("C", 10:33), "C13-C15")
-if (!file.exists(f)) {
+if (stahnout(f)) {
   es_save(es_get("sts_inpr_a", list(geo = c("CZ", "DE"), nace_r2 = sub, indic_bt = "PRD", s_adj = "CA",
                                     unit = "I21", sinceTimePeriod = 2015)), "sts_inpr_a_annual")
 }

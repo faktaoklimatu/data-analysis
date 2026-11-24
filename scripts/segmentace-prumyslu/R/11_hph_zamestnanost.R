@@ -11,9 +11,9 @@ options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "
 
 OBORY <- setdiff(names(NACE_NAMES), "C")              # 19 oborů vč. rafinerií C19
 f_a <- file.path(DIR_ES, "nama_10_a64_CZ.csv"); f_e <- file.path(DIR_ES, "nama_10_a64_e_CZ.csv")
-if (!file.exists(f_a)) es_save(es_get("nama_10_a64", list(geo = "CZ", na_item = c("B1G", "D1"), unit = "CP_MEUR",
+if (stahnout(f_a)) es_save(es_get("nama_10_a64", list(geo = "CZ", na_item = c("B1G", "D1"), unit = "CP_MEUR",
                                                          nace_r2 = to_es(c("C", OBORY)), time = 2015:2025)), "nama_10_a64_CZ")
-if (!file.exists(f_e)) es_save(es_get("nama_10_a64_e", list(geo = "CZ", na_item = c("EMP_DC", "SAL_DC"), unit = "THS_PER",
+if (stahnout(f_e)) es_save(es_get("nama_10_a64_e", list(geo = "CZ", na_item = c("EMP_DC", "SAL_DC"), unit = "THS_PER",
                                                            nace_r2 = to_es(c("C", OBORY)), time = 2015:2025)), "nama_10_a64_e_CZ")
 
 nama <- bind_rows(es_read("nama_10_a64_CZ"), es_read("nama_10_a64_e_CZ")) %>%
@@ -52,7 +52,7 @@ message(sprintf("11_hph_zamestnanost: HPH 18 oborů 2025 = %.0f mil. €; auta n
 # --- Str. 20: dovoz aut z Číny do EU --------------------------------------------
 # Eurostat Comext DS-059341 (obchod podle HS 2-4-6), dovoz (flow 1) EU27 z Číny, HS 8703 osobní auta, €
 f_c <- file.path(DIR_ES, "comext_8703_CN.csv")
-if (!file.exists(f_c)) es_save(es_get("DS-059341", list(reporter = "EU27_2020", partner = "CN", product = "8703", flow = 1,
+if (stahnout(f_c)) es_save(es_get("DS-059341", list(reporter = "EU27_2020", partner = "CN", product = "8703", flow = 1,
                                                        indicators = "VALUE_EUR", freq = "A"), api = COMEXT_API), "comext_8703_CN")
 cina <- es_read("comext_8703_CN") %>% filter(time >= 2015) %>% transmute(rok = time, dovoz_mld_eur = values / 1e9)
 write_csv(cina, file.path(DIR_OUT, "dovoz_aut_cina_eu.csv"))
