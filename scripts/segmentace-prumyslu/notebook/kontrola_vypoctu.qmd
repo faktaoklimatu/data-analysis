@@ -715,6 +715,39 @@ karta("C20", "Chemikálie")
 
 U chemie slajd uvádí horní odhad přímých nákladů (vč. elektráren a kotelen podniků, hvězdička).
 
+**Chemie není jedna: skupina ORLEN Unipetrol vs. ostatní chemie.** Zařízení skupiny ORLEN Unipetrol v registru EU ETS
+(rafinerie Litvínov a Kralupy, petrochemie, agrochemie, Spolana; vyhledáno podle názvu provozovatele), rok 2024.
+
+```{r s23-unipetrol}
+#| code-fold: show
+i24 <- inst |> filter(year == 2024, nace == "C20") |>
+  mutate(cast = if_else(grepl("UNIPETROL|ORLEN|SPOLANA", toupper(name)), "ORLEN Unipetrol", "ostatní chemie"))
+i24 |> group_by(cast) |>
+  summarise(zarizeni = n(), emise_kt = round(sum(verified_em, na.rm = TRUE) / 1e3),
+            zdarma_pct = round(sum(free_alloc, na.rm = TRUE) / sum(verified_em, na.rm = TRUE) * 100),
+            deficit_kt = round(sum(verified_em - free_alloc, na.rm = TRUE) / 1e3),
+            deficit_mil_eur = round(sum(verified_em - free_alloc, na.rm = TRUE) * EUA_2024 / 1e6, 1)) |>
+  mutate(podil_na_emisich_chemie_pct = round(emise_kt / sum(emise_kt) * 100))
+```
+
+Kontrola proti výkazu firmy: náklady na povolenky, které skupina sama vykazuje (konsolidovaná závěrka, ručně přepsáno
+do `data/manual/unipetrol_vykazy.csv` s odkazem), vs. odhad z registru (deficit × průměrná cena aukcí 2024 × kurz ECB).
+
+```{r s23-vykaz}
+#| code-fold: show
+vykaz <- read_csv(file.path(MAN, "unipetrol_vykazy.csv"), show_col_types = FALSE)
+odhad_mil_kc <- i24 |> filter(cast == "ORLEN Unipetrol") |>
+  summarise(v = sum(verified_em - free_alloc, na.rm = TRUE) * EUA_2024 * 25.12 / 1e6) |> pull(v)
+tibble(vykaz_firmy_mil_kc = vykaz$mil_kc[vykaz$polozka == "naklady_co2_povolenky_netto" & vykaz$rok == 2024],
+       odhad_z_registru_mil_kc = round(odhad_mil_kc),
+       podil_co2_na_nakladech_firmy_pct = round(vykaz$mil_kc[vykaz$polozka == "naklady_co2_povolenky_netto" & vykaz$rok == 2024] /
+                                                vykaz$mil_kc[vykaz$polozka == "naklady_podle_druhu_celkem" & vykaz$rok == 2024] * 100, 1))
+```
+
+*Pozn.:* Náklady firmy obsahují i maloobchod (čerpací stanice), PARAMO a zahraniční dcery, proto je podíl CO₂ na jejích
+nákladech jen orientační. Nákladovou stranu „ostatní chemie“ (obor C20 minus Unipetrol) z veřejných dat čistě
+oddělit nejde: konsolidovaná závěrka nerozlišuje rafinerii, petrochemii a maloobchod v členění národních účtů.
+
 # Str. 26 – Dovozní penetrace
 
 ::: {.columns}
