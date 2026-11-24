@@ -1,8 +1,10 @@
 # =============================================================================
 # 03_ets_costs.R – přímé a nepřímé náklady EU ETS a nákupy energie podle oborů (ČR, 2024)
 # Str. 17 (náklady ETS v % nákladů), 22 (hutě podle závodů)
-# Vstup:  out/registry_by_nace_year.csv (02_registry.R)
+# Vstup:  out/registry_installations.csv (02_registry.R), out/naklady_sut_roky.csv (13_sut_csu.R)
 #         data/eurostat: nama_10_a64_B1G, sbs_ovw_act, env_ac_pefasu
+# Jmenovatel „% nákladů“ = celkové náklady oboru 2024 ze SUT ČSÚ (mezispotřeba + náhrady zaměstnancům),
+#   stejný jako u energie na str. 10 a 17; převod Kč -> € kurzem ECB 2024.
 # Výstup: out/ets_costs_2024.csv, out/steel_sites.csv
 # =============================================================================
 source("R/00_setup.R")
@@ -33,11 +35,13 @@ inst <- read_csv(file.path(DIR_OUT, "registry_installations.csv"), show_col_type
   mutate(energetika = coalesce(energetika, 0), podil_obor = coalesce(podil_obor, 1),
          net = coalesce(verified_em, 0) - coalesce(free_alloc, 0))
 direct <- inst %>% group_by(nace) %>%
-  summarise(net_t = sum(net), net_low_t = sum(net[energetika == 0]), net_best_t = sum(net * podil_obor),
+  # net_t = netto (přebytky jednoho zařízení snižují náklad oboru – povolenky lze prodat);
+  # net_def_t = jen zařízení s deficitem (kolik musí nakupující podniky dokoupit)
+  summarise(net_t = sum(net), net_def_t = sum(pmax(net, 0)), net_low_t = sum(net[energetika == 0]), net_best_t = sum(net * podil_obor),
             .groups = "drop")
-direct_total <- direct %>% summarise(nace = "C", across(c(net_t, net_low_t, net_best_t), sum))
+direct_total <- direct %>% summarise(nace = "C", across(c(net_t, net_def_t, net_low_t, net_best_t), sum))
 direct <- bind_rows(direct, direct_total) %>%
-  mutate(direct_meur = net_t * price_cost / 1e6, direct_low_meur = net_low_t * price_cost / 1e6,
+  mutate(direct_meur = net_t * price_cost / 1e6, direct_def_meur = net_def_t * price_cost / 1e6, direct_low_meur = net_low_t * price_cost / 1e6,
          direct_best_meur = net_best_t * price_cost / 1e6)
 
 # Kompenzace nepřímých nákladů vyplacené za rok 2024 (MPO, 6. 1. 2026), převod kurzem ECB 2024
@@ -86,27 +90,15 @@ costs <- gva %>%
     indirect_net_pct_gva = (indirect_meur - coalesce(comp_meur, 0)) / gva_meur * 100,
     share_gva_c     = gva_meur / gva_meur[nace == "C"] * 100
   )
-# Str. 17: náklady ETS v % celkových nákladů oboru; celkové náklady = nákupy zboží a služeb (PUR_MEUR)
-#   + osobní náklady (EXPN_SAL_BEN_MEUR), Eurostat sbs_ovw_act 2024
-f_pur <- file.path(DIR_ES, "sbs_ovw_act_pur.csv")
-if (stahnout(f_pur)) {
-  options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "UTF-8"); options(fok.no_download = FALSE)
-  # sloučené obory (C10-12, C13-15, C31_32) SBS nemá jako celek -> stahují se složky a sčítají
-  es_save(es_get("sbs_ovw_act", list(geo = "CZ", nace_r2 = c("C", paste0("C", 10:33)),
-                                     indic_sbs = c("PUR_MEUR", "EXPN_SAL_BEN_MEUR"), time = YEAR_COST)), "sbs_ovw_act_pur")
-}
-slouc <- function(n) case_when(n %in% c("C10", "C11", "C12") ~ "C10-12", n %in% c("C13", "C14", "C15") ~ "C13-15",
-                               n %in% c("C31", "C32") ~ "C31_32", TRUE ~ n)
-pur <- es_read("sbs_ovw_act_pur") %>% mutate(nace = slouc(nace_r2)) %>%
-  group_by(nace, indic_sbs) %>% summarise(values = sum(values), .groups = "drop") %>%
-  pivot_wider(names_from = indic_sbs, values_from = values) %>%
-  transmute(nace, pur_meur = PUR_MEUR, osobni_meur = EXPN_SAL_BEN_MEUR)
-costs <- costs %>% left_join(pur, by = "nace") %>%
-  mutate(naklady_sbs_meur     = pur_meur + osobni_meur,
-         podil_nakladu_c_pct  = naklady_sbs_meur / naklady_sbs_meur[nace == "C"] * 100,
-         indirect_pct_naklady = indirect_meur / naklady_sbs_meur * 100,     # horní odhad, bez kompenzace
-         direct_pct_naklady   = direct_meur / naklady_sbs_meur * 100,       # horní odhad vč. energetik podniků
-         direct_best_pct_naklady = direct_best_meur / naklady_sbs_meur * 100)
+# Str. 17: náklady ETS v % celkových nákladů oboru 2024 podle SUT ČSÚ (13_sut_csu.R)
+sut24 <- read_csv(file.path(DIR_OUT, "naklady_sut_roky.csv"), show_col_types = FALSE) %>%
+  filter(rok == YEAR_COST) %>% transmute(nace, naklady_meur = naklady / EUR_CZK_2024)
+costs <- costs %>% left_join(sut24, by = "nace") %>%
+  mutate(podil_nakladu_c_pct     = naklady_meur / naklady_meur[nace == "C"] * 100,
+         indirect_pct_naklady    = indirect_meur / naklady_meur * 100,     # horní odhad, bez kompenzace
+         direct_pct_naklady      = direct_meur / naklady_meur * 100,       # netto, horní odhad vč. energetik podniků
+         direct_def_pct_naklady  = direct_def_meur / naklady_meur * 100,   # jen deficity
+         direct_best_pct_naklady = direct_best_meur / naklady_meur * 100)
 write_csv(costs, file.path(DIR_OUT, "ets_costs_2024.csv"))
 
 # Hutě podle lokalit (str. 22): Ostrava = Liberty + TAMEH, Třinec = TŽ + Energetika Třinec

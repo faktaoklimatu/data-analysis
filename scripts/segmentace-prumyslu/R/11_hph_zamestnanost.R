@@ -3,8 +3,8 @@
 # Eurostat nama_10_a64 (HPH B1G, náhrady zaměstnancům D1; mil. € b. c.) a
 #          nama_10_a64_e (pracující EMP_DC, zaměstnanci SAL_DC; tis. osob), ČR 2015–2025
 # Výstup: out/obory_velikost_2025.csv  – HPH, podíl na HPH průmyslu, pracující, skupina (str. 5, 6)
-#         out/exportni_jadro_prace.csv  – náklady práce na zaměstnance a výroba na pracujícího,
-#                                          2015 = 100, auta a stroje (str. 20)
+#         out/exportni_jadro_prace.csv  – podíl náhrad zaměstnancům na HPH; náklady práce na zaměstnance
+#                                          a nominální HPH na pracujícího (2015 = 100), auta a stroje (str. 20)
 # =============================================================================
 source("R/00_setup.R")
 options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "UTF-8"); options(fok.no_download = FALSE)
@@ -39,15 +39,20 @@ prace <- nama %>% filter(nace %in% c("C28", "C29")) %>%
   inner_join(sts, by = c("nace", "time")) %>%
   group_by(nace) %>% arrange(time) %>%
   mutate(naklady_prace_na_zam = D1 / SAL_DC * 1000,          # € na zaměstnance (mil. € / tis. osob × 1000)
-         vyroba_na_prac       = vyroba / EMP_DC,
+         hph_na_prac          = B1G / EMP_DC * 1000,         # nominální HPH na pracujícího, €
+         vyroba_na_prac       = vyroba / EMP_DC,             # objem výroby na pracujícího (bez cen)
          naklady_prace_idx    = naklady_prace_na_zam / first(naklady_prace_na_zam) * 100,
-         vyroba_na_prac_idx   = vyroba_na_prac / first(vyroba_na_prac) * 100) %>%
-  ungroup() %>% select(nace, time, D1, SAL_DC, EMP_DC, vyroba, naklady_prace_na_zam, naklady_prace_idx, vyroba_na_prac_idx)
+         hph_na_prac_idx      = hph_na_prac / first(hph_na_prac) * 100,
+         vyroba_na_prac_idx   = vyroba_na_prac / first(vyroba_na_prac) * 100,
+         # hlavní ukazatel karty 3: podíl náhrad zaměstnancům na HPH – jeden zdroj, stejné jednotky
+         podil_prace_hph      = D1 / B1G * 100) %>%
+  ungroup() %>% select(nace, time, D1, B1G, SAL_DC, EMP_DC, vyroba, naklady_prace_na_zam, naklady_prace_idx,
+                       hph_na_prac_idx, vyroba_na_prac_idx, podil_prace_hph)
 write_csv(prace, file.path(DIR_OUT, "exportni_jadro_prace.csv"))
 
-message(sprintf("11_hph_zamestnanost: HPH 18 oborů 2025 = %.0f mil. €; auta náklady práce/zam. %+.0f %%, výroba/prac. %+.0f %% (2015→2025)",
-                sum(vel$hph_meur), prace$naklady_prace_idx[prace$nace == "C29" & prace$time == 2025] - 100,
-                prace$vyroba_na_prac_idx[prace$nace == "C29" & prace$time == 2025] - 100))
+message(sprintf("11_hph_zamestnanost: HPH 18 oborů 2025 = %.0f mil. €; auta podíl práce na HPH %.0f → %.0f %% (2015→2025)",
+                sum(vel$hph_meur), prace$podil_prace_hph[prace$nace == "C29" & prace$time == 2015],
+                prace$podil_prace_hph[prace$nace == "C29" & prace$time == 2025]))
 
 # --- Str. 20: dovoz aut z Číny do EU --------------------------------------------
 # Eurostat Comext DS-059341 (obchod podle HS 2-4-6), dovoz (flow 1) EU27 z Číny, HS 8703 osobní auta, €

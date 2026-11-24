@@ -10,7 +10,7 @@
 #   (topné oleje; k = ostatní ropné produkty / (nafta + ostatní ropné produkty) v PEFA 2023),
 #   ropa (CPA 06) a zbytek CPA 19 (petrochemická surovina) se odečítají i z celkových nákladů.
 # C = zpracovatelský průmysl bez rafinerií (C19).
-# Výstup: out/naklady_sut.csv
+# Výstup: out/naklady_sut.csv (součet 2024 + 2025), out/naklady_sut_roky.csv (po letech)
 # =============================================================================
 source("R/00_setup.R")
 
@@ -73,6 +73,13 @@ naklady <- bind_rows(
   select(nace, name, skupina, naklady, energie, prace, hph, energie_pct, prace_pct, mezispotreba, odecet, k_c20) %>%
   arrange(desc(energie_pct))
 write_csv(naklady, file.path(DIR_OUT, "naklady_sut.csv"))
+
+# po jednotlivých letech – jmenovatel pro náklady ETS 2024 (03_ets_costs.R, str. 17)
+naklady_roky <- bind_rows(
+  po_oborech %>% mutate(nace = to_obor(nace2)) %>% group_by(nace, rok) %>% agreg(),
+  po_oborech %>% group_by(rok) %>% agreg() %>% mutate(nace = "C")) %>%
+  select(nace, rok, naklady, energie, prace)
+write_csv(naklady_roky, file.path(DIR_OUT, "naklady_sut_roky.csv"))
 
 message(sprintf("13_sut_csu: energie %% nákladů 2024+2025 – hutě %.1f, chemie %.1f, C23 %.1f, průmysl %.1f (k chemie = %.2f)",
                 naklady$energie_pct[naklady$nace == "C24"], naklady$energie_pct[naklady$nace == "C20"],

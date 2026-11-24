@@ -323,6 +323,19 @@ tibble(median_energie_pct = median(obory_sut$energie_pct), median_prace_pct = me
        k_chemie = unique(sut$k_c20))
 ```
 
+**Citlivost energie chemie na koeficient *k*.** *k* je poměr v TJ (PEFA 2023), ale násobí se korunami;
+nafta a topné oleje mají jinou cenu za TJ. Energie chemie v % nákladů pro různé *k* (ze souborů ČSÚ, 2024 + 2025):
+
+```{r s10-citlivost}
+c20 <- bind_rows(cti_sut("SUT_2024s.xls"), cti_sut("SUT_2025p.xls")) |> filter(n2 == "20") |>
+  summarise(across(-n2, sum))
+tibble(k = c(0, 0.2, round(unique(sut$k_c20), 2), 0.6, 1)) |>
+  mutate(energie_chemie_pct = round(with(c20, (c05 + k * c19 + c35) / (mezi + d11 + d12 - c06 - (1 - k) * c19) * 100), 1))
+```
+
+Chemie je v každé variantě mezi nejnáročnějšími obory (hutě 15,5 %, cement/sklo 11,7 %); pořadí s hutěmi
+se ale může prohodit. Na slajd patří poznámka „energie chemie 11–20 % podle zacházení s ropnými produkty“.
+
 # Str. 11 – Energetická náročnost (TJ na mil. € HPH)
 
 ::: {.columns}
@@ -500,12 +513,13 @@ i25 |> group_by(nace, source) |>
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
 ## Co jsou to za data
-*ČSÚ SUT 2024–25 + Eurostat SBS 2024 + registr ETS 2024 · % nákladů*
+*ČSÚ SUT 2024–25 + registr ETS 2024 + PEFA 2023 · % nákladů*
 
 - **Nákupy energie** v % nákladů – ze SUT jako na str. 10.
 - **Nepřímý náklad ETS** = o kolik povolenky zdražují elektřinu ze sítě: spotřeba elektřiny × 0,85 t CO₂/MWh × 65 €/t. Je to horní odhad (bez kompenzace od státu).
-- **Přímý čistý náklad ETS** = (ověřené emise − povolenky zdarma) × 65 €/t. Záporný = podnik měl povolenek víc, než potřeboval.
-- Jmenovatel pro ETS je z **podnikové statistiky** (nákupy + osobní náklady), proto je to jiný zdroj než pro energii.
+- **Přímý čistý náklad ETS** = (ověřené emise − povolenky zdarma) × 65 €/t, **netto**: přebytky povolenek jednoho zařízení snižují náklad oboru (lze je prodat). Varianta jen s deficity je v tabulce.
+- Všechno je v % stejných **celkových nákladů ze SUT** (mezispotřeba + náhrady zaměstnancům); pro ETS rok 2024, pro energii průměr 2024–25.
+- Rafinerie Litvínov a Kralupy jsou v chemii – stejně jako v národních účtech (celý podnik ORLEN Unipetrol RPA je v C20).
 :::
 :::
 :::
@@ -516,9 +530,7 @@ nepřímé náklady ETS v ceně elektřiny (% nákladů); přímé čisté nákl
 **Data:**
 
 - energie: ČSÚ SUT (str. 10);
-- jmenovatel pro ETS: celkové náklady = nákupy zboží a služeb + osobní náklady, Eurostat
-  [`sbs_ovw_act`](https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table) 2024
-  (`PUR_MEUR` + `EXPN_SAL_BEN_MEUR`);
+- jmenovatel pro ETS: celkové náklady oboru 2024 ze SUT ČSÚ (jako str. 10, jen rok 2024), převod kurzem ECB 2024 (25,12 Kč/€);
 - registr (str. 15), elektřina [`env_ac_pefasu`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table) P26 2023,
   cena povolenky [DEHSt](https://www.dehst.de/EN/Topics/EU-ETS-1/EU-ETS-1-Information/Auctioning/auctioning_node.html) 65,01 €/t;
 - skript `R/03_ets_costs.R`.
@@ -537,8 +549,8 @@ elec <- pefa_raw |> filter(prod_nrg == "P26") |>
 comb <- read_csv(file.path(MAN, "combustion_industrial.csv"), show_col_types = FALSE) |> select(installation_id, podil_obor)
 prime <- inst |> filter(year == 2024) |> left_join(comb, by = "installation_id") |>
   mutate(net = coalesce(verified_em, 0) - coalesce(free_alloc, 0), podil_obor = coalesce(podil_obor, 1)) |>
-  group_by(nace) |> summarise(net_t = sum(net), net_best_t = sum(net * podil_obor))
-prime <- bind_rows(prime, tibble(nace = "C", net_t = sum(prime$net_t), net_best_t = sum(prime$net_best_t)))
+  group_by(nace) |> summarise(net_t = sum(net), net_def_t = sum(pmax(net, 0)), net_best_t = sum(net * podil_obor))
+prime <- bind_rows(prime, tibble(nace = "C", net_t = sum(prime$net_t), net_def_t = sum(prime$net_def_t), net_best_t = sum(prime$net_best_t)))
 
 ets |> filter(nace != "C19") |>   # rafinerie: PEFA se pro ně nestahuje (vynechány ze slajdů)
   select(nace, obor = name, direct_meur, direct_best_meur, indirect_meur) |>
@@ -547,7 +559,7 @@ ets |> filter(nace != "C19") |>   # rafinerie: PEFA se pro ně nestahuje (vynech
          nepr_meur = elec_tj / 3.6 * 1000 * EF_ELEC * EUA_2024 / 1e6,
          shoda = mapply(shoda, prime_meur, direct_meur) & mapply(shoda, prime_best_meur, direct_best_meur) &
                  mapply(shoda, nepr_meur, indirect_meur)) |>
-  transmute(nace, obor, elektrina_TJ = elec_tj, deficit_kt = round(net_t / 1e3, 1),
+  transmute(nace, obor, elektrina_TJ = elec_tj, netto_kt = round(net_t / 1e3, 1), jen_deficity_kt = round(net_def_t / 1e3, 1),
             prime_meur = round(prime_meur, 1), prime_best_meur = round(prime_best_meur, 1),
             nepr_meur = round(nepr_meur, 1), shoda)
 ```
@@ -556,14 +568,15 @@ Výsledek slajdu:
 
 ```{r s17}
 ets |> transmute(nace, obor = name, podil_nakladu_prumyslu_pct = round(podil_nakladu_c_pct, 1),
-                 nepr_ETS_pct = round(indirect_pct_naklady, 1), prime_ETS_horni_pct = round(direct_pct_naklady, 1),
-                 prime_ETS_nejlepsi_pct = round(direct_best_pct_naklady, 1)) |>
+                 nepr_ETS_pct = round(indirect_pct_naklady, 1), prime_ETS_netto_pct = round(direct_pct_naklady, 2),
+                 prime_ETS_nejlepsi_pct = round(direct_best_pct_naklady, 2), prime_ETS_jen_deficity_pct = round(direct_def_pct_naklady, 2)) |>
   left_join(sut |> transmute(nace, energie_pct = round(energie_pct, 1)), by = "nace") |>
   filter(nace != "C19") |> arrange(desc(energie_pct))
 ```
 
-*Pozn.:* Jmenovatele se liší – energie je v % nákladů podle SUT (ČSÚ, 2024–25), náklady ETS v % nákladů
-podle podnikové statistiky (Eurostat SBS, 2024).
+*Pozn.:* Jmenovatel je pro energii i ETS stejný zdroj (SUT ČSÚ); energie je průměr 2024–25, ETS rok 2024.
+Elektřina pro nepřímý náklad je z PEFA 2023 (poslední rok). Nepřímý náklad je horní odhad: maximální emisní faktor
+0,85 t/MWh a plné promítnutí ceny povolenky do ceny elektřiny.
 
 # Str. 20 – Exportní jádro: výzvy jsou jinde
 
@@ -576,9 +589,9 @@ podle podnikové statistiky (Eurostat SBS, 2024).
 ## Co jsou to za data
 *Eurostat národní účty, krátkodobá statistika, Comext · 2015–2025*
 
-- **Náklady práce na zaměstnance** = náhrady zaměstnancům / počet zaměstnanců (€ ročně, běžné ceny – tedy vč. inflace).
-- **Výroba na pracujícího** = index objemu výroby / počet pracujících (produktivita v množství výrobků, bez cen).
-- Když mzdy rostou rychleji než výroba na pracujícího, roste cena práce na jednotku výrobku.
+- **Podíl práce na přidané hodnotě** = náhrady zaměstnancům / HPH oboru. Kolik z vytvořené hodnoty jde na mzdy a odvody. Když roste, mzdy předbíhají produktivitu.
+- Obě veličiny jsou ze stejného zdroje (národní účty) a ve stejných jednotkách (běžné €), takže inflace se vzájemně vyruší.
+- Pro srovnání: náklady práce na zaměstnance a nominální HPH na pracujícího (2015 = 100).
 - **Comext** = databáze zahraničního obchodu EU podle celních kódů; HS 8703 = osobní auta.
 :::
 :::
@@ -607,16 +620,17 @@ out("dovoz_aut_cina_eu") |> mutate(dovoz_mld_eur = round(dovoz_mld_eur, 1))
 idx |> filter(nace %in% c("C28", "C29")) |> transmute(nace, vyroba_DE_pct = round(DE))
 ```
 
-**Karta 3 – mzdy vs. produktivita.** Náklady práce na zaměstnance = náhrady zaměstnancům `D1` /
-zaměstnanci `SAL_DC`; výroba na pracujícího = index výroby `sts_inpr_a` / pracující `EMP_DC`
-(`nama_10_a64`, `nama_10_a64_e`). Skript: `R/11_hph_zamestnanost.R`.
+**Karta 3 – mzdy vs. produktivita.** Hlavní ukazatel: podíl náhrad zaměstnancům `D1` na HPH `B1G`
+(`nama_10_a64`). Pro srovnání náklady práce na zaměstnance (`D1` / `SAL_DC`) a nominální HPH na pracujícího
+(`B1G` / `EMP_DC`, `nama_10_a64_e`), obojí 2015 = 100. Skript: `R/11_hph_zamestnanost.R`.
+Dřívější „výroba na pracujícího“ (objemový index) se s nominálními mzdami nedala férově srovnat – je v tabulce pro úplnost.
 
 ```{r s20-prace}
 prace <- out("exportni_jadro_prace")
 prace |> filter(time %in% c(2015, 2025)) |>
-  transmute(nace, rok = time, D1_meur = D1, zamestnanci_tis = SAL_DC, pracujici_tis = EMP_DC, index_vyroby = vyroba,
-            naklady_prace_na_zam_eur = round(naklady_prace_na_zam), naklady_idx = round(naklady_prace_idx),
-            vyroba_na_prac_idx = round(vyroba_na_prac_idx))
+  transmute(nace, rok = time, D1_meur = D1, HPH_meur = B1G, podil_prace_na_HPH_pct = round(podil_prace_hph, 1),
+            naklady_prace_na_zam_idx = round(naklady_prace_idx), HPH_na_prac_nominal_idx = round(hph_na_prac_idx),
+            vyroba_na_prac_objem_idx = round(vyroba_na_prac_idx))
 ```
 
 # Str. 21 – Cement a cihly

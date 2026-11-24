@@ -82,8 +82,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2013,195605,0,106556,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2013,39106,0,27348,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2013,689680,0,694113,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2013,384348,0,366165,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2013,481201,0,405935,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2013,384348,0,366165,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2013,481201,0,405935,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2013,11608,0,5753,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2013,20645,0,16203,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2013,27394,0,17222,proc,C19,Středočeský,NA
@@ -256,8 +256,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2014,192208,0,106855,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2014,38426,0,26727,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2014,648736,0,785752,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2014,377672,0,482653,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2014,472843,0,394512,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2014,377672,0,482653,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2014,472843,0,394512,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2014,11407,0,8726,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2014,20286,0,17374,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2014,26918,0,15350,proc,C19,Středočeský,NA
@@ -430,8 +430,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2015,188770,0,102065,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2015,37739,0,25696,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2015,637095,0,824149,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2015,370918,0,476744,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2015,464387,0,412674,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2015,370918,0,476744,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2015,464387,0,412674,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2015,11202,0,9379,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2015,19923,0,18871,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2015,26436,0,15734,proc,C19,Středočeský,NA
@@ -604,8 +604,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2016,185297,0,107849,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2016,37045,0,26181,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2016,625334,0,906544,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2016,364093,0,341334,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2016,455842,0,336328,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2016,364093,0,341334,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2016,455842,0,336328,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2016,10996,0,9500,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2016,19556,0,17686,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2016,25950,0,15663,proc,C19,Středočeský,NA
@@ -778,8 +778,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2017,181786,0,115268,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2017,36343,0,26513,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2017,599771,0,912843,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2017,357195,0,535977,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2017,447206,0,418035,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2017,357195,0,535977,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2017,447206,0,418035,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2017,10788,0,8478,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2017,19186,0,16607,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2017,25459,0,18359,proc,C19,Středočeský,NA
@@ -952,8 +952,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2018,178242,0,119847,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2018,35635,0,27366,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2018,560334,0,826610,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2018,350229,0,473399,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2018,438485,0,406600,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2018,350229,0,473399,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2018,438485,0,406600,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2018,10577,0,8512,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2018,18812,0,16778,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2018,24962,0,19954,proc,C19,Středočeský,NA
@@ -1126,8 +1126,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2019,174653,0,124800,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2019,34917,0,26386,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2019,549019,0,751603,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2019,343177,0,520067,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2019,429656,0,420734,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2019,343177,0,520067,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2019,429656,0,420734,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2019,10365,0,9334,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2019,18434,0,19122,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2019,24459,0,16086,proc,C19,Středočeský,NA
@@ -1300,8 +1300,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2020,171051,0,119106,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2020,34197,0,26776,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2020,537663,0,644524,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2020,336101,0,442708,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2020,420796,0,321528,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2020,336101,0,442708,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2020,420796,0,321528,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2020,10150,0,8917,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2020,18053,0,16310,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2020,23955,0,16004,proc,C19,Středočeský,NA
@@ -1474,8 +1474,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2021,134097,0,125184,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2021,26940,0,35855,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2021,333995,0,838445,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2021,306078,0,535035,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2021,383695,0,382476,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2021,306078,0,535035,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2021,383695,0,382476,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2021,6799,0,8659,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2021,13503,0,15842,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2021,19150,0,16127,proc,C19,Středočeský,NA
@@ -1648,8 +1648,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2022,134097,0,116582,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2022,32234,0,37960,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2022,412854,0,850651,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2022,306078,0,483476,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2022,383695,0,391459,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2022,306078,0,483476,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2022,383695,0,391459,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2022,7038,0,9213,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2022,13503,0,14430,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2022,18937,0,3239,proc,C19,Středočeský,NA
@@ -1822,8 +1822,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2023,134097,0,112604,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2023,37777,0,30372,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2023,418635,0,746295,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2023,306078,0,517141,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2023,383695,0,404764,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2023,306078,0,517141,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2023,383695,0,404764,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2023,7038,0,9131,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2023,13503,0,11987,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2023,13430,0,6,proc,C19,Středočeský,NA
@@ -1996,8 +1996,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2024,134097,0,114887,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2024,34161,0,32801,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2024,419880,0,572674,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2024,306078,0,537990,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2024,383695,0,319774,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2024,306078,0,537990,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2024,383695,0,319774,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2024,6799,0,7692,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2024,10198,0,8382,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2024,4007,0,5,proc,C19,Středočeský,NA
@@ -2170,8 +2170,8 @@ installation_id,name,activity_code,year,free_alloc,transitional,verified_em,sour
 62,OKK - Koksovna Svoboda,20,2025,134097,0,109939,comb,C19,Moravskoslezský,NA
 116,OP papírna - Nové energocentrum,36,2025,31680,0,35475,proc,C17,Olomoucký,NA
 92,ORLEN UNIPETROL - AGROCHEMIE,20,2025,317736,0,551844,comb,C20,Ústecký,Chemikálie
-340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2025,306078,0,559740,proc,C19,Středočeský,NA
-260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2025,383695,0,343401,proc,C19,Ústecký,NA
+340,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Kralupy",21,2025,306078,0,559740,proc,C20,Středočeský,Chemikálie
+260,"ORLEN UNIPETROL RPA, s.r.o. - RAFINÉRIE, Litvínov",21,2025,383695,0,343401,proc,C20,Ústecký,Chemikálie
 231,P-D Refractories - Lokalita Svitavy,32,2025,6799,0,6510,proc,C23,Pardubický,Sklo a keramika
 232,P-D Refractories - Lokalita Velké Opatovice,32,2025,7970,0,9057,proc,C23,Jihomoravský,Sklo a keramika
 3,PARAMO-HS Kolín,21,2025,1002,0,3,proc,C19,Středočeský,NA

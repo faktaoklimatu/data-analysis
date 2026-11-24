@@ -56,7 +56,7 @@ bind_rows(inst %>% mutate(sektor = "Průmysl celkem"), inst %>% filter(!is.na(se
 rd("ets_costs_2024") %>% filter(nace != "C19") %>%
   transmute(nace, obor = NACE_NAMES[nace], podil_nakladu = round(podil_nakladu_c_pct, 1),
             nepr_ets = round(indirect_pct_naklady, 1), prime_ets = round(direct_pct_naklady, 1),
-            prime_ets_nejlepsi = round(direct_best_pct_naklady, 1)) %>%
+            prime_ets_nejlepsi = round(direct_best_pct_naklady, 1), prime_ets_deficity = round(direct_def_pct_naklady, 1)) %>%
   left_join(rd("naklady_sut") %>% transmute(nace, energie = round(energie_pct, 1)), by = "nace") %>%
   web("naklady_ets")
 
@@ -64,7 +64,8 @@ rd("ets_costs_2024") %>% filter(nace != "C19") %>%
 rd("dovoz_aut_cina_eu") %>% mutate(dovoz_mld_eur = round(dovoz_mld_eur, 2)) %>% web("dovoz_aut_cina")
 rd("exportni_jadro_prace") %>%
   transmute(nace, obor = NACE_NAMES[nace], rok = time,
-            naklady_prace = round(naklady_prace_idx, 1), vyroba_na_prac = round(vyroba_na_prac_idx, 1)) %>%
+            podil_prace_hph = round(podil_prace_hph, 1), naklady_prace = round(naklady_prace_idx, 1),
+            hph_na_prac = round(hph_na_prac_idx, 1)) %>%
   web("mzdy_produktivita")
 
 # Str. 26–28 – FIGARO
