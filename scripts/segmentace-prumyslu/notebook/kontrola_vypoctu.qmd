@@ -15,7 +15,7 @@ execute:
   message: false
 ---
 
-Notebook jde po slajdech prezentace *CZ segmentace průmyslu 2026* („Str.“ = strana v PDF).
+Notebook jde po slajdech prezentace *Průmysl – Slidedeck v1* („S“ = číslo snímku).
 U každého slajdu je **obrázek slajdu**, **data** (zdroj s odkazem), **kód** a **výsledek**,
 ze kterého se slajd kreslí. Kde to jde, notebook spočítá výsledek znovu přímo ze surových dat
 a porovná ho s výstupem skriptu (sloupec `shoda`). U slajdů, ke kterým data ještě nejsou,
@@ -27,22 +27,22 @@ Kód je u každé tabulky sbalený – rozklikněte **Kód**. Před vyrenderová
 
 | Pojem | Co znamená | Kde se používá |
 |---|---|---|
-| **HPH** – hrubá přidaná hodnota | Hodnota, kterou obor vytvoří: tržby za produkci minus nakoupené vstupy (materiál, energie, služby). Z HPH se platí mzdy, odpisy a zisk. Součet HPH všech oborů ≈ HDP. | str. 5, 6, 11, 27 |
-| **Produkce** (P.1) | Celková hodnota vyrobeného zboží a služeb, vč. vstupů nakoupených od jiných. Vždy větší než HPH. | str. 26–28 |
-| **Mezispotřeba** | Nakoupené vstupy spotřebované ve výrobě (materiál, díly, energie, služby). Produkce = mezispotřeba + HPH. | str. 10 |
-| **Náhrady zaměstnancům** (D.1 = D.11 + D.12) | Mzdy a platy + sociální a zdravotní pojištění placené zaměstnavatelem. | str. 10, 20 |
-| **Index objemu výroby** | Jak se mění *množství* vyrobeného (očištěno o ceny a o počet pracovních dní). 2015 = 100; hodnota 148 = o 48 % víc než v roce 2015. | str. 7, 20–23 |
-| **Pracující / zaměstnanci** | Pracující = zaměstnanci + podnikatelé (OSVČ); počet osob v tisících. | str. 5, 20 |
-| **Běžné / kupní / základní ceny** | Běžné = ceny daného roku (bez očištění o inflaci). Kupní = vč. obchodní marže, dopravy a daní z produktů; základní = bez nich. | str. 10, 26 |
-| **PEFA** | Fyzické účty energetických toků: kolik energie (TJ) jednotlivé obory spotřebují a jakých paliv. 1 TJ ≈ 278 MWh. | str. 11, 12, 27 |
-| **SUT** – tabulky dodávek a užití | Tabulka národních účtů ČSÚ: který obor nakupuje jaké výrobky (CZ-CPA) a kolik platí za práci. | str. 10, 17 |
+| **HPH** – hrubá přidaná hodnota | Hodnota, kterou obor vytvoří: tržby za produkci minus nakoupené vstupy (materiál, energie, služby). Z HPH se platí mzdy, odpisy a zisk. Součet HPH všech oborů ≈ HDP. | S6, S7, S12, D2 |
+| **Produkce** (P.1) | Celková hodnota vyrobeného zboží a služeb, vč. vstupů nakoupených od jiných. Vždy větší než HPH. | D1, D3 |
+| **Mezispotřeba** | Nakoupené vstupy spotřebované ve výrobě (materiál, díly, energie, služby). Produkce = mezispotřeba + HPH. | S11 |
+| **Náhrady zaměstnancům** (D.1 = D.11 + D.12) | Mzdy a platy + sociální a zdravotní pojištění placené zaměstnavatelem. | S11, S19 |
+| **Index objemu výroby** | Jak se mění *množství* vyrobeného (očištěno o ceny a o počet pracovních dní). 2015 = 100; hodnota 148 = o 48 % víc než v roce 2015. | S9, S19, S22 |
+| **Pracující / zaměstnanci** | Pracující = zaměstnanci + podnikatelé (OSVČ); počet osob v tisících. | S6, S19 |
+| **Běžné / kupní / základní ceny** | Běžné = ceny daného roku (bez očištění o inflaci). Kupní = vč. obchodní marže, dopravy a daní z produktů; základní = bez nich. | S11, D1 |
+| **PEFA** | Fyzické účty energetických toků: kolik energie (TJ) jednotlivé obory spotřebují a jakých paliv. 1 TJ ≈ 278 MWh. | S12, S13, S25, D2 |
+| **SUT** – tabulky dodávek a užití | Tabulka národních účtů ČSÚ: který obor nakupuje jaké výrobky (CZ-CPA) a kolik platí za práci. | S11, S17 |
 | **CZ-NACE / CZ-CPA** | Klasifikace oborů (kdo vyrábí) / výrobků (co se vyrábí). Např. obor C24 = hutě, výrobek CPA 35 = elektřina, plyn, pára. | všude |
-| **FIGARO** | Mezinárodní input-output tabulka Eurostatu: toky výrobků mezi obory a zeměmi (kdo komu co prodá, vč. vývozu a dovozu). | str. 26–28 |
-| **Dovozní penetrace** | Podíl dovozu na domácí spotřebě výrobků oboru: dovoz / (produkce − vývoz + dovoz). | str. 26, 27 |
-| **EU ETS, povolenka** | Systém obchodování s emisemi: za každou tunu CO₂ musí podnik odevzdat povolenku. Část povolenek dostává průmysl zdarma. | str. 15–17 |
-| **Ověřené emise** | Emise zařízení za rok ověřené auditorem a zapsané v registru EU (Union Registry). | str. 15, 16, 22 |
-| **Přímý / nepřímý náklad ETS** | Přímý = povolenky, které podnik musí dokoupit (emise − povolenky zdarma). Nepřímý = povolenky promítnuté do ceny elektřiny. | str. 17 |
-| **SBS** – podniková statistika | Data z výkazů podniků: tržby, nákupy, osobní náklady. Jiný zdroj než národní účty, proto se čísla mírně liší. | str. 17 |
+| **FIGARO** | Mezinárodní input-output tabulka Eurostatu: toky výrobků mezi obory a zeměmi (kdo komu co prodá, vč. vývozu a dovozu). | D1, D3 |
+| **Dovozní penetrace** | Podíl dovozu na domácí spotřebě výrobků oboru: dovoz / (produkce − vývoz + dovoz). | D1, D2 |
+| **EU ETS, povolenka** | Systém obchodování s emisemi: za každou tunu CO₂ musí podnik odevzdat povolenku. Část povolenek dostává průmysl zdarma. | S15, S17 |
+| **Ověřené emise** | Emise zařízení za rok ověřené auditorem a zapsané v registru EU (Union Registry). | S15, S16, S21 |
+| **Přímý / nepřímý náklad ETS** | Přímý = povolenky, které podnik musí dokoupit (emise − povolenky zdarma). Nepřímý = povolenky promítnuté do ceny elektřiny. | S17 |
+| **SBS** – podniková statistika | Data z výkazů podniků: tržby, nákupy, osobní náklady. Jiný zdroj než národní účty. | váhy indexu výroby (S9) |
 
 
 ```{r setup}
@@ -78,11 +78,69 @@ podil_zdarma <- function(d) d |>
   mutate(podil_pct = zdarma_kt / emise_kt * 100)
 ```
 
-# Str. 5 – Treemap: velikost oborů
+# S3 – Krátká odpověď: čtyři zjištění
+
+::: {.columns}
+::: {.column width="55%"}
+![](slajdy/s03.png)
+:::
+::: {.column width="45%"}
+::: {.callout-note appearance="simple" icon=false}
+## Co jsou to za data
+*souhrn čísel ze S9, S11, S15 a S17*
+
+- **x z 18** – v kolika oborech rostla česká výroba 2015 → 2025 rychleji než německá (S9).
+- **do 5 %** – kolik oborů platí za energii méně než 5 % nákladů (S11).
+- **~0,5 %** – náklady na povolenky (nepřímé + přímé) v % nákladů průmyslu (S17); **72 %** emisí kryto povolenkami zdarma (S15).
+:::
+:::
+:::
+
+Čísla pro snímek, spočítaná z výstupů skriptů:
+
+```{r v1-s03-souhrn}
+sut_s3 <- out("naklady_sut"); ets_s3 <- out("ets_costs_2024")
+tibble(
+  cesko_rychleji_oboru = sum(idx$CZ > idx$DE, na.rm = TRUE),
+  oboru_celkem = sum(!is.na(idx$CZ) & !is.na(idx$DE)),
+  energie_pod_5pct_oboru = sum(sut_s3$energie_pct[sut_s3$nace != "C"] < 5),
+  energie_nad_10pct = paste(sut_s3$name[sut_s3$nace != "C" & sut_s3$energie_pct > 10], collapse = ", "),
+  ets_prumysl_pct_nakladu = round(ets_s3$indirect_pct_naklady[ets_s3$nace == "C"] + ets_s3$direct_pct_naklady[ets_s3$nace == "C"], 2),
+  zdarma_pct = round(sum(i25$free_alloc, na.rm = TRUE) / sum(i25$verified_em, na.rm = TRUE) * 100))
+```
+
+*Pozn.:* Po revizi Eurostatu (11/2026) roste Česko rychleji v 16 z 18 oborů (výjimky hutě a ostatní doprava).
+Náklady na povolenky vycházejí 0,7 % nákladů průmyslu (jmenovatel ze SUT ČSÚ, horní odhad nepřímých nákladů).
+
+# S5 – Jak se českému průmyslu daří? (průmysl v číslech)
 
 ::: {.columns}
 ::: {.column width="55%"}
 ![](slajdy/s05.png)
+:::
+::: {.column width="45%"}
+::: {.callout-note appearance="simple" icon=false}
+## Co jsou to za data
+*Eurostat národní účty · 2025 (předběžně)*
+
+- **Podíl na HPH Česka** = HPH 18 oborů zpracovatelského průmyslu (bez rafinerií) / HPH celé ekonomiky.
+- **Pracující** = zaměstnanci + podnikatelé; **zaměstnanci** jen v pracovním poměru. Slajd uvádí „1,3 mil. zaměstnanců“ – to odpovídá pracujícím.
+:::
+:::
+:::
+
+**Data:** Eurostat [`nama_10_a64`](https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64/default/table) (`B1G`, `TOTAL` a obory C),
+[`nama_10_a64_e`](https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64_e/default/table). Skript: `R/11_hph_zamestnanost.R`.
+
+```{r v1-s05-kpi}
+out("prumysl_kpi_2025") |> mutate(across(where(is.double), \(x) round(x, 1)))
+```
+
+# S6 – Český průmysl je pestrá mozaika
+
+::: {.columns}
+::: {.column width="55%"}
+![](slajdy/s06.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
@@ -110,7 +168,7 @@ c_celk <- nama$values[nama$nace_r2 == "C"]; c19 <- nama$values[nama$nace_r2 == "
 tibble(C_celkem = c_celk, C19 = c19, C_bez_C19 = c_celk - c19)   # jmenovatel
 
 vel <- out("obory_velikost_2025")
-z_es <- nama |> filter(!nace_r2 %in% c("C", "C19")) |>
+z_es <- nama |> filter(!nace_r2 %in% c("TOTAL", "C", "C19")) |>
   transmute(nace = recode(nace_r2, "C10-C12" = "C10-12", "C13-C15" = "C13-15", "C31_C32" = "C31_32"),
             podil_es = values / sum(values) * 100)
 vel |> left_join(z_es, by = "nace") |>
@@ -119,25 +177,25 @@ vel |> left_join(z_es, by = "nace") |>
             pracujici_tis = round(pracujici_tis), shoda)
 ```
 
-# Str. 6 – Dvě skupiny oborů
+# S7 – Jak se v tom vyznat? Dvě skupiny oborů
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s06.png)
+![](slajdy/s07.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
 ## Co jsou to za data
-*stejná data jako str. 5*
+*stejná data jako S6*
 
 - Obory jsou rozdělené do dvou sledovaných skupin. **Exportní jádro** (auta, stroje, elektro, elektronika, ostatní doprava) nese většinu vývozu.
-- **Energeticky nejnáročnější** (hutě, chemie, cement/sklo/keramika, papír) spotřebují nejvíc energie na euro HPH (str. 11) a jsou hlavními emitenty v EU ETS.
+- **Energeticky nejnáročnější** (hutě, chemie, cement/sklo/keramika, papír) spotřebují nejvíc energie na euro HPH (S12) a jsou hlavními emitenty v EU ETS.
 :::
 :::
 :::
 
-**Data:** jako str. 5. Skupiny jsou definované v `R/00_setup.R`: exportní jádro = C26–C30,
-energeticky nejnáročnější = C17, C20, C23, C24 (podle str. 11 a registru ETS).
+**Data:** jako S6. Skupiny jsou definované v `R/00_setup.R`: exportní jádro = C26–C30,
+energeticky nejnáročnější = C17, C20, C23, C24 (podle S12 a registru ETS).
 
 ```{r s06}
 vel |> group_by(skupina) |>
@@ -191,11 +249,34 @@ vyvoz |> group_by(skupina) |>
 ```
 
 
-# Str. 7 – Index výroby: Česko vs. Německo
+# S8 – Většina oborů průmyslu roste
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s07.png)
+![](slajdy/s08.png)
+:::
+::: {.column width="45%"}
+::: {.callout-note appearance="simple" icon=false}
+## Co jsou to za data
+*Eurostat krátkodobá statistika · 2015 → 2025*
+
+- Změna **objemu výroby** v Česku 2015 → 2025 (index 2025 / 2015 − 1). Měří množství produkce bez vlivu cen; neměří přidanou hodnotu ani zisk.
+- Stejná data jako S9, jen Česko.
+:::
+:::
+:::
+
+```{r v1-s08-zmena}
+idx |> transmute(nace, zmena_CZ_pct = round(CZ)) |>
+  left_join(out("obory_velikost_2025") |> select(nace, obor = name, skupina), by = "nace") |>
+  arrange(desc(zmena_CZ_pct))
+```
+
+# S9 – Česko roste rychleji než Německo
+
+::: {.columns}
+::: {.column width="55%"}
+![](slajdy/s09.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
@@ -243,11 +324,11 @@ sum(idx$CZ > idx$DE, na.rm = TRUE)   # v kolika oborech roste Česko rychleji
 
 `shoda = NA` = sloučený obor, skládá ho `sts_composite()` v `R/funkce.R`.
 
-# Str. 10 – Energie a mzdy: podíl na nákladech
+# S11 – Energie a mzdy: podíl na celkových nákladech
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s10.png)
+![](slajdy/s11.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
@@ -336,11 +417,11 @@ tibble(k = c(0, 0.2, round(unique(sut$k_c20), 2), 0.6, 1)) |>
 Chemie je v každé variantě mezi nejnáročnějšími obory (hutě 15,5 %, cement/sklo 11,7 %); pořadí s hutěmi
 se ale může prohodit. Na slajd patří poznámka „energie chemie 11–20 % podle zacházení s ropnými produkty“.
 
-# Str. 11 – Energetická náročnost (TJ na mil. € HPH)
+# S12 – Čtyři obory potřebují na euro přidané hodnoty mnohem víc energie
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s11.png)
+![](slajdy/s12.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
@@ -350,7 +431,7 @@ se ale může prohodit. Na slajd patří poznámka „energie chemie 11–20 % p
 - **Energetická náročnost** = kolik energie obor spotřebuje na každý milion eur přidané hodnoty. Hutě 63 TJ ≈ 17,5 GWh na 1 mil. € HPH.
 - Počítá se jen energie pro **energetické účely**: bez surovin (nafta a plyn pro chemii) a bez energie, kterou si obor sám vyrobí (plyny z koksoven a vysokých pecí, černý louh v papírnách).
 - Koks ve vysoké peci Eurostat počítá jako energii; varianta bez uhlí a koksu je níže.
-- **Hlavní palivo** = palivo s největším podílem na užité energii oboru (str. 12).
+- **Hlavní palivo** = palivo s největším podílem na užité energii oboru (S25).
 :::
 :::
 :::
@@ -387,35 +468,32 @@ tibble(energie_tj = h24$tj_energie, uhli_a_koks_tj = uhli_koks, vlastni_vyroba_t
   mutate(energie_na_mil_eur = round(energie_tj / h24$hph_meur, 1), bez_koksu_na_mil_eur = round(bez_koksu_tj / h24$hph_meur, 1))
 ```
 
-# Str. 12 – Skladba paliv
+# S13 – Každý náročný obor běží na něčem jiném
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s12.png)
+![](slajdy/s13.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
 ## Co jsou to za data
-*Eurostat PEFA · 2023 · % užité energie*
+*Eurostat PEFA (env_ac_pefasu) · 2023 · % hrubého užití energie*
 
-- Rozdělení spotřebované energie oboru podle druhu: elektřina, zemní plyn, uhlí a koks, teplo, biomasa, odpady… Bez nafty jako suroviny pro chemii.
-- **Koksárenský a vysokopecní plyn** vzniká v hutích při výrobě koksu a železa a spaluje se dál.
-- **Nafta (surovina)** = benzínová frakce z ropy (naphtha), ze které chemie vyrábí plasty – nejde o motorovou naftu.
+- Skladba **hrubého užití energie** v 7 skupinách zdrojů, **včetně surovin** (nafta pro chemii, koks do vysokých pecí) – na rozdíl od náročnosti na S12.
+- Šest nejnáročnějších oborů zvlášť, ostatních 12 jako průměr vážený spotřebou energie.
 :::
 :::
 :::
 
-**Data:** Eurostat [`env_ac_pefasu`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table) (užití `USE`, TJ, 2023), hrubé užití bez nafty jako suroviny. Skupiny paliv (kódy PEFA) jsou v `R/12_energie_pefa.R` (tabulka `PALIVA`). Délka pruhu vpravo = energetická náročnost ze str. 11.
+**Data:** `out/energie_skladba7_2023.csv` (`R/12_energie_pefa.R`, tabulka `SKUPINY7`).
 
-```{r s12}
-out("energie_skladba_2023") |> filter(nace != "C", tj > 0) |>
-  mutate(podil_pct = round(podil_pct)) |> select(nace, palivo, podil_pct) |>
-  pivot_wider(names_from = palivo, values_from = podil_pct, values_fill = 0) |>
-  left_join(e11 |> select(nace, tj_na_mil_eur), by = "nace") |>
-  arrange(desc(tj_na_mil_eur)) |> mutate(tj_na_mil_eur = round(tj_na_mil_eur, 1))
+```{r v1-s13-skladba}
+out("energie_skladba7_2023") |> filter(podil_pct >= 0.5) |>
+  mutate(podil_pct = round(podil_pct)) |> select(radek, skupina7, podil_pct) |>
+  pivot_wider(names_from = skupina7, values_from = podil_pct, values_fill = 0)
 ```
 
-# Str. 15 – 72 % emisí kryto povolenkami zdarma
+# S15 – 72 % emisí kryto povolenkami zdarma
 
 ::: {.columns}
 ::: {.column width="55%"}
@@ -470,7 +548,7 @@ tibble(velicina = c("povolenky zdarma (Mt)", "ověřené emise (Mt)", "podíl zd
   mutate(shoda = mapply(shoda, registr, skript))
 ```
 
-# Str. 16 – Podíl povolenek zdarma po sektorech
+# S16 – Podíl povolenek zdarma v jednotlivých oborech
 
 ::: {.columns}
 ::: {.column width="55%"}
@@ -481,12 +559,12 @@ tibble(velicina = c("povolenky zdarma (Mt)", "ověřené emise (Mt)", "podíl zd
 ## Co jsou to za data
 *Registr EU ETS · 2025 · %*
 
-- Stejný podíl jako str. 15, ale po sektorech. Cement = výroba slínku a vápna, sklo a keramika = ostatní zařízení oboru C23.
+- Stejný podíl jako S15, ale po sektorech. Cement = výroba slínku a vápna, sklo a keramika = ostatní zařízení oboru C23.
 :::
 :::
 :::
 
-**Data:** jako str. 15. Vymezení sektorů: ocel = obor C24; cement = činnosti 29 (slínek) a 30 (vápno);
+**Data:** jako S15. Vymezení sektorů: ocel = obor C24; cement = činnosti 29 (slínek) a 30 (vápno);
 sklo a keramika = zbytek C23; chemie = C20.
 Vymezení je ve sloupci `sektor` v `R/02_registry.R`.
 
@@ -504,7 +582,7 @@ i25 |> group_by(nace, source) |>
   arrange(desc(emise_kt_proc + emise_kt_comb))
 ```
 
-# Str. 17 – Hlavní náklad je energie, ne povolenka
+# S17 – Hlavní náklad je energie, ne povolenky
 
 ::: {.columns}
 ::: {.column width="55%"}
@@ -515,7 +593,7 @@ i25 |> group_by(nace, source) |>
 ## Co jsou to za data
 *ČSÚ SUT 2024–25 + registr ETS 2024 + PEFA 2023 · % nákladů*
 
-- **Nákupy energie** v % nákladů – ze SUT jako na str. 10.
+- **Nákupy energie** v % nákladů – ze SUT jako na S11.
 - **Nepřímý náklad ETS** = o kolik povolenky zdražují elektřinu ze sítě: spotřeba elektřiny × 0,85 t CO₂/MWh × 65 €/t. Je to horní odhad (bez kompenzace od státu).
 - **Přímý čistý náklad ETS** = (ověřené emise − povolenky zdarma) × 65 €/t, **netto**: přebytky povolenek jednoho zařízení snižují náklad oboru (lze je prodat). Varianta jen s deficity je v tabulce.
 - Všechno je v % stejných **celkových nákladů ze SUT** (mezispotřeba + náhrady zaměstnancům); pro ETS rok 2024, pro energii průměr 2024–25.
@@ -529,9 +607,9 @@ nepřímé náklady ETS v ceně elektřiny (% nákladů); přímé čisté nákl
 
 **Data:**
 
-- energie: ČSÚ SUT (str. 10);
-- jmenovatel pro ETS: celkové náklady oboru 2024 ze SUT ČSÚ (jako str. 10, jen rok 2024), převod kurzem ECB 2024 (25,12 Kč/€);
-- registr (str. 15), elektřina [`env_ac_pefasu`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table) P26 2023,
+- energie: ČSÚ SUT (S11);
+- jmenovatel pro ETS: celkové náklady oboru 2024 ze SUT ČSÚ (jako S11, jen rok 2024), převod kurzem ECB 2024 (25,12 Kč/€);
+- registr (S15), elektřina [`env_ac_pefasu`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table) P26 2023,
   cena povolenky [DEHSt](https://www.dehst.de/EN/Topics/EU-ETS-1/EU-ETS-1-Information/Auctioning/auctioning_node.html) 65,01 €/t;
 - skript `R/03_ets_costs.R`.
 
@@ -578,11 +656,11 @@ ets |> transmute(nace, obor = name, podil_nakladu_prumyslu_pct = round(podil_nak
 Elektřina pro nepřímý náklad je z PEFA 2023 (poslední rok). Nepřímý náklad je horní odhad: maximální emisní faktor
 0,85 t/MWh a plné promítnutí ceny povolenky do ceny elektřiny.
 
-# Str. 20 – Exportní jádro: výzvy jsou jinde
+# S19 – Exportnímu jádru nehrozí povolenky
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s20.png)
+![](slajdy/s19.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
@@ -597,7 +675,7 @@ Elektřina pro nepřímý náklad je z PEFA 2023 (poslední rok). Nepřímý ná
 :::
 :::
 
-**Lišta:** výroba 2015 → 2025 (str. 7), energie (% nákladů, str. 10), povolenky přímo (str. 17).
+**Lišta:** výroba 2015 → 2025 (S9), energie (% nákladů, S11), povolenky přímo (S17).
 
 ```{r s20-lista}
 idx |> filter(nace %in% c("C26", "C27", "C28", "C29", "C30")) |>
@@ -614,7 +692,7 @@ idx |> filter(nace %in% c("C26", "C27", "C28", "C29", "C30")) |>
 out("dovoz_aut_cina_eu") |> mutate(dovoz_mld_eur = round(dovoz_mld_eur, 1))
 ```
 
-**Karta 2 – Německo.** Index výroby, Německo 2015 → 2025 (str. 7): auta a stroje.
+**Karta 2 – Německo.** Index výroby, Německo 2015 → 2025 (S9): auta a stroje.
 
 ```{r s20-de}
 idx |> filter(nace %in% c("C28", "C29")) |> transmute(nace, vyroba_DE_pct = round(DE))
@@ -633,24 +711,24 @@ prace |> filter(time %in% c(2015, 2025)) |>
             vyroba_na_prac_objem_idx = round(vyroba_na_prac_idx))
 ```
 
-# Str. 21 – Cement a cihly
+# S20 – Cement a cihly
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s21.png)
+![](slajdy/s20.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
 ## Co jsou to za data
-*souhrn ze str. 7, 10, 16 a 17*
+*souhrn ze S9, S11, S16, S17*
 
 - Lišta slajdu: výroba 2015 → 2025 (index objemu), energie (% nákladů, SUT), povolenky přímo (% nákladů), povolenky zdarma (%). Texty karet jsou z rešerše.
 :::
 :::
 :::
 
-**Lišta:** výroba 2015 → 2025 (str. 7), energie (% nákladů, str. 10), povolenky přímo (str. 17),
-povolenky zdarma pro cement (str. 16). Text karet je z rešerše (zdroje na slajdu).
+**Lišta:** výroba 2015 → 2025 (S9), energie (% nákladů, S11), povolenky přímo (S17),
+povolenky zdarma pro cement (S16). Text karet je z rešerše (zdroje na slajdu).
 
 ```{r karta}
 karta <- function(n, sektor) tibble(
@@ -664,18 +742,18 @@ NACE_NAMES_NB <- setNames(sut$name, sut$nace)
 karta("C23", "Výroba cementu")
 ```
 
-# Str. 22 – Ocel
+# S21 – Ocel
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s22.png)
+![](slajdy/s21.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
 ## Co jsou to za data
-*souhrn ze str. 7, 10, 16 a 17 + registr podle závodů*
+*souhrn ze S9, S11, S16, S17 + registr podle závodů*
 
-- Stejná lišta jako str. 21. Emise podle závodů ukazují, že pokles hutí způsobilo zastavení Liberty Ostrava, ne povolenky.
+- Stejná lišta jako S20. Emise podle závodů ukazují, že pokles hutí způsobilo zastavení Liberty Ostrava, ne povolenky.
 :::
 :::
 :::
@@ -693,18 +771,18 @@ out("steel_sites") |> filter(year >= 2019) |>
   select(site, year, verified_kt) |> pivot_wider(names_from = year, values_from = verified_kt)
 ```
 
-# Str. 23 – Chemie
+# S22 – Chemie
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s23.png)
+![](slajdy/s22.png)
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
 ## Co jsou to za data
-*souhrn ze str. 7, 10, 16 a 17*
+*souhrn ze S9, S11, S16, S17*
 
-- Stejná lišta jako str. 21. U chemie je přímý náklad horní odhad (vč. elektráren a kotelen podniků).
+- Stejná lišta jako S20. U chemie je přímý náklad horní odhad (vč. elektráren a kotelen podniků).
 :::
 :::
 :::
@@ -748,11 +826,72 @@ tibble(vykaz_firmy_mil_kc = vykaz$mil_kc[vykaz$polozka == "naklady_co2_povolenky
 nákladech jen orientační. Nákladovou stranu „ostatní chemie“ (obor C20 minus Unipetrol) z veřejných dat čistě
 oddělit nejde: konsolidovaná závěrka nerozlišuje rafinerii, petrochemii a maloobchod v členění národních účtů.
 
-# Str. 26 – Dovozní penetrace
+# S23 – Každý segment čelí jiné výzvě
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s26.png)
+![](slajdy/s23.png)
+:::
+::: {.column width="45%"}
+::: {.callout-note appearance="simple" icon=false}
+## Co jsou to za data
+*souhrn S11–S22*
+
+- Z dat je jen sloupec **Energie** (% nákladů, SUT ČSÚ 2024–25). Výzvy, páky a úrovně jsou pracovní návrh autorů.
+:::
+:::
+:::
+
+```{r v1-s23-segmenty}
+sut23 <- out("naklady_sut") |> filter(nace != "C")
+rozpeti <- function(n) { e <- sut23$energie_pct[sut23$nace %in% n]; sprintf("%.0f–%.0f %%", min(e), max(e)) }
+tibble(segment = c("Exportní jádro (C26–C30)", "Cement, sklo, keramika (C23)", "Ocel – hutě (C24)", "Chemie (C20)", "Ostatní obory"),
+       energie = c(rozpeti(c("C26", "C27", "C28", "C29", "C30")),
+                   sprintf("%.1f %%", sut23$energie_pct[sut23$nace == "C23"]),
+                   sprintf("%.1f %%", sut23$energie_pct[sut23$nace == "C24"]),
+                   sprintf("%.1f %%", sut23$energie_pct[sut23$nace == "C20"]),
+                   rozpeti(setdiff(sut23$nace, c("C26", "C27", "C28", "C29", "C30", "C23", "C24", "C20", "C17")))))
+```
+
+*Pozn.:* Papír (5,1 %) je energeticky náročný, ale v tabulce segmentů samostatně není.
+
+# S25 – Příloha: skladba užité energie ve všech 18 oborech
+
+::: {.columns}
+::: {.column width="55%"}
+![](slajdy/s25.png)
+:::
+::: {.column width="45%"}
+::: {.callout-note appearance="simple" icon=false}
+## Co jsou to za data
+*Eurostat PEFA · 2023 · % užité energie*
+
+- Rozdělení spotřebované energie oboru podle druhu: elektřina, zemní plyn, uhlí a koks, teplo, biomasa, odpady… Bez nafty jako suroviny pro chemii.
+- **Koksárenský a vysokopecní plyn** vzniká v hutích při výrobě koksu a železa a spaluje se dál.
+- **Nafta (surovina)** = benzínová frakce z ropy (naphtha), ze které chemie vyrábí plasty – nejde o motorovou naftu.
+:::
+:::
+:::
+
+**Data:** Eurostat [`env_ac_pefasu`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table) (užití `USE`, TJ, 2023), hrubé užití bez nafty jako suroviny. Skupiny paliv (kódy PEFA) jsou v `R/12_energie_pefa.R` (tabulka `PALIVA`). Délka pruhu vpravo = energetická náročnost ze S12.
+
+```{r s12}
+out("energie_skladba_2023") |> filter(nace != "C", tj > 0) |>
+  mutate(podil_pct = round(podil_pct)) |> select(nace, palivo, podil_pct) |>
+  pivot_wider(names_from = palivo, values_from = podil_pct, values_fill = 0) |>
+  left_join(e11 |> select(nace, tj_na_mil_eur), by = "nace") |>
+  arrange(desc(tj_na_mil_eur)) |> mutate(tj_na_mil_eur = round(tj_na_mil_eur, 1))
+```
+
+# Doplňkové analýzy (v decku v1 nejsou)
+
+Dovozní konkurence a vývoz mimo EU ETS z FIGARO; používá je i kontrola exportního jádra u S7.
+
+# D1 – Dovozní penetrace (v decku v1 není)
+
+::: {.columns}
+::: {.column width="55%"}
+*Snímek v decku v1 není – doplňková analýza.*
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
@@ -816,26 +955,26 @@ fs |> filter(rok == 2024, !nace %in% c("C18", "C19_20", "C21", "C31_32", "C33"))
   arrange(desc(penetrace_pct))
 ```
 
-# Str. 27 – Energetická náročnost vs. dovoz
+# D2 – Energetická náročnost vs. dovoz (v decku v1 není)
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s27.png)
+*Snímek v decku v1 není – doplňková analýza.*
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
 ## Co jsou to za data
 *FIGARO 2015 a 2024 + Eurostat PEFA (čisté užití) 2015 a 2023*
 
-- Osa x = dovozní penetrace (str. 26), osa y = energetická náročnost.
-- Energie je stejná jako na str. 11: čisté užití pro energetické účely.
+- Osa x = dovozní penetrace (D1), osa y = energetická náročnost.
+- Energie je stejná jako na S12: čisté užití pro energetické účely.
 - Prahy 10 TJ / mil. € a 50 % dělí obory do čtyř skupin.
 :::
 :::
 :::
 
 **Data:** dovozní penetrace FIGARO 2015 ([`naio_10_fcp_ii2`](https://ec.europa.eu/eurostat/web/esa-supply-use-input-tables/database))
-a 2024 (str. 26); energie = **čisté užití pro energetické účely** (`NETDOM_EUSE_EP`, stejně jako str. 11), Eurostat
+a 2024 (D1); energie = **čisté užití pro energetické účely** (`NETDOM_EUSE_EP`, stejně jako S12), Eurostat
 [`env_ac_pefa04`](https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefa04/default/table), 2015 a 2023,
 na mil. € HPH; velikost = HPH. Rafinerie a chemie sloučené (zlom v národních účtech 2018), dřevo a papír sloučené.
 Prahy: 10 TJ / mil. € HPH a 50 % dovozní penetrace.
@@ -846,11 +985,11 @@ fs |> transmute(nace, obor = name, rok, penetrace_pct = round(penetrace_pct, 1),
   arrange(nace, rok)
 ```
 
-# Str. 28 – Export mimo EU ETS
+# D3 – Vývoz mimo EU ETS (v decku v1 není)
 
 ::: {.columns}
 ::: {.column width="55%"}
-![](slajdy/s28.png)
+*Snímek v decku v1 není – doplňková analýza.*
 :::
 ::: {.column width="45%"}
 ::: {.callout-note appearance="simple" icon=false}
@@ -863,7 +1002,7 @@ fs |> transmute(nace, obor = name, rok, penetrace_pct = round(penetrace_pct, 1),
 :::
 :::
 
-**Data:** FIGARO 2024 (str. 26). Vývoz mimo oblast EU ETS = vývoz mimo EU27, Norsko, Island,
+**Data:** FIGARO 2024 (D1). Vývoz mimo oblast EU ETS = vývoz mimo EU27, Norsko, Island,
 Lichtenštejnsko a Švýcarsko; Spojené království zvlášť; vše v % produkce oboru. Tisk a rafinerie vynechány.
 
 ```{r s28}

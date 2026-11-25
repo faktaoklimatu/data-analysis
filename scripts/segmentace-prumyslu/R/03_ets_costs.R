@@ -1,10 +1,10 @@
 # =============================================================================
 # 03_ets_costs.R – přímé a nepřímé náklady EU ETS a nákupy energie podle oborů (ČR, 2024)
-# Str. 17 (náklady ETS v % nákladů), 22 (hutě podle závodů)
+# S17 (náklady ETS v % nákladů), 22 (hutě podle závodů)
 # Vstup:  out/registry_installations.csv (02_registry.R), out/naklady_sut_roky.csv (13_sut_csu.R)
 #         data/eurostat: nama_10_a64_B1G, sbs_ovw_act, env_ac_pefasu
 # Jmenovatel „% nákladů“ = celkové náklady oboru 2024 ze SUT ČSÚ (mezispotřeba + náhrady zaměstnancům),
-#   stejný jako u energie na str. 10 a 17; převod Kč -> € kurzem ECB 2024.
+#   stejný jako u energie na S11, S17; převod Kč -> € kurzem ECB 2024.
 # Výstup: out/ets_costs_2024.csv, out/steel_sites.csv
 # =============================================================================
 source("R/00_setup.R")
@@ -90,7 +90,7 @@ costs <- gva %>%
     indirect_net_pct_gva = (indirect_meur - coalesce(comp_meur, 0)) / gva_meur * 100,
     share_gva_c     = gva_meur / gva_meur[nace == "C"] * 100
   )
-# Str. 17: náklady ETS v % celkových nákladů oboru 2024 podle SUT ČSÚ (13_sut_csu.R)
+# S17: náklady ETS v % celkových nákladů oboru 2024 podle SUT ČSÚ (13_sut_csu.R)
 sut24 <- read_csv(file.path(DIR_OUT, "naklady_sut_roky.csv"), show_col_types = FALSE) %>%
   filter(rok == YEAR_COST) %>% transmute(nace, naklady_meur = naklady / EUR_CZK_2024)
 costs <- costs %>% left_join(sut24, by = "nace") %>%
@@ -101,7 +101,7 @@ costs <- costs %>% left_join(sut24, by = "nace") %>%
          direct_best_pct_naklady = direct_best_meur / naklady_meur * 100)
 write_csv(costs, file.path(DIR_OUT, "ets_costs_2024.csv"))
 
-# Hutě podle lokalit (str. 22): Ostrava = Liberty + TAMEH, Třinec = TŽ + Energetika Třinec
+# Hutě podle lokalit (S21): Ostrava = Liberty + TAMEH, Třinec = TŽ + Energetika Třinec
 SITES <- c(`73` = "Ostrava", `410` = "Ostrava", `421` = "Ostrava", `114` = "Třinec", `252` = "Třinec")
 steel <- read_csv(file.path(DIR_OUT, "registry_installations.csv"), show_col_types = FALSE) %>%
   filter(nace == "C24") %>%

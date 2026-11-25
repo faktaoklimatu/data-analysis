@@ -1,11 +1,11 @@
 # =============================================================================
-# 12_energie_pefa.R – energetická náročnost oborů a skladba paliv (str. 11, 12)
+# 12_energie_pefa.R – energetická náročnost oborů a skladba paliv (S12, S25)
 # Eurostat env_ac_pefasu (fyzické energetické toky, užití USE, TJ), ČR 2023 (poslední rok)
 # Hrubé užití energie = P00 (energetické produkty) + R00 (energetické zbytky); bez přírodních vstupů N00
 #   (u chemie N06 = 11 890 TJ biomasy jako přírodní vstup, nejde o nakoupenou energii), tj. včetně koksu do vysokých pecí
 #   a surovin pro chemii (nafta P16). HPH 2023 z nama_10_a64 (11_hph_zamestnanost.R).
-# Výstup: out/energie_narocnost_2023.csv – TJ pro energetické účely, HPH, TJ / mil. € HPH, hlavní palivo (str. 11)
-#         out/energie_skladba_2023.csv   – obor × skupina paliv, TJ a % (str. 12)
+# Výstup: out/energie_narocnost_2023.csv – TJ pro energetické účely, HPH, TJ / mil. € HPH, hlavní palivo (S12)
+#         out/energie_skladba_2023.csv   – obor × skupina paliv, TJ a % (S25)
 # =============================================================================
 source("R/00_setup.R")
 options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "UTF-8"); options(fok.no_download = FALSE)
@@ -68,6 +68,18 @@ narocnost <- celkem %>% rename(tj_hrube = tj_celkem) %>% inner_join(ep, by = "na
 
 write_csv(narocnost, file.path(DIR_OUT, "energie_narocnost_2023.csv"))
 write_csv(skladba, file.path(DIR_OUT, "energie_skladba_2023.csv"))
+
+# S13: hrubé užití vč. surovin (nafta) v 7 hlavních skupinách; šest nejnáročnějších oborů zvlášť, ostatní jako průměr
+SKUPINY7 <- c("Elektřina" = "Elektřina", "Zemní plyn" = "Zemní plyn", "Uhlí a koks" = "Uhlí, koks a koksárenské plyny",
+              "Koksárenský a vysokopecní plyn" = "Uhlí, koks a koksárenské plyny", "Nafta (surovina)" = "Ropa a ropné produkty",
+              "Ostatní ropné produkty" = "Ropa a ropné produkty", "Teplo" = "Teplo", "Biomasa" = "Biomasa",
+              "Odpady" = "Odpady", "Jaderné palivo" = "Ostatní")
+SEST <- c("C24", "C20", "C17", "C23", "C16", "C10-12")
+skladba7 <- skladba_vse %>% filter(nace != "C") %>%
+  mutate(skupina7 = unname(SKUPINY7[palivo]), radek = if_else(nace %in% SEST, nace, "ostatni")) %>%
+  group_by(radek, skupina7) %>% summarise(tj = sum(tj, na.rm = TRUE), .groups = "drop") %>%
+  group_by(radek) %>% mutate(podil_pct = tj / sum(tj) * 100) %>% ungroup()
+write_csv(skladba7, file.path(DIR_OUT, "energie_skladba7_2023.csv"))
 message(sprintf("12_energie_pefa: hutě %.0f TJ/mil. €, chemie %.0f, papír %.0f",
                 narocnost$tj_na_mil_eur[narocnost$nace == "C24"], narocnost$tj_na_mil_eur[narocnost$nace == "C20"],
                 narocnost$tj_na_mil_eur[narocnost$nace == "C17"]))

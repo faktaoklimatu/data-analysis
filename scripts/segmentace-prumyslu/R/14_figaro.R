@@ -1,5 +1,5 @@
 # =============================================================================
-# 14_figaro.R – dovozní konkurence a vývoz mimo EU ETS (str. 26, 27, 28)
+# 14_figaro.R – dovozní konkurence a vývoz mimo EU ETS (D1, D2, D3)
 # Eurostat FIGARO, mezinárodní input-output tabulka odvětví × odvětví, základní ceny, mil. €:
 #   naio_10_fcp_ii4 (2024), naio_10_fcp_ii2 (2015, vydání 2014–2017)
 # Pro obor X v ČR (řádky ind_ava = X, sečteno přes všechna užití ind_use vč. konečné poptávky):
@@ -8,10 +8,10 @@
 #   dovoz M    = výrobky oboru X ze zahraničí užité v ČR (c_orig ≠ CZ, c_dest = CZ)
 #   dovozní penetrace = M / (P − E + M)  (podíl dovozu na domácí spotřebě)
 #   vývoz mimo oblast EU ETS = vývoz mimo EU27, Norsko, Island, Lichtenštejnsko a Švýcarsko; UK zvlášť
-# Energie (str. 27): Eurostat env_ac_pefa04, čisté domácí užití energie pro energetické účely (NETDOM_EUSE_EP),
-#   TJ, 2015 a 2023 – stejná definice jako str. 11 (12_energie_pefa.R)
+# Energie (D2): Eurostat env_ac_pefa04, čisté domácí užití energie pro energetické účely (NETDOM_EUSE_EP),
+#   TJ, 2015 a 2023 – stejná definice jako S12 (12_energie_pefa.R)
 # Výstup: out/figaro_obory.csv – obor × rok: P, E, M, penetrace (z EU / mimo EU), vývoz mimo EU ETS, UK
-#         out/figaro_skupiny.csv – str. 26 a 27 se sloučenými obory (dřevo + papír, rafinerie + chemie)
+#         out/figaro_skupiny.csv – D1, D2 se sloučenými obory (dřevo + papír, rafinerie + chemie)
 # =============================================================================
 source("R/00_setup.R")
 options(fok.no_download = TRUE); source("R/01_download_eurostat.R", encoding = "UTF-8"); options(fok.no_download = FALSE)
@@ -58,7 +58,7 @@ obory <- fig %>% penetrace() %>%
          mimo_ets_uk_mld = (E_mimo_ets + E_uk) / 1000)
 write_csv(obory, file.path(DIR_OUT, "figaro_obory.csv"))
 
-# --- Str. 26, 27: sloučené obory, energie a HPH -----------------------------------
+# --- D1, D2: sloučené obory, energie a HPH -----------------------------------
 SLOUC <- c(C16 = "C16_17", C17 = "C16_17", C19 = "C19_20", C20 = "C19_20")
 SLOUC_NAMES <- c(C16_17 = "Dřevo a papír", C19_20 = "Rafinerie a chemie")
 # data stahuje 12_energie_pefa.R (env_ac_pefa04_ep.csv)

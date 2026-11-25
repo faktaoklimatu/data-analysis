@@ -1,0 +1,57 @@
+radek,obor,zdroj,podil
+C10-12,Potraviny a nápoje,Biomasa,1.9
+C10-12,Potraviny a nápoje,Elektřina,19.6
+C10-12,Potraviny a nápoje,Odpady,0
+C10-12,Potraviny a nápoje,Ostatní,0
+C10-12,Potraviny a nápoje,Ropa a ropné produkty,19
+C10-12,Potraviny a nápoje,Teplo,18.9
+C10-12,Potraviny a nápoje,"Uhlí, koks a koksárenské plyny",6.5
+C10-12,Potraviny a nápoje,Zemní plyn,34
+C16,Dřevo,Biomasa,39
+C16,Dřevo,Elektřina,11.6
+C16,Dřevo,Odpady,0
+C16,Dřevo,Ostatní,0
+C16,Dřevo,Ropa a ropné produkty,11.8
+C16,Dřevo,Teplo,29.3
+C16,Dřevo,"Uhlí, koks a koksárenské plyny",0
+C16,Dřevo,Zemní plyn,8.4
+C17,Papír,Biomasa,43.6
+C17,Papír,Elektřina,13.5
+C17,Papír,Odpady,0
+C17,Papír,Ostatní,0
+C17,Papír,Ropa a ropné produkty,1.3
+C17,Papír,Teplo,28.3
+C17,Papír,"Uhlí, koks a koksárenské plyny",4.6
+C17,Papír,Zemní plyn,8.8
+C20,Chemie,Biomasa,0.2
+C20,Chemie,Elektřina,8.1
+C20,Chemie,Odpady,0.1
+C20,Chemie,Ostatní,0
+C20,Chemie,Ropa a ropné produkty,47.5
+C20,Chemie,Teplo,12
+C20,Chemie,"Uhlí, koks a koksárenské plyny",24.4
+C20,Chemie,Zemní plyn,7.6
+C23,"Cement, sklo, keramika",Biomasa,0.2
+C23,"Cement, sklo, keramika",Elektřina,15
+C23,"Cement, sklo, keramika",Odpady,16.9
+C23,"Cement, sklo, keramika",Ostatní,0
+C23,"Cement, sklo, keramika",Ropa a ropné produkty,5.5
+C23,"Cement, sklo, keramika",Teplo,18
+C23,"Cement, sklo, keramika","Uhlí, koks a koksárenské plyny",9.8
+C23,"Cement, sklo, keramika",Zemní plyn,34.6
+C24,Hutě a slévárny,Biomasa,0
+C24,Hutě a slévárny,Elektřina,6.4
+C24,Hutě a slévárny,Odpady,0
+C24,Hutě a slévárny,Ostatní,0
+C24,Hutě a slévárny,Ropa a ropné produkty,0.7
+C24,Hutě a slévárny,Teplo,1.7
+C24,Hutě a slévárny,"Uhlí, koks a koksárenské plyny",85
+C24,Hutě a slévárny,Zemní plyn,6.2
+ostatni,Ostatních 12 oborů – průměr,Biomasa,0.5
+ostatni,Ostatních 12 oborů – průměr,Elektřina,42.1
+ostatni,Ostatních 12 oborů – průměr,Odpady,0
+ostatni,Ostatních 12 oborů – průměr,Ostatní,0
+ostatni,Ostatních 12 oborů – průměr,Ropa a ropné produkty,17.4
+ostatni,Ostatních 12 oborů – průměr,Teplo,8.2
+ostatni,Ostatních 12 oborů – průměr,"Uhlí, koks a koksárenské plyny",0.9
+ostatni,Ostatních 12 oborů – průměr,Zemní plyn,30.9

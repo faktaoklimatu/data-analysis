@@ -1,5 +1,5 @@
 # =============================================================================
-# 13_sut_csu.R – struktura nákladů oborů: energie a práce (str. 10, 17, 21–23)
+# 13_sut_csu.R – struktura nákladů oborů: energie a práce (S11, S17, S20, S22)
 # ČSÚ, tabulky dodávek a užití (SUT), běžné kupní ceny, mil. Kč, list „Matice dodávek a užití“
 #   2024 (semidefinitivní) a 2025 (předběžné); výsledek = součet obou let
 #   https://apl.czso.cz/pll/rocenka/rocenkaout.dod_uziti?mylang=CZ (údaje platné k 30. 6. 2026)
@@ -74,7 +74,7 @@ naklady <- bind_rows(
   arrange(desc(energie_pct))
 write_csv(naklady, file.path(DIR_OUT, "naklady_sut.csv"))
 
-# po jednotlivých letech – jmenovatel pro náklady ETS 2024 (03_ets_costs.R, str. 17)
+# po jednotlivých letech – jmenovatel pro náklady ETS 2024 (03_ets_costs.R, S17)
 naklady_roky <- bind_rows(
   po_oborech %>% mutate(nace = to_obor(nace2)) %>% group_by(nace, rok) %>% agreg(),
   po_oborech %>% group_by(rok) %>% agreg() %>% mutate(nace = "C")) %>%
