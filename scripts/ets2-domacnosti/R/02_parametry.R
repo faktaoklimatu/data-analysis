@@ -1,9 +1,10 @@
 # 02_parametry.R – všechny vstupní parametry (rok 2028). Zdroje a odkazy viz ../inputs.csv a ../METODIKA.md
 p <- list()
-p$HICP <- c(2.9, 9.2, 6.4, 2.6, 2.4, 2.0, 2.0, 2.0)   # EU HICP 2021–2028 (%), 2025 odhad, 2026–28 předpoklad
+p$HICP <- c(2.89, 9.19, 6.36, 2.60, 2.46, 3.0, 2.5, 2.1)   # EU HICP 2021–2028 (%): 2021–25 Eurostat prc_hicp_aind (EU27_2020),
+                                                        # 2026–28 projekce ECB (září 2026, eurozóna; EU leden–říjen 2026 průměr 3,0 %)
 p$HICP_INDEX <- prod(1 + p$HICP / 100)                 # 2020 -> 2028
 p$CENY_2026_NA_2028 <- prod(1 + p$HICP[7:8] / 100)    # ceny energií 2026 -> 2028 (stejný rok jako povolenka a příjmy)
-p$SCEN <- c(A_hranice_45EUR2020 = 45 * p$HICP_INDEX,   # ~60 €/t
+p$SCEN <- c(A_hranice_45EUR2020 = 45 * p$HICP_INDEX,   # ~61 €/t (do 26. 11. 2026 60 €/t)
             B_futures_Dec28     = 76.47)               # EUA2 Dec-28, 1. 10. 2026
 p$FX  <- 24.2                                          # CZK/EUR 2028, ČNB podzim 2026 (prognóza 5. 11. 2026)
 p$VAT <- c(std = 1.21, teplo = 1.12)
