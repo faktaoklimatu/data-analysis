@@ -121,7 +121,7 @@ rd("production_index_annual") %>% filter(geo == "CZ", time == max(time)) %>%
   transmute(nace, obor = NACE_NAMES[nace], skupina = skupina(nace), zmena_pct = round(index_2015 - 100) + 0) %>%
   arrange(desc(zmena_pct)) %>% web("vyroba_zmena")
 
-# S13 – skladba paliv: 6 nejnáročnějších oborů + průměr ostatních (7 skupin, vč. surovin)
+# S13 – skladba paliv: 6 nejnáročnějších oborů + průměr ostatních (bez surovin)
 rd("energie_skladba7_2023") %>%
   transmute(radek, obor = if_else(radek == "ostatni", "Ostatních 12 oborů – průměr", unname(NACE_NAMES[radek])),
             zdroj = skupina7, podil = round(podil_pct, 1)) %>%

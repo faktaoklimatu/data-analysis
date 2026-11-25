@@ -69,13 +69,12 @@ narocnost <- celkem %>% rename(tj_hrube = tj_celkem) %>% inner_join(ep, by = "na
 write_csv(narocnost, file.path(DIR_OUT, "energie_narocnost_2023.csv"))
 write_csv(skladba, file.path(DIR_OUT, "energie_skladba_2023.csv"))
 
-# S13: hrubé užití vč. surovin (nafta) v 7 hlavních skupinách; šest nejnáročnějších oborů zvlášť, ostatní jako průměr
+# S13: užití energie bez surovin (nafta pro chemii) v hlavních skupinách; šest nejnáročnějších oborů zvlášť, ostatní jako průměr
 SKUPINY7 <- c("Elektřina" = "Elektřina", "Zemní plyn" = "Zemní plyn", "Uhlí a koks" = "Uhlí, koks a koksárenské plyny",
-              "Koksárenský a vysokopecní plyn" = "Uhlí, koks a koksárenské plyny", "Nafta (surovina)" = "Ropa a ropné produkty",
-              "Ostatní ropné produkty" = "Ropa a ropné produkty", "Teplo" = "Teplo", "Biomasa" = "Biomasa",
+              "Koksárenský a vysokopecní plyn" = "Uhlí, koks a koksárenské plyny", "Ostatní ropné produkty" = "Ropa a ropné produkty", "Teplo" = "Teplo", "Biomasa" = "Biomasa",
               "Odpady" = "Odpady", "Jaderné palivo" = "Ostatní")
 SEST <- c("C24", "C20", "C17", "C23", "C16", "C10-12")
-skladba7 <- skladba_vse %>% filter(nace != "C") %>%
+skladba7 <- skladba_vse %>% filter(nace != "C", palivo != "Nafta (surovina)") %>%
   mutate(skupina7 = unname(SKUPINY7[palivo]), radek = if_else(nace %in% SEST, nace, "ostatni")) %>%
   group_by(radek, skupina7) %>% summarise(tj = sum(tj, na.rm = TRUE), .groups = "drop") %>%
   group_by(radek) %>% mutate(podil_pct = tj / sum(tj) * 100) %>% ungroup()
