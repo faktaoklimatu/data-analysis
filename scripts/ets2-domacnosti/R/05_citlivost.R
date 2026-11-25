@@ -12,7 +12,7 @@ vyt <- function(palivo, x, P, ncv_hnede = p$NCV[["hnede"]], dt_kg = p$DT_KG_PER_
     teplo_gj = x * dt_kg / 1000 * kc_t * p$VAT[["teplo"]])
 }
 var <- list(
-  "základ (A, ~60 €)"                      = list(P = PA),
+  "základ (A, 61 €)"                      = list(P = PA),
   "povolenka 45 € nominálně"               = list(P = 45),
   "povolenka 100 €"                        = list(P = 100),
   "přenos do ceny 80 %"                    = list(P = PA, pt = 0.8),

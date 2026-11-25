@@ -34,12 +34,12 @@ Mikrodata (SILC, SRÚ, ENERGO) jsou jen lokálně v `~/Documents/ČSÚ`. Na web 
 |---|---|
 | Rodinný dům na uhlí | rodinný dům, hlavní zdroj tuhá paliva (uhlí) |
 | Rodinný dům na plyn | rodinný dům, hlavní zdroj plyn |
-| Byt na plyn | bytový dům, plyn (vlastní kotel i domovní kotelna) |
+| Byt na plyn | bytový dům, plyn (vlastní ústřední/etážové topení nebo lokální topidla; domovní kotelna je v SILC „dálkové teplo“) |
 | Byt na teple ze zdroje v ETS2 | bytový dům na dálkovém teple ze zdroje, který by spadal pod ETS2 |
 | Byt na teple ze zdroje v ETS1 | ostatní byty na dálkovém teple; ETS2 jim topení nezdraží, zranitelnost se neposuzuje |
 | Ostatní | dřevo, elektřina, tepelné čerpadlo, jiné (rozpad v `09_silc_ostatni.csv`) |
 
-**Dálkové teplo v ETS2.** SILC zdroj tepla nezná. Zdroj v ETS2 = cenová lokalita ERÚ do 20 MWt, uhlí + plyn aspoň 50 % a dodané teplo nejvýš výkon × 3 000 h × 3,6 GJ/MWh (větší dodávka znamená nákup tepla z velkého zdroje v ETS1). Váha bytů na teple se násobí podílem tepla ze zdrojů v ETS2 v kraji a celek se škáluje na asi 380 tis. domácností (dashboard tepláren FoK). Je to spíš dolní odhad.
+**Dálkové teplo v ETS2.** SILC zdroj tepla nezná. Zdroj v ETS2 = cenová lokalita ERÚ do 20 MWt, uhlí + plyn aspoň 50 % a dodané teplo nejvýš výkon × 3 000 h × 3,6 GJ/MWh (větší dodávka znamená nákup tepla z velkého zdroje v ETS1). Váha bytů na teple se násobí podílem tepla ze zdrojů v ETS2 v kraji a celek se škáluje na asi 380 tis. domácností (dashboard tepláren FoK). Je to spíš dolní odhad. Stejnou krajskou pravděpodobnost dostávají i domácnosti jiných archetypů s platbou za ústřední topení, celkem je tak na zdroji v ETS2 asi 419 tis. domácností. Ponecháno záměrně: 380 tis. z dashboardu zahrnuje jen licencované zdroje, nelicencované domovní kotelny na plyn (také v ETS2) v něm chybí. Citlivost s kalibrací na všechny domácnosti s ústředním topením (celkem 380 tis.): 185 tis. zranitelných místo 187 tis. Patří sem i asi 113 tis. domácností na plyn, které platí i za ústřední topení a teplou vodu (SILC u nich jako hlavní zdroj uvádí vlastní kotel, takže platba je spíš za teplou vodu nebo společný zdroj neznámého paliva). Kdyby byla tato platba vždy za zdroj v ETS2, přibylo by asi 10 tis. zranitelných.
 
 ## 4. Od výdajů k emisím
 
@@ -98,6 +98,7 @@ Výsledek (`09_silc_prahy.csv`, `_data/ets2/zranitelne.csv`): asi 262 tis. domá
 ## 11. Hlavní omezení
 
 - Statický odhad bez změny chování (kromě odhadu toku peněz).
+- Mikrosimulace (díl I) a tok peněz (díl II) pracují s různou výší emisí 2028: mikrosimulace s dnešní spotřebou kalibrovanou na bilanci a zimu 2028 (plyn, uhlí a teplo ze zdrojů v ETS2, asi 5,8 Mt CO₂), tok peněz s inventurou 2024, trendem −3 % ročně a cenovou reakcí (asi 3,8 Mt). Část rozdílu je definiční (teplo z výtopen je v inventuře v 1A1a, ne v 1A4b), část je chybějící pokles spotřeby do 2028 v mikrosimulaci (asi −11 %). Dopady na domácnosti jsou proto spíš horní odhad, výnos spíš opatrný.
 - Náklady v SILC uvádí respondent (zálohy), příjem je za předchozí rok.
 - Pohonné hmoty přes dárce ze SRÚ: průměry sedí, vazba na konkrétní domácnost je náhodná.
 - Zdroj dálkového tepla u konkrétní domácnosti neznáme.

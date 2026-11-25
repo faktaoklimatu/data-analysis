@@ -388,6 +388,15 @@ print(eru_kraj %>% mutate(podil_ets2 = round(100 * podil_ets2, 1)) %>% arrange(d
 # Teď je každá domácnost s výdajem za ÚT rozdělena na dvě váhové varianty: zdroj v ETS2 (váha w * p, s nákladem
 # za teplo) a zdroj v ETS1 (váha w * (1 - p), bez nákladu za teplo). Všechny další kroky (práh, zranitelnost,
 # počty) pak počítají s touto směsí. Byty na teple v ETS1 zůstávají v archetypu TEPLO, rozlišuje je ut_ets2.
+# POZNÁMKA PRO PŘÍŠTÍ KONTROLU (ověřeno v SILC 2024 a dokumentaci 25. 11. 2026, nález nezávislé kontroly zamítnut):
+# Domácnosti na plyn (ZDROJ_ENER 2) s výdajem za ÚT (~113 tis.) NEMAJÍ domovní plynovou kotelnu jako hlavní zdroj.
+# ZDROJ_ENER se ptá jen u VYTAPENI 2/3 (vlastní/etážové topení, lokální topidla); domovní/bloková kotelna je VYTAPENI 1
+# a palivo u ní SILC nezjišťuje. UT = „ústřední vytápění a teplá voda“ ze zdroje mimo byt; tyto domácnosti platí
+# i plnou zálohu na plyn (medián 24 tis. Kč/rok vs. 30 tis. bez UT), takže UT je spíš teplá voda / společný zdroj
+# neznámého paliva. Proto i u nich krajská pravděpodobnost p_ut_ets2, ne 1. Citlivost „vždy ETS2“: ~+10 tis. zranitelných.
+# Otevřené: k_teplo se kalibruje jen na archetyp TEPLO (380 tis.), ale p_ut_ets2 dostávají všechny domácnosti
+# s ÚT → na zdroji v ETS2 je celkem ~419 tis. domácností (viz výpis B3 níže). Ponecháno (K2, 25. 11.): 380 tis. je
+# jen z licencovaných zdrojů, nelicencované domovní kotelny na plyn chybí. Kalibrace na všechny s ÚT: 185 místo 187 tis.
 rozdel <- s$kc_ut > 0 & p_ut_ets2 < 1
 s_v2 <- s %>% mutate(ut_ets2 = kc_ut > 0, w = ifelse(rozdel, w * p_ut_ets2, w))
 s_v1 <- s[rozdel, ] %>% mutate(ut_ets2 = FALSE, w = w * (1 - p_ut_ets2[rozdel]), co2_teplo = 0,
@@ -519,7 +528,7 @@ prahy_ets2 <- tibble(ukazatel = c("byty_teplo_v_ets2_tis_FoK", "zranitelne_tis_t
 prahy <- tibble(ukazatel = c("SILC_rok", "prah_2M_podil_energie_bydleni_pct", "prah_narust_vydaju_2x_median_pct",
                              "ohrozeni_energetickou_chudobou_2M_tis", "prah_2M_po_ets2_pct", "ohrozeni_2M_po_ets2_tis", "nove_ohrozeni_2M_ets2_tis", "nove_ohrozeni_2M_bez_bytu_na_teple_tis",
                              "podil_novych_2M_v_1_4_decilu_pct", "podil_novych_2M_bez_bytu_na_teple_v_1_4_decilu_pct", "citlivost_pevny_prah_ohrozeni_2M_po_ets2_tis", "nejvyssi_narust_tis",
-                             "zranitelne_tis", "zranitelne_pct_domacnosti", "podil_zranitelnych_v_1_4_decilu_pct",
+                             "zranitelne_tis", "zranitelne_pct_domacnosti", "podil_zranitelnych_v_1_4_decilu_pct", "zranitelne_energ_chude_uz_dnes_2M_tis", "zranitelne_nove_2M_tis",
                              "plyn_cena_D2_rok_kc_kwh", "uhli_kc_q_rok", "teplo_kc_gj_rok", "elektrina_index_2026_rok", "uprate_prijmu_na_2028"),
                 hodnota = c(SILC_ROK, M2, N2M, sum(s$w[s$vysoky_podil]) / 1000, M2_po, sum(s$w[s$vysoky_podil_po_ets2]) / 1000, sum(s$w[s$nove_2M]) / 1000,
                             sum(s$w[s$nove_2M & s$archetyp != "byt teplo (zdroj v ETS2)"]) / 1000,
@@ -527,7 +536,7 @@ prahy <- tibble(ukazatel = c("SILC_rok", "prah_2M_podil_energie_bydleni_pct", "p
                             with(s, 100 * sum(w[nove_2M & decil %in% 1:4 & archetyp != "byt teplo (zdroj v ETS2)"]) /
                                       sum(w[nove_2M & archetyp != "byt teplo (zdroj v ETS2)"])),
                             sum(s$w[s$vysoky_podil_po_ets2_pevny]) / 1000, sum(s$w[s$vysoky_narust]) / 1000, sum(dz$w) / 1000, 100 * sum(dz$w) / sum(s$w[ok]),
-                            100 * sum(dz$w[dz$decil <= 4]) / sum(dz$w),
+                            100 * sum(dz$w[dz$decil <= 4]) / sum(dz$w), sum(dz$w[dz$vysoky_podil]) / 1000, sum(dz$w[dz$nove_2M]) / 1000,
                             plyn_rok[["D2"]], cena_uhli_q_rok, teplo_kc_gj_rok, IDX_EL, UPRATE_PRIJ)) %>% mutate(hodnota = round(hodnota, 3))
 
 # srovnání s ENERGO (R/07)

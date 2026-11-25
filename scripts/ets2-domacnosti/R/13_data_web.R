@@ -451,7 +451,6 @@ tok <- tribble(
   "Státní rozpočet (jen klima a sociální)",              "Investice z plánu",          inv * (1 - podil_eu),
   "Státní rozpočet (jen klima a sociální)",              "Přímé platby",               pp * (1 - podil_eu),
   "Státní rozpočet (jen klima a sociální)",              "Další klimatická a sociální opatření",             rozpocet - plan_stat) |>
-  bind_rows(tibble(zdroj = "citlivost", cil = "platby_wem", mld = sum(pl_wem))) |>
   mutate(mld = zaokr(mld, 1))
 cat("Tok peněz: emise", EM_ROK, "| podíl ČR na emisích ETS2 v EU", round(100 * PODIL_CZ_ETS2, 2), "% | platby celkem",
     round(celkem), "mld. Kč za 5 let\n")

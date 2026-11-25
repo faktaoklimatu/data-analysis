@@ -22,7 +22,7 @@ ceny <- read_csv(file.path(OUT_DIR, "08_ceny.csv"), show_col_types = FALSE)
 cena <- function(p) ceny$hodnota[ceny$parametr == p]
 cit  <- read_csv(file.path(OUT_DIR, "05_citlivost_kc_mesic.csv"), show_col_types = FALSE)
 ets  <- function(typ) { r <- cit[cit$typ == typ, ]
-  list(kc_rok = as.numeric(r[["základ (A, ~60 €)"]]) * 12, mnozstvi = as.numeric(r$spotreba)) }
+  list(kc_rok = as.numeric(r[["základ (A, 61 €)"]]) * 12, mnozstvi = as.numeric(r$spotreba)) }
 
 # cena elektřiny podle pásma spotřeby, poslední pololetí (Kč/kWh)
 f_el <- sort(list.files(file.path(CSU_DIR, "ceny"), pattern = "^CEN0101K_.*\\.csv$", full.names = TRUE))
