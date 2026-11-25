@@ -105,11 +105,11 @@ tibble(
   oboru_celkem = sum(!is.na(idx$CZ) & !is.na(idx$DE)),
   energie_pod_5pct_oboru = sum(sut_s3$energie_pct[sut_s3$nace != "C"] < 5),
   energie_nad_10pct = paste(sut_s3$name[sut_s3$nace != "C" & sut_s3$energie_pct > 10], collapse = ", "),
-  ets_prumysl_pct_nakladu = round(ets_s3$indirect_best_pct_naklady[ets_s3$nace == "C"] + ets_s3$direct_pct_naklady[ets_s3$nace == "C"], 2),
+  ets_prumysl_pct_nakladu = round(ets_s3$indirect_net_pct_naklady[ets_s3$nace == "C"] + ets_s3$direct_pct_naklady[ets_s3$nace == "C"], 2),
   zdarma_pct = round(sum(i25$free_alloc, na.rm = TRUE) / sum(i25$verified_em, na.rm = TRUE) * 100))
 ```
 
-*Pozn.:* Náklady na povolenky = nepřímé (elektřina ze sítě, horní odhad) + přímé netto, v % celkových nákladů průmyslu ze SUT ČSÚ.
+*Pozn.:* Náklady na povolenky = nepřímé (elektřina ze sítě po kompenzaci, horní odhad) + přímé netto, v % celkových nákladů průmyslu ze SUT ČSÚ.
 
 # S5 – Jak se českému průmyslu daří? (průmysl v číslech)
 
@@ -593,7 +593,7 @@ i25 |> group_by(nace, source) |>
 *ČSÚ SUT 2024–25 + registr ETS 2024 + PEFA 2023 · % nákladů*
 
 - **Nákupy energie** v % nákladů – ze SUT jako na S11.
-- **Nepřímý náklad ETS** = o kolik povolenky zdražují elektřinu ze sítě: elektřina **ze sítě** (bez vlastní výroby) × 0,85 t CO₂/MWh × 65 €/t. Horní odhad: maximální emisní faktor, bez kompenzace od státu. Vlastní elektřinu (papírny ji z 58 % vyrábějí z černého louhu a biomasy) obor nekupuje a povolenku v ceně nenese.
+- **Nepřímý náklad ETS** = o kolik povolenky zdražují elektřinu ze sítě: elektřina **ze sítě** (bez vlastní výroby) × 0,85 t CO₂/MWh × 65 €/t. Po odečtení **kompenzace**, kterou stát (MPO) vrací vybraným odvětvím (papír, hutě, chemie…). Horní odhad: maximální emisní faktor 0,85 t/MWh. Vlastní elektřinu (papírny ji z 58 % vyrábějí z černého louhu a biomasy) obor nekupuje a povolenku v ceně nenese.
 - **Přímý čistý náklad ETS** = (ověřené emise − povolenky zdarma) × 65 €/t, **netto**: přebytky povolenek jednoho zařízení snižují náklad oboru (lze je prodat). Varianta jen s deficity je v tabulce.
 - Všechno je v % stejných **celkových nákladů ze SUT** (mezispotřeba + náhrady zaměstnancům); pro ETS rok 2024, pro energii průměr 2024–25.
 - Rafinerie Litvínov a Kralupy jsou v chemii – stejně jako v národních účtech (celý podnik ORLEN Unipetrol RPA je v C20).
@@ -616,7 +616,7 @@ nepřímé náklady ETS v ceně elektřiny (% nákladů); přímé čisté nákl
 
 - přímý = (ověřené emise − povolenky zdarma) × 65,01 €/t po zařízeních; horní odhad = všechna zařízení
   oboru vč. energetik podniků, nejlepší odhad = energetiky jen podílem výroby pro obor (Energetika Třinec 86,5 %);
-- nepřímý = (elektřina − vlastní výroba) (TJ) / 3,6 × 1000 MWh × 0,85 t/MWh × 65,01 €/t (horní odhad, bez kompenzace); na snímku se používá tato varianta „ze sítě“, varianta z veškeré elektřiny je v tabulce pro srovnání.
+- nepřímý = (elektřina − vlastní výroba) (TJ) / 3,6 × 1000 MWh × 0,85 t/MWh × 65,01 €/t (horní odhad, bez kompenzace); na snímku se od ní ještě odečítá kompenzace (`data/manual/kompenzace_neprimych_nakladu_2024.csv`); ostatní varianty jsou v tabulce pro srovnání. Vysvětlení: `docs/neprime_naklady_ets.md`.
 
 Přepočet nákladů ETS v mil. € přímo z registru a PEFA:
 
@@ -645,7 +645,8 @@ Výsledek slajdu:
 
 ```{r s17}
 ets |> transmute(nace, obor = name, podil_nakladu_prumyslu_pct = round(podil_nakladu_c_pct, 1),
-                 nepr_ETS_sit_pct = round(indirect_best_pct_naklady, 1), nepr_ETS_vc_vlastni_pct = round(indirect_pct_naklady, 1), prime_ETS_netto_pct = round(direct_pct_naklady, 2),
+                 nepr_ETS_po_kompenzaci_pct = round(indirect_net_pct_naklady, 1), nepr_ETS_sit_pct = round(indirect_best_pct_naklady, 1),
+                 nepr_ETS_vc_vlastni_pct = round(indirect_pct_naklady, 1), prime_ETS_netto_pct = round(direct_pct_naklady, 2),
                  prime_ETS_nejlepsi_pct = round(direct_best_pct_naklady, 2), prime_ETS_jen_deficity_pct = round(direct_def_pct_naklady, 2)) |>
   left_join(sut |> transmute(nace, energie_pct = round(energie_pct, 1)), by = "nace") |>
   filter(nace != "C19") |> arrange(desc(energie_pct))

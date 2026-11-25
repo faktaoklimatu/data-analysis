@@ -99,6 +99,10 @@ costs <- costs %>% left_join(sut24, by = "nace") %>%
          # S17: jen elektřina ze sítě – vlastní výroba (černý louh, biomasa, energetiky podniků) povolenku v ceně nenese
          #      a není ani v nákupech energie (SUT), se kterými se nepřímý náklad srovnává
          indirect_best_pct_naklady = indirect_best_meur / naklady_meur * 100,
+         # hlavní varianta S17: elektřina ze sítě po odečtení kompenzace nepřímých nákladů (MPO, za rok 2024);
+         # kompenzace nemůže náklad snížit pod nulu. Podrobně: docs/neprime_naklady_ets.md
+         indirect_net_meur        = pmax(indirect_best_meur - coalesce(comp_meur, 0), 0),
+         indirect_net_pct_naklady = indirect_net_meur / naklady_meur * 100,
          direct_pct_naklady      = direct_meur / naklady_meur * 100,       # netto, horní odhad vč. energetik podniků
          direct_def_pct_naklady  = direct_def_meur / naklady_meur * 100,   # jen deficity
          direct_best_pct_naklady = direct_best_meur / naklady_meur * 100)
