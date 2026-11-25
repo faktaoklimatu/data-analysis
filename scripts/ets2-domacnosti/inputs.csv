@@ -1,0 +1,36 @@
+parametr;hodnota;jednotka;zdroj;odkaz;stav
+Rok analýzy;2028;rok;první rok ostrého provozu ETS2 (odklad z 2027);https://climate.ec.europa.eu/areas-action/carbon-markets/ets2-buildings-road-transport-and-additional-sectors_en;potvrzeno
+Cena povolenky – scénář A;45 € v cenách 2020 × index HICP 1,333 = 60,0;€/t CO2;hranice stabilizačního mechanismu; index HICP EU 2021–2024 Eurostat, 2025 odhad 2,4 %, 2026–28 2 %;https://ec.europa.eu/eurostat/databrowser/product/view/tec00118;HICP 2025–28 k ověření
+Cena povolenky – scénář B;76,47;€/t CO2;EUA2 futures Dec-2028, ICE Endex, 1. 10. 2026;https://www.barchart.com/futures/quotes/CZEZ28;potvrzeno (nízká likvidita)
+Kurz;24,3;CZK/EUR;ČNB, prognóza léto 2026 pro rok 2028;https://www.cnb.cz/cs/menova-politika/prognoza/;potvrzeno
+DPH plyn, uhlí, PHM;21;%;zákon o DPH;https://www.financnisprava.cz/cs/dane/dane/dan-z-pridane-hodnoty;potvrzeno
+DPH teplo;12;%;snížená sazba pro dodávky tepla;https://www.financnisprava.cz/cs/dane/dane/dan-z-pridane-hodnoty;potvrzeno
+Přenos do ceny;100;%;studie snížení daní z paliv 2022 (úplný přenos);https://ideas.repec.org/a/eee/eneeco/v126y2023ics0140988323004462.html;citlivost 80 %
+EF zemní plyn;55,61;t CO2/TJ;ČHMÚ, národní hodnoty pro ETS2 (NID 2024);https://mzp.gov.cz/system/files/2026-02/opok-Vypoctove_faktory_2025_ETS2-20260213.pdf;potvrzeno
+EF hnědé uhlí;99,05;t CO2/TJ;tamtéž;https://mzp.gov.cz/system/files/2026-02/opok-Vypoctove_faktory_2025_ETS2-20260213.pdf;potvrzeno
+EF černé uhlí;94,04;t CO2/TJ;tamtéž;https://mzp.gov.cz/system/files/2026-02/opok-Vypoctove_faktory_2025_ETS2-20260213.pdf;potvrzeno
+EF koks / uhelné brikety / LPG / lehký topný olej;107,0 / 97,50 / 65,86 / 74,10;t CO2/TJ;tamtéž;https://mzp.gov.cz/system/files/2026-02/opok-Vypoctove_faktory_2025_ETS2-20260213.pdf;potvrzeno
+Výhřevnost hnědého uhlí pro domácnosti;17,6;GJ/t;Bílinské tříděné uhlí ořech 2 (deklarace prodejce); národní průměr 14,02 jako citlivost;https://uhlibuta.cz/uhli/bilinske-uhli-orech-2;k ověření (citlivost 14,02–19,8)
+Výhřevnost černého uhlí;27,5;GJ/t;černý ořech 2 (deklarace prodejce);https://www.uhli-frydek.cz/cerny-orech-2-10-25-mm-polsko;k ověření
+Výhřevnost plynu / přepočet z vyúčtování;34,72 MJ/m3 výhřevnost; 10,6 kWh/m3 spalné teplo (poměr 0,910);–;ČHMÚ; typický objemový přepočet na vyúčtování;https://mzp.gov.cz/system/files/2026-02/opok-Vypoctove_faktory_2025_ETS2-20260213.pdf;přepočet 10,6 k ověření
+Dálkové teplo ze zdroje v ETS2;účinnost 90 %, ztráty v rozvodu 15 % -> 72,7 kg CO2/GJ dodaného tepla;–;předpoklad: menší plynová výtopna do 20 MW (ETS1 pokrývá zdroje nad 20 MW);https://oenergetice.cz/teplarenstvi/eru-vydal-zpravu-o-provozu-teplarenskych-soustav-pres-45-vyroby-stale-pochazi-z-uhli;k ověření (ERÚ)
+Podíl dálkového tepla domácností ze zdrojů v ETS2 (jen mikrosimulace);25;%;pracovní odhad;https://oenergetice.cz/teplarenstvi/eru-vydal-zpravu-o-provozu-teplarenskych-soustav-pres-45-vyroby-stale-pochazi-z-uhli;k ověření (ERÚ, seznam zdrojů v ETS1)
+CO2 na prodaný litr benzinu / nafty;2,16 / 2,52;kg/l;ČHMÚ EF, ČAPPO spotřeba 2025, MPO biosložky (výpočet PHM);https://www.petrol.cz/aktuality/vyvoj-spotreby-pohonnych-hmot-v-cr-za-rok-2025-16692;potvrzeno
+Spotřeba RD hnědé uhlí;41,5;q/rok;ČSÚ ENERGO 2021, tab. 2-10 (průměr na byt v RD užívající hnědé uhlí);https://csu.gov.cz/produkty/spotreba-paliv-a-energii-v-domacnostech-energo-2021;potvrzeno
+Spotřeba RD černé uhlí;23,3;q/rok;ČSÚ ENERGO 2021, tab. 2-10;https://csu.gov.cz/produkty/spotreba-paliv-a-energii-v-domacnostech-energo-2021;potvrzeno
+Spotřeba BJ dálkové teplo;29,1;GJ/rok;ČSÚ ENERGO 2021, tab. 2-10 (byty v BD);https://csu.gov.cz/produkty/spotreba-paliv-a-energii-v-domacnostech-energo-2021;potvrzeno
+Spotřeba plynu – topící RD / BJ;1 554 / 916;m3/rok;tab. 2-10 (průměr uživatelů 1 393 / 493 m3) přepočtená na topící domácnosti: odečtena spotřeba na vaření u netopících (204 m3 = tab. 1-3.1 vaření 9 315 TJ / tab. 3-1 1,315 mil. domácností / 34,72 MJ/m3), děleno počtem topících (tab. 3-1);https://csu.gov.cz/produkty/spotreba-paliv-a-energii-v-domacnostech-energo-2021;potvrzeno (mikrodata: 1 710 / 929)
+Poměr uhlí s dřevem / bez dřeva;0,86 / 1,21;× průměr;mikrodata ENERGO 2021 (vážené průměry RD na hnědé uhlí s/bez dřeva jako vedlejšího paliva);https://csu.gov.cz/produkty/spotreba-paliv-a-energii-v-domacnostech-energo-2021;potvrzeno
+Auto;787 l na domácnost s autem/rok, 44 % nafta (dříve 840 l na auto z tab. 2-11 – nesprávně použito na domácnost); podíl domácností s autem 74 %;l/rok;ČSÚ ENERGO 2021, mikrodata (R/06);https://csu.gov.cz/produkty/spotreba-paliv-a-energii-v-domacnostech-energo-2021;opraveno 16. 10. 2026
+Mikrosimulace (decily, kraje);mikrodata ENERGO 2021 s váhami;–;ČSÚ; validace na tab. 1-3.1 (plyn 76 000 vs. 77 700 TJ);https://csu.gov.cz/produkty/spotreba-paliv-a-energii-v-domacnostech-energo-2021;potvrzeno
+Valorizace příjmů 2021 -> 2028;1,392;index;průměrná mzda 2021 37 839 Kč -> 2025 49 215 Kč (ČSÚ), 2026–28 inflace ČNB 2,0/2,5/2,4 %;https://csu.gov.cz/rychle-informace/prumerne-mzdy-4-ctvrtleti-2025;konzervativní (reálné příjmy 2026–28 beze změny)
+Hrubý -> čistý příjem;0,78;koef.;přibližný přepočet pro 12 % domácností, které uvedly hrubý příjem;https://csu.gov.cz/rychle-informace/prumerne-mzdy-4-ctvrtleti-2025;k ověření
+Ekvivalizace;odmocnina počtu osob;–;standard OECD (square root scale);https://www.oecd.org/els/soc/OECD-Note-EquivalenceScales.pdf;potvrzeno
+Cena plynu;2,433;Kč/kWh;ČSÚ DataStat CEN0101IT01, průměrná ceníková cena pro domácnosti, pásmo Celkem, 1. pololetí 2026 (R/08);https://data.csu.gov.cz/api/dotaz/v1/data/vybery/CEN0101IT01?format=CSV;ČSÚ (ověřit, zda vč. DPH)
+Cena elektřiny;7,128;Kč/kWh;ČSÚ DataStat CEN0101KT01, pásmo Celkem, 1. pololetí 2026, index k 2021 = 1,421 (R/08);https://data.csu.gov.cz/api/dotaz/v1/data/vybery/CEN0101KT01?format=CSV;ČSÚ
+Cena hnědého uhlí;680;Kč/q;ceníky uhelných skladů, Bílina kostka/ořech 1/ořech 2, vč. DPH, bez dopravy, říjen 2026 (674, 684, 694, 670); ČSÚ cenu uhlí nezveřejňuje. Kontrola: ENERGO 2021 medián 400 Kč/q × HICP = 696 (R/08);https://kb-uhli.cz/cenik/ ; https://www.uhli-janmaria.cz/cenik;ceníky prodejců
+Cena černého uhlí;870;Kč/q;ENERGO 2021 medián 500 Kč/q × HICP tuhá paliva 1,740 (R/08);https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_aind/default/table;ČSÚ + Eurostat HICP
+Cena dálkového tepla;1130;Kč/GJ;ERÚ 2024, cenové lokality do 20 MWt s plynem ≥ 50 %, koncové úrovně dodávky, vážený průměr 1 093 Kč/GJ vč. DPH × HICP CP0455 2025/2024 (R/08). Kontrola: ENERGO 2021 × HICP 1 169;https://eru.gov.cz/vysledne-ceny-tepelne-energie-v-cr-2024;ERÚ
+Cena benzínu Natural 95;38,64;Kč/l;ČSÚ týdenní ceny PHM, průměr 2025-W42 až 2026-W42 (R/08);https://vdb.czso.cz/pll/eweb/cenyphm.data;ČSÚ (poslední týden 45,35)
+Cena nafty;39,35;Kč/l;dtto;https://vdb.czso.cz/pll/eweb/cenyphm.data;ČSÚ (poslední týden 46,86)
+Cena LPG;40,06;Kč/kg;ČSÚ týdenní ceny PHM 20,43 Kč/l ÷ 0,51 kg/l;https://vdb.czso.cz/pll/eweb/cenyphm.data;ČSÚ
