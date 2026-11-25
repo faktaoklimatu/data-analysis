@@ -95,7 +95,10 @@ sut24 <- read_csv(file.path(DIR_OUT, "naklady_sut_roky.csv"), show_col_types = F
   filter(rok == YEAR_COST) %>% transmute(nace, naklady_meur = naklady / EUR_CZK_2024)
 costs <- costs %>% left_join(sut24, by = "nace") %>%
   mutate(podil_nakladu_c_pct     = naklady_meur / naklady_meur[nace == "C"] * 100,
-         indirect_pct_naklady    = indirect_meur / naklady_meur * 100,     # horní odhad, bez kompenzace
+         indirect_pct_naklady    = indirect_meur / naklady_meur * 100,     # veškerá elektřina vč. vlastní výroby (horní odhad)
+         # S17: jen elektřina ze sítě – vlastní výroba (černý louh, biomasa, energetiky podniků) povolenku v ceně nenese
+         #      a není ani v nákupech energie (SUT), se kterými se nepřímý náklad srovnává
+         indirect_best_pct_naklady = indirect_best_meur / naklady_meur * 100,
          direct_pct_naklady      = direct_meur / naklady_meur * 100,       # netto, horní odhad vč. energetik podniků
          direct_def_pct_naklady  = direct_def_meur / naklady_meur * 100,   # jen deficity
          direct_best_pct_naklady = direct_best_meur / naklady_meur * 100)

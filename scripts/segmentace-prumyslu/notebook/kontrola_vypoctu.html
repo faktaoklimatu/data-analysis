@@ -2430,7 +2430,7 @@ vertical-align: -.125em;
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">oboru_celkem =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(idx<span class="sc">$</span>CZ) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(idx<span class="sc">$</span>DE)),</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">energie_pod_5pct_oboru =</span> <span class="fu">sum</span>(sut_s3<span class="sc">$</span>energie_pct[sut_s3<span class="sc">$</span>nace <span class="sc">!=</span> <span class="st">&quot;C&quot;</span>] <span class="sc">&lt;</span> <span class="dv">5</span>),</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">energie_nad_10pct =</span> <span class="fu">paste</span>(sut_s3<span class="sc">$</span>name[sut_s3<span class="sc">$</span>nace <span class="sc">!=</span> <span class="st">&quot;C&quot;</span> <span class="sc">&amp;</span> sut_s3<span class="sc">$</span>energie_pct <span class="sc">&gt;</span> <span class="dv">10</span>], <span class="at">collapse =</span> <span class="st">&quot;, &quot;</span>),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets_prumysl_pct_nakladu =</span> <span class="fu">round</span>(ets_s3<span class="sc">$</span>indirect_pct_naklady[ets_s3<span class="sc">$</span>nace <span class="sc">==</span> <span class="st">&quot;C&quot;</span>] <span class="sc">+</span> ets_s3<span class="sc">$</span>direct_pct_naklady[ets_s3<span class="sc">$</span>nace <span class="sc">==</span> <span class="st">&quot;C&quot;</span>], <span class="dv">2</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">ets_prumysl_pct_nakladu =</span> <span class="fu">round</span>(ets_s3<span class="sc">$</span>indirect_best_pct_naklady[ets_s3<span class="sc">$</span>nace <span class="sc">==</span> <span class="st">&quot;C&quot;</span>] <span class="sc">+</span> ets_s3<span class="sc">$</span>direct_pct_naklady[ets_s3<span class="sc">$</span>nace <span class="sc">==</span> <span class="st">&quot;C&quot;</span>], <span class="dv">2</span>),</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">zdarma_pct =</span> <span class="fu">round</span>(<span class="fu">sum</span>(i25<span class="sc">$</span>free_alloc, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">/</span> <span class="fu">sum</span>(i25<span class="sc">$</span>verified_em, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">*</span> <span class="dv">100</span>))</span></code></pre></div><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
@@ -2460,7 +2460,7 @@ vertical-align: -.125em;
 <td style="text-align: right;">18</td>
 <td style="text-align: right;">13</td>
 <td style="text-align: left;">Hutě a slévárny, Chemie, Cement, sklo, keramika</td>
-<td style="text-align: right;">0.7</td>
+<td style="text-align: right;">0.6</td>
 <td style="text-align: right;">72</td>
 </tr>
 </tbody>
@@ -2468,7 +2468,7 @@ vertical-align: -.125em;
 </div>
 </div>
 </div>
-<p><em>Pozn.:</em> Náklady na povolenky = nepřímé (horní odhad) + přímé netto, v % celkových nákladů průmyslu ze SUT ČSÚ.</p>
+<p><em>Pozn.:</em> Náklady na povolenky = nepřímé (elektřina ze sítě, horní odhad) + přímé netto, v % celkových nákladů průmyslu ze SUT ČSÚ.</p>
 </section>
 <section id="s5-jak-se-českému-průmyslu-daří-průmysl-v-číslech" class="level1">
 <h1>S5 – Jak se českému průmyslu daří? (průmysl v číslech)</h1>
@@ -4688,7 +4688,7 @@ vertical-align: -.125em;
 <p><em>ČSÚ SUT 2024–25 + registr ETS 2024 + PEFA 2023 · % nákladů</em></p>
 <ul>
 <li><strong>Nákupy energie</strong> v % nákladů – ze SUT jako na S11.</li>
-<li><strong>Nepřímý náklad ETS</strong> = o kolik povolenky zdražují elektřinu ze sítě: spotřeba elektřiny × 0,85 t CO₂/MWh × 65 €/t. Je to horní odhad (bez kompenzace od státu).</li>
+<li><strong>Nepřímý náklad ETS</strong> = o kolik povolenky zdražují elektřinu ze sítě: elektřina <strong>ze sítě</strong> (bez vlastní výroby) × 0,85 t CO₂/MWh × 65 €/t. Horní odhad: maximální emisní faktor, bez kompenzace od státu. Vlastní elektřinu (papírny ji z 58 % vyrábějí z černého louhu a biomasy) obor nekupuje a povolenku v ceně nenese.</li>
 <li><strong>Přímý čistý náklad ETS</strong> = (ověřené emise − povolenky zdarma) × 65 €/t, <strong>netto</strong>: přebytky povolenek jednoho zařízení snižují náklad oboru (lze je prodat). Varianta jen s deficity je v tabulce.</li>
 <li>Všechno je v % stejných <strong>celkových nákladů ze SUT</strong> (mezispotřeba + náhrady zaměstnancům); pro ETS rok 2024, pro energii průměr 2024–25.</li>
 <li>Rafinerie Litvínov a Kralupy jsou v chemii – stejně jako v národních účtech (celý podnik ORLEN Unipetrol RPA je v C20).</li>
@@ -4708,7 +4708,7 @@ vertical-align: -.125em;
 <p><strong>Vzorce</strong></p>
 <ul>
 <li>přímý = (ověřené emise − povolenky zdarma) × 65,01 €/t po zařízeních; horní odhad = všechna zařízení oboru vč. energetik podniků, nejlepší odhad = energetiky jen podílem výroby pro obor (Energetika Třinec 86,5 %);</li>
-<li>nepřímý = elektřina (TJ) / 3,6 × 1000 MWh × 0,85 t/MWh × 65,01 €/t (horní odhad, bez kompenzace).</li>
+<li>nepřímý = (elektřina − vlastní výroba) (TJ) / 3,6 × 1000 MWh × 0,85 t/MWh × 65,01 €/t (horní odhad, bez kompenzace); na snímku se používá tato varianta „ze sítě“, varianta z veškeré elektřiny je v tabulce pro srovnání.</li>
 </ul>
 <p>Přepočet nákladů ETS v mil. € přímo z registru a PEFA:</p>
 <div class="cell">
@@ -4980,7 +4980,7 @@ vertical-align: -.125em;
 <details class="code-fold">
 <summary>Kód</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>ets <span class="sc">|&gt;</span> <span class="fu">transmute</span>(nace, <span class="at">obor =</span> name, <span class="at">podil_nakladu_prumyslu_pct =</span> <span class="fu">round</span>(podil_nakladu_c_pct, <span class="dv">1</span>),</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">nepr_ETS_pct =</span> <span class="fu">round</span>(indirect_pct_naklady, <span class="dv">1</span>), <span class="at">prime_ETS_netto_pct =</span> <span class="fu">round</span>(direct_pct_naklady, <span class="dv">2</span>),</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">nepr_ETS_sit_pct =</span> <span class="fu">round</span>(indirect_best_pct_naklady, <span class="dv">1</span>), <span class="at">nepr_ETS_vc_vlastni_pct =</span> <span class="fu">round</span>(indirect_pct_naklady, <span class="dv">1</span>), <span class="at">prime_ETS_netto_pct =</span> <span class="fu">round</span>(direct_pct_naklady, <span class="dv">2</span>),</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">prime_ETS_nejlepsi_pct =</span> <span class="fu">round</span>(direct_best_pct_naklady, <span class="dv">2</span>), <span class="at">prime_ETS_jen_deficity_pct =</span> <span class="fu">round</span>(direct_def_pct_naklady, <span class="dv">2</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(sut <span class="sc">|&gt;</span> <span class="fu">transmute</span>(nace, <span class="at">energie_pct =</span> <span class="fu">round</span>(energie_pct, <span class="dv">1</span>)), <span class="at">by =</span> <span class="st">&quot;nace&quot;</span>) <span class="sc">|&gt;</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(nace <span class="sc">!=</span> <span class="st">&quot;C19&quot;</span>) <span class="sc">|&gt;</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(energie_pct))</span></code></pre></div><button title="Zkopírovat do schránky" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4989,21 +4989,23 @@ vertical-align: -.125em;
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 4%">
-<col style="width: 18%">
+<col style="width: 3%">
 <col style="width: 16%">
-<col style="width: 8%">
+<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 10%">
 <col style="width: 12%">
 <col style="width: 14%">
-<col style="width: 16%">
-<col style="width: 7%">
+<col style="width: 6%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">nace</th>
 <th style="text-align: left;">obor</th>
 <th style="text-align: right;">podil_nakladu_prumyslu_pct</th>
-<th style="text-align: right;">nepr_ETS_pct</th>
+<th style="text-align: right;">nepr_ETS_sit_pct</th>
+<th style="text-align: right;">nepr_ETS_vc_vlastni_pct</th>
 <th style="text-align: right;">prime_ETS_netto_pct</th>
 <th style="text-align: right;">prime_ETS_nejlepsi_pct</th>
 <th style="text-align: right;">prime_ETS_jen_deficity_pct</th>
@@ -5015,6 +5017,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C24</td>
 <td style="text-align: left;">Hutě a slévárny</td>
 <td style="text-align: right;">4.0</td>
+<td style="text-align: right;">1.2</td>
 <td style="text-align: right;">1.5</td>
 <td style="text-align: right;">0.29</td>
 <td style="text-align: right;">0.16</td>
@@ -5025,6 +5028,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C20</td>
 <td style="text-align: left;">Chemie</td>
 <td style="text-align: right;">4.1</td>
+<td style="text-align: right;">1.5</td>
 <td style="text-align: right;">2.0</td>
 <td style="text-align: right;">1.66</td>
 <td style="text-align: right;">1.65</td>
@@ -5036,6 +5040,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">Cement, sklo, keramika</td>
 <td style="text-align: right;">3.2</td>
 <td style="text-align: right;">1.8</td>
+<td style="text-align: right;">1.8</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">0.23</td>
@@ -5046,6 +5051,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">Pryž a plasty</td>
 <td style="text-align: right;">5.9</td>
 <td style="text-align: right;">0.9</td>
+<td style="text-align: right;">0.9</td>
 <td style="text-align: right;">0.01</td>
 <td style="text-align: right;">0.01</td>
 <td style="text-align: right;">0.01</td>
@@ -5055,6 +5061,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C17</td>
 <td style="text-align: left;">Papír</td>
 <td style="text-align: right;">1.9</td>
+<td style="text-align: right;">1.0</td>
 <td style="text-align: right;">2.4</td>
 <td style="text-align: right;">0.22</td>
 <td style="text-align: right;">0.22</td>
@@ -5065,6 +5072,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C10-12</td>
 <td style="text-align: left;">Potraviny a nápoje</td>
 <td style="text-align: right;">8.4</td>
+<td style="text-align: right;">0.3</td>
 <td style="text-align: right;">0.6</td>
 <td style="text-align: right;">0.04</td>
 <td style="text-align: right;">0.04</td>
@@ -5076,6 +5084,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">Textil a oděvy</td>
 <td style="text-align: right;">1.4</td>
 <td style="text-align: right;">1.0</td>
+<td style="text-align: right;">1.0</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">0.00</td>
@@ -5085,6 +5094,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C16</td>
 <td style="text-align: left;">Dřevo</td>
 <td style="text-align: right;">1.8</td>
+<td style="text-align: right;">0.7</td>
 <td style="text-align: right;">0.8</td>
 <td style="text-align: right;">-0.17</td>
 <td style="text-align: right;">-0.17</td>
@@ -5095,6 +5105,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C</td>
 <td style="text-align: left;">Zpracovatelský průmysl celkem</td>
 <td style="text-align: right;">100.0</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.6</td>
 <td style="text-align: right;">0.10</td>
 <td style="text-align: right;">0.09</td>
@@ -5106,6 +5117,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">Kovovýroba</td>
 <td style="text-align: right;">8.5</td>
 <td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">0.00</td>
@@ -5115,6 +5127,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C27</td>
 <td style="text-align: left;">Elektrická zařízení</td>
 <td style="text-align: right;">7.1</td>
+<td style="text-align: right;">0.4</td>
 <td style="text-align: right;">0.4</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
@@ -5126,6 +5139,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">Ostatní doprava</td>
 <td style="text-align: right;">2.0</td>
 <td style="text-align: right;">0.3</td>
+<td style="text-align: right;">0.3</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">0.00</td>
@@ -5135,6 +5149,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C21</td>
 <td style="text-align: left;">Farmacie</td>
 <td style="text-align: right;">1.0</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.5</td>
 <td style="text-align: right;">0.01</td>
 <td style="text-align: right;">0.01</td>
@@ -5146,6 +5161,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">Tisk</td>
 <td style="text-align: right;">0.8</td>
 <td style="text-align: right;">0.5</td>
+<td style="text-align: right;">0.5</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
@@ -5155,6 +5171,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C28</td>
 <td style="text-align: left;">Stroje</td>
 <td style="text-align: right;">7.2</td>
+<td style="text-align: right;">0.4</td>
 <td style="text-align: right;">0.4</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">0.00</td>
@@ -5166,6 +5183,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">Opravy a instalace</td>
 <td style="text-align: right;">2.9</td>
 <td style="text-align: right;">0.1</td>
+<td style="text-align: right;">0.1</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
@@ -5176,6 +5194,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">Nábytek a ostatní</td>
 <td style="text-align: right;">2.4</td>
 <td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.4</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
@@ -5185,6 +5204,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C29</td>
 <td style="text-align: left;">Auta</td>
 <td style="text-align: right;">31.3</td>
+<td style="text-align: right;">0.2</td>
 <td style="text-align: right;">0.3</td>
 <td style="text-align: right;">0.04</td>
 <td style="text-align: right;">0.03</td>
@@ -5195,6 +5215,7 @@ vertical-align: -.125em;
 <td style="text-align: left;">C26</td>
 <td style="text-align: left;">Elektronika</td>
 <td style="text-align: right;">6.1</td>
+<td style="text-align: right;">0.2</td>
 <td style="text-align: right;">0.2</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>

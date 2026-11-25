@@ -57,7 +57,8 @@ bind_rows(inst %>% mutate(sektor = "Průmysl celkem"), inst %>% filter(!is.na(se
 # S17 – energie vs. náklady ETS
 rd("ets_costs_2024") %>% filter(nace != "C19") %>%
   transmute(nace, obor = NACE_NAMES[nace], podil_nakladu = round(podil_nakladu_c_pct, 1),
-            nepr_ets = round(indirect_pct_naklady, 1), prime_ets = round(direct_pct_naklady, 1),
+            nepr_ets = round(indirect_best_pct_naklady, 1), nepr_ets_vc_vlastni = round(indirect_pct_naklady, 1),
+            prime_ets = round(direct_pct_naklady, 1),
             prime_ets_nejlepsi = round(direct_best_pct_naklady, 1), prime_ets_deficity = round(direct_def_pct_naklady, 1)) %>%
   left_join(rd("naklady_sut") %>% transmute(nace, energie = round(energie_pct, 1)), by = "nace") %>%
   web("naklady_ets")
