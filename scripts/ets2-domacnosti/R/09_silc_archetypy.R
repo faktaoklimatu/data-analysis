@@ -670,3 +670,24 @@ b4 <- tibble(scenar = c("A", "B"),
          celkem_bez_dph_mld = vytapeni_mld / 1.2 + phm_mld / p$VAT[["std"]]) %>%   # teplo má 12 %, plyn/uhlí 21 % -> přibližně
   mutate(across(where(is.double), ~ round(.x, 1)))
 write_csv(b4, file.path(OUT_DIR, "09_b4_platby_domacnosti.csv")); print(b4)
+
+# --- E2 (26. 11. 2026, Polanecký): zdražení PHM podle velikosti obce a pracovní aktivity, přímo ze SRÚ ---
+# V SILC jsou PHM jen doplněné hot-deckem (RD/BD × kvintil), proto rozdělení podle obce počítáme na dárcích ze SRÚ.
+# Jen domácnosti s autem; náklad ETS2 v základním scénáři (A) vč. DPH, Kč měsíčně.
+e_obec <- cti(najdi_sru(SRU_ROK, "e")) %>% transmute(DOMACID = num(DOMACID), VEL = num(VEL), EA = num(EA))
+kc_t_A <- p$SCEN[["A_hranice_45EUR2020"]] * p$FX
+e2 <- darci %>% left_join(e_obec, by = "DOMACID") %>%
+  mutate(A_phm_mes = (benzin_l * p$KG_L[["benzin"]] + nafta_l * p$KG_L[["nafta"]] +
+                      lpg_l * LPG_KG_L / 1000 * p$NCV[["lpg"]] * p$EF[["lpg"]]) / 1000 * kc_t_A * p$VAT[["std"]] / 12,
+         obec = case_when(VEL <= 4 ~ "obec do 2 tis.", VEL <= 7 ~ "2–50 tis.", TRUE ~ "nad 50 tis."),
+         prace = ifelse(EA > 0, "někdo pracuje", "nikdo nepracuje"),
+         prijem = ifelse(KVINTIL <= 2, "1.–2. kvintil", "3.–5. kvintil"))
+e2_tab <- function(df) df %>% summarise(n_vzorek = n(), P25 = wq(A_phm_mes, PKOEFP, .25), P50 = wq(A_phm_mes, PKOEFP, .5),
+                                         P75 = wq(A_phm_mes, PKOEFP, .75), P90 = wq(A_phm_mes, PKOEFP, .9),
+                                         prumer = wmean(A_phm_mes, PKOEFP), .groups = "drop")
+e2_out <- bind_rows(
+  e2 %>% group_by(obec) %>% e2_tab() %>% mutate(skupina = "všechny s autem"),
+  e2 %>% filter(prijem == "1.–2. kvintil") %>% group_by(obec, prace) %>% e2_tab() %>% mutate(skupina = "nízkopříjmové (1.–2. kvintil)"),
+  e2 %>% group_by(prace) %>% e2_tab() %>% mutate(skupina = "všechny s autem", obec = "celkem")) %>%
+  relocate(skupina, obec, prace) %>% mutate(across(where(is.double), ~ round(.x)))
+write_csv(e2_out, file.path(OUT_DIR, "09_e2_phm_obec.csv")); print(e2_out, n = 50)
