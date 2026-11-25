@@ -1,0 +1,20 @@
+nace,obor,podil_nakladu,nepr_ets,nepr_ets_vc_vlastni,prime_ets,prime_ets_nejlepsi,prime_ets_deficity,energie
+C,Zpracovatelský průmysl celkem,100,0.5,0.6,0.1,0.1,0.1,4
+C10-12,Potraviny a nápoje,8.4,0.3,0.6,0,0,0.1,4.4
+C13-15,Textil a oděvy,1.4,1,1,0,0,0,4.4
+C16,Dřevo,1.8,0.7,0.8,-0.2,-0.2,0,4.1
+C17,Papír,1.9,1,2.4,0.2,0.2,0.2,5.1
+C18,Tisk,0.8,0.5,0.5,NA,NA,NA,2.7
+C20,Chemie,4.1,1.5,2,1.7,1.6,1.8,14.9
+C21,Farmacie,1,0.5,0.5,0,0,0,2.9
+C22,Pryž a plasty,5.9,0.9,0.9,0,0,0,5.4
+C23,"Cement, sklo, keramika",3.2,1.8,1.8,-0,-0,0.2,11.7
+C24,Hutě a slévárny,4,1.2,1.5,0.3,0.2,1.1,15.5
+C25,Kovovýroba,8.5,0.5,0.5,0,0,0,4
+C26,Elektronika,6.1,0.2,0.2,NA,NA,NA,1.2
+C27,Elektrická zařízení,7.1,0.4,0.4,NA,NA,NA,3.2
+C28,Stroje,7.2,0.4,0.4,0,0,0,2.4
+C29,Auta,31.3,0.2,0.3,0,0,0,1.3
+C30,Ostatní doprava,2,0.3,0.3,0,0,0,3
+C31_32,Nábytek a ostatní,2.4,0.4,0.4,NA,NA,NA,2
+C33,Opravy a instalace,2.9,0.1,0.1,NA,NA,NA,2.2

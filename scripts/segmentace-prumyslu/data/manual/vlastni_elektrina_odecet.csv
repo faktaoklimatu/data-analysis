@@ -1,0 +1,10 @@
+nace,typ,tj,podil_obor,zdroj
+C10-12,vlastní výroba oboru (PEFA),3140.5,1,"Eurostat env_ac_pefasu, dodávka elektřiny (SUP, P26) oborem 2023: https://ec.europa.eu/eurostat/databrowser/view/env_ac_pefasu/default/table?lang=en"
+C16,vlastní výroba oboru (PEFA),213.8,1,"Eurostat env_ac_pefasu, SUP P26, 2023"
+C17,vlastní výroba oboru (PEFA),3672.6,1,"Eurostat env_ac_pefasu, SUP P26, 2023"
+C20,vlastní výroba oboru (PEFA),2864.8,1,"Eurostat env_ac_pefasu, SUP P26, 2023"
+C24,vlastní výroba oboru (PEFA),43.3,1,"Eurostat env_ac_pefasu, SUP P26, 2023"
+C29,vlastní výroba oboru (PEFA),11.6,1,"Eurostat env_ac_pefasu, SUP P26, 2023"
+C24,energetika mimo obor v PEFA,2053.9,0.865,"Energetika Třinec – výroba elektřiny 2023 570 539 MWh (výroční zpráva 2023: https://etas.trz.cz/dokumenty/vz_2023.pdf); podíl pro TŽ jako u přímého nákladu"
+C29,energetika mimo obor v PEFA,2232,1,"ŠKO-ENERGO – výroba elektřiny 2022 620 GWh (https://www.sko-energo.cz/technologie/teplo-tepla-voda-a-elektrina/); podíl jako u přímého nákladu"
+C_ostatni,vlastní výroba oboru (PEFA),177.9,1,"Eurostat env_ac_pefasu, SUP P26, 2023: zbytek do celku C (10 124,6 TJ) v ostatních oborech, nepřiřazeno"
