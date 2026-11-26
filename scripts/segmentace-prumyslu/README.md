@@ -48,6 +48,7 @@ Seznam všech zdrojů po slajdech je v [`data_catalog.csv`](data_catalog.csv)
 | `12_energie_pefa.R` | energetická náročnost (TJ / mil. € HPH) a skladba paliv, PEFA 2023 | S12, S13, S25 |
 | `13_sut_csu.R` | nákupy energie a náklady práce v % nákladů, SUT ČSÚ 2024 + 2025 | S11, S17, S19–S23 |
 | `14_figaro.R` | dovozní penetrace, vývoz mimo EU ETS, čtyři skupiny oborů (FIGARO 2015, 2024) | doplňkové D1–D3 (v decku v1 nejsou) |
+| `16_vyvoz_nemecko.R` | vývoz ČR do Německa vs. dovoz Německa (Comext, reálně), podíl ČR; výroba CZ vs. DE po čtvrtletích | slajd Německo |
 | `15_export_web.R` | data pro webovou prezentaci do `web-cz/_data/segmentace_prumyslu/` | web |
 
 Ruční převodníky jsou v `data/manual/` (kód činnosti → obor, průmyslové spalovací zdroje → obor,

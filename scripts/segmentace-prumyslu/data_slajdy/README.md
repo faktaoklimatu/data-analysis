@@ -42,6 +42,7 @@ Hodnoty `%` jsou v procentech (15.5 = 15,5 %). Prázdná buňka = obor nemá dat
 | S22 | – | rozklad chemie: skupina ORLEN Unipetrol = 72 % emisí chemie; povolenky = 2,1 % nákladů firmy (2024) | registr EU ETS; výroční zpráva ORLEN Unipetrol 2025. Výpočet v notebooku u S22. |
 | S23 | `naklady_energie_prace.csv` | sloupec Energie v tabulce segmentů (rozpětí za skupiny oborů) | Výpočet v notebooku u S23. Ostatní sloupce jsou pracovní návrh autorů. |
 | S25 | `energie_skladba.csv` + `energie_narocnost.csv` | `palivo`, `podil` – % hrubého užití energie všech 18 oborů (2023) | Eurostat env_ac_pefasu; bez nafty jako suroviny. Délka pruhu náročnosti z `energie_narocnost.csv`. |
+| Německo (bez čísla) | `nemecko_vyroba.csv`, `nemecko_vyvoz.csv` | výroba: `zeme`, `ctvrtleti`, `index` (2022 = 100). Vývoz: `skupina_zbozi` (Celkem, Auta a díly, Stroje, Elektro, Železo a ocel, Chemie a plasty), `obdobi` (stejné měsíce každého roku, např. 1–8/2026), `vyvoz_cz_index` – vývoz CZ→DE ve stálých cenách, `dovoz_de_index` – celý dovoz Německa ve stálých cenách (oba 2022 = 100), `podil_cz_pct` – podíl ČR na dovozu Německa | Eurostat sts_inpr_m (zprac. průmysl, sezónně očištěno); Comext DS-045409 (dovoz DE z CZ a ze světa), deflováno indexem dovozních cen DE ze zemí EU (sts_inpi_m). Podíl v běžných cenách. |
 
 Snímky bez grafů (S1, S2, S4, S10, S14, S18, S24) mají texty v decku. Číslo o nákladech na povolenky na S24
 je stejné jako na S3.

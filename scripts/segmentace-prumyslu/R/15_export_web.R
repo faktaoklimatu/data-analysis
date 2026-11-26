@@ -129,4 +129,16 @@ rd("energie_skladba7_2023") %>%
             zdroj = skupina7, podil = round(podil_pct, 1)) %>%
   web("energie_skladba_6")
 
+# Slajd „Německo klesá, český průmysl je chráněný (sheltered)“ (zatím bez čísla v decku v1)
+# a) výroba ve zpracovatelském průmyslu CZ vs. DE po čtvrtletích, 2022 = 100
+rd("vyroba_cz_de_ctvrtletne") %>% filter(ctvrtleti >= "2019Q1") %>%
+  transmute(zeme = geo, ctvrtleti, index = round(index_2022, 1)) %>%
+  web("nemecko_vyroba")
+# b) vývoz CZ→DE a celý dovoz Německa reálně (stejné měsíce každého roku, 2022 = 100) a podíl ČR na dovozu DE
+rd("vyvoz_nemecko_ytd") %>% filter(rok >= 2019) %>%
+  transmute(skupina_zbozi = skupina, rok, obdobi, vyvoz_mld_eur = round(vyvoz_mld_eur, 1),
+            vyvoz_cz_index = round(vyvoz_realne_i2022, 1), dovoz_de_index = round(dovoz_de_realne_i2022, 1),
+            podil_cz_pct = round(podil_cz_pct, 2)) %>%
+  web("nemecko_vyvoz")
+
 message("15_export_web: ", length(list.files(OUT_DIRS[1], pattern = "csv$")), " souborů v ", paste(OUT_DIRS, collapse = " a "))

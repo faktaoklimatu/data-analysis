@@ -27,7 +27,7 @@ if (!ok) { sink(type = "message"); sink(); close(con)
 if (stahnout(file.path(DIR_ES, "sbs_ovw_act.csv"))) step("R/01_download_eurostat.R")
 # pořadí: 11 -> 12 -> 13 -> 03 (03 potřebuje náklady ze SUT, 13 PEFA z 12, 12 HPH z 11)
 for (f in c("R/02_registry.R", "R/08_production_annual.R", "R/11_hph_zamestnanost.R", "R/12_energie_pefa.R",
-            "R/13_sut_csu.R", "R/03_ets_costs.R", "R/14_figaro.R", "R/15_export_web.R")) if (ok) step(f)
+            "R/13_sut_csu.R", "R/03_ets_costs.R", "R/14_figaro.R", "R/16_vyvoz_nemecko.R", "R/15_export_web.R")) if (ok) step(f)
 cat("\n=== Stav:", if (ok) "HOTOVO" else "SKONČILO CHYBOU", "===\n")
 cat("\nSoubory v data/eurostat:\n"); print(list.files(DIR_ES))
 cat("\n"); print(sessionInfo())
