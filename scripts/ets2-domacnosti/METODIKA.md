@@ -75,6 +75,8 @@ Výsledek (`09_silc_prahy.csv`, `_data/ets2/zranitelne.csv`): asi 262 tis. domá
 
 - **Oprávnění vs. zranitelní:** platbu by dostalo asi 980 tis. domácností (2,3 mil. osob), z toho 160 tis. zranitelných (84 % ze 189 tis.); zbylých asi 29 tis. zranitelných topí hlavně elektřinou, dřevem nebo teplem z ETS1 (`11`, sloupce `prijemci_zranit_tis`, `prijemci_osob_tis`).
 - **Valorizace důchodů:** náklad ETS2 domácností je asi 0,5 % jejich čistého příjmu (proxy pro dopad na ceny); zranitelným domácnostem s důchodcem vezme zdražení vytápění 2,3 % příjmu, valorizace o inflaci by jim tak vrátila nanejvýš asi čtvrtinu (`11_kompenzace_parametry.csv`).
+- **Rezerva:** 47 % zranitelných domácností si nemůže dovolit neočekávaný výdaj (SILC `NEOCEK_VYD`, 15 600 Kč), mezi všemi 20 % (`09_silc_prahy.csv`).
+- **Průměr na zranitelnou domácnost** (i nulové, `11`, sloupce `prum_zranit_*`): zdražení vytápění 597 Kč/měs. (RD uhlí 1 029), PAQ a CVF 253 Kč (RD uhlí 207, dosah 94 % zranitelných), náš návrh 474 Kč (RD uhlí 943).
 - **PAQ a CVF na domácnost:** 100 Kč měsíčně na pracujícího, asi 170 Kč na důchodce (5,54 mld. Kč rozložených na 2,7 mil. důchodců v SILC), v průměru asi 240 Kč na domácnost; náš návrh v průměru asi 390 Kč na oprávněnou domácnost. 70 % zranitelných domácností nemá ekonomicky aktivního člena.
 
 ## 8. Sociální klimatický fond a plán

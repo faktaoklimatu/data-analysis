@@ -128,6 +128,9 @@ vyhodnot <- function(sc) {
            prijemci_tis = round(sum(wt[pl > 0]) / 1000),
            prijemci_zranit_tis = round(sum(wt[pl > 0 & z]) / 1000),   # překryv oprávněných a zranitelných (27. 11. 2026)
            prijemci_osob_tis = round(sum((wt * pop$osoby)[pl > 0]) / 1000),
+           prum_zranit_kc_mesic = round(sum((pl * wt)[z]) / sum(wt[z]) / 12),   # průměr na zranitelnou domácnost (i nulové)
+           prum_zranit_rd_uhli_kc_mesic = round(sum((pl * wt)[z & pop$archetyp == "RD uhlí"]) / sum(wt[z & pop$archetyp == "RD uhlí"]) / 12),
+           prum_prijemce_kc_mesic = round(sum(pl * wt) / sum(wt[pl > 0]) / 12),
            naklad_mld = round(sum(pl * wt) / 1e9, 2),
            podil_k_zranit = round(100 * sum((pl * wt)[z]) / sum(pl * wt), 1),
            pokryti_zranit = round(100 * sum(wt[z & pl > 0]) / sum(wt[z]), 1),

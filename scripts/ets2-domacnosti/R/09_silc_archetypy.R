@@ -220,7 +220,8 @@ najdi_sru <- function(rok, typ) list.files(file.path(SRU_DIR, rok), pattern = pa
 
 s <- cti_silc_h(SILC_ROK) %>%
   transmute(DOMAC_ID = num(DOMAC_ID), w = num(PKOEF), osoby = pmax(num(OSOB), 1), sj = num(SJ), DUM = num(DUM), KRAJ = num(KRAJ),
-            VYTAPENI = num(VYTAPENI), ZDROJ_ENER = num(ZDROJ_ENER), auto = num(AUTO) == 1,
+            VYTAPENI = num(VYTAPENI), ZDROJ_ENER = num(ZDROJ_ENER), auto = num(AUTO) == 1, neocek = num(NEOCEK_VYD) == 2,   # nemůže si dovolit neočekávaný výdaj (2024: 15 600 Kč)
+           
             prijem_rok = num(CP_PRIJ) * UPRATE_PRIJ,
             across(c(ELEKTR, PLYN, UT, PALIVA), ~ 12 * coalesce(num(.x), 0), .names = "kc_{tolower(.col)}")) %>%
   mutate(typ = case_when(DUM %in% 1:2 ~ "RD", DUM %in% 3:4 ~ "BD", TRUE ~ "jiný"),
@@ -549,7 +550,7 @@ prahy_ets2 <- tibble(ukazatel = c("byty_teplo_v_ets2_tis_FoK", "zranitelne_tis_t
 prahy <- tibble(ukazatel = c("SILC_rok", "prah_2M_podil_energie_bydleni_pct", "prah_narust_vydaju_2x_median_pct",
                              "ohrozeni_energetickou_chudobou_2M_tis", "prah_2M_po_ets2_pct", "ohrozeni_2M_po_ets2_tis", "nove_ohrozeni_2M_ets2_tis", "nove_ohrozeni_2M_bez_bytu_na_teple_tis",
                              "podil_novych_2M_v_1_4_decilu_pct", "podil_novych_2M_bez_bytu_na_teple_v_1_4_decilu_pct", "citlivost_pevny_prah_ohrozeni_2M_po_ets2_tis", "nejvyssi_narust_tis",
-                             "zranitelne_tis", "zranitelne_pct_domacnosti", "podil_zranitelnych_v_1_4_decilu_pct", "zranitelne_energ_chude_uz_dnes_2M_tis", "zranitelne_nove_2M_tis",
+                             "zranitelne_tis", "zranitelne_pct_domacnosti", "podil_zranitelnych_v_1_4_decilu_pct", "zranitelne_energ_chude_uz_dnes_2M_tis", "zranitelne_nove_2M_tis", "zranitelne_bez_rezervy_pct", "vsechny_bez_rezervy_pct",
                              "plyn_cena_D2_rok_kc_kwh", "uhli_kc_q_rok", "teplo_kc_gj_rok", "elektrina_index_2026_rok", "uprate_prijmu_na_2028"),
                 hodnota = c(SILC_ROK, M2, N2M, sum(s$w[s$vysoky_podil]) / 1000, M2_po, sum(s$w[s$vysoky_podil_po_ets2]) / 1000, sum(s$w[s$nove_2M]) / 1000,
                             sum(s$w[s$nove_2M & s$archetyp != "byt teplo (zdroj v ETS2)"]) / 1000,
@@ -557,7 +558,7 @@ prahy <- tibble(ukazatel = c("SILC_rok", "prah_2M_podil_energie_bydleni_pct", "p
                             with(s, 100 * sum(w[nove_2M & decil %in% 1:4 & archetyp != "byt teplo (zdroj v ETS2)"]) /
                                       sum(w[nove_2M & archetyp != "byt teplo (zdroj v ETS2)"])),
                             sum(s$w[s$vysoky_podil_po_ets2_pevny]) / 1000, sum(s$w[s$vysoky_narust]) / 1000, sum(dz$w) / 1000, 100 * sum(dz$w) / sum(s$w[ok]),
-                            100 * sum(dz$w[dz$decil <= 4]) / sum(dz$w), sum(dz$w[dz$vysoky_podil]) / 1000, sum(dz$w[dz$nove_2M]) / 1000,
+                            100 * sum(dz$w[dz$decil <= 4]) / sum(dz$w), sum(dz$w[dz$vysoky_podil]) / 1000, sum(dz$w[dz$nove_2M]) / 1000, 100 * sum(dz$w[dz$neocek %in% TRUE]) / sum(dz$w), 100 * sum(s$w[ok & s$neocek %in% TRUE]) / sum(s$w[ok]),
                             plyn_rok[["D2"]], cena_uhli_q_rok, teplo_kc_gj_rok, IDX_EL, UPRATE_PRIJ)) %>% mutate(hodnota = round(hodnota, 3))
 
 # srovnání s ENERGO (R/07)
