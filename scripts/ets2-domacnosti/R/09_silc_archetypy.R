@@ -65,7 +65,7 @@ B_BOOT   <- 500
 # Byty na dálkovém teple ze zdroje v ETS2: počet domácností na malých teplárnách a kotelnách mimo ETS1
 # (Fakta o klimatu, Dashboard tepláren / studie Odchod tepláren od uhlí, verze 2026-08-29:
 #  https://faktaoklimatu.cz/studie/2026-odchod-teplaren-od-uhli). Bez domovních plynových kotelen -> spíš dolní odhad.
-N_TEPLO_ETS2_TIS <- 380
+N_TEPLO_ETS2_TIS <- as.numeric(Sys.getenv("ETS2_N_TEPLO_TIS", "380"))   # citlivost C3: 300 nebo 450
 TEPLO <- "byt teplo (zdroj v ETS2)"
 TEPLO_ETS1 <- "byt teplo (zdroj v ETS1)"   # od B3: ETS2 jim teplo nezdraží, ale platí ETS2 za plyn (vaření, ohřev vody)
 
@@ -125,9 +125,17 @@ if (length(chybi)) stop("Pro SILC_ROK = ", r, " / SRU_ROK = ", SRU_ROK, " chybí
 # domovní předávací stanice, domovní kotelna). Celostátní průměr jen pro kontrolu.
 # https://eru.gov.cz/vysledne-ceny-tepelne-energie-v-cr-2024
 ERU_KONCOVE <- c("primarni_rozvod", "cvs", "blokova_kotelna", "sekundarni_rozvody", "domovni_predavaci_stanice", "domovni_kotelna")
+# C6 (27. 11. 2026): jeden výběr lokalit „zdroj v ETS2“ pro cenu tepla, podíl tepla z ETS2 v krajích i emisní faktor.
+# Zdroj v ETS2 = výkon do 20 MWt, uhlí + plyn aspoň 50 % a dodané teplo nejvýš výkon × 3 000 h × 3,6 GJ/MWh
+# (větší dodávka = nákup tepla z velkého zdroje v ETS1). Dřív cena tepla brala jen plyn >= 50 % bez kontroly dodávky.
+je_ets2 <- function(e0) {
+  gj <- rowSums(e0[grep("_mnozstvi_gj$", names(e0))], na.rm = TRUE)
+  !is.na(e0$vykon_mwt) & e0$vykon_mwt <= 20 & coalesce(e0$uhli_pct, 0) + coalesce(e0$plyn_pct, 0) >= 50 &
+    gj <= e0$vykon_mwt * 3.6 * 3000
+}
 eru_cena <- function(rok, maly_plyn = TRUE) {
   e0 <- read_csv(file.path(ERU_DIR, paste0("eru_teplo_", rok, ".csv")), show_col_types = FALSE)
-  if (maly_plyn) e0 <- filter(e0, vykon_mwt <= 20, coalesce(plyn_pct, 0) >= 50)
+  if (maly_plyn) e0 <- e0[je_ets2(e0), ]
   kc <- 0; gj <- 0
   for (u in ERU_KONCOVE) {
     c0 <- e0[[paste0(u, "_cena_kc_gj")]]; q0 <- coalesce(e0[[paste0(u, "_mnozstvi_gj")]], 0)
@@ -138,6 +146,18 @@ eru_cena <- function(rok, maly_plyn = TRUE) {
 ERU_ROK <- if (file.exists(file.path(ERU_DIR, paste0("eru_teplo_", r, ".csv")))) SILC_ROK else SILC_ROK - 1
 CENA_TEPLA_ERU_KC_GJ <- eru_cena(ERU_ROK) * IDX_TEPLO[[r]] / IDX_TEPLO[[as.character(ERU_ROK)]]   # = ERÚ, je-li rok k dispozici
 CENA_TEPLA_ERU_CR    <- eru_cena(ERU_ROK, maly_plyn = FALSE) * IDX_TEPLO[[r]] / IDX_TEPLO[[as.character(ERU_ROK)]]
+# C6: emisní faktor dodaného tepla vážený palivy lokalit v ETS2 (dřív čistě plynový 72,7 kg/GJ).
+# Plyn: účinnost zdroje DT_EFF_ZDROJ (0,90), uhlí (hnědé): 0,80; ztráty v rozvodu DT_ZTRATY; biomasa a ostatní = 0.
+DT_EFF_UHLI <- 0.80
+ef_teplo_ets2 <- function(rok) {
+  e0 <- read_csv(file.path(ERU_DIR, paste0("eru_teplo_", rok, ".csv")), show_col_types = FALSE)
+  e0 <- e0[je_ets2(e0), ]; gj <- rowSums(e0[grep("_mnozstvi_gj$", names(e0))], na.rm = TRUE)
+  ef <- (coalesce(e0$plyn_pct, 0) / 100 * p$EF[["plyn"]] / p$DT_EFF_ZDROJ +
+         coalesce(e0$uhli_pct, 0) / 100 * p$EF[["hnede"]] / DT_EFF_UHLI) / (1 - p$DT_ZTRATY)
+  sum(ef * gj) / sum(gj)
+}
+DT_KG_PER_GJ_ETS2 <- ef_teplo_ets2(ERU_ROK)
+cat("Emisní faktor tepla ze zdrojů v ETS2:", round(DT_KG_PER_GJ_ETS2, 1), "kg CO2/GJ (čistě plyn", round(p$DT_KG_PER_GJ, 1), ")\n")
 
 # Elektřina: ČSÚ CEN0101KT01, pásmo Celkem (jen pro přecenění výdajů do 2028; elektřina není v ETS2)
 posl <- function(vzor) { f <- sort(list.files(CENY_DIR, pattern = vzor, full.names = TRUE)); f[length(f)] }
@@ -286,7 +306,7 @@ s <- s %>% left_join(select(PODIL_UHLI_SRU, skup_paliva = skup, podil_uhli), by 
     teplo_gj   = kc_ut / teplo_kc_gj_rok,
     co2_plyn   = plyn_kwh * 3.6e-3 * p$GAS_NCV_TO_GCV * p$EF[["plyn"]] / 1000,
     co2_paliva = uhli_q / 10 * p$NCV[["hnede"]] * p$EF[["hnede"]] / 1000,
-    co2_teplo  = teplo_gj * p$DT_KG_PER_GJ / 1000,
+    co2_teplo  = teplo_gj * DT_KG_PER_GJ_ETS2 / 1000,
     co2_phm    = (benzin_l * p$KG_L[["benzin"]] + nafta_l * p$KG_L[["nafta"]] +
                   lpg_l * LPG_KG_L / 1000 * p$NCV[["lpg"]] * p$EF[["lpg"]]) / 1000)
 # --- C1 (25. 11. 2026, HLAVNÍ VARIANTA): kalibrace emisí z plynu a uhlí na národní bilanci, přepočtenou na zimu roku 2028 ---
@@ -368,8 +388,7 @@ KRAJ_SILC_ERU <- c(`11` = "A", `21` = "S", `31` = "C", `32` = "P", `41` = "K", `
 # z velkého zdroje (typicky ETS1, např. Havířov z Dětmarovic) a za zdroj v ETS2 se nepočítá.
 eru_kraj <- read_csv(file.path(ERU_DIR, paste0("eru_teplo_", ERU_ROK_TEPLO, ".csv")), show_col_types = FALSE) %>%
   mutate(gj = rowSums(across(ends_with("_mnozstvi_gj")), na.rm = TRUE),
-         ets2 = !is.na(vykon_mwt) & vykon_mwt <= 20 & coalesce(uhli_pct, 0) + coalesce(plyn_pct, 0) >= 50 &
-                gj <= vykon_mwt * 3.6 * 3000) %>%
+         ets2 = je_ets2(pick(everything()))) %>%
   filter(kraj %in% KRAJ_SILC_ERU) %>%   # pár řádků PDF převodu nemá platný kód kraje
   group_by(kraj) %>% summarise(podil_ets2 = sum(gj[ets2]) / sum(gj), gj_tis = sum(gj) / 1000, .groups = "drop")
 if (!all(KRAJ_SILC_ERU %in% eru_kraj$kraj)) stop("ERÚ: chybí kraj ", paste(setdiff(KRAJ_SILC_ERU, eru_kraj$kraj), collapse = ", "))
@@ -567,7 +586,28 @@ write_csv(s_dec, file.path(OUT_DIR, "09_silc_decily.csv"))
 write_csv(s_dz_dec, file.path(OUT_DIR, "09_silc_zranitelne_decil.csv"))
 write_csv(s_dz_arch, file.path(OUT_DIR, "09_silc_zranitelne_archetyp.csv"))
 # 95% interval celkového počtu zranitelných (bootstrap, váha w_ets2)
-ci_z <- boot_ci(s$zranitelne & ok_p, we) * sum(we) / 100 / 1000
+# C5 (27. 11. 2026): bootstrap po domácnostech (obě varianty ETS1/ETS2 téže domácnosti spolu), stratifikovaný podle kraje,
+# s přepočtem prahů v každé replikaci (2M po ETS2 a hranice 4. decilu). MF verze SILC nemá PSU, design je tak jen přibližný.
+# Dřív se převzorkovaly řádky, prahy byly pevné a interval se zaokrouhloval na 0,1 p. b. (proto stejná dolní mez v různých bězích).
+ci_zranitelne <- function(B = B_BOOT) {
+  stopifnot(length(podil_po) == nrow(s))
+  ekv <- s$prijem_rok / s$sj; okk <- ok_p & s$vydaje_energie > 0
+  dom <- split(seq_len(nrow(s)), s$DOMAC_ID)
+  kraj_dom <- vapply(dom, function(ix) s$KRAJ[ix[1]], numeric(1))
+  idx_kraj <- split(seq_along(dom), kraj_dom)
+  N <- sum(s$w)
+  replicate(B, {
+    vyber <- unlist(lapply(idx_kraj, function(ix) ix[sample.int(length(ix), length(ix), replace = TRUE)]), use.names = FALSE)
+    i <- unlist(dom[vyber], use.names = FALSE); w <- s$w[i]; o <- okk[i]
+    m2 <- 2 * wq0(podil_po[i][o], w[o]); p40 <- wq0(ekv[i][ok_p[i]], w[ok_p[i]], 0.4)
+    z <- o & ekv[i] <= p40 & podil_po[i] > m2 & s$podil_ets2_na_prijmu[i] >= 1
+    sum(w[z]) / sum(w) * N / 1000
+  })
+}
+boot_z <- ci_zranitelne()
+ci_z <- quantile(boot_z, c(.025, .975))
+cat("C5: zranitelných (tis.) bod", round(sum(we[s$zranitelne & ok_p]) / 1000, 1), "| bootstrap medián", round(median(boot_z), 1),
+    "| 95% interval", paste(round(ci_z, 1), collapse = "–"), "\n")
 prahy_ets2 <- bind_rows(prahy_ets2, tibble(ukazatel = c("zranitelne_tis_teplo_jen_ets2_ci95_dolni", "zranitelne_tis_teplo_jen_ets2_ci95_horni"),
                                            hodnota = as.numeric(ci_z)))
 prahy <- bind_rows(prahy, prahy_ets2 %>% mutate(hodnota = round(hodnota, 3)))
