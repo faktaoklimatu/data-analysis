@@ -98,6 +98,8 @@ Výsledek (`09_silc_prahy.csv`, `_data/ets2/zranitelne.csv`): asi 262 tis. domá
 ## 11. Hlavní omezení
 
 - Statický odhad bez změny chování (kromě odhadu toku peněz).
+- Cena uhlí (680 Kč/q) výsledky neovlivňuje: emise z uhlí se kalibrují na bilanci, takže nižší cena jen sníží kalibrační faktor (500 Kč/q: 0,57, 600 Kč/q: 0,69, 680 Kč/q: 0,78), počty i částky zůstanou stejné (citlivost C2, `ETS2_CENA_UHLI_Q`). Nižší ceny by navíc znamenaly, že SILC nadhodnocuje spotřebu uhlí o 45–75 %, což je méně věrohodné.
+- Výše platby se odvozuje z průměrného zdražení zranitelných domácností a návrh se hodnotí na téže skupině (kruhovost, C4). Srovnání s plošnými návrhy proto náš návrh mírně zvýhodňuje. Ověřit při přepočtu na SILC 2025 (částky z 2024 vyhodnotit na 2025).
 - Mikrosimulace (díl I) a tok peněz (díl II) pracují s různou výší emisí 2028: mikrosimulace s dnešní spotřebou kalibrovanou na bilanci a zimu 2028 (plyn, uhlí a teplo ze zdrojů v ETS2, asi 5,8 Mt CO₂), tok peněz s inventurou 2024, trendem −3 % ročně a cenovou reakcí (asi 3,8 Mt). Část rozdílu je definiční (teplo z výtopen je v inventuře v 1A1a, ne v 1A4b), část je chybějící pokles spotřeby do 2028 v mikrosimulaci (asi −11 %). Dopady na domácnosti jsou proto spíš horní odhad, výnos spíš opatrný.
 - Náklady v SILC uvádí respondent (zálohy), příjem je za předchozí rok.
 - Pohonné hmoty přes dárce ze SRÚ: průměry sedí, vazba na konkrétní domácnost je náhodná.

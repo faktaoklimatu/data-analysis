@@ -100,7 +100,7 @@ IDX_TEPLO <- c(`2021` = 102.8, `2022` = 123.0, `2023` = 168.7, `2024` = 177.7, `
 # Kotva = aktuální ceníky uhelných skladů, hnědé uhlí Bílina (kostka, ořech 1, ořech 2), vč. DPH, bez dopravy, říjen 2026:
 #   https://kb-uhli.cz/cenik/ (674, 684, 694 Kč/q), https://www.uhli-janmaria.cz/cenik (670 Kč/q) -> průměr 680 Kč/q.
 # Na rok šetření SILC přepočteno HICP CP0454 (2026 ~ 2025). Kontrola: ENERGO 2021 medián 400 Kč/q × HICP = 695 Kč/q (2024).
-CENA_UHLI_Q_2026 <- 680
+CENA_UHLI_Q_2026 <- as.numeric(Sys.getenv("ETS2_CENA_UHLI_Q", "680"))   # citlivost C2: ETS2_CENA_UHLI_Q=500 nebo 600
 # Průměrná hrubá měsíční mzda ČSÚ (pro přepočet příjmů SILC na 2028); nový SILC_ROK potřebuje rok SILC_ROK - 1:
 # 2023: https://csu.gov.cz/rychle-informace/prumerne-mzdy-4-ctvrtleti-2023
 MZDA <- c(`2021` = 37839, `2023` = 43341)    # ČSÚ, průměrná hrubá měsíční mzda
