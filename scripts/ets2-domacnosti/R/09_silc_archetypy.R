@@ -159,27 +159,29 @@ cena_phm <- c(nafta = phm$kc[grepl("nafta", phm$polozka_txt)],
 LPG_KG_L <- 0.51
 
 # ---------- ENERGO 2021: emise na korunu tuhých paliv a cena tepla ----------
-d <- load_energo(); w <- d$Vahy
-n0 <- function(x) { x <- suppressWarnings(as.numeric(x)); ifelse(is.na(x) | x < 0, 0, x) }
-RDe <- d$EODUMTYP %in% c(1, 2)
-uhli_e <- is1(d$ERVYTAPENI_04) | is1(d$ERVYTAPENI_05); plyn_e <- is1(d$ERVYTAPENI_02)
-kc_uhli  <- n0(d$EPSPOTREBATPKC_01) + n0(d$EPSPOTREBATPKC_02) + n0(d$EPSPOTREBATPKC_03) + n0(d$EPSPOTREBATPKC_04)
-kc_drevo <- n0(d$EPSPOTREBATPKC_05) + n0(d$EPSPOTREBATPKC_06) + n0(d$EPSPOTREBATPKC_07)
-co2_uhli <- (n0(d$EPTPMNOZSTVI_01) / 10 * p$NCV[["hnede"]] * p$EF[["hnede"]] +
-             n0(d$EPTPMNOZSTVI_02) / 10 * p$NCV[["cerne"]] * p$EF[["cerne"]] +
-             n0(d$EPTPMNOZSTVI_03) / 10 * p$NCV[["koks"]] * p$EF[["koks"]] +
-             n0(d$EPTPMNOZSTVI_04) / 10 * p$NCV[["brikety_uhelne"]] * p$EF[["brikety_uhelne"]]) / 1000   # t CO2
-ok_e <- (kc_uhli + kc_drevo > 0) & ((kc_uhli > 0) == (co2_uhli > 0))   # Kč i množství vyplněné konzistentně
-skup_e <- ifelse(RDe & uhli_e, "RD uhlí", ifelse(RDe & plyn_e, "RD plyn", ifelse(RDe, "RD ostatní", "BD")))
-T_NA_KC_2021 <- tibble(skup = skup_e, w = w, ok = ok_e, co2 = co2_uhli, kc = kc_uhli + kc_drevo, kcu = kc_uhli) %>%
-  filter(ok) %>% group_by(skup) %>%
-  summarise(n_energo = n(), podil_uhli_v_kc = sum(kcu * w) / sum(kc * w), t_co2_na_kc = sum(co2 * w) / sum(kc * w))
-cena21 <- function(kc, mn) { r <- suppressWarnings(as.numeric(kc) / as.numeric(mn)); r[!is.finite(r)] <- NA; wq(r, w) }
-TEPLO_KC_GJ_2021 <- cena21(d$EPSPOTRVYTTABKC_01, d$EPSPOTRVYTTABGJ_01)
+if (ENERGO_OK) {
+  d <- load_energo(); w <- d$Vahy
+  n0 <- function(x) { x <- suppressWarnings(as.numeric(x)); ifelse(is.na(x) | x < 0, 0, x) }
+  RDe <- d$EODUMTYP %in% c(1, 2)
+  uhli_e <- is1(d$ERVYTAPENI_04) | is1(d$ERVYTAPENI_05); plyn_e <- is1(d$ERVYTAPENI_02)
+  kc_uhli  <- n0(d$EPSPOTREBATPKC_01) + n0(d$EPSPOTREBATPKC_02) + n0(d$EPSPOTREBATPKC_03) + n0(d$EPSPOTREBATPKC_04)
+  kc_drevo <- n0(d$EPSPOTREBATPKC_05) + n0(d$EPSPOTREBATPKC_06) + n0(d$EPSPOTREBATPKC_07)
+  co2_uhli <- (n0(d$EPTPMNOZSTVI_01) / 10 * p$NCV[["hnede"]] * p$EF[["hnede"]] +
+               n0(d$EPTPMNOZSTVI_02) / 10 * p$NCV[["cerne"]] * p$EF[["cerne"]] +
+               n0(d$EPTPMNOZSTVI_03) / 10 * p$NCV[["koks"]] * p$EF[["koks"]] +
+               n0(d$EPTPMNOZSTVI_04) / 10 * p$NCV[["brikety_uhelne"]] * p$EF[["brikety_uhelne"]]) / 1000   # t CO2
+  ok_e <- (kc_uhli + kc_drevo > 0) & ((kc_uhli > 0) == (co2_uhli > 0))   # Kč i množství vyplněné konzistentně
+  skup_e <- ifelse(RDe & uhli_e, "RD uhlí", ifelse(RDe & plyn_e, "RD plyn", ifelse(RDe, "RD ostatní", "BD")))
+  T_NA_KC_2021 <- tibble(skup = skup_e, w = w, ok = ok_e, co2 = co2_uhli, kc = kc_uhli + kc_drevo, kcu = kc_uhli) %>%
+    filter(ok) %>% group_by(skup) %>%
+    summarise(n_energo = n(), podil_uhli_v_kc = sum(kcu * w) / sum(kc * w), t_co2_na_kc = sum(co2 * w) / sum(kc * w))
+  cena21 <- function(kc, mn) { r <- suppressWarnings(as.numeric(kc) / as.numeric(mn)); r[!is.finite(r)] <- NA; wq(r, w) }
+  TEPLO_KC_GJ_2021 <- cena21(d$EPSPOTRVYTTABKC_01, d$EPSPOTRVYTTABGJ_01)
+  TEPLO_KONTROLA_ENERGO <- TEPLO_KC_GJ_2021 * IDX_TEPLO[[r]] / IDX_TEPLO[["2021"]]   # jen kontrola
+  rm(d)
+} else { T_NA_KC_2021 <- NULL; TEPLO_KONTROLA_ENERGO <- NA_real_ }
 teplo_kc_gj_rok  <- CENA_TEPLA_ERU_KC_GJ
-TEPLO_KONTROLA_ENERGO <- TEPLO_KC_GJ_2021 * IDX_TEPLO[[r]] / IDX_TEPLO[["2021"]]   # jen kontrola
 cena_uhli_q_rok  <- CENA_UHLI_Q_2026 * IDX_TUHA[[r]] / IDX_TUHA[["2025"]]
-rm(d)
 
 # ---------- čtení SILC a SRÚ ----------
 num <- function(x) suppressWarnings(as.numeric(gsub(",", ".", x)))
@@ -573,7 +575,7 @@ write_csv(prahy, file.path(OUT_DIR, "09_silc_prahy.csv"))
 write_csv(phm_kvintily, file.path(OUT_DIR, "09_sru_phm_kvintily.csv"))
 write_csv(phm_zdrazeni, file.path(OUT_DIR, "09_phm_zdrazeni.csv"))
 write_csv(PODIL_UHLI_SRU %>% mutate(podil_uhli = round(podil_uhli, 3)), file.path(OUT_DIR, "09_sru_podil_uhli.csv"))
-write_csv(T_NA_KC_2021 %>% mutate(across(where(is.numeric), ~ signif(.x, 4))), file.path(OUT_DIR, "09_kontrola_energo_co2_na_kc_paliv.csv"))
+if (!is.null(T_NA_KC_2021)) write_csv(T_NA_KC_2021 %>% mutate(across(where(is.numeric), ~ signif(.x, 4))), file.path(OUT_DIR, "09_kontrola_energo_co2_na_kc_paliv.csv"))
 if (!is.null(srovnani)) write_csv(srovnani, file.path(OUT_DIR, "09_srovnani_energo.csv"))
 
 # ---------- kontroly (QA) ----------
@@ -591,7 +593,7 @@ print(tibble(vstup = c("výdaje na bydlení (SILC)", "příjem CP_PRIJ (SILC)", 
              rok = c(SILC_ROK, SILC_ROK - 1, SILC_ROK, SILC_ROK, ERU_ROK, SILC_ROK, SRU_ROK, SRU_ROK, 2028)))
 if (ERU_ROK != SILC_ROK) cat("POZOR: ceny tepla ERÚ za", SILC_ROK, "zatím nejsou, použit rok", ERU_ROK, "× HICP CP0455.\n")
 cat("Domácnosti s plynem podle pásma (váženě, %):\n"); print(round(100 * prop.table(tapply(s$w[s$plyn_kwh > 0], pasmo(s$plyn_kwh[s$plyn_kwh > 0]), sum)), 1))
-cat("\nKONTROLA ENERGO 2021 – podíl uhlí a emise na 1 000 Kč tuhých paliv (ceny 2021):\n"); print(T_NA_KC_2021 %>% mutate(t_na_1000kc = 1000 * t_co2_na_kc))
+if (!is.null(T_NA_KC_2021)) { cat("\nKONTROLA ENERGO 2021 – podíl uhlí a emise na 1 000 Kč tuhých paliv (ceny 2021):\n"); print(T_NA_KC_2021 %>% mutate(t_na_1000kc = 1000 * t_co2_na_kc)) }
 cat("\nAgregáty (celá populace, SILC):\n")
 cat("  plyn domácností", round(sum(s$plyn_kwh * s$w) * 3.6e-6 * p$GAS_NCV_TO_GCV), "TJ (výhřevnost)",
     "| CO2 plyn", round(sum(s$co2_plyn * s$w) / 1e6, 2), "Mt  [ČSÚ bilance 2020, tab. 1-3.1: 77 707 TJ; ENERGO 04: 75 994 TJ, 4,23 Mt]\n")

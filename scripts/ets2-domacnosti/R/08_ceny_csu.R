@@ -27,11 +27,13 @@ phm_p <- phm %>% filter(obdobi %in% tydny) %>% group_by(polozka_txt) %>%
 kc_phm <- function(vzor) phm_p$kc[grepl(vzor, phm_p$polozka_txt)]
 
 # --- uhlí a teplo: ENERGO 2021 × index ---
-d <- load_energo(); w <- d$Vahy
-cena21 <- function(kc, mn) { r <- kc / mn; r[!is.finite(r)] <- NA; wq(r, w) }
-hnede21 <- cena21(d$EPSPOTREBATPKC_01, d$EPTPMNOZSTVI_01)
-cerne21 <- cena21(d$EPSPOTREBATPKC_02, d$EPTPMNOZSTVI_02)
-teplo21 <- cena21(d$EPSPOTRVYTTABKC_01, d$EPSPOTRVYTTABGJ_01)
+if (ENERGO_OK) {
+  d <- load_energo(); w <- d$Vahy
+  cena21 <- function(kc, mn) { r <- kc / mn; r[!is.finite(r)] <- NA; wq(r, w) }
+  hnede21 <- cena21(d$EPSPOTREBATPKC_01, d$EPTPMNOZSTVI_01)
+  cerne21 <- cena21(d$EPSPOTREBATPKC_02, d$EPTPMNOZSTVI_02)
+  teplo21 <- cena21(d$EPSPOTRVYTTABKC_01, d$EPSPOTRVYTTABGJ_01)
+} else { hnede21 <- cerne21 <- teplo21 <- NA_real_; cat("ENERGO 2021 není k dispozici – kontrolní ceny přeskočeny.\n") }
 IDX_TUHA  <- 198.9 / 114.3   # HICP ČR CP0454 2025/2021
 # Hnědé uhlí: ČSÚ průměrnou spotřebitelskou cenu uhlí nezveřejňuje -> aktuální ceníky uhelných skladů (vč. DPH, bez dopravy):
 #   https://kb-uhli.cz/cenik/ (Bílina kostka 674, ořech 1 684, ořech 2 694 Kč/q), https://www.uhli-janmaria.cz/cenik (ořech 2 670 Kč/q)

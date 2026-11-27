@@ -20,7 +20,7 @@ Náklad ETS2 pro domácnost = emise × cena povolenky × kurz × DPH.
 
 - **EU-SILC 2024 (ČSÚ, verze pro MF):** hlavní zdroj. Příjem, typ bydlení, způsob vytápění a náklady na energie u téže domácnosti, asi 8 500 domácností s váhami.
 - **Statistika rodinných účtů (SRÚ) 2023:** pohonné hmoty (SILC je nemá) a podíl uhlí ve výdajích za tuhá paliva.
-- **ČSÚ ENERGO 2021:** fyzické spotřeby typových domácností a kontrola.
+- **ČSÚ ENERGO 2021 (volitelné):** jen kontrola cen uhlí a tepla a emisí na korunu tuhých paliv; bez něj se kontroly přeskočí. Starší větev výpočtu nad ENERGO (04, 06, 07) a diagnostika 08a (SILC 2022) se v `run_all.R` nespouští.
 - **ERÚ, výsledné ceny tepla 2024:** ceny tepla a určení, které lokality spadají pod ETS2.
 - **SLDB 2021:** byty podle paliva po správních obvodech ORP (mapy).
 - **Eurostat:** realizované ceny plynu (nrg_pc_202), energetická bilance (nrg_bal_c), inventura emisí (env_air_gge).

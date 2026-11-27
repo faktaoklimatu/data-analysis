@@ -26,6 +26,8 @@ dir.create(OUT_DIR, showWarnings = FALSE, recursive = TRUE)
 # ZIP od ČSÚ má názvy souborů v nestandardním kódování -> R hlásí "invalid multibyte string";
 # rozbalení ze ZIPu zůstává jen jako záloha.
 ENERGO_XLSX <- file.path(CSU_DIR, "ENERGO_2021_data.xlsx")
+# ENERGO je volitelné (jen kontroly v 08 a 09); bez něj se kontroly přeskočí.
+ENERGO_OK <- file.exists(ENERGO_XLSX) || file.exists(ENERGO_ZIP)
 load_energo <- function() {
   f <- ENERGO_XLSX
   if (!file.exists(f)) {
