@@ -126,6 +126,8 @@ vyhodnot <- function(sc) {
     tibble(scenar = sc, pravidlo = nm,
            castka_kc_mesic = round(ifelse(nm %in% c("ideal", "paq_pausal", "paq_balik", "paq_bez_slevy", "RD_zaklad_tuha", "RD_tuha_taper", "RD_byt_plyn", "RD_byty_vse", "pal_vlastni", "pal_vlastni_teplo", "pal_vlastni_teplo_drevo", "pal_vlastni_teplo_vse", "duchod_podm"), NA, prum_z / 12)),
            prijemci_tis = round(sum(wt[pl > 0]) / 1000),
+           prijemci_zranit_tis = round(sum(wt[pl > 0 & z]) / 1000),   # překryv oprávněných a zranitelných (27. 11. 2026)
+           prijemci_osob_tis = round(sum((wt * pop$osoby)[pl > 0]) / 1000),
            naklad_mld = round(sum(pl * wt) / 1e9, 2),
            podil_k_zranit = round(100 * sum((pl * wt)[z]) / sum(pl * wt), 1),
            pokryti_zranit = round(100 * sum(wt[z & pl > 0]) / sum(wt[z]), 1),
@@ -165,6 +167,15 @@ param <- bind_rows(
          hodnota = c(sum(wz[zr]) / 1000, 100 * sum(wz[zr & pop$davka_bydleni]) / sum(wz[zr]),
                      100 * sum(wz[zr & pop$davka_bydleni & pop$archetyp == "RD uhlí"]) / sum(wz[zr & pop$archetyp == "RD uhlí"]),
                      100 * sum(wz[zr & pop$typ == "RD" & pop$n_duch > 0]) / sum(wz[zr & pop$typ == "RD"]),
-                     100 * sum(wz[zr & pop$n_duch > 0]) / sum(wz[zr])))) |>
-  mutate(hodnota = round(hodnota, 1))
+                     100 * sum(wz[zr & pop$n_duch > 0]) / sum(wz[zr]))),
+  # valorizace důchodů (27. 11. 2026): o kolik ETS2 zvedne ceny (náklad ETS2 domácností / jejich výdaje, proxy z SILC:
+  # podíl na čistém příjmu) a kolik zdražení vytápění by zranitelným s důchodcem vrátila valorizace o tuto inflaci
+  tibble(ukazatel = c("ets2_naklad_pct_prijmu_vsech", "zranitelne_s_duchodcem_ets2_vytapeni_pct_prijmu",
+                      "valorizace_vrati_zranitelnym_duchodcum_pct"),
+         hodnota = {
+           infl <- 100 * sum(pop$A_celkem * wz) / sum(pop$prijem_rok * wz)
+           zd <- zr & pop$n_duch > 0
+           zatez <- 100 * sum(pop$A_vytapeni[zd] * wz[zd]) / sum(pop$prijem_rok[zd] * wz[zd])
+           c(infl, zatez, 100 * infl / zatez) })) |>
+  mutate(hodnota = round(hodnota, 2))
 write_csv(param, file.path(OUT_DIR, "11_kompenzace_parametry.csv")); print(param, n = 40)

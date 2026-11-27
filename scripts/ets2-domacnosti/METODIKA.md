@@ -73,6 +73,10 @@ Výsledek (`09_silc_prahy.csv`, `_data/ets2/zranitelne.csv`): asi 262 tis. domá
 - **Náklad:** v plné výši asi 6,0 mld. Kč ročně, za 2028–2032 asi 21 mld. Kč. Je to horní odhad: počítá s tím, že požádají všichni oprávnění.
 - **Srovnávaná pravidla** (`11_kompenzace_nastroje.R`): platba všem domácnostem, příjemcům dávek na bydlení, návrh PAQ Research a CVF (sleva na poplatníka, valorizace důchodů ve stejném úhrnu, +20 % energetického paušálu), náš návrh s teplem jen ze zdrojů v ETS2 a s teplem všem bytům na dálkovém teple. Ukazatele: náklad, podíl peněz pro zranitelné, kolik zranitelných nedostane nic, jaká část zdražení vytápění se jim vrátí (v plné výši, v průměru za 5 let a v roce 2032).
 
+- **Oprávnění vs. zranitelní:** platbu by dostalo asi 980 tis. domácností (2,3 mil. osob), z toho 160 tis. zranitelných (84 % ze 189 tis.); zbylých asi 29 tis. zranitelných topí hlavně elektřinou, dřevem nebo teplem z ETS1 (`11`, sloupce `prijemci_zranit_tis`, `prijemci_osob_tis`).
+- **Valorizace důchodů:** náklad ETS2 domácností je asi 0,5 % jejich čistého příjmu (proxy pro dopad na ceny); zranitelným domácnostem s důchodcem vezme zdražení vytápění 2,3 % příjmu, valorizace o inflaci by jim tak vrátila nanejvýš asi čtvrtinu (`11_kompenzace_parametry.csv`).
+- **PAQ a CVF na domácnost:** 100 Kč měsíčně na pracujícího, asi 170 Kč na důchodce (5,54 mld. Kč rozložených na 2,7 mil. důchodců v SILC), v průměru asi 240 Kč na domácnost; náš návrh v průměru asi 390 Kč na oprávněnou domácnost. 70 % zranitelných domácností nemá ekonomicky aktivního člena.
+
 ## 8. Sociální klimatický fond a plán
 
 - **Alokace pro ČR:** 1 562 617 717 € z EU (příloha II nařízení 2023/955, podíl 2,40 %, fond 65 mld. €). Snížení fondu na 54,6 mld. € platí jen při odkladu ETS2 podle čl. 30k směrnice; ETS2 se odložilo nařízením 2026/667, fond tedy zůstává.
